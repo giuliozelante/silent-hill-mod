@@ -1,0 +1,82 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+<title>Releasing Your Mod</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<base target="main">
+</head>
+
+<body leftmargin="0" topmargin="0">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" height="80">
+  <tr>
+    <td width="50%" height="80" bgcolor="#000000"><img border="0" src="images/maxlogo.gif" width="260" height="80"></td>
+    <td width="50%" height="80" align="right" bgcolor="#000000"><img border="0" src="images/rmdlogo.gif" width="115" height="64"></td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="16">
+  <tr>
+    <td>
+      <table border="0" cellpadding="0" cellspacing="0" width="640">
+  <tr>
+          <td> <h1> <br>
+              Releasing your mod</h1>
+      <blockquote>
+        <p align="left">This tutorial covers the little things you should be aware of when you want to release a mod. I.e. editing the menus, testing, packing your data into .MPM files and other miscellaneous tips.</p>
+      </blockquote>
+      <h2 align="left">Editing the menus</h2>
+      <blockquote>
+        <p align="left">Since you want to make it as easy as possible for people to play your mod, you
+        probably want to edit the menu.txt to add an option to start your custom levels (if you have any) straight from the menus. You do this by editing the file
+        <b>...\data\menu\menu.txt</b>.</p>
+      </blockquote>
+      <p align="center"><img border="0" src="images/releasing_1.gif" width="640" height="579"></p>
+      <blockquote>
+        <p align="left">Just copy/paste the "GCID_STARTTUTORIAL" item and edit its GM_Init to point at your level, as you can see has been done in the example above.</p>
+        <p align="left">And as you probably noticed, you can also modify the menu bitmaps to give your mod a fresh feeling. The original bitmaps can be found from
+        <b>...\data\menu\bitmaps</b>. Note that even though the original files are .TGA files, you can use .JPG file just as well, to save some download time from the gamers.</p>
+      </blockquote>
+      <h2 align="left">Testing</h2>
+      <blockquote>
+        <p align="left">Never forget to test  your mod thoroughly. Run through the levels and try weird things that might break the level. Make your friends try it a few times. Try it in maximum texture detail settings (It's very easy to use too much texture memory by having too much textures and different characters in the levels, so watch out for that). Fix whatever errors you might find, and test the changes.</p>
+        <p align="left">Once you know it works well, pack all the needed data files
+        into an .MPM file. You can do this for example by copying all the data files
+        you have created or changed into a temporary directory. Into their own respective subdirectories. It could look little bit something like this:</p>
+        <blockquote>
+          <p align="left" class="fixed">C:\TEMP\data<br>
+          C:\TEMP\data\database<br>
+          C:\TEMP\data\menu<br>
+          C:\TEMP\data\globalconfig.txt<br>
+          C:\TEMP\data\database\levels<br>
+          C:\TEMP\data\database\materials.txt<br>
+          C:\TEMP\data\database\levels\Mylevels<br>
+          C:\TEMP\data\database\levels\levels.txt<br>
+          C:\TEMP\data\database\levels\Mylevels\Level1.ldb<br>
+          C:\TEMP\data\database\levels\Mylevels\Level2.ldb<br>
+          C:\TEMP\data\menu\menu.txt<br>
+          </p>
+        </blockquote>
+        <p align="left">And then using RasMaker:</p>
+        <blockquote>
+          <p align="left" class="fixed">rasmaker -a -p c:\temp mymod.mpm</p>
+        </blockquote>
+        <p align="left">This will pack everything you've got in a C:\Temp directory into a Max Payne Mod file called
+        <b> mymod.mpm</b>. Now you should still test that it works and all the required data is in the pack. To do this, you should have a fresh install of Max Payne somewhere. This means the database shouldn't be extracted from the .RAS files. If you have the original .RAS files somewhere safe, you can just copy them to the Max Payne directory, and rename the \data -directory into something else while you are testing. Or better yet, you can simply re-install Max Payne into another directory which you use for testing and running
+        .MPM files.</p>
+        <p align="left">If you attempt to run an .MPM file while you have the database extracted, it will just prefer files from the exported database over the files inside your mod file, and you won't know if it actually worked or not.</p>
+      </blockquote>
+      <h2 align="left">Making your mod available</h2>
+      <blockquote>
+        <p align="left">If you don't have the bandwidth for making the mod available on your own, there are numerous Max sites out there that might help you getting the mod out there, at least if it's any good. For example
+        you can ask for help from
+        <a href="http://www.3drealms.com/forums.html" target="_blank"> 3D Realms Forums</a>, which is also a nice place to make people aware of your mod.</p>
+      </blockquote>
+    </td>
+  </tr>
+</table>
+	</td>
+  </tr>
+</table>
+</body>
+
+</html>

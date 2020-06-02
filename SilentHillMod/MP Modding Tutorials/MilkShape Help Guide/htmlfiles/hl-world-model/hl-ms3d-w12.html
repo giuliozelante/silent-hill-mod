@@ -1,0 +1,89 @@
+<html> 
+<h1><font color="#00CC00" face="Arial, Helvetica, sans-serif"><b><font color="#000000">Half-Life 
+  Tutorials</font></b></font> </h1>
+<h2><font face="Arial, Helvetica, sans-serif"><b>Making a World model for Half-Life 
+  - by <a href="mailto:rat@polycount.com">Rat</a></b> <br>
+  </font></h2>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td width="70"><a href="hl-ms3d-w11.html"><img src="../Images/previous.gif" width="70" height="58" border="0"></a></td>
+    <td>&nbsp;</td>
+    <td width="70"><a href="hl-ms3d-w13.html"><img src="../Images/next.gif" width="70" height="58" border="0"></a></td>
+  </tr>
+</table>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Good work! Maybe some big 
+  game company is start to take notice of our work! I can see the paychecks now! 
+  *Ahem* ..., well seriously folks, take a look at Figure 1.45 to see what we 
+  should have at this point.</font></p>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="2"><img src="ms3d_hl-1/mt-fig45.gif" width="400" height="413"
+alt="mt-fig45.gif (14011 bytes)"></font></p>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="2"><strong>Figure 
+  1.45 Completed handle with knife blade unhidden</strong></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">The final thing we need 
+  to do is to make it so that we can view it ingame as a world model. But we will 
+  first have to check its size and position to be correct for ingame use. Chances 
+  are that it will be of monstrous dimensions. The first world model of a Pipe 
+  bomb I made was big as a house, and the team laughed so hard when we went into 
+  a DM MP game with it in the map that it took weeks of therapy to calm us down! 
+  One of the comments about it is shown in Figure 1.46</font></p>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="2"><img src="ms3d_hl-1/mt-fig46.jpg" width="592" height="440"
+alt="mt-fig46.jpg (35042 bytes)"></font></p>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="2"><strong>Figure 
+  1.46 Disaster strikes in the hearts of Swarm players!</strong></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Before we compare the what 
+  size we need, first we have to save our file. For us to compare its size to 
+  a human or another weapon is that you should open up a v_weapon.mdl file and 
+  make a box to fit around the weapon. Then you should delete all the groups and 
+  the joints or bones in it so that just your box remains. (See Figures 1.47 and 
+  1.48).</font></p>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="2"><img src="ms3d_hl-1/mt-fig47.gif" width="438" height="303"
+alt="mt-fig47.gif (8435 bytes)"></font></p>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="2"><strong>Figure 
+  1.47 Exporting the op4 v_knife.mdl</strong></font></p>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="2"><img src="ms3d_hl-1/mt-fig48.gif" width="649" height="413"
+alt="mt-fig48.gif (27377 bytes)"></font></p>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="2"><strong>Figure 
+  1.48 Creating a box to use as a guide</strong></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">We will next delete all 
+  the joints by going to the <font color="#0000FF">&quot;Joint&quot;</font> rollout 
+  and selecting the first bone in the list as shown in figure 1.49, then deleting 
+  it by using the <font color="#0000FF">&quot;Delete&quot;</font> key on the keyboard.</font></p>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="2"><img src="ms3d_hl-1/mt-fig49.gif" width="649" height="413"
+alt="mt-fig49.gif (31631 bytes)"></font></p>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="2"><strong>Figure 
+  1.49 Selecting the main joint of the biped for deletion</strong></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">You will next switch to 
+  the <font color="#0000FF">&quot;Groups&quot;</font> rollout and select and delete 
+  one by one all the <strong><em>&quot;groups,&quot;</em></strong> except of course 
+  the <strong><em>&quot;box&quot;</em></strong> group that you just created. Next 
+  go to the &quot;Materials&quot; rollout and delete all the materials, as we 
+  do not want any unwanted references to materials that are not used in our knife 
+  file. Then you will save this in the directory that you created your knife. 
+  You should name it something like <em><strong>&quot;Box-Scale.ms3d,&quot;</strong></em> 
+  so as to remind you what this file is.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">At this point you will open 
+  the <em><strong>&quot;knife2(ref).ms3d.&quot;</strong></em> You need to merge 
+  the box into this file now. Select <font color="#0000FF">&quot;<u>F</u>ile-&gt;<u>M</u>erge...&quot;</font> 
+  on the menu selections, and choose the <em><strong>&quot;Box-Scale.ms3d&quot;</strong></em> 
+  file. You may find it hard to find this new item, if you do not first zoom out 
+  in all viewports before the merge. You might want to rotate this box so that 
+  it will be easier to scale the knife to about the same size. In Figure 1.50 
+  you can see that my knife creation was a bit to large, and will need to be scaled 
+  down. Refer back to the reference on how to scale and do this now. Here is a 
+  tip to help: set the scales of the <font color="#0000FF">&quot;X,&quot; &quot;Y,&quot;</font> 
+  and <font color="#0000FF">&quot;Z&quot;</font> axis to .9 in the scale text 
+  boxes and keep clicking the <font color="#0000FF">&quot;Scale&quot;</font> button 
+  in the <font color="#0000FF">&quot;Scale Options&quot;</font> section until 
+  the desired size is achieved.</font></p>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="2"><img src="ms3d_hl-1/mt-fig50.gif" width="649" height="413"
+alt="mt-fig50.gif (15598 bytes)"></font></p>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="2"><strong>Figure 
+  1.50 Checking the scale of the knife model to a know size</strong></font></p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td width="70"><a href="hl-ms3d-w11.html"><img src="../Images/previous.gif" width="70" height="58" border="0"></a></td>
+    <td>&nbsp;</td>
+    <td width="70"><a href="hl-ms3d-w13.html"><img src="../Images/next.gif" width="70" height="58" border="0"></a></td>
+  </tr>
+</table>
+</html>

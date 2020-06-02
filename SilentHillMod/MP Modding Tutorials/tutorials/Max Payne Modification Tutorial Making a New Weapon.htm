@@ -1,0 +1,1232 @@
+odification of the original desert eagle. This tutorial is for people who want 
+to know how to make a new weapon in max payne, does not create anything 
+spectacularly cool but you could use this information to create your own weapons 
+which are =) <o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Intro: 
+This is my first tutorial and I am not very familiar with max script, there may 
+be better ways to do this but I don't know of it yet. I figured this out by 
+messing around with the code for about 6 hours and got this working. After I 
+figured it out I decided to write a tutorial because I haven't seen any on the 
+internet and I figured that lots of people would need this 
+information.<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Getting 
+Started:<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">(If 
+you are familiar with RasMaker then you can skip this 
+part)<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">The 
+first thing you have to do to make a Max Payne Mod is getting to know how to use 
+rasmaker. This program archives your datafiles and allows you to open a .ras 
+file. To get this program install the max payne editing tools off the game CD. 
+Go in to the directory you installed the editing tools and move the directory 
+\rasmaker to c:\rasmaker (or whatever other drive you have) this isn't 
+necessary, it just makes things easier. Now go to your max payne game folder and 
+copy the x_data.ras and x_english.ras files in to this new directory. These are 
+the datafiles you will need for this tutorial, they contain all of the code, 
+graphics, sounds etc. needed to make mods. to extract the data from these files 
+open up a dos prompt and go to your rasmaker directory. Type "rasmaker -x 
+x_data.ras" then type "rasmaker -x x_english.ras". This will extract all of the 
+data files needed in to a folder called \data in your rasmaker 
+directory.<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Making 
+the Mod:<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Ok, 
+now that we have all the files extracted we can begin. There should be about 350 
+megabytes of files in the data folder and we only need about 1 mb of them for 
+this tutorial, so naturally we have to delete some stuff. Open up the data 
+folder and delete all the folders except for "console", "database", and "hud". 
+delete all of the files in this folder except for weaponpriority.txt. Go in to 
+the database directory and delete all the folders except "skeletons" and 
+"weapons", go in to the skeletons directory then open up the default_skeleton 
+folder and delete the folder "anim". Delete all of the files in this folder 
+except "characteranimid.h", "shooting.h", and "weaponid.h". Now go in to the 
+weapons folder and delete all the folders except "deserteagle" and the file 
+"deserteagle.txt". Now re-name the folder "deserteagle" to "supdeagle" and 
+re-name "deserteagle.txt" to "supeagle.txt". This doesn't overwrite the old 
+desert eagle, but we are using the old desert eagle files as a model for the new 
+weapon. Any files you don't include in your mod aren't modified and the game 
+just loads the orignial (so it loads all the info you just deleted from the 
+original x_data.ras/x_english.ras in your max payne directory and adds your 
+information to it). <o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Ok, 
+we are done with the deleting, now for the modifying. Go to your \data folder 
+and open up "weaponpriority.txt". You should see something that looks like 
+this:<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">[BestWeapons]<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">{<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>[weapon] ID = 
+WEAPONID_JACKHAMMER;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>[weapon] ID = 
+WEAPONID_MP5;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>[weapon] ID = 
+WEAPONID_INGRAMDUAL;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>[weapon] ID = 
+WEAPONID_INGRAM;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>[weapon] ID = 
+WEAPONID_PUMPSHOTGUN;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>[weapon] ID = 
+WEAPONID_SAWEDSHOTGUN;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>[weapon] ID = 
+WEAPONID_DESERTEAGLE;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>[weapon] ID = 
+WEAPONID_BERETTADUAL;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>[weapon] ID = 
+WEAPONID_BERETTA;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>[weapon] ID = 
+WEAPONID_BASEBALLBAT;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>[weapon] ID = 
+WEAPONID_LEADPIPE;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">}</SPAN></I></B><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Add 
+in this line:<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><B 
+style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp;</SPAN>[weapon] ID = 
+WEAPONID_SUPDEAGLE;</I></B><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">at 
+the bottom.<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Below 
+this Part, there is another part<SPAN style="mso-spacerun: yes">&nbsp; 
+</SPAN>that looks like this:<o:p></o:p></SPAN></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">[CycleWeapons]<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">{<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>[weapon] ID = 
+WEAPONID_BASEBALLBAT;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>[weapon] ID = 
+WEAPONID_LEADPIPE;</SPAN></I></B><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">.................<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">at 
+the bottom, under "[weapon] ID = WEAPONID SNIPER;"<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">add 
+in:<o:p></o:p></SPAN></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">[weapon] 
+ID = WEAPONID_SUPDEAGLE;</SPAN></I></B><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">OK, 
+we are done with this file. Now we have to assign an ID for our new gun. Open up 
+the \data\database\ folder. There is a long list of weapon names and ID's. Under 
+"#define WEAPONID_PAINKILLER<SPAN style="mso-tab-count: 1">&nbsp;&nbsp; 
+</SPAN>16"<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">write 
+in: <B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal">"#define WEAPONID_SUPDEAGLE<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>17".</I></B><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">This 
+ID allows the game to know what to call the gun. It is needed later on in other 
+files.<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Now 
+scroll down a bit, under "#define INVENTORYID_PAINKILLER<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>13" 
+<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">write 
+in <B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal">"#define INVENTORYID_SUPDEAGLE<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN>14"</I></B><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Now 
+scroll down a bit more, under "#define SLOTID_PAINKILLER<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>10" 
+<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">write 
+in <B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal">"#define SLOTID_SUPDEAGLE<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN>5"</I></B><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">This 
+ID is tells the game what weapon slot to show the gun in the HUD. Slot 5 is the 
+same slot as the sniper rifle.<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Ok 
+we are done with this file. Now open up "shooting.h" in the database folder. 
+This defines the properties with all of the weapons. Scroll down till you find 
+where it says "//Desert Eagle and just above it at in 
+this:<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">//Super 
+Desert Eagle<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">#define 
+SUPDEAGLE_SHOOTINGFREQUENCY<SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>5<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">#define 
+SUPDEAGLE_MAXSHOOTINGFREQUENCY <SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>5.001<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">#define 
+SUPDEAGLE_SLOWMOTIONMULTIPLIER<SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>0.25<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">#define 
+SUPDEAGLE_BULLETDAMAGE<SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>15<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">#define 
+SUPDEAGLE_BULLETSPREAD<SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>25<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">#define 
+SUPDEAGLE_CLIPSIZE<SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>50<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">#define 
+SUPDEAGLE_POCKETSIZE<SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>150</SPAN></I></B><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><o:p></o:p></SPAN></I></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">This 
+information is the properties for our weapon. You can fiddle around with them, 
+but it is a good idea to finish up everything before you do that. 
+<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Ok 
+we are done with this file now. Alright now open up the file "characteranimid.h" 
+this is a really large file, it helps if you are using a text editor which 
+allows you to search. Ok, now either do a search for "CHARANIM_RELOADPAINKILLER" 
+or look for it manually and add this line under it:<o:p></o:p></SPAN></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">#define<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CHARANIM_RELOADSUPDEAGLE<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>297</SPAN></I></B><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Ok 
+now find the line "#define CHARANIM_SHOOTPAINKILLER 326" and add the line <B 
+style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal">"#define<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CHARANIM_SHOOTSUPDEAGLE<SPAN style="mso-tab-count: 1"> </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>327" 
+</I></B>under it.<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Ok, 
+now under the line "#define CHARANIM_SHOOTHIGHPAINKILLER 356" add in the 
+line:<o:p></o:p></SPAN></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">#define<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CHARANIM_SHOOTHIGHSUPDEAGLE<SPAN style="mso-tab-count: 1">&nbsp;&nbsp; 
+</SPAN><SPAN style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>357</SPAN></I></B><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Now 
+under the line "#define CHARANIM_SHOOTLOWPAINKILLER<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>386" add in the 
+line:<o:p></o:p></SPAN></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">#define<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>CHARANIM_SHOOTLOWSUPDEAGLE<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN>387</SPAN></I></B><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Now 
+under the line "#define CHARANIM_DISCARDPAINKILLER<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>416" add 
+in:<o:p></o:p></SPAN></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">#define 
+CHARANIM_DISCARDSUPDEAGLE<SPAN style="mso-tab-count: 1">&nbsp;&nbsp; 
+</SPAN>417</SPAN></I></B><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Now 
+under the line "#define CHARANIM_MODESWITCHPAINKILLER<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN>446" add in:<o:p></o:p></SPAN></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">#define 
+CHARANIM_MODESWITCHSUPDEAGLE<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>447</SPAN></I></B><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">ok 
+we are finished with this file, basically this file tells the game the ID #'s 
+for the animation sequences for each weapon.<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Alright, 
+now go in to the \data\database\weapons\ folder and open the file you created 
+earlier "supdeagle.txt" this is a copy of the desert eagle file and you need to 
+change a few things.<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Scroll 
+down to the middle and Under the [Attributes] part change it so it looks like 
+this(don't delete any parts I left out, they stay the 
+same):<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">[Attributes]<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">SlotIndex<SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>= 
+SLOTID_SUPDEAGLE;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">InventoryID 
+= INVENTORYID_SUPDEAGLE;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">WeaponID<SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>= 
+WEAPONID_SUPDEAGLE;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Clipsize<SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>= 
+SUPDEAGLE_CLIPSIZE;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Pocketsize<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>= 
+SUPDEAGLE_POCKETSIZE;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">MaximumShootingFrequency 
+= SUPDEAGLE_MAXSHOOTINGFREQUENCY;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">DefaultShootingFrequency 
+= SUPDEAGLE_SHOOTINGFREQUENCY;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">ShootingFrequencyMultiplier 
+= SUPDEAGLE_SLOWMOTIONMULTIPLIER;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">everything 
+else stays the same.<BR style="mso-special-character: line-break"><![if !supportLineBreakNewLine]><BR 
+style="mso-special-character: line-break"><![endif]><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Ok, 
+now open up the data\console folder and open up the file "console.txt". Add in 
+this line under "[Aliases]":<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">GetSupDeagle="player-&gt;c_pickupweapon(supdeagle);player-&gt;c_pickupammo(supdeagle,1000);";</SPAN></I></B><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">this 
+allows you to type in "GetSupdeagle" in the console and you will recieve the gun 
+without having to pick it up (like a cheat code).<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Ok, 
+now go in to \data\hud\ and open up the file hud.txt.<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Scroll 
+down till you find this part(you can make it easier by searching for 
+"WEAPONID_SNIPER"):<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>[SlotWeapon]<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>{<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>[WeaponSpecific]<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>ID = 
+WEAPONID_SNIPER;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>[SpriteWindow]<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>ReferencePoint = 
+CENTER;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>Position = 
+SLOT6_WEAPONPOSITION;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>Width = 
+SLOTWEAPON_WIDTH;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>Height = 
+SLOTWEAPON_HEIGHT;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>UVUpperLeft<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>= ( U_0xOFFSET , V_4xOFFSET , 
+0);<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>UVLowerRight = ( 
+U_1xOFFSET , V_5xOFFSET , 0);<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>}</SPAN></I></B><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">directly 
+under this part add in:<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>[SlotWeapon]<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>{<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>[WeaponSpecific]<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>ID = 
+WEAPONID_SUPDEAGLE;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>[SpriteWindow]<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>ReferencePoint = 
+CENTER;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>Position = 
+SLOT6_WEAPONPOSITION;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>Width = 
+SLOTWEAPON_WIDTH;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>Height = 
+SLOTWEAPON_HEIGHT;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>UVUpperLeft<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>= ( U_2xOFFSET , 
+V_1xOFFSET , 0);<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>UVLowerRight = ( U_3xOFFSET , V_2xOFFSET , 
+0);<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>}<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN></I></B><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">now 
+scroll down some more and find this part(you can search for 
+"WEAPONID_DESERTEAGLE" however it is the second reference to that text so hit 
+search twice):<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>[ActiveWeapon]<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>{<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>[WeaponSpecific] 
+<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>id = 
+WEAPONID_DESERTEAGLE;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>LowAmmunition = 
+LOWAMMO_ALWAYS_VISIBLE;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>UnlimitedAmmoText = 
+"-";<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>[Sprite]<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp;</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>ReferencePoint = 
+DOWNRIGHT;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>Position = 
+WEAPON_POSITION ;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>Width = 
+WEAPON_WIDTH ;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>Height = 
+WEAPON_HEIGHT ;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>Filename = 
+"bitmaps\weapons\deserteagle.jpg";<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>AlphaFilename = 
+"bitmaps\weapons\deserteagle_alpha.pcx";<SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>DefaultVertexAlpha = 
+WEAPON_ALPHA ;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>}</SPAN></I></B><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">add 
+in this part directly under it:<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>[ActiveWeapon]<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>{<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>[WeaponSpecific] 
+<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>id = 
+WEAPONID_SUPDEAGLE;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>LowAmmunition = 
+LOWAMMO_ALWAYS_VISIBLE;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>UnlimitedAmmoText = 
+"-";<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>[Sprite]<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp;</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>ReferencePoint = 
+DOWNRIGHT;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>Position = 
+WEAPON_POSITION ;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>Width = 
+WEAPON_WIDTH ;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>Height = 
+WEAPON_HEIGHT ;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>Filename = 
+"bitmaps\weapons\deserteagle.jpg";<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>AlphaFilename = 
+"bitmaps\weapons\deserteagle_alpha.pcx";<SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>DefaultVertexAlpha = 
+WEAPON_ALPHA ;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>}</SPAN></I></B><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">This 
+allows us to see the gun in the HUD, it will appear in slot 6 under the sniper 
+rifle.<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">ok 
+we are done with this file, and almost done the mod. Just two more files to 
+edit.<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Now 
+go in to the \data\database\skeletons\ folder and open up the file pigrat.txt 
+(don't ask me why its called that).<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Find 
+the line(search for CHARANIM_RELOADDESERTEAGLE): "[REVERT] From = 
+CHARANIM_RELOADDESERTEAGLE; To=CHARANIM_RELOAD BERETTA;"<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">and 
+add this line under it:<o:p></o:p></SPAN></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">[Revert] 
+From = CHARANIM_RELOADSUPDEAGLE; To = 
+CHARANIM_RELOADBERETTA;</SPAN></I></B><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">now 
+scroll down a bit and find the line "[REVERT] From = CHARANIM_SHOOTDESERTEAGLE; 
+To = CHARANIM_SHOOT BERETTA;"<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">and 
+add this under it:<o:p></o:p></SPAN></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">[Revert]<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN>From = 
+CHARANIM_SHOOTSUPDEAGLE; To = CHARANIM_SHOOTBERETTA;</SPAN></I></B><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">now 
+find the line (its a few lines down) "[REVERT] 
+From=CHARANIM_SHOOTHIGHDESERTEAGLE; To=CHARANIM_SHOOTHIGHBERETTA; and add this 
+line under:<o:p></o:p></SPAN></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">[Revert]From=CHARANIM_SHOOTHIGHSUPDEAGLE;To=CHARANIM_SHOOTHIGHBERETTA;</SPAN></I></B><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">about 
+10 lines down find "[Revert]From=CHARANIM_SHOOTLOWDESERTEAGLE; 
+To=CHARANIM_SHOOTLOWBERETTA;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">and 
+add this under it:<o:p></o:p></SPAN></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">[Revert]From=CHARANIM_SHOOTLOWSUPDEAGLE; 
+To = CHARANIM_SHOOTLOWBERETTA;</SPAN></I></B><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">now 
+find the line "[Revert]From=CHARANIM_DISCARDDESERTEAGLE;To= 
+CHARANIM_DISCARDBERETTA;" and add this line under it:<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">[Revert]From 
+= CHARANIM_DISCARDSUPDEAGLE; To = CHARANIM_DISCARDBERETTA;</SPAN></I></B><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">now 
+find the line "[Revert]From=CHARANIM_MODESWITCHDESERTEAGLE;To= 
+CHARANIM_MODESWITCHBERETTA;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">and 
+add this under it:<o:p></o:p></SPAN></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">[Revert]From=CHARANIM_MODESWITCHSUPDEAGLE;To=CHARANIM_MODESWITCHBERETTA;</SPAN></I></B><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">we 
+are done with this file, it is used for the animations of the weapon. Only one 
+more to go....<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Go 
+to the data\database\skeletons\ and open the file 
+default_skeleton.txt.<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Ok, 
+search for "CHARANIM_RELOADDESERTEAGLE" you should see 
+this:<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">[Animation] 
+Index = CHARANIM_RELOADDESERTEAGLE; Filename = 
+anim\reloaddeserteagle.kf2;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">[Properties]<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">{<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>[Movement] 
+EndPosition = (0,0,0); Rotation = (0,0,0);<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>[Message] Frame = 
+35; String = "RightHandWeapon-&gt;WS_Animate(" WEAPONANIM_RELOAD 
+");";<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>[Message] Frame = 
+39; String = "this-&gt;C_Reload();";<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">}<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">copy 
+this text and paste it directly under the original, then change the line 
+"[Animation] Index = CHARANIM_RELOADDESERTEAGLE;" to:<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">"[Animation] 
+Index = CHARANIM_RELOADSUPDEAGLE;" it should look like 
+this:<o:p></o:p></SPAN></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>[Animation] Index 
+= CHARANIM_RELOADDESERTEAGLE; Filename = 
+anim\reloaddeserteagle.kf2;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>[Properties]<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>{<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>[Movement] 
+EndPosition = (0,0,0); Rotation = (0,0,0);<o:p></o:p></SPAN></I></B></P>
+<P class=MsoBodyText><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>[Message] Frame = 
+35; String = "RightHandWeapon-&gt;WS_Animate(" WEAPONANIM_RELOAD 
+");";<o:p></o:p></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>[Message] Frame = 
+39; String = "this-&gt;C_Reload();";<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>}<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>[Animation] Index 
+= CHARANIM_RELOADSUPDEAGLE; Filename = 
+anim\reloaddeserteagle.kf2;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>[Properties]<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>{<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>[Movement] 
+EndPosition = (0,0,0); Rotation = (0,0,0);<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>[Message] Frame = 
+35; String = "RightHandWeapon-&gt;WS_Animate(" WEAPONANIM_RELOAD 
+");";<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>[Message] Frame = 
+39; String = "this-&gt;C_Reload();";<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>}</SPAN></I></B><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">now 
+search for "CHARANIM_SHOOTDESERTEAGLE" and do the exact same thing that you did 
+above. Do the same thing for all of these:<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">CHARANIM_SHOOTLOWDESERTEAGLE<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">CHARANIM_SHOOTHIGHDESERTEAGLE<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">now 
+search for CHARANIM_DISCARDDESERTEAGLE and add this line under: 
+<o:p></o:p></SPAN></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">[Revert]From 
+= CHARANIM_DISCARDSUPDEAGLE; To = CHARANIM_DISCARDBERETTA;</SPAN></I></B><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">do 
+the same thing for CHARANIM_MODESWITCHDESERTEAGLE and add this line under 
+it:<o:p></o:p></SPAN></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">[Revert]From 
+=CHARANIM_MODESWITCHSUPDEAGLE;To= 
+CHARANIM_HOLSTERWEAPON;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></I></B></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">Ok, 
+that is it for coding. Now you have to archive this with rasmaker. Go in to dos 
+and open up your rasmaker directory. type <o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">"rasmaker 
+-a data firstmod.mpm". now in your rasmaker directory there should be a file 
+called firstmod.mpm, take this file and move it in to your max payne directory. 
+Go to your max payne short cut and open up the properties, under target add 
+"-developer" after the path of the game. Run max payne and in the selection box 
+at the bottom of the setup screen select firstmod then press play. Once you are 
+in game hit f12 to open up the console and type in Getsupdeagle. Then press 6 
+and select the gun under the sniper rifle, this is the gun you just made. 
+Congratulations, you are done! try messing around with the settings, you can 
+make the gun much more powerfull and fire faster, I will leave that for you to 
+experiment with.<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'">By 
+Aaron Shivji<B style="mso-bidi-font-weight: normal"><I 
+style="mso-bidi-font-style: normal"><o:p></o:p></I></B></SPAN></P>
+<P class=MsoNormal><SPAN 
+style="FONT-FAMILY: 'Courier New'; mso-bidi-font-family: 'Times New Roman'"><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></SPAN></P>
+<P 
+class=MsoNormal><![if !supportEmptyParas]><![endif]>&nbsp;<o:p></o:p></P></DIV><!-- text below generated by server. PLEASE REMOVE --></OBJECT></LAYER>
+<DIV></DIV></SPAN></STYLE></NOSCRIPT></TABLE></SCRIPT></APPLET>
+<SCRIPT 
+language=JavaScript>var PUpage="76001067"; var PUprop="geocities"; </SCRIPT>
+
+<SCRIPT language=JavaScript 
+src="Max Payne Modification Tutorial Making a New Weapon_file/pu5geo.js"></SCRIPT>
+
+<SCRIPT language=JavaScript 
+src="Max Payne Modification Tutorial Making a New Weapon_file/ygIELib9.js"></SCRIPT>
+
+<SCRIPT language=JavaScript>var yviContents='http://us.toto.geo.yahoo.com/toto?s=76001067&l=NE&b=1&t=1089022996';yviR='us';yfiEA(0);</SCRIPT>
+
+<SCRIPT language=JavaScript 
+src="Max Payne Modification Tutorial Making a New Weapon_file/mc.js"></SCRIPT>
+
+<SCRIPT language=JavaScript 
+src="Max Payne Modification Tutorial Making a New Weapon_file/geov2.js"></SCRIPT>
+
+<SCRIPT language=javascript>geovisit();</SCRIPT>
+<NOSCRIPT><IMG height=1 alt=setstats 
+src="Max Payne Modification Tutorial Making a New Weapon_file/visit.gif" width=1 
+border=0></NOSCRIPT> <IMG height=1 alt=1 
+src="Max Payne Modification Tutorial Making a New Weapon_file/serv.gif" width=1> 
+</BODY></HTML>

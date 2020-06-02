@@ -1,0 +1,41 @@
+#include <..\level_items.h>
+#include <..\object_lods.h>
+#include <..\weaponid.h>
+
+[LOD]
+{
+    [Geometry]
+	ExportData = ..\..\weapons\katana\katana_LevelItem.kf2;
+    Distance = PROJECTILE_LOD_DRAW_ALWAYS;
+}
+
+[Properties]
+TriggerRadius = RADIUS_BASEBALLBAT;
+CantPickupMessagesTimeout = CANTPICKUP_TIMEOUT;
+MatchingWeaponID = WEAPONID_KATANA;
+PickupIfNewWeapon = true;
+PickupIfAmmoNotFull = true;
+
+[OnFirstPickup]
+{
+	[Message] string = "activator->C_PickupWeapon( "katana" );";
+	[Message] string = "activator->C_SetInfiniteAmmo( "katana"," TRUE ");";
+	[Message] string = "maxpayne_gamemode->a_playsound( level_items, pickup_handgun );";
+	[Message] string = "maxpayne_hudmode->mphm_print( \"HUDPRINT_PICKUP_KATANA1\" );";
+	[Message] string = "maxpayne_hudmode->mphm_print( \"HUDPRINT_PICKUP_KATANA2\" );";
+	[Message] string = "maxpayne_hudmode->mphm_print( \"HUDPRINT_PICKUP_KATANA3\" );";
+}
+
+[OnPickUp]
+{
+	[Message] string = "activator->C_PickupWeapon( "katana" );";
+	[Message] string = "activator->C_SetInfiniteAmmo( "katana"," TRUE ");";
+	[Message] string = "maxpayne_gamemode->a_playsound( level_items, pickup_handgun );";
+	[Message] string = "maxpayne_hudmode->mphm_print( \"HUDPRINT_PICKUP_KATANA_END\" );";
+}
+
+[OnCantPickup]
+{
+	[Message] string = "maxpayne_gamemode->a_playsound( level_items, pickup_ammo_full );";
+	[Message] string = "maxpayne_hudmode->mphm_print( HUDPRINT_PICKUP_KATANA_AMMO_FULL );";
+}

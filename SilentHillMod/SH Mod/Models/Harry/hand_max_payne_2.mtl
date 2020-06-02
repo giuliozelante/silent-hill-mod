@@ -1,0 +1,66 @@
+#
+# hand_max_payne_2.mtl
+#
+
+newmtl Face
+illum 2
+Kd 0.674510 0.560784 0.498039
+Ka 1.000000 1.000000 1.000000
+Ks 0.898039 0.898039 0.898039
+Ke 0.000000 0.000000 0.000000
+Ns 62.500000
+map_Kd D:\MaxPayne2Dev\Game\data\database\skins\MaxPayne/../sharedtextures/MaxPayne_Face.dds
+
+newmtl Pants
+illum 2
+Kd 0.203922 0.282353 0.317647
+Ka 1.000000 1.000000 1.000000
+Ks 0.898039 0.898039 0.898039
+Ke 0.000000 0.000000 0.000000
+Ns 62.500000
+map_Kd D:\MaxPayne2Dev\Game\data\database\skins\MaxPayne/../sharedtextures/MaxPayne_Legs_A.dds
+
+newmtl Body
+illum 2
+Kd 0.862745 0.784314 0.392157
+Ka 1.000000 1.000000 1.000000
+Ks 0.898039 0.898039 0.898039
+Ke 0.000000 0.000000 0.000000
+Ns 62.500000
+map_Kd D:\MaxPayne2Dev\Game\data\database\skins\MaxPayne/../sharedtextures/MaxPayne_Body_A.dds
+
+newmtl Hand
+illum 2
+Kd 0.862745 0.784314 0.392157
+Ka 1.000000 1.000000 1.000000
+Ks 0.898039 0.898039 0.898039
+Ke 0.000000 0.000000 0.000000
+Ns 62.500000
+map_Kd D:\MaxPayne2Dev\Game\data\database\skins\MaxPayne/../sharedtextures/Hand_Max_Payne.dds
+
+newmtl Jacket
+illum 2
+Kd 1.000000 0.392157 0.533333
+Ka 1.000000 1.000000 1.000000
+Ks 0.898039 0.898039 0.898039
+Ke 0.000000 0.000000 0.000000
+Ns 62.500000
+map_Kd D:\MaxPayne2Dev\Game\data\database\skins\MaxPayne/../sharedtextures/MaxPayne_Body_A.dds
+
+newmtl Eyelash
+illum 2
+Kd 0.203922 0.282353 0.317647
+Ka 1.000000 1.000000 1.000000
+Ks 0.898039 0.898039 0.898039
+Ke 0.000000 0.000000 0.000000
+Ns 62.500000
+map_Kd D:\MaxPayne2Dev\Game\data\database\skins\MaxPayne/../sharedtextures/EyeLash_A_Alpha.dds
+
+newmtl Eyes
+illum 2
+Kd 0.498039 0.898039 1.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.898039 0.898039 0.898039
+Ke 0.000000 0.000000 0.000000
+Ns 62.500000
+map_Kd D:\MaxPayne2Dev\Game\data\database\skins\MaxPayne/../sharedtextures/MaxPayne_Face.dds

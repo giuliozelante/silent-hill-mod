@@ -1,0 +1,1768 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0106)http://www.3dkingdom.org/modules.php?op=modload&name=News&file=article&sid=284&mode=thread&order=0&thold=0 -->
+<HTML><HEAD><TITLE>3ds max: Matrix Bullet-Time Bullet Trail Effect :: 3D Kingdom.org :: Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures... forums ...</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=ISO-8859-1">
+<META http-equiv=Keywords 
+content="How,many,of,you,loved,that,bullet,trail,in,The,Matrix,Yesterday,it,was,only,a,fantasy,to,make,such,thing,in,some,3d,program,but,today,that,fantasy,became,real,BryanA,leads,you,throught,his,amazing,tutorial,which,will,teach,you,how,to,make,Matrix,Bullet-Time,Bullet,Trail,Effect,in,3ds,MAX,Matrix,Bullet-Time,Bullet,Trail,Effectby,BryanA,UPDATE,Bullet,Time,Bullet,Trail,v,2,ONLINE,November,9th,2003,Click,Here,Do,you,like,math,Neither,do,I,But,that's,too,bad,because,the,Matrix,Bullet-Time,Trail,Effect,works,best,when,you,know,what,you're,doing,mathematically,Don't,worry,though,it's,nothing,tough,For,the,time,of,it,all,let's,figure,that,we,want,a,five,second,scene,at,30,frames,per,second,Set,MAX,to,150,frames,at,30,fps,Our,rooftop,is,200,units,now,we'll,scale,that,to,feet,-,so,it's,20,feet,across,and,across,making,a,perfect,square,The,Matrix,Bullet-Time,Trails,fade,out,into,invisibility,They,also,change,shape,a,little,after,just,being,fired,There,are,three,noticable,stages,of,a,trail,as,you,see,in,this,picture,1,is,a,more,recently,fired,bullet,you,can,still,see,the,bullet,2,is,what,we'll,call,a,Standard,Trail,and3,is,an,Expiring,Trail,it's,fading,away,and,the,distortion,of,the,geometry,is,&quot;,leaning&quot;,to,one,side,Here's,what,we,need,A,200x200,roof,that,will,scale,to,20feet,by,20feet,Super-Easy,A,bullet,Easy,A,trail,reference,shape,Harder,Splines,Copying,Grouping,Modifying,A,cup,of,coffee,Lot's,of,sugar,please,I,used,a,Plane,built,in,the,TOP,viewport,at,200x200,Then,I,converted,it,to,Editable,Mesh,and,selected,the,outside,polygons,and,Extruded,them,with,a,value,of,3,0,The,bullet,Let's,first,build,it,larger,than,we,need,it,and,then,we'll,just,scale,it,down,with,the,Xform,Modifier,Let's,use,a,Capsule,at,this,size,Radius,of,2,Hieght,of,8,and,12,sides,in,the,justify,viewport,where,we,build,it,will,be,important,later,After,achieving,these,dimensions,convert,it,to,Editable,Mesh,Use,Vertex,as,the,sub-object,and,grab,what,will,be,the,front,tip,Activate,the,soft,selection,and,set,it,to,4,and,pull,it,&quot;,forward&quot;,about,1,0,unit,and,then,let,go,and,then,pull,it,again,about,1,0,unit,Now,tuck,in,the,backside,by,taking,off,Soft,Selection,and,starting,with,the,last,vertex,Push,it,in,to,meet,the,next,column,of,vertices,then,collect,them,in,the,selection,and,keep,doing,this,until,you,have,a,reasonably,flat,backside,The,last,thing,to,do,is,apply,the,Modifier,Xform,and,Scale,the,Gizmo,to,18%,&amp;,nbsp,Now,for,the,Spline,modeling,This,isn't,the,most,advanced,spline,you,ever,made,-,but,it,was,my,first,time,ever,believe,it,or,not,So,if,you,know,a,more,efficient,way,to,do,it,feel,free,to,do,so,For,first-timers,like,me,follow,this,part,carefully,and,take,no,shortcuts,We,need,to,&quot;,trick&quot;,MAX,into,making,one,object,out,of,several,2D,shapes,For,accuracy,we're,also,going,to,use,Keyboard,Entry,for,this,Here,are,the,best,directions,I,can,give,for,this,Create,one,2D,Circle,with,the,justify,viewport,active,*Ahem*,The,justify,viewport,active,Keyboard,Entry,is,as,follows,x=0,y=0,z=2,radius,is,2,0,&quot;,Create,&quot;,Magical,huh,Now,you,have,to,do,this,little,step,Look,up,top,above,&quot;,Circle&quot;,and,&quot;,Line&quot;,and,&quot;,Rectangle&quot;,where,it,says,&quot;,Start,New,Shape,&quot;,Click,the,check,mark,out,of,there,so,you,DO,NOT,start,a,new,shape,All,additional,shapes,you,make,now,will,apply,to,the,same,object,Now,we,continue,with,the,Keyboard,z=0,Radius,is,6,&quot;,Create,&quot;,The,thrid,entry,is,z=-2,r=2,&quot;,Create,&quot;,Now,click,the,Modifier,Tab,look,under,the,General,rollout,and,choose,Adaptive,instead,of,Optimize,The,following,modifiers,require,that,you,build,a,spline,in,the,correct,logical,order,as,we,have,done,We,will,treat,these,Circles,as,being,cut-through,cross-sections,of,a,final,shape,Telling,MAX,to,treat,it,that,way,is,easy,Look,under,the,Modifier,&quot;,More&quot;,list,for,&quot;,Cross,Section,&quot;,Apply,it,choose,Smooth,and,then,look,for,&quot;,Surface&quot;,under,the,list,by,clicking,&quot;,More&quot;,a,second,time,Surface,will,complete,the,procedure,and,create,a,renderable,object,You,can,control,how,complex,the,surface,is,with,Patch,Tolology,which,is,one,of,the,few,Parameters,of,&quot;,Surface,&quot;,To,prepare,for,the,Invisiblity,of,the,Trail,set,the,Animate,button,ON,Goto,frame,10,Right-Click,the,Oject's,Properties,Halfway,down,on,the,justify,column,see,&quot;,Visibility,1,0,&quot;,Change,that,to,0,0,Turn,the,Animate,button,OFF,With,the,Move,Tool,move,a,COPY,some,units,away,along,the,X-axis,Then,look,at,the,COPY'S,Keys,on,the,time,slider,There,should,be,two,one,at,0,and,one,at,10,Select,them,both,and,move,them,ONE,frame,to,rest,at,1,and,11,With,the,Move,Tool,move,ANOTHER,COPY,some,units,away,along,the,X-axis,again,Now,change,the,new,keys,from,1,and,11,to,the,new,frames,of,2,and,12,See,a,pattern,Make,seven,copies,or,eight,if,you,please,Just,keep,COPYING,in,the,same,direction,everytime,and,always,adjust,the,Keys,by,one,frame,for,every,new,copied,Object,Get,this,VERIFY,If,you,select,ALL,eight,of,your,shapes,now,do,your,Keys,look,exactly,like,this,If,not,DELETE,and,do,it,again,With,all,eight,Objects,selected,make,a,Group,of,them,Name,it,TrailMother,Apply,FFD,4x4x4,to,TrailMother,Do,your,best,to,make,this,shape,What,we're,doing,is,making,the,Standard,Trail,from,which,all,others,come,Now,Right-Click,the,Group,and,&quot;,Convert,Selected,to,Editable,Mesh,&quot;,Here's,the,easy,part,of,this,we,will,copy,this,Group,and,adjust,the,Keys,again,so,Invisibility,&quot;,runs,up&quot;,the,trail,we're,making,Move,a,COPY,in,the,X,axis,direction,to,where,it,looks,right,next,to,the,original,Select,all,of,the,Copy's,Keys,and,move,them,8,frames,later,0,and,10,become,8,and,18,etc,Make,six,more,copies,and,continue,moving,the,Keys,for,the,Visibility,When,you're,done,set,Perspective,Viewport,so,that,you,can,see,the,whole,trail,Hitting,F3,will,toggle,a,Shaded,View,With,a,Shaded,View,hit,Play,and,make,sure,that,the,Invisibility,runs,correctly,Did,it,I,hope,so,it's,confusing,to,reconfigure,Optimizing,the,Refractive,material,is,the,first,thing,we,need,to,do,before,rendering,too,much,Following,these,tips,will,cut,down,the,time,it,takes,to,render,multiple,trails,in,the,future,Hit,&quot;,M&quot;,on,the,keyboard,The,material,browswer,is,up,and,you,should,be,in,the,first,slot,Glossines,Specular,to,0,Soften,to,1,0,Extended,Parameters,IOR,to,1,2,Material,Maps,Refraction,Slot,-,Raytrace,Raytrace,Options,button,match,the,picture,below,Congratulations,You,just,saved,yourself,minutes,of,waiting,for,still,shots,and,maybe,an,hour,for,a,future,animation,Faster,would,be,Anti-Aliasing,UNCHECKED,totally,but,it,looks,bad,that,way,so,we,have,it,checked,to,allow,it,Finally,apply,the,Material,TrailMat,to,the,new,eight,objects,With,all,eight,big,objects,selected,Group,them,and,name,it,Trail,Right-Click,them,and,UNCHECK,Cast,Shadows,and,Receive,Shadows,OK,Then,apply,Modifier,FFD,box,to,the,Group,Trail,Set,the,points,to,3,2,3,It,should,look,like,this,For,ease,in,the,future,you,will,also,need,to,adjust,the,Pivot,Point,Move,the,Pivot,Point,to,one,end,of,the,Group,&quot;,Trail,&quot;,This,will,aid,in,predicting,where,the,Trail,moves,rotates,and,scales,later,on,Now,there,are,several,choices,you,get,to,make,on,your,own,since,we,have,run,out,of,time,Obviously,the,Trail,is,way,too,big,It,should,be,scaled,down,uniformly,on,every,axis,Here,was,my,decision,I,scaled,it,all,to,25%,for,the,Standard,phase,For,the,fired,bullet,phase,28%,NUScale,for,the,radius,65%,NUScale,for,the,length,For,still,pictures,you,can,Scale,the,rear,Control,Points,to,175%,Just,as,it's,Expiring,NUScale,50%,for,length,but,grew,the,radius,with,NUScale,150%,I,moved,it,forward,to,meet,the,bullet,and,scaled,the,rear,of,the,FFD,bigger,to,150%,finally,I,scaled,all,of,it,to,65%,A,word,about,animating,With,luck,I,can,include,one,small,MAX,file,with,one,Bullet,animated,to,cross,the,floor,followed,by,a,Trail,that,goes,through,all,three,phases,To,make,another,Bullet,you,would,simply,select,the,Bullet,and,the,Trail,and,MOVE,a,Copy,of,both,being,sure,to,alter,the,Keys,of,the,copies,so,that,two,Bullets,fire,at,two,different,times,and,each,Bullet,is,followed,by,a,correct,Trail,To,animate,your,own,Bullet,and,Trail,follow,these,guide,lines,You,first,need,to,set,the,position,and,timing,of,the,Bullet,Put,it,WHERE,you,want,it,Animate/Move,it,where,you,want,it,shot,to,Adjust,the,two,keys,so,that,it,moves,as,fast,or,slowly,as,you,want,Now,you,can,mess,with,the,Trail,first,Bullet,then,Trail,See,all,the,Keys,to,the,Trail,they,should,only,be,Invisibility,Keys,Adjust,them,so,that,Invisibility,begins,AFTER,the,Bullet,leaves,the,scene,Place,the,Trail,so,that,the,Pivot,Point,is,where,the,Bullet,was,fired,from,This,assumes,that,your,first,Bullet,will,travel,in,a,straight,uncomplicated,path,1,Goto,the,first,Key,of,your,firing,Bullet,and,Move,the,Trail,behind,it,2,NUScale,the,length,of,the,Trail,so,that,it,sits,entirely,behind,the,Bullet,3,NUScale,the,radius,of,the,Trail,accordingly,so,that,it,is,small,4,Goto,the,end,Key,of,your,firing,Bullet,Animate,ON,now,and,NUScale,the,Trail's,length,so,that,it,meets,the,Bullet,5,With,Animate,ON,choose,a,frame,where,your,Trail,should,be,&quot;,Standard,&quot;,Remember,it,-,and,look,16,frames,BEFORE,this,occurs,6,Under,the,Motion,Tab,click,the,button,&quot;,Scale&quot;,to,create,a,Key,here,for,locking,in,the,Fired,Bullet,phase,7,Go,BEFORE,this,another,16,frames,and,tug,the,center,two,Control,Point,for,FFD,box,forward,towards,the,Bullet,a,little,bit,8,With,Animate,still,ON,go,forward,those,32,frames,Now,it's,safe,to,NUScale,the,radius,of,the,Trail,to,look,&quot;,Standard,&quot;,9,Absolutely,those,Invisibility,Keys,should,be,AFTER,what,we've,done,so,far,Goto,the,end,of,those,Keys,and,Move,the,Trail,slightly,forward,and,expand,the,backside,of,that,FFD,box,10,To,finish,select,the,center,Control,Point,of,the,FFD,box,and,Move,them,backward,towards,the,gun,11,Animate,OFF,This,tutorial,was,originaly,written,by,BryanA,UPDATE,Bullet,Time,Bullet,Trail,v,2,ONLINE,November,9th,2003,Click,Here,We,would,also,like,to,say,thanks,to,following,3D,Kingdom,members,who,activly,contributed,in,creation,of,this,tutorial,on,our,forum,Magicalhobo,FleshEater,and,Goliard,Forum,Thread,-,CLICK,HERE,If,you,have,any,questions,related,to,this,tutorial,feel,free,to,send,Private,Message,to,BryanA,Edited,by,PiLe">
+<META 
+content="Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures... forums ..." 
+name=DESCRIPTION>
+<META content=INDEX,FOLLOW name=ROBOTS>
+<META content=document name=resource-type>
+<META http-equiv=expires content=0>
+<META content="3D Kingdom.org" name=author>
+<META content="Copyright (c) 2003 by 3D Kingdom.org" name=copyright>
+<META content="1 days" name=revisit-after>
+<META content=Global name=distribution>
+<META content="MSHTML 6.00.2737.800" name=GENERATOR>
+<META content=General name=rating><LINK 
+href="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/styleNN.css" 
+type=text/css rel=StyleSheet>
+<STYLE type=text/css>@import url( themes/3DKv2/style/style.css );
+</STYLE>
+
+<SCRIPT 
+src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/showimages.htm" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT 
+src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/openwindow.htm" 
+type=text/javascript></SCRIPT>
+<!--------------- Start Design ---------------></HEAD>
+<BODY bgColor=whitesmoke leftMargin=0 topMargin=0 marginheight="0" 
+marginwidth="0">
+<TABLE height=16 cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD width=241 height=2><IMG height=82 
+      src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/startHeader.jpg" 
+      width=295></TD>
+    <TD width="100%" 
+    background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/tileHeader.jpg" 
+    height=2></TD>
+    <TD align=right width=468 
+    background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/backgroundBanner.jpg" 
+    height=2>
+      <P align=right><A 
+      href="http://www.3dkingdom.org/banners.php?op=click&amp;bid=28" 
+      target=_blank><IMG alt="Please click " 
+      src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/tommyvideotv.jpg" 
+      border=0></A> </P></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width=111 
+    background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/topback.gif" 
+    rowSpan=3><FONT face=Arial color=#666666 size=1><B><IMG 
+      src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/HeaderLeft.jpg" 
+      border=0><BR><IMG height=23 
+      src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/LeftTop.jpg" 
+      border=0> </B></FONT></TD>
+    <TD width=39 
+    background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/TopTile.jpg" 
+    height=33></TD>
+    <TD 
+    background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/topback.gif" 
+    colSpan=12 height=33></TD></TR>
+  <TR>
+    <TD width=39 
+    background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/ButtonTile.jpg" 
+    height=12></TD>
+    <TD vAlign=top width=34 
+    background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/ButtonTile.jpg" 
+    height=12><FONT face=Arial color=#666666 size=1><B><IMG height=29 
+      src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/beginButtonDiv.jpg" 
+      width=34 border=0></B></FONT> </TD>
+    <TD class=tdButton width=243 
+    background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/ButtonTile.jpg" 
+    height=12><A class=Button 
+      href="http://www.3dkingdom.org/index.php">Home</A></TD>
+    <TD vAlign=top width=33 
+    background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/ButtonTile.jpg" 
+    height=12><FONT face=Arial color=#666666 size=1><B><IMG height=29 
+      src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/endButtonDiv.jpg" 
+      width=33 border=0></B></FONT> </TD>
+    <TD class=tdButton width=189 
+    background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/ButtonTile.jpg" 
+    height=12><A class=Button 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=Diner_Wrapper&amp;file=index&amp;req=ShowFile&amp;file_wrap=html/submit.html">Submit</A></TD>
+    <TD vAlign=top width=33 
+    background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/ButtonTile.jpg" 
+    height=12><FONT face=Arial color=#666666 size=1><B><IMG height=29 
+      src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/endButtonDiv.jpg" 
+      width=33 border=0></B></FONT> </TD>
+    <TD class=tdButton width=201 
+    background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/ButtonTile.jpg" 
+    height=12><A class=Button 
+      href="http://www.3dkingdom.org/index.php?module=My_eGallery&amp;do=showgall&amp;gid=1">Gallery</A></TD>
+    <TD vAlign=top width=33 
+    background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/ButtonTile.jpg" 
+    height=12><FONT face=Arial color=#666666 size=1><B><IMG height=29 
+      src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/endButtonDiv.jpg" 
+      width=33 border=0></B></FONT> </TD>
+    <TD class=tdButton width=213 
+    background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/ButtonTile.jpg" 
+    height=12><A class=Button 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=PNphpBB2&amp;file=index">Forums</A></TD>
+    <TD vAlign=top width=33 
+    background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/ButtonTile.jpg" 
+    height=12><FONT face=Arial color=#666666 size=1><B><IMG height=29 
+      src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/endButtonDiv.jpg" 
+      width=33 border=0></B></FONT> </TD>
+    <TD class=tdButton width=173 
+    background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/ButtonTile.jpg" 
+    height=12><A class=Button 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=Diner_Wrapper&amp;file=index&amp;req=ShowFile&amp;file_wrap=html/about.html">About</A></TD>
+    <TD vAlign=top width=34 
+    background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/ButtonTile.jpg" 
+    height=12><FONT face=Arial color=#666666 size=1><B><IMG height=29 
+      src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/endButtonDiv.jpg" 
+      width=33 border=0></B></FONT> </TD>
+    <TD width=128 
+    background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/ButtonTile.jpg" 
+    height=12></TD></TR>
+  <TR>
+    <TD width=39 height=19></TD>
+    <TD vAlign=top width=34 height=19></TD>
+    <TD class=tdButton width=243 height=19></TD>
+    <TD vAlign=top width=33 height=19></TD>
+    <TD class=tdButton width=189 height=19></TD>
+    <TD vAlign=top width=33 height=19></TD>
+    <TD class=tdButton width=201 height=19></TD>
+    <TD vAlign=top width=33 height=19></TD>
+    <TD class=tdButton width=213 height=19></TD>
+    <TD vAlign=top width=33 height=19></TD>
+    <TD class=tdButton width=173 height=19></TD>
+    <TD vAlign=top width=34 height=19></TD></TR></TBODY></TABLE>
+<TABLE id=AutoNumber1 style="BORDER-COLLAPSE: collapse" borderColor=#111111 
+height=25 cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD width=161 height=1></TD>
+    <TD vAlign=top width="100%" rowSpan=2>
+      <CENTER>
+      <DIV align=center>
+      <CENTER>
+      <TABLE id=AutoNumber1 style="BORDER-COLLAPSE: collapse" 
+      borderColor=#dcdcdc cellSpacing=0 cellPadding=0 width="99%" 
+      bgColor=#dcdcdc border=0 valign="top">
+        <TBODY>
+        <TR>
+          <TD width="100%" bgColor=whitesmoke>
+            <DIV align=center><A 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=464"><IMG 
+            height=162 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/treetuttop.jpg" 
+            width=470 border=0></A><BR><A 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=470"><IMG 
+            height=87 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/iotmmarchtop.jpg" 
+            width=470 border=0></A></DIV></TD></TR></TBODY></TABLE></CENTER></DIV>
+      <DIV align=center>
+      <CENTER>
+      <TABLE id=AutoNumber1 style="BORDER-COLLAPSE: collapse" 
+      borderColor=#dcdcdc cellSpacing=0 cellPadding=0 width="99%" 
+      bgColor=#dcdcdc border=0 valign="top">
+        <TBODY>
+        <TR>
+          <TD width="100%" bgColor=whitesmoke><BR>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" align=center 
+            border=1 <p>
+              <TBODY>
+              <TR>
+                <TD>
+                  <P align=center>Last 4 submissions<BR><A 
+                  href="http://www.3dkingdom.org/index.php?module=My_eGallery&amp;file=index&amp;do=showpic&amp;pid=1964&amp;orderby=hitsD" 
+                  target=_self><IMG height=75 alt="Made in 3ds Max 5.1" 
+                  src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/interior.jpg" 
+                  width=100 border=0></A> <A 
+                  href="http://www.3dkingdom.org/index.php?module=My_eGallery&amp;file=index&amp;do=showpic&amp;pid=1966&amp;orderby=hitsD" 
+                  target=_self><IMG height=75 
+                  alt="sorry for my english!!!i have used 3dmax 6 for this scene 2 light and radiosity thanks" 
+                  src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/living.jpg" 
+                  width=100 border=0></A> <A 
+                  href="http://www.3dkingdom.org/index.php?module=My_eGallery&amp;file=index&amp;do=showpic&amp;pid=1965&amp;orderby=hitsD" 
+                  target=_self><IMG height=75 
+                  alt="I m dedicating this image to the fans of 2 sci-films Back to the future part 2 and Bladerunner.This films have changed my life.The car models I ve created first with splines and than I ve converted to editable poly.For the front lights and rear lights of the hovercars I used video post and lens glow effects.Please tell me your oppinions what I should do to improve my work." 
+                  src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/hovercars.jpg" 
+                  width=100 border=0></A> <A 
+                  href="http://www.3dkingdom.org/index.php?module=My_eGallery&amp;file=index&amp;do=showpic&amp;pid=1962&amp;orderby=hitsD" 
+                  target=_self><IMG height=75 alt="modelisation sous 3ds max 6" 
+                  src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/gamecube%208.jpg" 
+                  width=100 
+      border=0></A></P></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></CENTER></DIV><BR>
+      <TABLE width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top width="85%">
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD width=15><IMG height=20 
+                  src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/arrows.gif" 
+                  width=15></TD>
+                <TD width="100%" 
+                background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/title_middle.gif"><A 
+                  href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=1">Tutorials</A>: 
+                  <A class=pn-title 
+                  href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">3ds 
+                  max: Matrix Bullet-Time Bullet Trail Effect</A></TD>
+                <TD width=46><IMG height=20 
+                  src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/title_right.gif" 
+                  width=46></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD width=1 bgColor=#000000><IMG height=1 
+                  src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/pixel.gif" 
+                  width=1></TD>
+                <TD width="100%" bgColor=#cccccc>Posted by <B><A 
+                  href="http://www.3dkingdom.org/user.php?op=userinfo&amp;uname=PiLe">PiLe</A></B> 
+                  on May 23, 2003 - 06:52 AM with 58097 Reads.</TD>
+                <TD width=1 bgColor=#000000><IMG height=1 
+                  src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/pixel.gif" 
+                  width=1></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD width=1 bgColor=#000000><IMG height=1 
+                  src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/pixel.gif" 
+                  width=1></TD>
+                <TD width=1061 bgColor=#e5e5e5>How many of you loved that 
+                  <B>bullet trail</B> in <B>The Matrix</B>?! Yesterday, it was 
+                  only a fantasy to make such thing in some 3d program, but 
+                  today, that <I>fantasy became real! </I><B>BryanA.</B> leads 
+                  you throught his amazing tutorial which will teach you how to 
+                  make <B>Matrix Bullet-Time Bullet Trail Effect </B>in <B>3ds 
+                  MAX</B>...<BR><A 
+                  href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0"><IMG 
+                  height=107 
+                  src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/23052003_matrixtutindex.jpg" 
+                  width=200 border=0></A><BR><BR>
+                  <TABLE cellSpacing=5 cellPadding=5 width=600 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD>
+                        <P align=center>
+                        <P align=center><B><BIG><BIG>Matrix Bullet-Time Bullet 
+                        Trail Effect<BR></BIG></BIG></B>by <I>BryanA.</I></P>
+                        <P align=justify><IMG height=321 
+                        src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/BIGindexRatio.jpg" 
+                        width=600 border=1></P>
+                        <P align=justify><B>UPDATE:</B> Bullet Time Bullet Trail 
+                        v.2 ONLINE (November 9th, 2003)! <A 
+                        href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=398&amp;mode=thread&amp;order=0&amp;thold=0"><B>Click 
+                        Here</B></A>!<BR><BR><BR>Do you like math? Neither do I. 
+                        But that's too bad because the <B>Matrix Bullet-Time 
+                        Trail Effect</B> works best when you know what you're 
+                        doing mathematically. Don't worry though, it's nothing 
+                        tough. </P>
+                        <P align=justify>For the time of it all, let's figure 
+                        that we want a five second scene at 30 frames per 
+                        second. Set MAX to 150 frames at 30 fps.</P>
+                        <P align=justify>Our rooftop is 200 units (now we'll 
+                        scale that to feet) - so it's 20 feet across and across, 
+                        making a perfect square.</P>
+                        <P align=justify><IMG height=279 
+                        src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/ssRoof.jpg" 
+                        width=600 border=1></P>
+                        <P align=justify>The Matrix Bullet-Time Trails fade out 
+                        into invisibility. They also change shape a little after 
+                        just being fired. There are three noticable stages of a 
+                        trail as you see in this picture:</P>
+                        <P align=justify><IMG height=300 
+                        src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/HoboFind.jpg" 
+                        width=600 border=1></P>
+                        <P align=justify>1 is a more recently fired bullet (you 
+                        can still see the bullet),<BR>2 is what we'll call a 
+                        Standard Trail, and<BR>3 is an Expiring Trail (it's 
+                        fading away and the distortion of the geometry is 
+                        "leaning" to one side).</P>
+                        <P align=justify><B>Here's what we need:</B></P>
+                        <P align=justify><I>A 200x200 roof that will scale to 
+                        20feet by 20feet. (Super-Easy)<BR>A bullet (Easy)<BR>A 
+                        trail reference shape. (Harder: Splines, Copying, 
+                        Grouping, Modifying)<BR>A cup of coffee? :) (Lot's of 
+                        sugar please)</I></P>
+                        <P align=justify>I used a Plane built in the TOP 
+                        viewport at 200x200. Then I converted it to Editable 
+                        Mesh and selected the outside polygons and Extruded them 
+                        with a value of 3.0.</P>
+                        <P align=justify><B>The bullet</B>. Let's first build it 
+                        larger than we need it and then we'll just scale it down 
+                        with the Xform Modifier. Let's use a <IMG height=309 
+                        src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/ssB.jpg" 
+                        width=300 align=right>Capsule at this size (Radius of 2 
+                        Hieght of 8 and 12 sides) in the justify viewport (where 
+                        we build it will be important later). After achieving 
+                        these dimensions, convert it to Editable Mesh. Use 
+                        Vertex as the sub-object and grab what will be the front 
+                        tip. Activate the soft selection and set it to 4 and 
+                        pull it "forward" about 1.0 unit, and then let go, and 
+                        then pull it again about 1.0 unit.</P>
+                        <P align=justify>Now tuck in the backside by taking off 
+                        Soft Selection and starting with the last vertex. Push 
+                        it in to meet the next column of vertices, then collect 
+                        them in the selection and keep doing this until you have 
+                        a reasonably flat backside.</P>
+                        <P align=justify>The last thing to do is apply the 
+                        Modifier, Xform and Scale the Gizmo to 18%.</P>
+                        <P align=justify>&amp;nbsp;</P>
+                        <P align=justify></P>
+                        <P align=justify>Now for the Spline modeling. This isn't 
+                        the most advanced spline you ever made - but it was my 
+                        first time ever believe it or not. So if you know a more 
+                        efficient way to do it, feel free to do so! For 
+                        first-timers like me, follow this part carefully and 
+                        take no shortcuts.</P>
+                        <P align=justify>We need to "trick" MAX into making one 
+                        object out of several 2D shapes. For accuracy, we're 
+                        also going to use Keyboard Entry for this. Here are the 
+                        best directions I can give for this:</P>
+                        <P align=justify>Create one 2D Circle with the justify 
+                        viewport active. *Ahem* The justify viewport active. 
+                        Keyboard Entry is as follows: x=0, y=0, z=2 radius is 
+                        2.0 "Create." Magical, huh?</P>
+                        <P align=justify><IMG height=321 
+                        src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/ss1.jpg" 
+                        width=600 border=1></P>
+                        <P align=justify>Now you have to do this little step: 
+                        Look up top above "Circle" and "Line" and "Rectangle" 
+                        where it says "Start New Shape." Click the check mark 
+                        out of there so you DO NOT start a new shape. All 
+                        additional shapes you make now will apply to the same 
+                        object.</P>
+                        <P align=justify><IMG height=218 
+                        src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/ss2.gif" 
+                        width=166 align=left border=1>Now we continue with the 
+                        Keyboard. z=0 Radius is 6 "Create."<BR>The thrid entry 
+                        is: z=-2 r=2 "Create."</P>
+                        <P align=justify>Now click the Modifier Tab, look under 
+                        the General rollout and choose Adaptive instead of 
+                        Optimize.</P>
+                        <P align=justify>The following modifiers require that 
+                        you build a spline in the correct, logical order as we 
+                        have done. We will treat these Circles as being 
+                        cut-through cross-sections of a final shape. Telling MAX 
+                        to treat it that way is easy. Look under the Modifier 
+                        "More" list for "Cross Section." Apply it (choose 
+                        Smooth) and then look for "Surface" under the list by 
+                        clicking "More" a second time. Surface will complete the 
+                        procedure and create a renderable object. You can 
+                        control how complex the surface is with Patch Tolology 
+                        which is one of the few Parameters of "Surface."</P>
+                        <P align=justify>To prepare for the Invisiblity of the 
+                        Trail, set the Animate button ON. Goto frame 10. 
+                        Right-Click the Oject's Properties. Halfway down, on the 
+                        justify column, see "Visibility: 1.0." Change that to 
+                        0.0. Turn the Animate button OFF. With the Move Tool, 
+                        move a COPY some units away along the X-axis. Then look 
+                        at the COPY'S Keys on the time slider. There should be 
+                        two: one at 0 and one at 10. Select them both and move 
+                        them ONE frame to rest at 1 and 11.</P>
+                        <P align=justify>With the Move Tool, move ANOTHER COPY 
+                        some units away along the X-axis again. Now change the 
+                        new keys from 1 and 11 to the new frames of 2 and 12. 
+                        See a pattern? Make seven copies or eight if you please. 
+                        Just keep COPYING in the same direction everytime, and 
+                        always adjust the Keys by one frame for every new copied 
+                        Object. Get this:</P>
+                        <P align=justify><IMG height=252 
+                        src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/ss2b.jpg" 
+                        width=552></P>
+                        <P align=justify>!VERIFY! If you select ALL eight of 
+                        your shapes now, do your Keys look exactly like this? If 
+                        not, DELETE and do it again.</P>
+                        <P align=justify><IMG height=181 
+                        src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/ss3.gif" 
+                        width=252 border=1></P>
+                        <P align=justify>With all eight Objects selected, make a 
+                        Group of them. Name it TrailMother. Apply FFD 4x4x4 to 
+                        TrailMother. Do your best to make this shape:</P>
+                        <P align=justify><IMG height=480 
+                        src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/pic4.jpg" 
+                        width=558></P>
+                        <P align=justify>What we're doing is making the Standard 
+                        Trail from which all others come. Now Right-Click the 
+                        Group and "Convert Selected to Editable Mesh." Here's 
+                        the easy part of this; we will copy this Group and 
+                        adjust the Keys again so Invisibility "runs up" the 
+                        trail we're making. Move a COPY in the X axis direction 
+                        to where it looks right next to the original. Select all 
+                        of the Copy's Keys and move them 8 frames later (0 and 
+                        10 become 8 and 18, etc.). Make six more copies and 
+                        continue moving the Keys for the Visibility. When you're 
+                        done, set Perspective Viewport so that you can see the 
+                        whole trail. Hitting F3 will toggle a Shaded View. With 
+                        a Shaded View, hit Play and make sure that the 
+                        Invisibility runs correctly. Did it? I hope so; it's 
+                        confusing to reconfigure.</P>
+                        <P align=justify><IMG height=305 
+                        src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/ss4b.jpg" 
+                        width=600></P>
+                        <P align=justify>Optimizing the Refractive material is 
+                        the first thing we need to do before rendering too much. 
+                        Following these tips will cut down the time it takes to 
+                        render multiple trails in the future. Hit "M" on the 
+                        keyboard. The material browswer is up and you should be 
+                        in the first slot. Glossines, Specular to 0. Soften to 
+                        1.0. Extended Parameters: IOR to 1.2. Material Maps: 
+                        Refraction Slot - Raytrace. Raytrace Options button 
+                        (match the picture below).</P>
+                        <P align=justify><IMG height=305 
+                        src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/ss5.jpg" 
+                        width=600 border=1></P>
+                        <P align=justify>Congratulations! You just saved 
+                        yourself minutes of waiting for still shots and maybe an 
+                        hour for a future animation. Faster would be 
+                        Anti-Aliasing UNCHECKED totally, but it looks bad that 
+                        way so we have it checked to allow it. Finally, apply 
+                        the Material (TrailMat) to the new, eight objects.</P>
+                        <P align=justify>With all eight big objects selected, 
+                        Group them and name it Trail. Right-Click them and 
+                        UNCHECK Cast Shadows and Receive Shadows. OK. Then, 
+                        apply Modifier FFD (box) to the Group, Trail. Set the 
+                        points to 3,2,3. It should look like this:</P>
+                        <P align=justify><IMG height=336 
+                        src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/ss6.jpg" 
+                        width=600 border=1></P>
+                        <P align=justify>For ease in the future, you will also 
+                        need to adjust the Pivot Point. Move the Pivot Point to 
+                        one end of the Group, "Trail." This will aid in 
+                        predicting where the Trail moves, rotates and scales 
+                        later on.</P>
+                        <P align=justify><IMG height=232 
+                        src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/ss7.jpg" 
+                        width=532 border=1></P>
+                        <P align=justify>Now there are several choices you get 
+                        to make on your own since we have run out of time. 
+                        Obviously, the Trail is way too big. It should be scaled 
+                        down uniformly on every axis. Here was my decision:<BR>I 
+                        scaled it all to 25% for the Standard phase.<BR>For the 
+                        fired bullet phase: 28% NUScale for the radius; 65% 
+                        NUScale for the length. For still pictures, you can 
+                        Scale the rear Control Points to 175%.<BR>Just as it's 
+                        Expiring: NUScale 50% for length but grew the radius 
+                        with NUScale 150%; I moved it forward to meet the bullet 
+                        and scaled the rear of the FFD bigger to 150%; finally, 
+                        I scaled all of it to 65%.</P>
+                        <P align=justify>A word about animating. With luck, I 
+                        can include one, small MAX file with one Bullet animated 
+                        to cross the floor, followed by a Trail that goes 
+                        through all three phases. To make another Bullet, you 
+                        would simply select the Bullet and the Trail and MOVE a 
+                        Copy of both being sure to alter the Keys of the copies 
+                        so that two Bullets fire at two different times and each 
+                        Bullet is followed by a correct Trail.</P>
+                        <P align=justify>To animate your own Bullet and Trail, 
+                        follow these guide lines. You first need to set the 
+                        position and timing of the Bullet. Put it WHERE you want 
+                        it; Animate/Move it where you want it shot to. Adjust 
+                        the two keys so that it moves as fast or slowly as you 
+                        want. Now you can mess with the Trail (first Bullet, 
+                        then Trail). See all the Keys to the Trail (they should 
+                        only be Invisibility Keys). Adjust them so that 
+                        Invisibility begins AFTER the Bullet leaves the scene. 
+                        Place the Trail so that the Pivot Point is where the 
+                        Bullet was fired from.</P>
+                        <P align=justify><I>This assumes that your first Bullet 
+                        will travel in a straight, uncomplicated 
+                        path.</I><BR><B>1.</B> Goto the first Key of your firing 
+                        Bullet and Move the Trail behind it.<BR><B>2.</B> 
+                        NUScale the length of the Trail so that it sits entirely 
+                        behind the Bullet.<BR><B>3.</B> NUScale the radius of 
+                        the Trail accordingly so that it is small.<BR><B>4.</B> 
+                        Goto the end Key of your firing Bullet (Animate ON now) 
+                        and NUScale the Trail's length so that it meets the 
+                        Bullet.<BR><B>5.</B> With Animate ON, choose a frame 
+                        where your Trail should be "Standard." Remember it - and 
+                        look 16 frames BEFORE this occurs.<BR><B>6.</B> Under 
+                        the Motion Tab, click the button "Scale" to create a Key 
+                        here for locking in the Fired Bullet phase.<BR><B>7.</B> 
+                        Go BEFORE this another 16 frames and tug the center two 
+                        Control Point for FFD (box) forward (towards the Bullet) 
+                        a little bit.<BR><B>8.</B> With Animate still ON, go 
+                        forward those 32 frames. Now it's safe to NUScale the 
+                        radius of the Trail to look "Standard."<BR><B>9.</B> 
+                        Absolutely, those Invisibility Keys should be AFTER what 
+                        we've done so far. Goto the end of those Keys, and Move 
+                        the Trail slightly forward and expand the backside of 
+                        that FFD (box).<BR><B>10.</B> To finish, select the 
+                        center Control Point of the FFD (box) and Move them 
+                        backward (towards the gun).<BR><B>11.</B> Animate 
+                        OFF.<BR><IMG height=321 
+                        src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/BIGindexRatio.jpg" 
+                        width=600 border=1></P>
+                        <P align=center><BIG>This tutorial was originaly written 
+                        by <B>BryanA.</B></BIG></P>
+                        <P align=left><B>UPDATE:</B> Bullet Time Bullet Trail 
+                        v.2 ONLINE (November 9th, 2003)! <A 
+                        href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=398&amp;mode=thread&amp;order=0&amp;thold=0"><B>Click 
+                        Here</B></A>!<BR><BR>We would also like to say thanks to 
+                        following 3D Kingdom members who activly contributed in 
+                        creation of this tutorial on our forum: 
+                        <B>Magicalhobo</B>, <B>FleshEater</B> and 
+                        <B>Goliard</B>.<BR><BR>Forum Thread - <A 
+                        href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=PNphpBB2&amp;file=viewtopic&amp;t=582"><B>CLICK 
+                        HERE</B></A>!<BR><BR>If you have any questions related 
+                        to this tutorial, feel free to send Private Message to 
+                        <B>BryanA. </B>!</P>
+                        <P align=right>Edited by 
+                  <B>PiLe</B></P></TD></TR></TBODY></TABLE></TD>
+                <TD width=114 bgColor=#e5e5e5><A class=pn-normal 
+                  href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=9"><IMG 
+                  alt=Tutorials hspace=5 
+                  src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/tutorials.gif" 
+                  align=left vspace=5 border=0></A></TD>
+                <TD width=1 bgColor=#000000><IMG height=1 
+                  src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/pixel.gif" 
+                  width=1></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD width=5><IMG height=20 
+                  src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/footer_left.gif" 
+                  width=5></TD>
+                <TD width="100%" 
+                background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/footer_middle.gif"></TD>
+                <TD width=5><IMG height=20 
+                  src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/footer_right.gif" 
+                  width=5></TD></TR></TBODY></TABLE></TD>
+          <TD>&nbsp;</TD>
+          <TD vAlign=top>
+            <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+              <TBODY>
+              <TR>
+                <TD width=15><IMG height=20 
+                  src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/arrows.gif" 
+                  width=15></TD>
+                <TD width="100%" 
+                background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/title_middle.gif">Login</TD>
+                <TD width=46><IMG height=20 
+                  src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/title_right.gif" 
+                  width=46></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+              <TBODY>
+              <TR>
+                <TD width=1 bgColor=#000000><IMG height=1 
+                  src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/pixel.gif" 
+                  width=1></TD>
+                <TD width="100%" bgColor=#e5e5e5>
+                  <FORM action=user.php method=post>
+                  <TABLE cellSpacing=0 cellPadding=1 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><SPAN class=pn-normal>&nbsp;Username</SPAN></TD></TR>
+                    <TR>
+                      <TD><INPUT maxLength=25 size=14 name=uname></TD></TR>
+                    <TR>
+                      <TD><SPAN class=pn-normal>&nbsp;Password</SPAN></TD></TR>
+                    <TR>
+                      <TD><INPUT type=password maxLength=20 size=14 
+                      name=pass></TD></TR>
+                    <TR>
+                      <TD><INPUT type=checkbox value=1 name=rememberme><SPAN 
+                        class=pn-normal>&nbsp;Remember me</SPAN></TD></TR>
+                    <TR>
+                      <TD><BR><INPUT type=hidden value=NS-User 
+                        name=module><INPUT type=hidden value=login 
+                        name=op><INPUT type=hidden 
+                        value=/modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0 
+                        name=url><INPUT type=submit value=Login></TD></TR>
+                    <TR>
+                      <TD><A 
+                        href="http://www.3dkingdom.org/user.php?op=check_age&amp;module=NS-NewUser">Create 
+                        a account</A><BR><A 
+                        href="http://www.3dkingdom.org/user.php?op=lostpassscreen&amp;module=NS-LostPassword">Forgot 
+                        your password?<BR><BR></A></TD></TD></TR></TBODY></TABLE></TD>
+                <TD width=1 bgColor=#000000><IMG height=1 
+                  src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/pixel.gif" 
+                  width=1></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+              <TBODY>
+              <TR>
+                <TD><IMG height=8 
+                  src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/footer.gif" 
+                  width=165></TD></TR></TBODY></TABLE><BR>
+            <TABLE style="BORDER-COLLAPSE: collapse" borderColor=#ffffff 
+            cellSpacing=0 cellPadding=4 width=150 border=1>
+              <TBODY>
+              <TR>
+                <TD bgColor=#dcdcdc><B>Related links</B>&nbsp;</TD></TR>
+              <TR>
+                <TD bgColor=#e3e3e3><FONT 
+                  class=pn-normal><STRONG><BIG>·</BIG></STRONG>&nbsp;<A 
+                  class=pn-normal href="http://www.3dkingdom.org/index.php" 
+                  target=new>3DK 
+                  Home</A><BR><STRONG><BIG>·</BIG></STRONG>&nbsp;<A 
+                  class=pn-normal href="http://www.3dkingdom.org/forum" 
+                  target=new>3DK 
+                  Forum</A><BR><STRONG><BIG>·</BIG></STRONG>&nbsp;<A 
+                  class=pn-normal 
+                  href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=My_eGallery&amp;file=index&amp;do=showgall&amp;gid=1&amp;p=" 
+                  target=new>Art 
+                  Gallery</A><BR><STRONG><BIG>·</BIG></STRONG>&nbsp;<A 
+                  class=pn-normal 
+                  href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=Diner_Wrapper&amp;file=index&amp;req=ShowFile&amp;file_wrap=html/submit.html" 
+                  target=new><B>Submit 
+                  Tutorial<B></A><BR><STRONG><BIG>·</BIG></STRONG>&nbsp;<A 
+                  class=pn-normal 
+                  href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=Search&amp;file=index&amp;action=search&amp;overview=1&amp;active_stories=1&amp;stories_topics[0]=9">More 
+                  about Tutorials</A><BR><STRONG><BIG>·</BIG></STRONG>&nbsp;<A 
+                  class=pn-normal 
+                  href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=Search&amp;file=index&amp;action=search&amp;overview=1&amp;active_stories=1&amp;stories_author=PiLe">News 
+                  by PiLe</A><BR></FONT><BR>
+                  <HR width="95%" noShade SIZE=1>
+
+                  <DIV align=center><FONT class=pn-normal>Most read story in 
+                  Tutorials:<BR><A class=pn-title 
+                  href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">3ds 
+                  max: Matrix Bullet-Time Bullet Trail 
+                  Effect</A></FONT></DIV><BR>
+                  <TABLE width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD align=left></TD>
+                      <TD 
+              align=right></TD></TR></TBODY></TABLE>&nbsp;</B></B></TD></TR></TBODY></TABLE><BR></TD></TR></TBODY></TABLE><!-- COMMENTS NAVIGATION BAR START -->
+      <TABLE cellSpacing=0 cellPadding=0 width="99%" border=0>
+        <TBODY>
+        <TR>
+          <TD align=middle bgColor=#eff0ef><FONT class=pn-title>3ds max: 
+            Matrix Bullet-Time Bullet Trail Effect</FONT><FONT class=pn-normal> 
+            | </FONT><A class=pn-normal 
+            href="http://www.3dkingdom.org/user.php">Login/Create an 
+            account</A><FONT class=pn-normal> | 68 Comments</FONT></TD></TR>
+        <TR>
+          <TD align=middle width="100%" bgColor=#eff0ef>
+            <TABLE border=0>
+              <TBODY>
+              <TR>
+                <TD><FORM action="modules.php" method="post"><FONT 
+                  class=pn-normal>Threshold</FONT> <SELECT name=thold> <OPTION 
+                    value=-1>-1</OPTION> <OPTION value=0 selected>0</OPTION> 
+                    <OPTION value=1>1</OPTION> <OPTION value=2>2</OPTION> 
+                    <OPTION value=3>3</OPTION> <OPTION value=4>4</OPTION> 
+                    <OPTION value=5>5</OPTION></SELECT> <SELECT 
+                    name=mode><OPTION value=nocomments>No comments</OPTION> 
+                    <OPTION value=nested>Nested</OPTION> <OPTION 
+                    value=flat>Flat</OPTION> <OPTION value=thread 
+                    selected>Thread</OPTION></SELECT> <SELECT name=order><OPTION 
+                    value=0 selected>Oldest first</OPTION> <OPTION 
+                    value=1>Newest first</OPTION> <OPTION value=2>Highest scores 
+                    first</OPTION></SELECT> <INPUT type=hidden value=modload 
+                  name=op> <INPUT type=hidden value=News name=name> <INPUT 
+                  type=hidden value=article name=file> <INPUT type=hidden 
+                  value=284 name=sid> 
+<INPUT type=submit value=Refresh></FORM></TD>
+                <TD bgColor=#eff0ef>
+                  <FORM action=modules.php method=post><INPUT type=hidden 
+                  value=modload name=op><INPUT type=hidden value=NS-Comments 
+                  name=name><INPUT type=hidden value=index name=file><INPUT 
+                  type=hidden value=0 name=pid><INPUT type=hidden value=284 
+                  name=sid><INPUT type=hidden value=Reply name=req>&nbsp;&nbsp;<INPUT type=submit value="Post comment"></FORM></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD align=middle bgColor=#eff0ef><FONT class=pn-sub>Comments are 
+            owned by the poster. We aren't responsible for their 
+          content.</FONT></TD></TR></TBODY></TABLE><!-- COMMENTS NAVIGATION BAR END -->
+      <DIV align=left>
+      <FORM action=modules.php method=post><A name=190></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Re: 3ds max: Matrix Bullet-Time 
+            Bullet Trail Effect</FONT><FONT class=pn-normal> (Score: 1) <BR>by 
+            FleshEater on May 23, 2003 - 08:14 AM<BR><FONT class=pn-normal>(<A 
+            class=pn-normal 
+            href="http://www.3dkingdom.org/user.php?op=userinfo&amp;uname=FleshEater&amp;module=NS-User">User 
+            info</A> | <A 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=Messages&amp;file=replypmsg&amp;send=1&amp;uname=FleshEater">Send 
+            a Message</A>)</FONT> <A class=pn-normal 
+            href="http://www.abstractfonts.com/flesh/index.html" 
+            target=window>http://www.abstractfonts.com/flesh/index.html</A> 
+            </FONT></TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>Hey Good Work Bryan!</FONT> 
+      </TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=190&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL>
+        <LI><FONT class=pn-normal><A class=pn-normal 
+        href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=191&amp;sid=284&amp;pid=190&amp;mode=thread&amp;order=0&amp;thold=0#191">FleshEater; 
+        partner in crime.</A></FONT><FONT class=pn-sub> by BryanA. on May 23, 
+        2003 - 08:33 AM</FONT><BR></LI></UL><A name=192></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Re: 3ds max: Matrix Bullet-Time 
+            Bullet Trail Effect</FONT><FONT class=pn-normal> (Score: 1) <BR>by 
+            gahn on May 23, 2003 - 05:32 PM<BR><FONT class=pn-normal>(<A 
+            class=pn-normal 
+            href="http://www.3dkingdom.org/user.php?op=userinfo&amp;uname=gahn&amp;module=NS-User">User 
+            info</A> | <A 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=Messages&amp;file=replypmsg&amp;send=1&amp;uname=gahn">Send 
+            a Message</A>)</FONT> <A class=pn-normal href="http:///" 
+            target=window>http://</A> </FONT></TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>WOW, i can't believe i missed this whole 
+            thread:(. Far too pissed to do anything at the mo but the tut looks 
+            superb (i don't like the fact that all the text is doubled up and 
+            keeps moving around but that may be a problem my end ;) ). I am so 
+            doing this tomorrow. Well in Bryan, great timing too :)</FONT> 
+        </TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=192&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL></UL><A name=193></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>question...</FONT><FONT 
+            class=pn-normal> (Score: 0) <BR>by Guest on May 24, 2003 - 01:19 
+            PM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>Hi! Great tut.. I just did not understand 
+            the thing about the NUscale... can someone help me out??<BR><BR>You 
+            r really good BryanA!!! So r you PiLe!<BR><BR>Thx</FONT> 
+        </TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=193&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL>
+        <LI><FONT class=pn-normal><A class=pn-normal 
+        href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=195&amp;sid=284&amp;pid=193&amp;mode=thread&amp;order=0&amp;thold=0#195">NUScale 
+        answer...</A></FONT><FONT class=pn-sub> by BryanA. on May 25, 2003 - 
+        09:33 AM</FONT><BR>
+        <UL>
+          <LI><FONT class=pn-normal><A class=pn-normal 
+          href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=198&amp;sid=284&amp;pid=195&amp;mode=thread&amp;order=0&amp;thold=0#198">Re: 
+          NUScale answer...</A></FONT><FONT class=pn-sub> by Guest on May 25, 
+          2003 - 10:41 AM</FONT><BR>
+          <UL>
+            <LI><FONT class=pn-normal><A class=pn-normal 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=207&amp;sid=284&amp;pid=198&amp;mode=thread&amp;order=0&amp;thold=0#207">Oops.</A></FONT><FONT 
+            class=pn-sub> by BryanA. on May 28, 2003 - 05:15 
+          AM</FONT><BR></LI></UL></LI></UL></LI></UL><A name=194></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Re: 3ds max: Matrix Bullet-Time 
+            Bullet Trail Effect</FONT><FONT class=pn-normal> (Score: 0) <BR>by 
+            Guest on May 25, 2003 - 09:19 AM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>damnit... i cant find that raytracer 
+            options dialog... where's that? when i apply raytrace, the material 
+            goes invisible...</FONT> </TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=194&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL>
+        <LI><FONT class=pn-normal><A class=pn-normal 
+        href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=196&amp;sid=284&amp;pid=194&amp;mode=thread&amp;order=0&amp;thold=0#196">Raytrace 
+        complexities.</A></FONT><FONT class=pn-sub> by BryanA. on May 25, 2003 - 
+        09:39 AM</FONT><BR>
+        <UL>
+          <LI><FONT class=pn-normal><A class=pn-normal 
+          href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=197&amp;sid=284&amp;pid=196&amp;mode=thread&amp;order=0&amp;thold=0#197">Re: 
+          Raytrace complexities.</A></FONT><FONT class=pn-sub> by Guest on May 
+          25, 2003 - 10:18 AM</FONT><BR>
+          <UL>
+            <LI><FONT class=pn-normal><A class=pn-normal 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=201&amp;sid=284&amp;pid=197&amp;mode=thread&amp;order=0&amp;thold=0#201">MAX 
+            5</A></FONT><FONT class=pn-sub> by BryanA. on May 26, 2003 - 08:22 
+            AM</FONT><BR></LI></UL></LI></UL></LI></UL><A name=202></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Re: 3ds max: Matrix Bullet-Time 
+            Bullet Trail Effect</FONT><FONT class=pn-normal> (Score: 0) <BR>by 
+            Guest on May 26, 2003 - 09:51 AM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>Excelent tutorial used in my 
+            portfolio<BR></FONT></TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=202&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL>
+        <LI><FONT class=pn-normal><A class=pn-normal 
+        href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=205&amp;sid=284&amp;pid=202&amp;mode=thread&amp;order=0&amp;thold=0#205">Portfolio 
+        use...</A></FONT><FONT class=pn-sub> by BryanA. on May 28, 2003 - 05:08 
+        AM</FONT><BR></LI></UL><A name=204></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Re: 3ds max: Matrix Bullet-Time 
+            Bullet Trail Effect</FONT><FONT class=pn-normal> (Score: 0) <BR>by 
+            Guest on May 26, 2003 - 11:38 PM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>Hi, you can do the same effect more 
+            simply.Use an cylinder object, make a map with gradient ( opacity ) 
+            and use if for a displace, then use FFD(box) make the trail.You can 
+            animate it ( anime the displace ).Then you can make the displace of 
+            the background under after effect.<BR><BR>Zfromparis 
+        </FONT></TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=204&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL>
+        <LI><FONT class=pn-normal><A class=pn-normal 
+        href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=206&amp;sid=284&amp;pid=204&amp;mode=thread&amp;order=0&amp;thold=0#206">Opacity 
+        and Displace.</A></FONT><FONT class=pn-sub> by BryanA. on May 28, 2003 - 
+        05:12 AM</FONT><BR>
+        <LI><FONT class=pn-normal><A class=pn-normal 
+        href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=208&amp;sid=284&amp;pid=204&amp;mode=thread&amp;order=0&amp;thold=0#208">Re: 
+        Re: 3ds max: Matrix Bullet-Time Bullet Trail Effect</A></FONT><FONT 
+        class=pn-sub> by Guest on May 28, 2003 - 08:39 AM</FONT><BR>
+        <UL>
+          <LI><FONT class=pn-normal><A class=pn-normal 
+          href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=211&amp;sid=284&amp;pid=208&amp;mode=thread&amp;order=0&amp;thold=0#211">Buttons 
+          for 4.2 and 5</A></FONT><FONT class=pn-sub> by Guest on May 28, 2003 - 
+          07:17 PM</FONT><BR></LI></UL></LI></UL><A name=209></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Re: 3ds max: Matrix Bullet-Time 
+            Bullet Trail Effect</FONT><FONT class=pn-normal> (Score: 0) <BR>by 
+            Guest on May 28, 2003 - 09:23 AM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>You should add some motion blur to the 
+            trails too...</FONT> </TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=209&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL>
+        <LI><FONT class=pn-normal><A class=pn-normal 
+        href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=212&amp;sid=284&amp;pid=209&amp;mode=thread&amp;order=0&amp;thold=0#212">Blurring.</A></FONT><FONT 
+        class=pn-sub> by Guest on May 28, 2003 - 07:20 PM</FONT><BR></LI></UL><A 
+      name=210></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Re: 3ds max: Matrix Bullet-Time 
+            Bullet Trail Effect</FONT><FONT class=pn-normal> (Score: 0) <BR>by 
+            Guest on May 28, 2003 - 02:39 PM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>Hey Bryan, great work on the tutorial! I 
+            have just one question, though: When you say to adjust the pivot 
+            point, I get a million pivot points on each single circle when I 
+            press Affect Pivot Only! Which pivot point are you talking about or 
+            am I doing it wrong?</FONT> </TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=210&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL>
+        <LI><FONT class=pn-normal><A class=pn-normal 
+        href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=213&amp;sid=284&amp;pid=210&amp;mode=thread&amp;order=0&amp;thold=0#213">Excellent 
+        question!</A></FONT><FONT class=pn-sub> by Guest on May 28, 2003 - 07:25 
+        PM</FONT><BR>
+        <UL>
+          <LI><FONT class=pn-normal><A class=pn-normal 
+          href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=218&amp;sid=284&amp;pid=213&amp;mode=thread&amp;order=0&amp;thold=0#218">Re: 
+          Excellent question!</A></FONT><FONT class=pn-sub> by Guest on May 30, 
+          2003 - 08:32 AM</FONT><BR>
+          <UL>
+            <LI><FONT class=pn-normal><A class=pn-normal 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=219&amp;sid=284&amp;pid=218&amp;mode=thread&amp;order=0&amp;thold=0#219">Hmmm. 
+            Confusion.</A></FONT><FONT class=pn-sub> by BryanA. on May 30, 2003 
+            - 01:40 PM</FONT><BR>
+            <UL>
+              <LI><FONT class=pn-normal><A class=pn-normal 
+              href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=220&amp;sid=284&amp;pid=219&amp;mode=thread&amp;order=0&amp;thold=0#220">Re: 
+              Hmmm. Confusion.</A></FONT><FONT class=pn-sub> by Guest on May 30, 
+              2003 - 01:51 PM</FONT><BR>
+              <UL>
+                <LI><FONT class=pn-normal><A class=pn-normal 
+                href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=221&amp;sid=284&amp;pid=220&amp;mode=thread&amp;order=0&amp;thold=0#221">Speedy!</A></FONT><FONT 
+                class=pn-sub> by BryanA. on May 30, 2003 - 02:03 PM</FONT><BR>
+                <UL>
+                  <LI><FONT class=pn-normal><A class=pn-normal 
+                  href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=222&amp;sid=284&amp;pid=221&amp;mode=thread&amp;order=0&amp;thold=0#222">Re: 
+                  Speedy!</A></FONT><FONT class=pn-sub> by Guest on May 30, 2003 
+                  - 02:16 
+        PM</FONT><BR></LI></UL></LI></UL></LI></UL></LI></UL></LI></UL></LI></UL><A 
+      name=223></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Re: 3ds max: Matrix Bullet-Time 
+            Bullet Trail Effect</FONT><FONT class=pn-normal> (Score: 0) <BR>by 
+            Guest on May 31, 2003 - 11:58 AM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>I'm having difficulty getting the trail to 
+            be transparent. I did all of the raytrace stuff but the trail is 
+            still just solid black. Please help!</FONT> 
+      </TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=223&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL>
+        <LI><FONT class=pn-normal><A class=pn-normal 
+        href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=224&amp;sid=284&amp;pid=223&amp;mode=thread&amp;order=0&amp;thold=0#224">Re: 
+        Re: Same Problem</A></FONT><FONT class=pn-sub> by Guest on Jun 01, 2003 
+        - 09:17 AM</FONT><BR>
+        <UL>
+          <LI><FONT class=pn-normal><A class=pn-normal 
+          href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=227&amp;sid=284&amp;pid=224&amp;mode=thread&amp;order=0&amp;thold=0#227">The 
+          solution for both of you!!! :)</A></FONT><FONT class=pn-sub> by 
+          BryanA. on Jun 01, 2003 - 07:37 PM</FONT><BR></LI></UL>
+        <LI><FONT class=pn-normal><A class=pn-normal 
+        href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=270&amp;sid=284&amp;pid=223&amp;mode=thread&amp;order=0&amp;thold=0#270">Re: 
+        Re: 3ds max: Matrix Bullet-Time Bullet Trail Effect</A></FONT><FONT 
+        class=pn-sub> by Guest on Jun 22, 2003 - 03:19 AM</FONT><BR></LI></UL><A 
+      name=226></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Re: 3ds max: Matrix Bullet-Time 
+            Bullet Trail Effect</FONT><FONT class=pn-normal> (Score: 0) <BR>by 
+            Guest on Jun 01, 2003 - 07:10 PM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>Im a super beginner so I'm rather 
+            confused. You should do this in "step by step" form</FONT> 
+        </TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=226&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL>
+        <LI><FONT class=pn-normal><A class=pn-normal 
+        href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=228&amp;sid=284&amp;pid=226&amp;mode=thread&amp;order=0&amp;thold=0#228">Super 
+        Beginners.</A></FONT><FONT class=pn-sub> by BryanA. on Jun 01, 2003 - 
+        07:42 PM</FONT><BR>
+        <UL>
+          <LI><FONT class=pn-normal><A class=pn-normal 
+          href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=263&amp;sid=284&amp;pid=228&amp;mode=thread&amp;order=0&amp;thold=0#263">Re: 
+          Super Beginners.</A></FONT><FONT class=pn-sub> by Guest on Jun 17, 
+          2003 - 05:20 AM</FONT><BR></LI></UL></LI></UL><A name=231></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Re: 3ds max: Matrix Bullet-Time 
+            Bullet Trail Effect</FONT><FONT class=pn-normal> (Score: 0) <BR>by 
+            Guest on Jun 03, 2003 - 01:10 AM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>isnt it much easier to create a super 
+            spray particle and select the donut shape as the instanced geometry 
+            tweak the properties for your convinience and use the particle age 
+            and mblur as opacity map in the material for the particle system... 
+            </FONT></TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=231&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL>
+        <LI><FONT class=pn-normal><A class=pn-normal 
+        href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=232&amp;sid=284&amp;pid=231&amp;mode=thread&amp;order=0&amp;thold=0#232">A 
+        sacrifice.</A></FONT><FONT class=pn-sub> by BryanA. on Jun 03, 2003 - 
+        07:15 AM</FONT><BR></LI></UL><A name=236></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Re: 3ds max: Matrix Bullet-Time 
+            Bullet Trail Effect</FONT><FONT class=pn-normal> (Score: 0) <BR>by 
+            Guest on Jun 04, 2003 - 04:20 AM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>It is really fantastic. Excellent 
+            work.Thanks for the tutorial Brayan.<BR>Neil</FONT> 
+      </TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=236&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL></UL><A name=253></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Re: 3ds max: Matrix Bullet-Time 
+            Bullet Trail Effect</FONT><FONT class=pn-normal> (Score: 0) <BR>by 
+            Guest on Jun 11, 2003 - 04:26 AM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>I think it looks like in the movie, but it 
+            looks muck better if you use a super spray particle system and 
+            raytracing, it looks more realistic</FONT> 
+      </TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=253&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL></UL><A name=259></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Finished Max File</FONT><FONT 
+            class=pn-normal> (Score: 0) <BR>by Guest on Jun 14, 2003 - 10:36 
+            AM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>I wondered if ANYBODY could send me the 
+            finshed .max file. This would be a real help since im training in 
+            3dmax and have decided to do this as my project.<BR><BR>Thanks 
+            alot!<BR><BR>Please email file to alslicer@programmer.net<BR>or add 
+            link on post</FONT> </TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=259&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL>
+        <LI><FONT class=pn-normal><A class=pn-normal 
+        href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=315&amp;sid=284&amp;pid=259&amp;mode=thread&amp;order=0&amp;thold=0#315">Re: 
+        Finished Max File</A></FONT><FONT class=pn-sub> by Guest on Aug 04, 2003 
+        - 01:19 PM</FONT><BR></LI></UL><A name=260></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Animation</FONT><FONT 
+            class=pn-normal> (Score: 0) <BR>by Guest on Jun 14, 2003 - 08:59 
+            PM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>Is the trail supposed to grow lenth wise 
+            with the movement of the bullet or dows it actually appear as the 
+            bullet moves forward? I'm guessing im doing something wrong but I 
+            can only get the trail to "grow" with the bullet instead of sort of 
+            appearing then growing with the bullet like the movie. Am I doing 
+            something wrong?</FONT> </TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=260&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL></UL><A name=273></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Splines do not refract 
+            Bitmap-Environment Map</FONT><FONT class=pn-normal> (Score: 1) 
+            <BR>by BartSimpson on Jun 25, 2003 - 11:34 PM<BR><FONT 
+            class=pn-normal>(<A class=pn-normal 
+            href="http://www.3dkingdom.org/user.php?op=userinfo&amp;uname=BartSimpson&amp;module=NS-User">User 
+            info</A> | <A 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=Messages&amp;file=replypmsg&amp;send=1&amp;uname=BartSimpson">Send 
+            a Message</A>)</FONT> </FONT></TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>Hi Bryan!<BR>As a Mid-Beginner I had no 
+            problems to complete the tutorial. ;-)<BR><BR>But I want to use now 
+            the Bullet Trail in an Avi File set up as Environment 
+            Map.<BR><BR>When I render the picture I see only the avi-movie 
+            without the trail. Is there a way to make refraction/Raytrace work 
+            with Environment map?<BR>--&gt; I want to see the the "Envi. 
+            Map-Movie" refracted in the splines... ;-)<BR><BR>bart 
+        </FONT></TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=273&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL>
+        <LI><FONT class=pn-normal><A class=pn-normal 
+        href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=310&amp;sid=284&amp;pid=273&amp;mode=thread&amp;order=0&amp;thold=0#310">Re: 
+        Splines do not refract Bitmap-Environment Map</A></FONT><FONT 
+        class=pn-sub> by Guest on Jul 31, 2003 - 11:42 AM</FONT><BR>
+        <LI><FONT class=pn-normal><A class=pn-normal 
+        href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=524&amp;sid=284&amp;pid=273&amp;mode=thread&amp;order=0&amp;thold=0#524">Re: 
+        Splines do not refract Bitmap-Environment Map</A></FONT><FONT 
+        class=pn-sub> by Guest on Jan 29, 2004 - 02:00 PM</FONT><BR></LI></UL><A 
+      name=275></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Re: 3ds max: Matrix Bullet-Time 
+            Bullet Trail Effect</FONT><FONT class=pn-normal> (Score: 1) <BR>by 
+            lolo13 on Jun 29, 2003 - 01:13 PM<BR><FONT class=pn-normal>(<A 
+            class=pn-normal 
+            href="http://www.3dkingdom.org/user.php?op=userinfo&amp;uname=lolo13&amp;module=NS-User">User 
+            info</A> | <A 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=Messages&amp;file=replypmsg&amp;send=1&amp;uname=lolo13">Send 
+            a Message</A>)</FONT> </FONT></TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>thanx for your tutorial it's great ! i 
+            just have a problem with rendering. when i want to render just one 
+            picture ( not an avi file ) the trail doesn't appear, it's totaly 
+            invisible whatever the background may be (it takes many minutes to 
+            have this so i'm sure that the rendering is working correctly ). i 
+            think the problem is in the texture but i don't know how to fix it, 
+            if you could help me that would be great. thank you</FONT> 
+        </TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=275&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL>
+        <LI><FONT class=pn-normal><A class=pn-normal 
+        href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=288&amp;sid=284&amp;pid=275&amp;mode=thread&amp;order=0&amp;thold=0#288">Render 
+        thing</A></FONT><FONT class=pn-sub> by PiLe on Jul 04, 2003 - 01:23 
+        AM</FONT><BR></LI></UL><A name=290></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Re: 3ds max: Matrix Bullet-Time 
+            Bullet Trail Effect</FONT><FONT class=pn-normal> (Score: 0) <BR>by 
+            Guest on Jul 06, 2003 - 09:58 AM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>Hello everyone,<BR>I am adrian, but there 
+            is a big (massive) problem. I dont know anything about 3ds Max (i 
+            got 4.2)....I am askin a favour.....would someone please tell me the 
+            basics of the program, how do i make a 3d 
+            model....please..pleas..please....if someone could tell me step by 
+            step, I would be more than greatefull....</FONT> 
+      </TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=290&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL>
+        <LI><FONT class=pn-normal><A class=pn-normal 
+        href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=306&amp;sid=284&amp;pid=290&amp;mode=thread&amp;order=0&amp;thold=0#306">Re: 
+        Re: 3ds max: Matrix Bullet-Time Bullet Trail Effect</A></FONT><FONT 
+        class=pn-sub> by Guest on Jul 29, 2003 - 05:35 PM</FONT><BR>
+        <LI><FONT class=pn-normal><A class=pn-normal 
+        href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=313&amp;sid=284&amp;pid=290&amp;mode=thread&amp;order=0&amp;thold=0#313">Improve 
+        this ?</A></FONT><FONT class=pn-sub> by Guest on Aug 04, 2003 - 09:11 
+        AM</FONT><BR>
+        <LI><FONT class=pn-normal><A class=pn-normal 
+        href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=366&amp;sid=284&amp;pid=290&amp;mode=thread&amp;order=0&amp;thold=0#366">Re: 
+        Re: 3ds max: Matrix Bullet-Time Bullet Trail Effect</A></FONT><FONT 
+        class=pn-sub> by Guest on Oct 06, 2003 - 01:32 PM</FONT><BR></LI></UL><A 
+      name=314></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Improve this tutorial</FONT><FONT 
+            class=pn-normal> (Score: 0) <BR>by Guest on Aug 04, 2003 - 10:02 
+            AM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>Hi all, <BR>It's a very good tutorial ... 
+            Even for a dummy like me ! :-)<BR><BR>But I think it 'd be better to 
+            animate the refraction level (from 1.2 to 1), instead of physical 
+            dis-apparition ... What do you think about 
+        ?<BR><BR>Bye<BR></FONT></TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=314&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL></UL><A name=316></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Re: 3ds max: Matrix Bullet-Time 
+            Bullet Trail Effect</FONT><FONT class=pn-normal> (Score: 0) <BR>by 
+            Guest on Aug 05, 2003 - 02:56 AM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>my 3dmax says always error when i try save 
+            something so could someone email that to me... the save where are 
+            done bullet trail and bullet...thank you!! 
+            (arilipsanen@jippii.fi)</FONT> </TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=316&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL></UL><A name=320></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Re: 3ds max: Matrix Bullet-Time 
+            Bullet Trail Effect</FONT><FONT class=pn-normal> (Score: 0) <BR>by 
+            Guest on Aug 08, 2003 - 02:40 PM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>I am super begginer too. I don't 
+            understanbd almost anything of it. Could you send me a ready 3d max 
+            scene?? It would be a very great help for me.......</FONT> 
+        </TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=320&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL>
+        <LI><FONT class=pn-normal><A class=pn-normal 
+        href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=333&amp;sid=284&amp;pid=320&amp;mode=thread&amp;order=0&amp;thold=0#333">Re: 
+        Re: 3ds max: Matrix Bullet-Time Bullet Trail Effect</A></FONT><FONT 
+        class=pn-sub> by Guest on Sep 04, 2003 - 05:38 PM</FONT><BR></LI></UL><A 
+      name=334></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Re: 3ds max: Matrix Bullet-Time 
+            Bullet Trail Effect</FONT><FONT class=pn-normal> (Score: 0) <BR>by 
+            Guest on Sep 04, 2003 - 05:40 PM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>There should made a version useing 
+            particles so it can be used for an animation.</FONT> 
+      </TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=334&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL>
+        <LI><FONT class=pn-normal><A class=pn-normal 
+        href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=335&amp;sid=284&amp;pid=334&amp;mode=thread&amp;order=0&amp;thold=0#335">How 
+        do you prepare the invisibility of the trail?</A></FONT><FONT 
+        class=pn-sub> by Guest on Sep 05, 2003 - 10:10 AM</FONT><BR></LI></UL><A 
+      name=352></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Re: 3ds max: Matrix Bullet-Time 
+            Bullet Trail Effect</FONT><FONT class=pn-normal> (Score: 1) <BR>by 
+            Doakiller on Sep 26, 2003 - 05:14 PM<BR><FONT class=pn-normal>(<A 
+            class=pn-normal 
+            href="http://www.3dkingdom.org/user.php?op=userinfo&amp;uname=Doakiller&amp;module=NS-User">User 
+            info</A> | <A 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=Messages&amp;file=replypmsg&amp;send=1&amp;uname=Doakiller">Send 
+            a Message</A>)</FONT> </FONT></TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>Wow awsome effect thanks alot</FONT> 
+        </TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=352&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL></UL><A name=358></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Bullet Question</FONT><FONT 
+            class=pn-normal> (Score: 0) <BR>by Guest on Oct 04, 2003 - 04:58 
+            PM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>When you said scale it down to 18% are you 
+            suppose to guess the scale or is there something im not seeing where 
+            you can input the scale level</FONT> </TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=358&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL>
+        <LI><FONT class=pn-normal><A class=pn-normal 
+        href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=361&amp;sid=284&amp;pid=358&amp;mode=thread&amp;order=0&amp;thold=0#361">Re: 
+        Bullet Question</A></FONT><FONT class=pn-sub> by Guest on Oct 04, 2003 - 
+        09:02 PM</FONT><BR></LI></UL><A name=359></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>JUSTIFY VIEWPORT ?</FONT><FONT 
+            class=pn-normal> (Score: 0) <BR>by Guest on Oct 04, 2003 - 05:08 
+            PM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>In this tutorial it keeps metioning 
+            justify view port and i have no clue what that is and please tell me 
+            how i can activate it</FONT> </TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=359&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL></UL><A name=360></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>8 circles</FONT><FONT 
+            class=pn-normal> (Score: 0) <BR>by Guest on Oct 04, 2003 - 08:56 
+            PM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>on your eight circles it looks like they 
+            have some thickness to them how did you do this cuz i dont believe 
+            it is mentioned in your tutorial</FONT> </TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=360&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL>
+        <LI><FONT class=pn-normal><A class=pn-normal 
+        href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=362&amp;sid=284&amp;pid=360&amp;mode=thread&amp;order=0&amp;thold=0#362">Re: 
+        8 circles</A></FONT><FONT class=pn-sub> by Guest on Oct 04, 2003 - 09:03 
+        PM</FONT><BR>
+        <UL>
+          <LI><FONT class=pn-normal><A class=pn-normal 
+          href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=showreply&amp;tid=406&amp;sid=284&amp;pid=362&amp;mode=thread&amp;order=0&amp;thold=0#406">Re: 
+          Re: 8 circles</A></FONT><FONT class=pn-sub> by Guest on Nov 02, 2003 - 
+          09:10 PM</FONT><BR></LI></UL></LI></UL><A name=363></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Hey</FONT><FONT class=pn-normal> 
+            (Score: 0) <BR>by Guest on Oct 05, 2003 - 09:10 PM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>Which 3d max version did you use for this 
+            and was it by discreet?</FONT> </TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=363&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL></UL><A name=372></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Thx</FONT><FONT class=pn-normal> 
+            (Score: 0) <BR>by Guest on Oct 13, 2003 - 05:16 PM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>Hey!! This is really good!!<BR>though I am 
+            a "beginner", but I found this is not so difficult to 
+            understand.<BR>But can you still send me the original max file to 
+            me?<BR>MY address: 
+      ashin_la@hotmail.com<BR></FONT></TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=372&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL></UL><A name=458></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>I am a grad 11 student with 2 
+            monthes of a max class, and this rocks!</FONT><FONT class=pn-normal> 
+            (Score: 0) <BR>by Guest on Dec 07, 2003 - 11:37 PM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>This was REALLY easy. It works too. It 
+            works in .avi's and it works in .jpgs..and its kool. However, you 
+            have a rendered pci of the effect, and i wish to havethe materials 
+            you used for the houses....or a url perhaps...sinc the feect seems 
+            to work best with those. <BR>Keep up the excellent work!<BR>-Horus 
+            http://greyfox.ath.cx/horus</FONT> </TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=458&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL></UL><A name=464></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Re: 3ds max: Matrix Bullet-Time 
+            Bullet Trail Effect</FONT><FONT class=pn-normal> (Score: 0) <BR>by 
+            Guest on Dec 15, 2003 - 06:38 PM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>Hey,<BR>Can you e-mail me the background 
+            at s.m10@ntlworld.com</FONT> </TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=464&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL></UL><A name=523></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>"Bullet-Time 3D max file or 
+            Bullet Time AVI</FONT><FONT class=pn-normal> (Score: 0) <BR>by Guest 
+            on Jan 29, 2004 - 01:53 PM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>Hi <BR>any one got the 3Dmax file contains 
+            the Bullet time effect and ready to run with the 3D max 
+            program.</FONT> </TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=523&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL></UL><A name=563></A>
+      <TABLE width="99%" border=0>
+        <TBODY>
+        <TR bgColor=#eff0ef>
+          <TD width=500><FONT class=pn-title>Animation of 
+            BulletTime</FONT><FONT class=pn-normal> (Score: 0) <BR>by Guest on 
+            Mar 01, 2004 - 05:44 PM</FONT> </TD></TR>
+        <TR>
+          <TD><FONT class=pn-normal>Great Tutorial. I totally understand 
+            everything in the actual designing of the trail, but the part I get 
+            lost at is the animation steps. I love this effect, but if someone 
+            could please explain the animation steps a little more in-depth, it 
+            would be greatly appreciated. Thanks</FONT> 
+      </TD></TR></TBODY></TABLE><BR><BR>
+      <DIV align=center><FONT class=pn-normal>[ <A class=pn-normal 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Comments&amp;file=index&amp;req=Reply&amp;pid=563&amp;sid=284&amp;mode=thread&amp;order=0&amp;thold=0">Reply 
+      to this</A> ]</FONT><BR><BR></DIV>
+      <UL></UL></DIV></CENTER></TD></TR>
+  <TR>
+    <TD vAlign=top width=161 bgColor=#e5e5e5 height="100%" rowSpan=2>
+      <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+        <TBODY>
+        <TR>
+          <TD width=15><IMG height=20 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/arrows.gif" 
+            width=15></TD>
+          <TD width="100%" 
+          background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/title_middle.gif">Main 
+            Menu</TD>
+          <TD width=46><IMG height=20 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/title_right.gif" 
+            width=46></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+        <TBODY>
+        <TR>
+          <TD width=1 bgColor=#000000><IMG height=1 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/pixel.gif" 
+            width=1></TD>
+          <TD width="100%" 
+            bgColor=#e5e5e5><STRONG><BIG>·</BIG></STRONG>&nbsp;<A 
+            class=pn-normal title="Back to the home page." 
+            href="http://www.3dkingdom.org/index.php">Home</A><BR><STRONG><BIG>·</BIG></STRONG>&nbsp;<A 
+            class=pn-normal title="Administer your personal account." 
+            href="http://www.3dkingdom.org/user.php">My 
+            profile</A><BR><STRONG><BIG>·</BIG></STRONG>&nbsp;<A class=pn-normal 
+            title="Register on 3D Kingdom for more access." 
+            href="http://www.3dkingdom.org/user.php?op=check_age&amp;module=NS-NewUser">Register</A><BR><STRONG><BIG>·</BIG></STRONG>&nbsp;<A 
+            class=pn-normal title="Logout of your account." 
+            href="http://www.3dkingdom.org/user.php?module=NS-User&amp;op=logout">Logout</A><BR><STRONG><BIG>·</BIG></STRONG>&nbsp;<A 
+            class=pn-normal title="3D Kingdom.org Topics" 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=Topics&amp;file=index">Topics</A><BR><BR></TD>
+          <TD width=1 bgColor=#000000><IMG height=1 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/pixel.gif" 
+            width=1></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+        <TBODY>
+        <TR>
+          <TD><IMG height=8 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/footer.gif" 
+            width=165></TD></TR></TBODY></TABLE><BR>
+      <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+        <TBODY>
+        <TR>
+          <TD width=15><IMG height=20 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/arrows.gif" 
+            width=15></TD>
+          <TD width="100%" 
+          background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/title_middle.gif">Categories</TD>
+          <TD width=46><IMG height=20 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/title_right.gif" 
+            width=46></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+        <TBODY>
+        <TR>
+          <TD width=1 bgColor=#000000><IMG height=1 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/pixel.gif" 
+            width=1></TD>
+          <TD width="100%" 
+            bgColor=#e5e5e5><STRONG><BIG>·</BIG></STRONG>&nbsp;<A 
+            class=pn-normal title="3D Kingdom.org Art Gallery" 
+            href="http://www.3dkingdom.org/index.php?module=My_eGallery&amp;do=showgall&amp;gid=1">Art 
+            Gallery</A><BR><STRONG><BIG>·</BIG></STRONG>&nbsp;<A class=pn-normal 
+            title="3D Kingdom.org Textures" 
+            href="http://www.3dkingdom.org/index.php?module=My_eGallery&amp;do=showgall&amp;gid=2">Textures</A><BR><STRONG><BIG>·</BIG></STRONG>&nbsp;<A 
+            class=pn-normal title="3D Kingdom.org Models" 
+            href="http://www.3dkingdom.org/index.php?module=My_eGallery&amp;do=showgall&amp;gid=3">3D 
+            Models</A><BR><STRONG><BIG>·</BIG></STRONG>&nbsp;<A class=pn-normal 
+            title="3D Kingdom.org Robo-Attack! Contest Results" 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=Diner_Wrapper&amp;file=index&amp;req=ShowFile&amp;file_wrap=html/contestresults.html">Contest</A><BR><STRONG><BIG>·</BIG></STRONG>&nbsp;<A 
+            class=pn-normal title="3D Kingdom.org Books Shop" 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=Diner_Wrapper&amp;file=index&amp;req=ShowFile&amp;file_wrap=html/shop.html">Books</A><BR><STRONG><BIG>·</BIG></STRONG>&nbsp;<A 
+            class=pn-normal title="3D Kingdom.org Interviews" 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=15&amp;allstories=1">Interviews</A><BR><STRONG><BIG>·</BIG></STRONG>&nbsp;<A 
+            class=pn-normal title="3D Kingdom.org Animations and Trailers" 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=14&amp;allstories=1">Animations</A><BR><STRONG><BIG>·</BIG></STRONG>&nbsp;<A 
+            class=pn-normal title="3D Kingdom.org Tutorials" 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=9&amp;allstories=1">Tutorials</A><BR><STRONG><BIG>·</BIG></STRONG>&nbsp;<A 
+            class=pn-normal title="3D Kingdom.org Tips&amp;Tricks" 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=News&amp;file=index&amp;catid=&amp;topic=13">Tips&amp;Tricks</A><BR><STRONG><BIG>·</BIG></STRONG>&nbsp;<A 
+            class=pn-normal title="3D Kingdom.org Downloads" 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=Downloads&amp;file=index">Downloads</A><BR><STRONG><BIG>·</BIG></STRONG>&nbsp;<A 
+            class=pn-normal title="3D Kingdom.org Links" 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=Web_Links&amp;file=index">Links</A><BR></TD>
+          <TD width=1 bgColor=#000000><IMG height=1 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/pixel.gif" 
+            width=1></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+        <TBODY>
+        <TR>
+          <TD><IMG height=8 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/footer.gif" 
+            width=165></TD></TR></TBODY></TABLE><BR>
+      <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+        <TBODY>
+        <TR>
+          <TD width=15><IMG height=20 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/arrows.gif" 
+            width=15></TD>
+          <TD width="100%" 
+          background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/title_middle.gif">Contact</TD>
+          <TD width=46><IMG height=20 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/title_right.gif" 
+            width=46></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+        <TBODY>
+        <TR>
+          <TD width=1 bgColor=#000000><IMG height=1 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/pixel.gif" 
+            width=1></TD>
+          <TD width="100%" 
+            bgColor=#e5e5e5><STRONG><BIG>·</BIG></STRONG>&nbsp;<A 
+            class=pn-normal title="About Us" 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=Diner_Wrapper&amp;file=index&amp;req=ShowFile&amp;file_wrap=html/about.html">About 
+            Us</A><BR><STRONG><BIG>·</BIG></STRONG>&nbsp;<A class=pn-normal 
+            title="List of registered members on 3D Kingdom.org" 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=Members_List&amp;file=index">Members 
+            List</A><BR><STRONG><BIG>·</BIG></STRONG>&nbsp;<A class=pn-normal 
+            title="Advertise on 3D Kingdom.org" 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=Diner_Wrapper&amp;file=index&amp;req=ShowFile&amp;file_wrap=html/advertise.html">Advertise</A><BR><STRONG><BIG>·</BIG></STRONG>&nbsp;<A 
+            class=pn-normal title="3D Kingdom.org Forum" 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=PNphpBB2&amp;file=index">Forum</A><BR><STRONG><BIG>·</BIG></STRONG>&nbsp;<A 
+            class=pn-normal title="3D Kingdom.org Guestbook" 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=GuestBook&amp;file=index">Guestbook</A><BR><STRONG><BIG>·</BIG></STRONG>&nbsp;<A 
+            class=pn-normal 
+            title="Submit Stuff (Models, Art Works, Textures, Tutorials, Tips&amp;Tricks and News)" 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=Diner_Wrapper&amp;file=index&amp;req=ShowFile&amp;file_wrap=html/submit.html">Submit 
+            Stuff</A><BR></TD>
+          <TD width=1 bgColor=#000000><IMG height=1 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/pixel.gif" 
+            width=1></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+        <TBODY>
+        <TR>
+          <TD><IMG height=8 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/footer.gif" 
+            width=165></TD></TR></TBODY></TABLE><BR>
+      <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+        <TBODY>
+        <TR>
+          <TD width=15><IMG height=20 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/arrows.gif" 
+            width=15></TD>
+          <TD width="100%" 
+          background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/title_middle.gif">Featured 
+            Tutorial</TD>
+          <TD width=46><IMG height=20 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/title_right.gif" 
+            width=46></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+        <TBODY>
+        <TR>
+          <TD width=1 bgColor=#000000><IMG height=1 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/pixel.gif" 
+            width=1></TD>
+          <TD width="100%" bgColor=#e5e5e5>
+            <DIV align=center><A 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=News&amp;file=article&amp;sid=468"><IMG 
+            height=86 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/giside.jpg" 
+            width=160 border=0></A><BR>Global Ilumination<BR>by <A 
+            href="http://www.redpixel.com.br/" 
+            target=_blank><B>PiledotNET</B></A><BR><BR><A 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=Diner_Wrapper&amp;file=index&amp;req=ShowFile&amp;file_wrap=html/submit.html"><B>SUBMIT 
+            YOUR TUTORIAL!</B></A></DIV></TD>
+          <TD width=1 bgColor=#000000><IMG height=1 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/pixel.gif" 
+            width=1></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+        <TBODY>
+        <TR>
+          <TD><IMG height=8 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/footer.gif" 
+            width=165></TD></TR></TBODY></TABLE><BR>
+      <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+        <TBODY>
+        <TR>
+          <TD width=15><IMG height=20 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/arrows.gif" 
+            width=15></TD>
+          <TD width="100%" 
+          background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/title_middle.gif">Who's 
+            online</TD>
+          <TD width=46><IMG height=20 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/title_right.gif" 
+            width=46></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+        <TBODY>
+        <TR>
+          <TD width=1 bgColor=#000000><IMG height=1 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/pixel.gif" 
+            width=1></TD>
+          <TD width="100%" bgColor=#e5e5e5>
+            <TABLE cellSpacing=1 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD><IMG 
+                  src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/arrow_b.gif"></TD>
+                <TD><FONT size=1><A title=BurningAcid 
+                  href="http://www.3dkingdom.org/user.php?op=userinfo&amp;uname=BurningAcid" 
+                  ?>BurningAcid</A></FONT></TD>
+                <TD></TD></TR>
+              <TR>
+                <TD><IMG 
+                  src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/arrow_b.gif"></TD>
+                <TD><FONT size=1><A title=RticULuS 
+                  href="http://www.3dkingdom.org/user.php?op=userinfo&amp;uname=RticULuS" 
+                  ?>RticULuS</A></FONT></TD>
+                <TD></TD></TR>
+              <TR>
+                <TD><IMG 
+                  src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/arrow_b.gif"></TD>
+                <TD><FONT size=1><A title=joee 
+                  href="http://www.3dkingdom.org/user.php?op=userinfo&amp;uname=joee" 
+                  ?>joee</A></FONT></TD>
+                <TD></TD></TR>
+              <TR>
+                <TD><IMG 
+                  src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/arrow_b.gif"></TD>
+                <TD><FONT size=1><A title=zombo 
+                  href="http://www.3dkingdom.org/user.php?op=userinfo&amp;uname=zombo" 
+                  ?>zombo</A></FONT></TD>
+                <TD></TD></TR>
+              <TR>
+                <TD colSpan=3><BR>
+                  <CENTER>
+                  <TABLE cellSpacing=1 cellPadding=2 width="90%" bgColor=#eff0ef 
+                  border=0>
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=#eff0ef>
+                        <CENTER><IMG 
+                        src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/info.gif"><BR>You 
+                        are an anonymous user. You can register for free by 
+                        clicking <A 
+                        href="http://www.3dkingdom.org/user.php">here</A></CENTER></TD></TR></TBODY></TABLE></CENTER></TD></TR>
+              <TR>
+                <TD colSpan=3><FONT size=1>
+                  <CENTER>We have 104 guests and 4 members 
+                online</CENTER></FONT></TD></TR></TBODY></TABLE></TD>
+          <TD width=1 bgColor=#000000><IMG height=1 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/pixel.gif" 
+            width=1></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+        <TBODY>
+        <TR>
+          <TD><IMG height=8 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/footer.gif" 
+            width=165></TD></TR></TBODY></TABLE><BR>
+      <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+        <TBODY>
+        <TR>
+          <TD width=15><IMG height=20 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/arrows.gif" 
+            width=15></TD>
+          <TD width="100%" 
+          background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/title_middle.gif">Partners</TD>
+          <TD width=46><IMG height=20 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/title_right.gif" 
+            width=46></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+        <TBODY>
+        <TR>
+          <TD width=1 bgColor=#000000><IMG height=1 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/pixel.gif" 
+            width=1></TD>
+          <TD width="100%" bgColor=#e5e5e5>
+            <DIV align=center><A href="http://www.3dk.org/" target=_blank><IMG 
+            height=31 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/3dkorg.jpg" 
+            width=88 border=0></A><BR><A href="http://www.3dm-mc.com/" 
+            target=_blank><IMG height=31 alt="3DM models creation" 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/3dm-banner-small2.gif" 
+            width=88 border=0></A><BR><A 
+            href="http://www.3dlr.com/index.php?refid=40" target=_blank><IMG 
+            height=31 alt="3D Link Resources" 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/3dlnk2.jpg" 
+            width=88 border=0></A><BR><A href="http://www.galleryof3d.com/" 
+            target=_blank><IMG height=31 alt="Gallery of 3d.com" 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/g3d_88_31.jpg" 
+            width=88 border=0></A><BR><A href="http://www.3dvalley.com/" 
+            target=_blank><IMG height=31 
+            alt="3D Valley - Free 3D Models, Tutorials, Textures, Links..." 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/3dvalley8831.gif" 
+            width=88 border=0></A><BR><A href="http://www.cgfocus.com/" 
+            target=_blank><IMG height=31 
+            alt="CG Focus - Focus on Computer Graphics" 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/CGFocus_88x31.gif" 
+            width=88 border=0></A><BR><A href="http://www.rendernode.com/" 
+            target=_blank><IMG height=31 alt="The Render Node Magazine" 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/rendernode88x31.jpg" 
+            width=88 border=0></A><BR><A href="http://www.max3d.pl/" 
+            target=_blank><IMG height=31 alt="Max3d.pl - Polish CG Vortal" 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/max3d.gif" 
+            width=88 border=0></A></DIV></TD>
+          <TD width=1 bgColor=#000000><IMG height=1 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/pixel.gif" 
+            width=1></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+        <TBODY>
+        <TR>
+          <TD><IMG height=8 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/footer.gif" 
+            width=165></TD></TR></TBODY></TABLE><BR>
+      <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+        <TBODY>
+        <TR>
+          <TD width=15><IMG height=20 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/arrows.gif" 
+            width=15></TD>
+          <TD width="100%" 
+          background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/title_middle.gif">Poll</TD>
+          <TD width=46><IMG height=20 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/title_right.gif" 
+            width=46></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+        <TBODY>
+        <TR>
+          <TD width=1 bgColor=#000000><IMG height=1 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/pixel.gif" 
+            width=1></TD>
+          <TD width="100%" bgColor=#e5e5e5><FORM 
+            action="modules.php?op=modload&amp;name=NS-Polls&amp;file=index" 
+            method="post"><INPUT type=hidden value=34 name=pollID><INPUT 
+            type=hidden 
+            value=modules.php?op=modload&amp;name=NS-Polls&amp;file=index&amp;req=results&amp;pollID=34 
+            name=forwarder><FONT class=pn-normal><B>What is your car speed 
+            record?</B></FONT><BR><BR><INPUT class=r-button type=radio value=1 
+            name=voteID> <SPAN class=pn-normal>160 km/h or 
+            under</SPAN><BR><INPUT class=r-button type=radio value=2 
+            name=voteID> <SPAN class=pn-normal>170 km/h</SPAN><BR><INPUT 
+            class=r-button type=radio value=3 name=voteID> <SPAN 
+            class=pn-normal>180 km/h</SPAN><BR><INPUT class=r-button type=radio 
+            value=4 name=voteID> <SPAN class=pn-normal>190 km/h</SPAN><BR><INPUT 
+            class=r-button type=radio value=5 name=voteID> <SPAN 
+            class=pn-normal>200 km/h</SPAN><BR><INPUT class=r-button type=radio 
+            value=6 name=voteID> <SPAN class=pn-normal>210 km/h</SPAN><BR><INPUT 
+            class=r-button type=radio value=7 name=voteID> <SPAN 
+            class=pn-normal>220 km/h</SPAN><BR><INPUT class=r-button type=radio 
+            value=8 name=voteID> <SPAN class=pn-normal>230 km/h</SPAN><BR><INPUT 
+            class=r-button type=radio value=9 name=voteID> <SPAN 
+            class=pn-normal>240 km/h</SPAN><BR><INPUT class=r-button type=radio 
+            value=10 name=voteID> <SPAN class=pn-normal>250+ km/h</SPAN><BR><BR>
+            <P style="TEXT-ALIGN: center"><SPAN class=pn-normal><INPUT class=pn-button type=submit value=Vote></SPAN>
+            <CENTER></CENTER><BR>
+            <P style="TEXT-ALIGN: center"><SPAN class=pn-normal>[ <A 
+            class=pn-normal 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Polls&amp;file=index&amp;req=results&amp;pollID=34&amp;mode=thread&amp;order=0&amp;thold=0"><B>Results</B></A> 
+            | <A class=pn-normal 
+            href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=NS-Polls&amp;file=index"><B>Polls</B></A> 
+            ]</SPAN></P><BR>
+            <P style="TEXT-ALIGN: center"><SPAN class=pn-normal>Votes: 
+            <B>459</B> | Comments: <B>17</B></SPAN></P></FORM></TD>
+          <TD width=1 bgColor=#000000><IMG height=1 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/pixel.gif" 
+            width=1></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+        <TBODY>
+        <TR>
+          <TD><IMG height=8 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/footer.gif" 
+            width=165></TD></TR></TBODY></TABLE><BR>
+      <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+        <TBODY>
+        <TR>
+          <TD width=15><IMG height=20 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/arrows.gif" 
+            width=15></TD>
+          <TD width="100%" 
+          background="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/title_middle.gif">Link 
+            to 3DK</TD>
+          <TD width=46><IMG height=20 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/title_right.gif" 
+            width=46></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+        <TBODY>
+        <TR>
+          <TD width=1 bgColor=#000000><IMG height=1 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/pixel.gif" 
+            width=1></TD>
+          <TD width="100%" bgColor=#e5e5e5>
+            <DIV align=center><A href="http://www.3dkingdom.org/" 
+            target=_blank><IMG height=31 
+            alt="3D Kingdom.org :: Don't stay in the shadow" 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/3dkingdom88x31blue.gif" 
+            width=88 border=0><BR>www.3dkingdom.org</A> </DIV></TD>
+          <TD width=1 bgColor=#000000><IMG height=1 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/pixel.gif" 
+            width=1></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width=165 border=0>
+        <TBODY>
+        <TR>
+          <TD><IMG height=8 
+            src="3ds max Matrix Bullet-Time Bullet Trail Effect  3D Kingdom_org  Free 3ds max tutorials, 3d models, Art Galleries, 3d links, downloads, textures___ forums ___file/footer.gif" 
+            width=165></TD></TR></TBODY></TABLE><BR></TD>
+    <TD vAlign=top width=166 bgColor=#e5e5e5 
+height="100%"></TD></TR></TBODY></TABLE>
+<TABLE id=AutoNumber2 style="BORDER-COLLAPSE: collapse" borderColor=#a1a1a1 
+height=17 cellSpacing=0 cellPadding=0 width="100%" bgColor=whitesmoke 
+  border=1><TBODY>
+  <TR>
+    <TD width="100%" bgColor=#e3e3e3>
+      <CENTER><FONT class=pn-sub>
+      <DIV align=center><A 
+      title="Make 3D Kingdom.org as your home page (Only compatible with IE browsers)" 
+      style="CURSOR: hand" 
+      onclick="if (this.style != null &amp;&amp; this.style.behavior != null) {this.style.behavior='url(#default#homepage)'; this.setHomePage('http://www.3dkingdom.org'); return false}" 
+      href="http://www.3dkingdom.org/"><B>Home Page</B></A> | <A 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=Legal_Notices&amp;file=index"><B>Privacy 
+      Statment</B></A> | <A 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=legal&amp;file=index"><B>Terms 
+      of use</B></A> | <A 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=Diner_Wrapper&amp;file=index&amp;req=ShowFile&amp;file_wrap=html/advertise.html"><B>Advertise</B></A> 
+      | <A 
+      href="http://www.3dkingdom.org/modules.php?op=modload&amp;name=Diner_Wrapper&amp;file=index&amp;req=ShowFile&amp;file_wrap=html/about.html"><B>About 
+      Us</B></A> | <A 
+      href="mailto:webmaster@NOSPAM3dkingdom.org?subject=General Contact"><B>Contact</B> 
+      </A><BR>Copyright © 2002 - 2004 :: 3D Kingdom.org <B>::</B> Don't stay in 
+      the shadow! <BR><A 
+      href="http://www.cia.gov/cia/publications/factbook/geos/bk.html" 
+      target=_blank><B>Bosnia and 
+    Herzegovina</B></A></DIV><BR></FONT></CENTER></TD></TR></TBODY></TABLE><!--------------- End Design ---------------></BODY></HTML>

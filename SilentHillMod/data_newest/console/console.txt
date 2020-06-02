@@ -1,0 +1,161 @@
+// ===================================================================
+// Max Payne Console properties
+// ===================================================================
+
+
+
+// ===================================================================
+// General definitions
+// ===================================================================
+[General]
+
+// Filename      = "console8pt.pcx";		// Font Filename
+// AlphaFilename = "alpha_console8pt.pcx";	// Font Alpha file
+Filename      	 = "tahoma.pcx";			
+AlphaFilename 	 = "alpha_tahoma.pcx";
+
+Prompt     	 = "TheFlamesStillBurn... ";	// Input field parameters
+Cursor     	 = "|";
+LinePrefix 	 = " ";
+
+maxLines 	 = 10000;			// Text window size
+maxCommands 	 = 10;				// Command buffer size
+
+// ===================================================================
+// Syntax Coloring
+// ===================================================================
+
+DefaultColor 		= ( 190, 52, 52 );	// Light Cyan (was 1x 96; 2x 208)
+StringConstantsColor	= ( 250, 250, 190 );	// Medium Yellow
+NumbersColor 		= ( 121, 242, 204 );	// Light Yellow
+CommandsColor 		= ( 255, 207, 207 );	// Light Gray (was 3x 176)
+OperatorsColor 		= ( 70, 100, 180 );	// White (was 3x 255)
+AliasesColor 		= ( 250, 151, 151 );	// Yellow (was 2x 255; 1x 0)
+LayerColor 		= ( 160, 160, 160 );	// Multiplicative Background, was 160
+
+//windowPosition	= ( 40,40, 0 );
+//windowSize		= ( 560,400, 0 );
+//commandLinePosition	= ( 0,460, 0 );
+//commandLineWidth	= 340;
+// ===================================================================
+// ScrollBar definition
+// ===================================================================
+
+ScrollBarWidth 				= 2.0;
+minimumScrollBarHeight 		= 16.0;
+scrollBarBackgroundFilename	= "scrollbar-background.pcx";
+scrollBarFilename			= "scrollbar-foreground.pcx";
+
+// ===================================================================
+// Alias Definitions
+// ===================================================================
+
+
+// Cheats - Part 1 -
+
+[Aliases]
+Lighter			= "player->c_pickupweapon( zippo ); player->c_setinfiniteammo( zippo, true );";
+KitchenKnife		= "player->c_pickupweapon( leadpipe ); player->c_setinfiniteammo( leadpipe, true );";
+SteelPipe		= "player->c_pickupweapon( baseballbat ); player->c_setinfiniteammo( baseballbat, true );";
+EmergencyHammer		= "player->c_pickupweapon( hammer ); player->c_setinfiniteammo( hammer, true );";
+DeadlyAxe		= "player->c_pickupweapon( scure ); player->c_setinfiniteammo( scure, true );";
+SwordKatana		= "player->c_pickupweapon( katana ); player->c_setinfiniteammo( katana, true );";
+ChainSaw		= "player->c_pickupweapon( saw ); player->c_setinfiniteammo( saw, true );";
+RockDrill		= "player->c_pickupweapon( drill ); player->c_setinfiniteammo( drill, true );";
+CybilsGun		= "player->c_pickupweapon( glock ); player->c_pickupammo( beretta, 1000 );";
+SawedOffShotgun		= "player->c_pickupweapon( sawedshotguntwo ); player->c_pickupammo( sawedshotguntwo, 1000 );";
+Shotgun			= "player->c_pickupweapon( pumpshotgun ); player->c_pickupammo( pumpshotgun, 1000 );";
+Machinegun		= "player->c_pickupweapon( uzi ); player->c_pickupammo( uzi, 1000 );";
+HuntingRifle		= "player->c_pickupweapon( bar ); player->c_pickupammo( bar, 1000 );";
+KaufmannsGun		= "player->c_pickupweapon( m27 ); player->c_pickupammo( m27, 1000 );";
+HellOnEarth		= "player->c_pickupweapon( flamethrower ); player->c_setinfiniteammo( flamethrower, true );";
+AliensGun		= "player->c_pickupweapon( hyperblaster ); player->c_setinfiniteammo( hyperblaster, true );";
+HealthBottle		= "player->c_pickupweapon( painkiller ); player->c_pickupammo( painkiller, 1000 );";
+
+// Cheats - End -
+
+
+Dump			= "maxpayne_gamemode->gm_dump();";
+DumpActiveObjects	= "maxpayne_gamemode->gm_dumpactiveobjects();";
+
+Help			= "X_ConsoleMode->CM_Help( );";
+Clr 			= "X_ConsoleMode->CM_Clear( );";
+Clear 			= "X_ConsoleMode->CM_Clear( );";
+
+MemoryDump 		= "X_ConsoleMode->CM_MemoryDump(2);";
+MessageDump		= "X_ConsoleMode->CM_MessageMapDump( );";
+
+MessageVerbose  = "X_ConsoleMode->CM_MessageVerboseToggle();";
+
+MessageFilter_LevelOnly	= "X_ConsoleMode->CM_MessageVerboseToggle(); X_ConsoleMode->CM_AddMessageVerboseFilter( X_Character ); X_ConsoleMode->CM_AddMessageVerboseFilter( X_Projectile ); X_ConsoleMode->CM_AddMessageVerboseFilter( X_DecalImplementation ); X_ConsoleMode->CM_AddMessageVerboseFilter( X_WeaponSet );";
+MessageFilter_Off	= "X_ConsoleMode->CM_RemoveAllMessageVerboseFilters();";
+
+Quit 			= "X_ModeSwitch->S_Quit();";
+
+DrawFSM			= "maxpayne_gamemode->gm_drawfsm(1);";
+DrawFSM_off 	= "maxpayne_gamemode->gm_drawfsm(0);";
+
+ShowFPS 		= "X_StatisticsMode->SM_EnableFPS( true ); X_StatisticsMode->SM_EnableExtendedFPS( false ); X_StatisticsMode->SM_EnableSoundStatistics( false ); X_StatisticsMode->SM_EnablePolygonStatistics( false ); X_StatisticsMode->SM_EnableTextureStatistics( false ); X_StatisticsMode->SM_EnableObjectStatistics( false ); X_StatisticsMode->SM_EnablePrimitiveStatistics( false ); MaxPayne_StatisticsMode->MPSM_EnableGameInformation( false ); MaxPayne_StatisticsMode->MPSM_EnableProfileInformation( false ); X_StatisticsMode->SM_EnableMemoryStatistics( false ); X_StatisticsMode->SM_EnableCoderStatistics( false ); ";
+ShowExtendedFPS	= "X_StatisticsMode->SM_EnableFPS( false ); X_StatisticsMode->SM_EnableExtendedFPS( true ); X_StatisticsMode->SM_EnableSoundStatistics( false ); X_StatisticsMode->SM_EnablePolygonStatistics( false ); X_StatisticsMode->SM_EnableTextureStatistics( false ); X_StatisticsMode->SM_EnableObjectStatistics( false ); X_StatisticsMode->SM_EnablePrimitiveStatistics( false ); MaxPayne_StatisticsMode->MPSM_EnableGameInformation( false ); MaxPayne_StatisticsMode->MPSM_EnableProfileInformation( false ); X_StatisticsMode->SM_EnableMemoryStatistics( false );";
+ShowStatistics 	= "X_StatisticsMode->SM_EnableFPS( true ); X_StatisticsMode->SM_EnableExtendedFPS( true ); X_StatisticsMode->SM_EnableSoundStatistics( true ); X_StatisticsMode->SM_EnablePolygonStatistics( true ); X_StatisticsMode->SM_EnableTextureStatistics( true ); X_StatisticsMode->SM_EnableObjectStatistics( true ); X_StatisticsMode->SM_EnablePrimitiveStatistics( true ); MaxPayne_StatisticsMode->MPSM_EnableGameInformation( true ); MaxPayne_StatisticsMode->MPSM_EnableProfileInformation( true ); X_StatisticsMode->SM_EnableMemoryStatistics( true );";
+HideStatistics 	= "X_StatisticsMode->SM_EnableCoderStatistics( false ); X_StatisticsMode->SM_EnableFPS( false ); X_StatisticsMode->SM_EnableExtendedFPS( false ); X_StatisticsMode->SM_EnableSoundStatistics( false ); X_StatisticsMode->SM_EnablePolygonStatistics( false ); X_StatisticsMode->SM_EnableTextureStatistics( false ); X_StatisticsMode->SM_EnableObjectStatistics( false ); X_StatisticsMode->SM_EnablePrimitiveStatistics( false ); MaxPayne_StatisticsMode->MPSM_EnableGameInformation( false ); MaxPayne_StatisticsMode->MPSM_EnableProfileInformation( false ); X_StatisticsMode->SM_EnableMemoryStatistics( false );";
+ShowProfile		= "X_StatisticsMode->SM_EnableFPS( true ); X_StatisticsMode->SM_EnableExtendedFPS( false ); X_StatisticsMode->SM_EnableSoundStatistics( false ); X_StatisticsMode->SM_EnablePolygonStatistics( false ); X_StatisticsMode->SM_EnableTextureStatistics( false ); X_StatisticsMode->SM_EnableObjectStatistics( false ); X_StatisticsMode->SM_EnablePrimitiveStatistics( false ); MaxPayne_StatisticsMode->MPSM_EnableGameInformation( false ); MaxPayne_StatisticsMode->MPSM_EnableProfileInformation( true ); X_StatisticsMode->SM_EnableMemoryStatistics( false );";
+ShowEngineStatistics = "X_StatisticsMode->SM_EnableFPS( true ); X_StatisticsMode->SM_EnableExtendedFPS( false ); X_StatisticsMode->SM_EnableSoundStatistics( false ); X_StatisticsMode->SM_EnablePolygonStatistics( true ); X_StatisticsMode->SM_EnableTextureStatistics( true ); X_StatisticsMode->SM_EnableObjectStatistics( true ); X_StatisticsMode->SM_EnablePrimitiveStatistics( true ); MaxPayne_StatisticsMode->MPSM_EnableGameInformation( false ); MaxPayne_StatisticsMode->MPSM_EnableProfileInformation( false ); X_StatisticsMode->SM_EnableMemoryStatistics( true );  X_StatisticsMode->SM_EnableCoderStatistics( true );";
+ShowMapperStatistics = "X_StatisticsMode->SM_EnableFPS( true ); X_StatisticsMode->SM_EnableExtendedFPS( true ); X_StatisticsMode->SM_EnableSoundStatistics( true );  X_StatisticsMode->SM_EnablePolygonStatistics( true ); X_StatisticsMode->SM_EnableTextureStatistics( true ); X_StatisticsMode->SM_EnableObjectStatistics( true ); X_StatisticsMode->SM_EnablePrimitiveStatistics( true ); MaxPayne_StatisticsMode->MPSM_EnableGameInformation( true ); MaxPayne_StatisticsMode->MPSM_EnableProfileInformation( false );";
+
+ShowHealth 		= "X_StatisticsMode->SM_EnableFPS( false ); X_StatisticsMode->SM_EnableExtendedFPS( false ); X_StatisticsMode->SM_EnableSoundStatistics( false ); X_StatisticsMode->SM_EnablePolygonStatistics( false ); X_StatisticsMode->SM_EnableTextureStatistics( false ); X_StatisticsMode->SM_EnableObjectStatistics( false ); X_StatisticsMode->SM_EnablePrimitiveStatistics( false ); MaxPayne_StatisticsMode->MPSM_EnableGameInformation( true ); MaxPayne_StatisticsMode->MPSM_EnableProfileInformation( false ); X_StatisticsMode->SM_EnableMemoryStatistics( false );";
+ShowMemory 		= "X_StatisticsMode->SM_EnableFPS( false ); X_StatisticsMode->SM_EnableExtendedFPS( false ); X_StatisticsMode->SM_EnableSoundStatistics( false ); X_StatisticsMode->SM_EnablePolygonStatistics( false ); X_StatisticsMode->SM_EnableTextureStatistics( false ); X_StatisticsMode->SM_EnableObjectStatistics( false ); X_StatisticsMode->SM_EnablePrimitiveStatistics( false ); MaxPayne_StatisticsMode->MPSM_EnableGameInformation( false ); MaxPayne_StatisticsMode->MPSM_EnableProfileInformation( false ); X_StatisticsMode->SM_EnableMemoryStatistics( true );";
+
+EnableDebugDraw	= "maxpayne_gamemode->GM_DrawInvalidCollisions(1); maxpayne_gamemode->GM_DrawExits(1); maxpayne_gamemode->GM_DrawLights(1); maxpayne_gamemode->GM_DrawFSM(1); ";
+DisableDebugDraw= "maxpayne_gamemode->GM_DrawInvalidCollisions(0); maxpayne_gamemode->GM_DrawExits(0); maxpayne_gamemode->GM_DrawLights(0); maxpayne_gamemode->GM_DrawFSM(0); ";
+
+EnableCameraCollisions = "maxpayne_gamemode->GM_SetCameraCollisions(1);";
+DisableCameraCollisions = "maxpayne_gamemode->GM_SetCameraCollisions(0);";
+
+
+// Cheats - Part 2 -
+
+TheSilenceIsBroken	= "player->c_pickupweapon ( "zippo" );player->c_setinfiniteammo( "zippo", true);player->c_pickupweapon ( "leadpipe" );player->c_setinfiniteammo( "leadpipe", true);player->c_pickupweapon ( "baseballbat" );player->c_setinfiniteammo( "baseballbat", true);player->c_pickupweapon ( "hammer" );player->c_setinfiniteammo( "hammer", true);player->c_pickupweapon ( "scure" );player->c_setinfiniteammo( "scure", true);player->c_pickupweapon ( "katana" );player->c_setinfiniteammo( "katana", true);player->c_pickupweapon ( "saw" );player->c_setinfiniteammo( "saw", true);player->c_pickupweapon ( "drill" );player->c_setinfiniteammo( "drill", true);player->c_pickupweapon ( "glock" );player->c_pickupammo( "beretta", 1000 );player->c_pickupweapon ( "sawedshotguntwo" );player->c_pickupammo( "sawedshotguntwo", 1000 );player->c_pickupweapon ( "pumpshotgun" );player->c_pickupammo( "pumpshotgun", 1000 );player->c_pickupweapon ( "uzi" );player->c_pickupammo( "uzi", 1000 );player->c_pickupweapon ( "bar" );player->c_pickupammo("bar", 1000 );player->c_pickupweapon ( "m27" );player->c_pickupammo("m27", 1000 );player->c_pickupweapon( flamethrower );player->c_setinfiniteammo( flamethrower, true );player->c_pickupweapon ( "hyperblaster" );player->C_SetInfiniteAmmo ( "hyperblaster", 1);player->c_pickupweapon ( "painkiller" );player->c_pickupammo( "painkiller", 30 );";
+
+NoMoreChoices 		= "player->C_SetInfiniteAmmo ( "empty", 1);player->C_SetInfiniteAmmo ( "zippo", 1);player->C_SetInfiniteAmmo ( "leadpipe", 1);player->C_SetInfiniteAmmo ( "baseballbat", 1);player->C_SetInfiniteAmmo ( "hammer", 1);player->C_SetInfiniteAmmo ( "scure", 1);player->C_SetInfiniteAmmo ( "katana", 1);player->C_SetInfiniteAmmo ( "saw", 1);player->C_SetInfiniteAmmo ( "drill", 1);player->C_SetInfiniteAmmo ( "glock", 1);player->C_SetInfiniteAmmo ( "sawedshotguntwo", 1);player->C_SetInfiniteAmmo ( "pumpshotgun", 1);player->C_SetInfiniteAmmo ( "uzi", 1);player->C_SetInfiniteAmmo ( "bar", 1);player->C_SetInfiniteAmmo ( "m27", 1);player->c_setinfiniteammo( flamethrower, true );player->C_SetInfiniteAmmo ( "hyperblaster", 1);player->C_SetInfiniteAmmo ( "painkiller" ,1);";
+
+GOD 			= "player->C_SetImmortal ( false ); player->C_SetHealth(1);player->C_SetImmortal ( true );";
+
+MiserableHumanBeen	= "player->C_SetImmortal ( false );";
+
+Kill			= "player->C_SetImmortal ( false );player->c_sethealth( 0 );X_ConsoleMode->CM_Clear( );";
+
+AColdDayInHell 		= "player->C_SetImmortal ( false );player->C_SetHealth(1);player->C_SetImmortal ( true );player->C_SetInfiniteAmmo ( empty, 1);player->c_pickupweapon( painkiller );player->c_setinfiniteammo( painkiller );player->c_pickupweapon ( zippo );player->C_SetInfiniteAmmo ( zippo, 1);player->c_pickupweapon ( leadpipe );player->C_SetInfiniteAmmo ( leadpipe, 1);player->c_pickupweapon ( baseballbat );player->C_SetInfiniteAmmo( baseballbat,1 );player->c_pickupweapon ( hammer );player->C_SetInfiniteAmmo( hammer,1 );player->c_pickupweapon ( scure );player->C_SetInfiniteAmmo( scure,1 );player->c_pickupweapon ( katana );player->C_SetInfiniteAmmo( katana,1 );player->c_pickupweapon ( saw );player->C_SetInfiniteAmmo( saw,1 );player->c_pickupweapon ( drill );player->C_SetInfiniteAmmo( drill,1 );player->c_pickupweapon ( glock );player->C_SetInfiniteAmmo ( glock, 1);player->c_pickupweapon ( sawedshotguntwo );player->C_SetInfiniteAmmo ( sawedshotguntwo, 1);player->c_pickupweapon ( pumpshotgun );player->C_SetInfiniteAmmo ( pumpshotgun, 1);player->c_pickupweapon ( uzi );player->C_SetInfiniteAmmo ( uzi, 1);player->c_pickupweapon ( bar );player->C_SetInfiniteAmmo ( bar, 1);player->c_pickupweapon ( m27 );player->C_SetInfiniteAmmo ( m27, 1);player->c_pickupweapon( flamethrower );player->c_setinfiniteammo( flamethrower, true );player->c_pickupweapon ( hyperblaster );player->C_SetInfiniteAmmo ( hyperblaster, 1);MaxPayne_ModeSwitch->MPS_ConsoleModeToggle();X_ConsoleMode->CM_Clear( );";
+
+// Cheats - End - 
+
+
+SetWoundedState = "player->C_SetWoundedAnimations( true );";
+SetNormalState 	= "player->C_SetWoundedAnimations( false );";
+
+Jump10 			= "player->C_SetImmortal ( true ); player->C_Jump( 10 ); MaxPayne_ModeSwitch->MPS_ConsoleModeToggle(); MaxPayne_ModeSwitch->MPS_ConsoleModeToggle();";
+Jump20 			= "player->C_SetImmortal ( true ); player->C_Jump( 20 ); MaxPayne_ModeSwitch->MPS_ConsoleModeToggle(); MaxPayne_ModeSwitch->MPS_ConsoleModeToggle();";
+Jump30 			= "player->C_SetImmortal ( true ); player->C_Jump( 30 ); MaxPayne_ModeSwitch->MPS_ConsoleModeToggle(); MaxPayne_ModeSwitch->MPS_ConsoleModeToggle();";
+
+Inventory		= "player->C_Dump();";
+
+ResetScales		= "maxpayne_hudmode->mphm_changehudvisibility(1,0);maxpayne_hudmode->mphm_fadetocolor(0x00000000,0x00000000,0);maxpayne_gamemode->gm_changeglobalgamespeed( 1.0, 0 ); maxpayne_gamemode->gm_changegamespeed( 1.0, 0 ); maxpayne_gamemode->gm_changefov( 1.0, 0 ); maxpayne_gamemode->gm_enablewidescreen(0,0);";
+
+// ===================================================================
+// Command Complete Definitions - these string are completed with Tab
+// ===================================================================
+
+[CommandComplete] String = "X_Character";
+
+[CommandComplete] String = "X_ModeSwitch";
+[CommandComplete] String = "X_StatisticsMode";
+[CommandComplete] String = "X_ConsoleMode";
+
+[CommandComplete] String = "MaxPayne_GameMode";
+[CommandComplete] String = "MaxPayne_GraphicNovelMode";
+[CommandComplete] String = "MaxPayne_HudMode";
+[CommandComplete] String = "MaxPayne_MenuMode";
+[CommandComplete] String = "MaxPayne_ModeSwitch";
+[CommandComplete] String = "MaxPayne_StatisticsMode";
+
+[CommandComplete] String = "Player";

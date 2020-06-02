@@ -1,0 +1,272 @@
+#include "database\stringdefines.h"
+#include "database\stringtable.txt"
+
+[startup]
+StartupVideoName = "";
+
+[character]
+FallingThresholdVelocity 	= 1.0;
+LandingThresholdVelocity 	= 9.0;
+TurningThresholdValue 		= 1.0; 	// in degrees?
+MaximumSteepnessAngle		= 46;	// in degrees
+MaximumDragDownAngle		= 60;	// in degrees
+CapsuleTopLimit				= 2.00;
+CapsuleBottomLimit			= 0.0;
+CapsuleRadiusLimit			= 0.50;
+AICapsuleRadius				= 0.31;
+UseTriggerAngle				= 130; 	// in degrees
+
+// It is safe to fall from 5m, but 10m is lethal.
+DamageFallingThreshold		= 15.0;		// velocity, in meters/s
+RelativeFallingDamage		= 1%;		// as in x*total_hitpoints/(meters/second)
+DamageFallingSpeedDeduct	= 10.0;		// should be less than DamageFallingThreshold
+FallingDamageExponent		= 2.1;
+
+MinSpeedCharacterCollidesDynamicObject = 0.01;
+
+// these variables only matter for the player
+DamageFlashMinimumHitPoints		= 1; // amount of hitpoints to lose at once to trigger the flash 
+DamageFlashMinimumColor			= A5000010;
+DamageFlashMinimumFadeOutTime	= 0.05;
+DamageFlashMinimumStayInTime	= 0.1;
+
+DamageFlashMaximumHitPoints		= 50; // amount of hitpoints where to clamp the flash
+DamageFlashMaximumColor			= A50000D0;
+DamageFlashMaximumFadeOutTime	= 1.0;
+DamageFlashMaximumStayInTime	= 0.1;
+
+// shadow
+FootShadowFilename				= "database\skeletons\sharedtextures\footshadow.pcx";
+FootShadowAlphaFilename			= "database\skeletons\sharedtextures\footshadow_alpha.pcx";
+FootShadowRadius				= 0.4;
+FootShadowCharacterOriented		= false;
+SingleShadowFilename			= "database\skeletons\sharedtextures\shadow.jpg";
+SingleShadowAlphaFilename		= "database\skeletons\sharedtextures\shadow_alpha.jpg";
+SingleShadowRadius 				= 0.6;
+SingleShadowCharacterOriented	= true;
+
+[projectile]
+DebrisMaximumSteepness		= 67;	// in degrees
+LowDetailLevelDebrisLimitMultiplier			= 0%;
+MediumDetailLevelDebrisLimitMultiplier		= 33%;
+HighDetailLevelDebrisLimitMultiplier		= 100%;
+
+[decal]
+MaximumDecalTrianglesPerRoom			= 2000;
+MaximumDecalTrianglesPerDynamicObject 	= 500;
+AllocationGranularity					= 100; // how many triangles(/vertices for them) to allocate at a time 
+LowDetailLevelMultiplier				= 0.333;
+MediumDetailLevelMultiplier				= 0.666;
+HighDetailLevelMultiplier				= 1.000;
+
+[paths]
+SharedDBPath = "database";
+WeaponPriorityScriptName = "WeaponPriority.txt";
+DifficultyScriptName = "difficulty.txt";
+
+[camera]
+{
+	[general]
+	FrontPlaneDistance				= 0.05;
+	MinimumBackPlaneDistance		= 10.0;
+	SphereRadius		    		= 0.1;	// normal sphere radius
+	CollisionPredictionSphereRadius = 0.6;	// bigger radius -> more eager to avoid obstacles - was 0.8
+	MaximumPredictionIterations		= 7;	// small==fast&ugly, big==slow&accurate. <5 starts frapping >10 is wasting of time
+	InitialBackwardsSpeed    		= 5.0; 	// m/s			- was 5
+	BackwardsAcceleration			= 20.0;	// m/s^2		- was 12
+	
+	// attention if you want player to be in the center of the screen, adjust the x value
+	// to nullify the x offset caused by camera startpoint (defined in skeleton)
+	// camera is cast from it's startpoint directly to this direction when it's above player
+	UpFollowDistance				= ( 0.06, 0.40, -0.40 );	
+	
+	// camera is casted from it's startpoint directly to this direction when it's behind player
+	MiddleFollowDistance				= ( 0.06, 0.5, -4.00 ); //was 0,0.75,-3
+	
+	// camera is casted from it's startpoint directly to this direction when it's below player
+	DownFollowDistance				= ( 0.06, 0.80, -1.00 );
+
+	// when sniper (overlay) mode is on, this offset from characters normal camera position
+	// is used to place the camera conveniently in front of the player. 
+	// sniper mode ignores normal followdistance. this is absolute offset, i.e. rotating camera
+	// up/down doesn't change camera positioning
+	SniperOffset					= ( 0.0, 0.0, 0.80 );
+	SniperZoomInSpeed				= 0.7;  // in jounis
+	
+	LookAtMinDistance				= 5.0;	// minimum distance from aiming startpoint
+	LookAtMaxDistance				= 5.0;	// maximum distance from aiming startpoint
+	DefaultFOV						= 70; 	// degrees
+	
+	PauseCameraPathName				= "pause";
+	// if pause camera path can't be played this is printed to HUD's pauseslot
+	NoPauseCameraPathText			= "NoPauseCameraPathText"; // points to stringtable.txt
+	
+	[DOExitMessages]	
+	{
+		[Message] String = "maxpayne_gamemode->gm_changegamespeed( 1, 0 );";
+	}
+}
+
+[cinematic]
+2DSoundMinimumPitchMultiplier 	= 1.0; //so that narrative isn't slowed down
+3DSoundMinimumPitchMultiplier 	= 0.15;
+MusicMinimumPitchMultiplier 	= 1.0;
+//removed because this was not in use and it interferes with sniper's fov dependent sensitivity
+//MouseSensitivityMultiplier		= 1.0; // sensitivity is from this to 1.0 according to time multiplier
+// normal screen height is 1.0, in widescreen mode screen height is simply multiplied
+// by widescreenmultiplier... real life examples:
+// Wide-screen (i.e. 16:9) TV 				multiplier = 0.75		with formula (4:3)/(16:9)
+// PanaVision (most used movie screen) 		multiplier = 0.720721 				 (4:3)/(1.85:1)
+// IMAX/CinemaScope	(only coolest movies) 	multiplier = 0.567376				 (4:3)/(2.35:1)
+WideScreenMultiplier			= 0.75;     // wide-screen TV
+
+[savegame]
+SaveScreen						= "sharedtextures\menu_saving.pcx";
+
+LoadHUDText						= SGID_LOADHUDTEXT;
+SaveHUDText						= SGID_SAVEHUDTEXT;
+SaveLimitedHUDText				= SGID_SAVELIMITEDHUDTEXT;
+UnableToSaveHUDText				= SGID_UNABLETOSAVEHUDTEXT;
+SaveGameNotFoundHUDText			= SGID_SAVEGAMENOTFOUNDHUDTEXT;
+CannotSaveHUDText				= SGID_CANNOTSAVEHUDTEXT;
+SavingFailedHUDText				= SGID_SAVINGFAILEDHUDTEXT;
+
+// actual size of the screen shot saved to disk, size of the 
+// sprite shown in the menu is defined in the menu.txt
+ScreenShotWidth					= 256;
+ScreenShotHeight				= 192;
+
+[loadingscreen]
+MenuLoadingScreen				= "\data\menu\bitmaps\menu_loading.tga";
+AINetworkCalculationScreen		= "\data\sharedtextures\ai_calc.pcx";
+GameExitScreen					= "\data\menu\bitmaps\menu_exiting.tga";
+// progress bar settings
+ProgressBarScreenX				= 128; // reference point is upleft
+ProgressBarScreenY				= 434; // reference point is upleft
+ProgressBarWidth				= 384; // -1 will use map width
+ProgressBarHeight				= -1; // -1 will use map height
+ProgressBar1Filename			= "\data\sharedtextures\progress_bar1.pcx";
+ProgressBar1AlphaFilename		= "\data\sharedtextures\progress_bar_alpha.pcx";
+ProgressBar2Filename			= "\data\sharedtextures\progress_bar2.pcx";
+ProgressBar2AlphaFilename		= "\data\sharedtextures\progress_bar_alpha.pcx";
+
+[activation]
+// CharacterTimeout variable specifies how many seconds character is
+// updated after other activation logic determinates it to be inactive.
+// Note: The specified time should cover atleast the character death
+// animation length as otherwise characters may die in deactivated
+// state meaning the death animation is not fully played to the end
+CharacterTimeout				= 4.0;
+
+// DynamicObjectTimeout variable specifies how many seconds finite
+// state machines, triggers and dynamic objects are updated after
+// the other activation logic determinates them to be inactive.
+DynamicObjectTimeout			= 2.0;
+
+[particle]
+CombinationRPSName				= "\data\database\particles\_all_particles.rps";
+
+[parentallock]
+AdultContentReplaceTexture		= "\data\database\sharedtextures\adultcontent.jpg";
+AdultContentReplaceAlphaTexture	= "\data\database\sharedtextures\adultcontent_alpha.pcx";
+
+[painkiller]
+{
+	[general]
+	PainkillerWeaponName		= "painkiller";
+
+	[Messages]	
+	{
+		[Message] String = "maxpayne_gamemode->a_playsound( characters, use_painkillers );";
+		[Message] String = "MaxPayne_HudMode->mphm_flashtocolor( 0xffffff70, 0.01, 0.02, 0.1 );";
+	}
+}
+
+[slowmotion]
+{
+	[general]
+	SlowMotionTime			= 0.0;			// length of full slowmotion session
+	RegenerationTime		= 100000000.0;	// takes this many seconds to recharge from 0 to 1 (extremely slow)
+	Threshold				= 0.1%;			// must be exceeded to start slowmotion (should never regen to this)
+	TurnOffPenalty			= 0%;			// amount of slowmotion that gets deducted when you turn it off
+	ShootDodgePenalty		= 100%;			// amount of slowmotion that gets deducted when shootdodging
+	ShootDodgeThreshold		= 100%;			// minimum of slowmotion needed to allow shootdodging
+
+	MusicVolume				= 0.0;			// music volume when in slowmotion from 0 to 1
+	MusicVolumeFadeTime		= 0.5;			// how many seconds the fade from/to music volume should take
+	// sound message to send every "HeartbeatSoundInterval" seconds - the sound should NOT be looping!
+	HeartbeatSoundMessage	= "maxpayne_gamemode->A_PlaySound( menu, slomo_heartbeat );";
+	HeartbeatSoundInterval	= 1.25;			// interval of sending "HeartbeatSoundMessage" in slowmotion
+
+	[StartMessages]	
+	{
+		[Message] String = "maxpayne_gamemode->gm_changecontrolledgamespeed( 0.2, 0.3 );";
+		[Message] String = "maxpayne_gamemode->A_PlaySound ( characters, slow_motion );";
+		[Message] String = "maxpayne_hudmode->mphm_flashtocolor( 0x000000a0, 0.01, 0.03, 0.1 );";
+	}
+
+	[EndMessages]	
+	{
+		[Message] String = "maxpayne_gamemode->gm_changecontrolledgamespeed( 1.0, 0.5 );";
+		[Message] String = "maxpayne_gamemode->A_PlaySound ( characters, slow_motion_end );";
+//		[Message] String = "maxpayne_hudmode->mphm_flashtocolor( 0x000000a0, 0.01, 0.05, 0.2 );";
+//		[Message] String = "maxpayne_gamemode->A_PlaySound ( weapons, Shoot_NoBulletsLeft );";
+	}
+
+	[CantSwitchOnMessages]	
+	{
+		//[Message] String = "maxpayne_gamemode->A_PlaySound ( weapons, Shoot_NoBulletsLeft );";
+	}
+}
+
+[gamemode]
+{
+	[general]
+	// fade to menu is fast
+	// gn-mode also has its own in and out times defined in graphicnovel.txt
+	FadeOutTimeToGraphicNovelMode 	= 0.25;
+	FadeInTimeFromGraphicNovelMode 	= 0.25;
+	
+	ShowShootDodgeTipIfUsedLessThan	= 3; // times (global throughout all levels)
+	ShowBulletTimeTipIfUsedLessThan	= 3; // times (global throughout all levels)
+
+	QuickLoadQueryText = "QuickLoadQueryText";
+		
+	// these are global for all levels
+	[LevelOnInitMessages]
+	{
+		[Message] String = "maxpayne_hudmode->mphm_printTipAlways( \"\" );";
+		[Message] String = "maxpayne_hudmode->mphm_printTipAlways( \"\" );";
+		[Message] String = "maxpayne_hudmode->mphm_printTipAlways( \"\" );";
+		[Message] String = "maxpayne_hudmode->mphm_printinventory( \"\", 0 );";
+		[Message] String = "maxpayne_hudmode->mphm_printinventory( \"\", 1 );";
+		[Message] String = "maxpayne_hudmode->mphm_printinventory( \"\", 2 );";
+		[Message] String = "maxpayne_hudmode->mphm_printobjective( \"\", 0 );";
+		[Message] String = "maxpayne_hudmode->mphm_printobjective( \"\", 1 );";
+		[Message] String = "maxpayne_hudmode->mphm_printobjective( \"\", 2 );";
+		[Message] String = "maxpayne_hudmode->mphm_fadetocolor( 0x00000000, 0x00000000, 0 );";	// clear hudlayer
+		[Message] String = "maxpayne_hudmode->mphm_changehudvisibility( 1, 0 );";				// hud fully visible
+		[Message] String = "maxpayne_hudmode->mphm_enablehud( 1 );";							// hud fully visible
+		[Message] String = "maxpayne_gamemode->gm_changefov( 1, 0 );";							// fov reset
+		[Message] String = "maxpayne_gamemode->gm_changeglobalgamespeed( 1, 0 );";				// global gamespeed reset
+		[Message] String = "maxpayne_gamemode->gm_changecontrolledgamespeed( 1, 0 );";			// player gamespeed reset
+		[Message] String = "maxpayne_gamemode->gm_changegamespeed( 1, 0 );";
+		[Message] String = "maxpayne_gamemode->gm_enablewidescreen( 0, 0 );";					// no widescreen
+		[Message] String = "maxpayne_gamemode->gm_setplayercontrols( 0 );";						// reset player dodge etc flags
+		[Message] String = "maxpayne_gamemode->gm_setplayercontrols( 1 );";						// player has input
+		[Message] String = "maxpayne_gamemode->a_playmusic( \"\" );";							// stop music
+		[Message] String = "maxpayne_gamemode->a_playsound( story, empty );";					// stop speech
+		[Message] String = "maxpayne_hudmode->mphm_printTipNYM ( STRING_NYM_MAP );";
+
+	}
+	
+	[TimedMode]
+	BeepTime						= 10.0; // start beeping when you have less time left than this value
+	BeepInterval					= 1.0; // interval of beeps in seconds
+	BeepMessage						= "maxpayne_gamemode->A_PlaySound( menu, timeout );";
+}
+
+[globalmodesettings]
+GameModeKeyPressMessage				= "maxpayne_gamemode->A_PlaySound( menu, selection );";
+MenuModeKeyPressMessage				= "maxpayne_menumode->A_PlaySound( menu, selection );";
+GraphicNovelModeKeyPressMessage		= "maxpayne_graphicnovelmode->A_PlaySound( menu, selection );";

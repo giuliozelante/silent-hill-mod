@@ -1,0 +1,114 @@
+BODY {
+	SCROLLBAR-FACE-COLOR: #f5f5f5; FONT-WEIGHT: 600; FONT-SIZE: 8pt; SCROLLBAR-HIGHLIGHT-COLOR: #a1a1a1; SCROLLBAR-SHADOW-COLOR: #a1a1a1; COLOR: #000006; SCROLLBAR-3DLIGHT-COLOR: #f5f5f5; SCROLLBAR-ARROW-COLOR: #a1a1a1; SCROLLBAR-TRACK-COLOR: #f5f5f5; FONT-FAMILY: Arial, Helvetica, sans-serif; SCROLLBAR-DARKSHADOW-COLOR: #f5f5f5; SCROLLBAR-BASE-COLOR: black; TEXT-DECORATION: none
+}
+A.Home {
+	FONT-WEIGHT: 600; FONT-SIZE: 10pt; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+A.Home:hover {
+	COLOR: black
+}
+A.Button {
+	FONT-SIZE: 8pt; COLOR: #708090; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+A.Button:hover {
+	COLOR: black
+}
+TD.tdButton {
+	TEXT-ALIGN: center
+}
+#Article {
+	FONT-SIZE: 9pt; COLOR: black; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+#PostedBy {
+	FONT-WEIGHT: bold; FONT-SIZE: 7pt; COLOR: black; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+#ArticleTitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+A:link {
+	FONT: 11px Arial, Helvetica, sans-serif; COLOR: #000000; TEXT-DECORATION: none
+}
+A:active {
+	FONT: 11px Arial, Helvetica, sans-serif; COLOR: #000000; TEXT-DECORATION: none
+}
+A:visited {
+	FONT: 11px Arial, Helvetica, sans-serif; COLOR: #000000; TEXT-DECORATION: none
+}
+A:hover {
+	FONT: 11px Arial, Helvetica, sans-serif; COLOR: #000000; TEXT-DECORATION: none
+}
+A.pn-title {
+	FONT: bold 10px Arial, Helvetica, sans-serif; COLOR: #000000; TEXT-DECORATION: none
+}
+A.pn-title:active {
+	FONT: bold 10px Arial, Helvetica, sans-serif; COLOR: #000000; TEXT-DECORATION: none
+}
+A.pn-title:visited {
+	FONT: bold 10px Arial, Helvetica, sans-serif; COLOR: #000000; TEXT-DECORATION: none
+}
+A.pn-title:hover {
+	FONT: bold 10px Arial, Helvetica, sans-serif; COLOR: #000000; TEXT-DECORATION: none
+}
+A.pn-normal:link {
+	FONT: 11px Arial, Helvetica, sans-serif; COLOR: #000000; TEXT-DECORATION: none
+}
+A.pn-normal:active {
+	FONT: 11px Arial, Helvetica, sans-serif; COLOR: #000000; TEXT-DECORATION: none
+}
+A.pn-normal:visited {
+	FONT: 11px Arial, Helvetica, sans-serif; COLOR: #000000; TEXT-DECORATION: none
+}
+A.pn-normal:hover {
+	FONT: 11px Arial, Helvetica, sans-serif; COLOR: #000000; TEXT-DECORATION: none
+}
+A.pn-sub:link {
+	FONT: 10px Arial, Helvetica, sans-serif; COLOR: #000000; TEXT-DECORATION: none
+}
+A.pn-sub:active {
+	FONT: 10px Arial, Helvetica, sans-serif; COLOR: #000000; TEXT-DECORATION: none
+}
+A.pn-sub:visited {
+	FONT: 10px Arial, Helvetica, sans-serif; COLOR: #000000; TEXT-DECORATION: none
+}
+A.pn-sub:hover {
+	FONT: 10px Arial, Helvetica, sans-serif; COLOR: #000000; TEXT-DECORATION: none
+}
+A.pn-logo:link {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; LETTER-SPACING: 3px; TEXT-DECORATION: none
+}
+A.pn-logo:active {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; LETTER-SPACING: 3px; TEXT-DECORATION: none
+}
+A.pn-logo:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; LETTER-SPACING: 3px; TEXT-DECORATION: none
+}
+A.pn-logo:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; LETTER-SPACING: 3px; TEXT-DECORATION: none
+}
+.pn-logo {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; LETTER-SPACING: 3px; TEXT-DECORATION: none
+}
+.pn-logo-small {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.pn-pagetitle {
+	FONT: bold 14px Arial, Helvetica, sans-serif; COLOR: #000000; TEXT-DECORATION: none
+}
+.pn-title {
+	FONT: bold 10px Arial, Helvetica, sans-serif; COLOR: #000000; TEXT-DECORATION: none
+}
+.pn-storytitle {
+	FONT: bold 10px Arial, Helvetica, sans-serif; COLOR: #000000; LETTER-SPACING: 3px; TEXT-DECORATION: none
+}
+.pn-normal {
+	FONT: 11px Arial, Helvetica, sans-serif; COLOR: #000000; TEXT-ALIGN: justify; TEXT-DECORATION: none
+}
+.pn-sub {
+	FONT: 10px Arial, Helvetica, sans-serif; COLOR: #000000; TEXT-DECORATION: none
+}
+INPUT.pn-text {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 8px; BACKGROUND: #ffffff; BORDER-LEFT: #000000 1px solid; COLOR: #000000; BORDER-BOTTOM: #000000 1px solid
+}
+TABLE {
+	FONT-SIZE: 8pt; COLOR: #000006; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}

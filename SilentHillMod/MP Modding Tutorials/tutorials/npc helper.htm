@@ -1,0 +1,405 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0058)http://paynekiller.kipsta.net/showtutorial.php?id=7&page=1 -->
+<HTML><HEAD><TITLE>Kipsta's PayneKiller :: Max Payne 2 Mod Resource Site</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252"><LINK 
+href="npc helper_file/style.css" type=text/css rel=stylesheet>
+<SCRIPT language=Javascript type=text/javascript>
+function storeCaret (textEl) {
+	if (textEl.createTextRange)
+		textEl.caretPos = document.selection.createRange().duplicate();
+} // end fn
+
+function addsmiley (textEl, text) {
+	if (textEl.createTextRange && textEl.caretPos) {
+		var caretPos = textEl.caretPos;
+		caretPos.text =
+			caretPos.text.charAt(caretPos.text.length - 1) == ' ' ?
+			text + ' ' : text;
+	} else {
+		textEl.value  = textEl.value + text; // for non MSIE browsers just append it
+	}
+
+	return true;
+}// fn
+</SCRIPT>
+
+<META content="MSHTML 6.00.2737.800" name=GENERATOR></HEAD>
+<BODY>
+<DIV align=center>
+<CENTER>
+<TABLE style="BORDER-COLLAPSE: collapse" height="100%" cellSpacing=0 
+cellPadding=0 width=720 bgColor=#ffffff border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%" height=10><!-- SPACER --><IMG class=blank height=10 
+      src="npc helper_file/blank.gif" width=10> </TD></TR>
+  <TR>
+    <TD height=160><!-- FLASH MENU -->
+      <OBJECT id=menu 
+      codeBase='"http:/download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0/"' 
+      height=160 width=720 classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000><PARAM NAME="movie" VALUE="layout/menu.swf"><PARAM NAME="quality" VALUE="High"><PARAM NAME="menu" VALUE="false">
+      																								<EMBED src="layout/menu.swf" menu=false 
+      quality=High WIDTH="720" HEIGHT="160" NAME="menu" 
+      TYPE="application/x-shockwave-flash" 
+      PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer"></EMBED></OBJECT></TD></TR>
+  <TR>
+    <TD vAlign=top width="100%"><IMG class=blank height=16 
+      src="npc helper_file/blank.gif" width=16> 
+      <TABLE style="BORDER-COLLAPSE: collapse" borderColor=#111111 height="100%" 
+      cellSpacing=0 cellPadding=0 width=720 border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top width=10><IMG class=blank height=20 
+            src="npc helper_file/blank.gif" width=10> </TD>
+          <TD class=tdmain vAlign=top width=540>
+            <P>
+            <CENTER>
+            <TABLE style="BORDER-COLLAPSE: collapse" borderColor=#111111 
+            cellSpacing=3 cellPadding=2 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <H1>Adding NPC's (AI) characters to your level!</H1>
+                  <TABLE style="BORDER-COLLAPSE: collapse" borderColor=#111111 
+                  cellSpacing=3 cellPadding=2 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD width="50%">Jump to page: <A 
+                        href="http://paynekiller.kipsta.net/showtutorial.php?id=7&amp;page=1">1</A> 
+                        <A 
+                        href="http://paynekiller.kipsta.net/showtutorial.php?id=7&amp;page=2">2</A> 
+                        <A 
+                        href="http://paynekiller.kipsta.net/showtutorial.php?id=7&amp;page=3">3</A> 
+                      </TD>
+                      <TD width="50%">
+                        <P align=right>| <A 
+                        href="http://paynekiller.kipsta.net/showtutorial.php?id=7&amp;page=2">Next 
+                        page &gt;</A></P></TD></TR></TBODY></TABLE>
+                  <DIV class=hr>
+                  <HR>
+                  </DIV>
+                  <P>Hello boys and girls, it's me your lovable and somewhat 
+                  pressed for time tutorial writer. Ph33r not though I have 
+                  taken some time out of my busy schedule to bring you this 
+                  tutorial on how to add both Friendly and Hostile NPC's (Non 
+                  Player/Playing Characters) and AI nodes! The time I spend 
+                  writing this, could be the time I spend looking at and for 
+                  porn... awww... but annnnyyyway... let's get to it.</P>
+                  <DIV class=hr>
+                  <HR>
+                  </DIV>
+                  <P>Usually, I would have included a map for you to work 
+                  from... but I'm assuming you now know how to <SPAN 
+                  class=hl>1.</SPAN> make a map, <SPAN class=hl>2.</SPAN> light 
+                  it, <SPAN class=hl>3.</SPAN> <STRIKE>smoke it</STRIKE> 
+                  play/load it... and you are now desperate to get those NPC's 
+                  into your level and kick some ass. Which is fine, but for all 
+                  sakes and purposes of writing this tutorial, I will be using 
+                  screenshots from one of my lovely <SPAN class=hl>HOIME</SPAN> 
+                  maps (<SPAN class=hl>H</SPAN>ere's <SPAN class=hl>O</SPAN>ne 
+                  <SPAN class=hl>I M</SPAN>ade <SPAN class=hl>E</SPAN>arlier) 
+                  maps. If you are a no-hoper (nothing wrong with that)... than 
+                  yes, you can <A 
+                  href="http://paynekiller.kipsta.net/tutorials/tutorial7/npclev.zip">download 
+                  the HOIME map by clicking HERE</A> *groan* (2.78 megs). The 
+                  <U>finished MP2M</U> version can be <A 
+                  href="http://paynekiller.kipsta.net/tutorials/tutorial7/npclevmod.zip">downloaded 
+                  by clicking HERE</A> (2.3megs) - just in case you are curious 
+                  about how the damn thing looks/works.</P>
+                  <DIV class=hr>
+                  <HR>
+                  </DIV>
+                  <P><SPAN class=numlist>1.</SPAN> First things first, we'll 
+                  create a friendly NPC, why? Well if we made a bad guy first 
+                  then added an NPC he'd probably get killed before you got a 
+                  chance to see he was working correctly... and besides, isn't 
+                  it fun to kill him yourself? I think so... <IMG class=blank 
+                  alt=:evil: src="npc helper_file/lolevil.gif" align=top> Take a 
+                  look at the screener below.</P>
+                  <P>As you can see I have 2 rooms, one is labelled "1", and the 
+                  other "2" (duh). In room "1" which is more of a corridor, I'll 
+                  set up my friendly NPC guy. So, position your camera/viewport 
+                  to where you want to place your friendly NPC, it's often wise 
+                  to have him/her/it start near you.</P>
+                  <P align=center><IMG src="npc helper_file/pic1.jpg" 
+                  border=0></P>
+                  <DIV class=hr>
+                  <HR>
+                  </DIV><SPAN class=numlist>2.</SPAN> Now, just <SPAN 
+                  class=hl>like creating a jumppoint</SPAN> add yourself a <SPAN 
+                  class=hl>NEW entity</SPAN> of "<SPAN class=hl>enemy</SPAN>" 
+                  type. Again to refresh your memory, this is done by switching 
+                  to <SPAN class=hl>F4 (polygon mode)</SPAN>, then <SPAN 
+                  class=hl>pressing "A"</SPAN> to align the grid to the floor. 
+                  <SPAN class=hl>Press F3</SPAN>, now highlight a grid spot 
+                  close to your starting jumppoint and <SPAN class=hl>press 
+                  "N"</SPAN>, this brings up the <U>"entity panel"</U> and now 
+                  use the drop down box to find "enemy" and select it - followed 
+                  by <SPAN class=hl>pressing "ok"</SPAN>
+                  <P align=center><IMG src="npc helper_file/pic2.jpg" 
+                  border=0></P>
+                  <DIV class=hr>
+                  <HR>
+                  </DIV><SPAN class=numlist>3.</SPAN> Once, you've done that, 
+                  you'll be immediately presented with a new dialog/screen. It 
+                  might look complex but it's fairly straight forward. The first 
+                  thing you need to do is specify a name for your character 
+                  (it's not essential but if you want to script him/her/it 
+                  later, you can use this name).
+                  <BLOCKQUOTE>
+                    <P><SPAN class=hl>The important things I've highlighted 
+                    are:</SPAN></P>
+                    <P><SPAN class=hl>Name:</SPAN> As mentioned above the name 
+                    of your NPC<BR><SPAN class=hl>Group:</SPAN> Which group 
+                    he/she/it will belong to. If you are making a normal enemy, 
+                    leave this alone.<BR><SPAN class=hl>Skin:</SPAN> This will 
+                    specify which model you want to use for this character. 
+                    Since this NPC will be a helper, I've specified NPC_NYPD_B 
+                    which is a policeman skin... who will help me vanquish evil 
+                    cleaners and terrorist! *mommy!*</P>
+                    <P><I>Note: This screen can be brought up again later on 
+                    simply by selecting the NPC in object mode (<SPAN 
+                    class=hl>F5</SPAN>) and <SPAN class=hl>pressing 
+                    ENTER</SPAN>. For the moment, DON'T close this 
+                    panel...</I></P></BLOCKQUOTE>
+                  <P align=center><IMG src="npc helper_file/pic3.jpg" 
+                  border=0></P>
+                  <DIV class=hr>
+                  <HR>
+                  </DIV><SPAN class=numlist>4.</SPAN> Did you close the panel? 
+                  Naughty naughty! I told you not to! Shame on you! Open it back 
+                  up... right, ok good stuff. Ok, now before you close it, you 
+                  will need to click that tiny button called <SPAN 
+                  class=hl>"edit groups"</SPAN>. I didn't highlight it, because 
+                  I'm stupid... but it's in between red circles 2 and 3. This 
+                  will bring up another dialog with available groups... these 
+                  groups are used to determine AI team combat. Whenever one AI 
+                  member in a team detects something, he will alert the rest of 
+                  his team, where-as other teams won't be aware unless manually 
+                  triggered. You can use groups to create much more interesting 
+                  AI game play.
+                  <P>Anyhow, onward! You want to create a group for the bad 
+                  guys. Appropriately we'll call this group "<SPAN class=hl>Bad 
+                  guys</SPAN>". <SPAN class=hl>Click the "ADD" button</SPAN> and 
+                  a smaller dialog appears, type the name "<SPAN 
+                  class=hl>badguys"</SPAN> and <SPAN class=hl>click "OK"</SPAN>. 
+                  <SPAN class=hl>Click OK again</SPAN> on the second panel and 
+                  now you may finally <U>close the larger panel by again 
+                  pressing "OK"</U>... Look at the screener below, 1, 2, 3. 
+                  Simple as that.</P>
+                  <P align=center><IMG src="npc helper_file/pic4.jpg" 
+                  border=0></P>
+                  <DIV class=hr>
+                  <HR>
+                  </DIV><SPAN class=numlist>5.</SPAN> You should now have a blue 
+                  semi-sphere in front of you. This is your NPC. But before 
+                  he/she/it functions as a friend, you need to specify a few 
+                  parameters in the FSM. This is a piece of cake, Remedy have 
+                  really made FSM editing a walk in the park this time around. 
+                  <SPAN class=hl>Press F5</SPAN> (<SPAN class=hl>Object 
+                  mode</SPAN>), now <SPAN class=hl>select the new NPC 
+                  entity</SPAN> and <SPAN class=hl>press "B"</SPAN> - this will 
+                  bring up the FSM window... although you could also open this 
+                  window from the "hierarchy panel" (select object, right click, 
+                  select "edit fsm").
+                  <P>Anyhow *cracks neck bones... ahhh*, yeah anyhow... You can 
+                  check out the screenshot below of what this FSM editing window 
+                  looks like. Right now all you need to concentrate on is the 
+                  "startup" section. Basically, this means when this entity is 
+                  started, it commits the actions you specify there.</P>
+                  <P align=center><IMG src="npc helper_file/pic5.jpg" 
+                  border=0></P>
+                  <DIV class=hr>
+                  <HR>
+                  </DIV><SPAN class=numlist>6.</SPAN> Now comes the fun part, 
+                  this is where you specify the code that will do 2 things; 
+                  <SPAN class=hl>1.</SPAN> get the NPC character to fight and 
+                  protect you, and <SPAN class=hl>2.</SPAN> give the NPC 
+                  character some weapons.
+                  <P>For now you <SPAN class=hl>don't need to worry</SPAN> about 
+                  the 2 sub-code headings "send always before" and "send always 
+                  after", just place your code in/below "Send Always after". 
+                  Here's the code to type, and what it does. You'll find as you 
+                  type the code in the editor, you will get helper sub-menus 
+                  which drop down and give you a list of available commands that 
+                  could fit what you are typing. It's easier if you type this 
+                  code below letter by letter, line by line and see what I mean. 
+                  (Type in what's in bold-red below, don't forget to include the 
+                  semi-colon at the end of each line ";".</P>
+                  <DIV align=center>
+                  <CENTER>
+                  <TABLE style="BORDER-COLLAPSE: collapse" cellSpacing=3 
+                  cellPadding=2 width=480 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD width="100%" bgColor=#f0f0f0><SPAN 
+                        class=hl>this-&gt;AI_SetTarget(badguys);</SPAN> 
+                        <P>This will tell your character to target the group you 
+                        made above called "badguys".</P>
+                        <P><I>For your reference: THIS-&gt; represents the 
+                        entity you are referring to, you can take it as a 
+                        literal reference, such as THIS house or THIS enemy etc. 
+                        In this case you are saying THIS character -&gt; AI 
+                        (artificial intelligence), Set it's target to "badguys" 
+                        group.</I></P></TD></TR>
+                    <TR>
+                      <TD width="100%" bgColor=#f0f0f0><SPAN 
+                        class=hl>this-&gt;AI_SetTactic(FollowCombat);</SPAN> 
+                        <P>This will tell your character to follow you and go 
+                        into combat if necessary.</P></TD></TR>
+                    <TR>
+                      <TD width="100%" bgColor=#f0f0f0><SPAN 
+                        class=hl>this-&gt;C_RemoveAllWeapons(BerettaDual);</SPAN> 
+
+                        <P>This line will remove all weapons from your 
+                        character, and give him/her the specified weapon with 
+                        unlimited ammo. In this case, dual Berettas.</P></TD></TR>
+                    <TR>
+                      <TD width="100%" bgColor=#f0f0f0><SPAN 
+                        class=hl>this-&gt;C_PickupWeapon(PumpShotgun);</SPAN> 
+                        <P>This will now give your character a finite ammo 
+                        weapon. In this case a shotgun.</P></TD></TR>
+                    <TR>
+                      <TD width="100%" bgColor=#f0f0f0><SPAN 
+                        class=hl>this-&gt;C_PickupAmmo(PumpShotgun,16);</SPAN> 
+                        <P>This will give some ammo to your character for the 
+                        weapon you just assigned him/her, again in this case, 
+                        pump shotgun ammo.</P></TD></TR>
+                    <TR>
+                      <TD width="100%" bgColor=#f0f0f0>The screener below 
+                        shows how your code/FSM should look like... 
+                    </TD></TR></TBODY></TABLE></CENTER></DIV>
+                  <P align=center><IMG src="npc helper_file/pic6.jpg" 
+                  border=0></P>
+                  <P></P>
+                  <TABLE style="BORDER-COLLAPSE: collapse" borderColor=#111111 
+                  cellSpacing=3 cellPadding=2 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD width="50%">Jump to page: <A 
+                        href="http://paynekiller.kipsta.net/showtutorial.php?id=7&amp;page=1">1</A> 
+                        <A 
+                        href="http://paynekiller.kipsta.net/showtutorial.php?id=7&amp;page=2">2</A> 
+                        <A 
+                        href="http://paynekiller.kipsta.net/showtutorial.php?id=7&amp;page=3">3</A> 
+                      </TD>
+                      <TD width="50%">
+                        <P align=right>| <A 
+                        href="http://paynekiller.kipsta.net/showtutorial.php?id=7&amp;page=2">Next 
+                        page 
+            &gt;</A></P></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></CENTER>
+            <P></P></TD>
+          <TD vAlign=top width=15 
+            background="npc helper_file/sidedotsb.gif"><IMG class=blank 
+            height=15 src="npc helper_file/blank.gif" width=15> </TD>
+          <TD vAlign=top width=150><!-- SIDE PANEL FOR LOGIN, BANNERS and TOOLS -->
+            <FORM action=login.php method=post>
+            <TABLE style="BORDER-COLLAPSE: collapse" borderColor=#111111 
+            cellSpacing=1 cellPadding=2 border=0>
+              <TBODY>
+              <TR>
+                <TD width=40>User:</TD>
+                <TD><INPUT size=14 name=username></TD></TR>
+              <TR>
+                <TD width=40>Pass:</TD>
+                <TD><INPUT type=password size=14 name=password></TD></TR>
+              <TR>
+                <TD width=40>&nbsp;</TD>
+                <TD><INPUT type=image height=16 alt="Click here to login" 
+                  width=48 src="npc helper_file/login.gif" border=0 
+                name=Login></TD></TR></TBODY></TABLE>
+            <TABLE style="BORDER-COLLAPSE: collapse" borderColor=#111111 
+            cellSpacing=1 cellPadding=2 border=0>
+              <TBODY>
+              <TR>
+                <TD width="100%">
+                  <P align=center>Don't have a user account? Get one free! <A 
+                  href="http://paynekiller.kipsta.net/register.php">Click 
+                  here!</A></P></TD></TR></TBODY></TABLE><INPUT type=hidden 
+            value=submit name=submit> </FORM>
+            <P></P><LINK href="npc helper_file/style.css" type=text/css 
+            rel=stylesheet>
+            <DIV class=hr>
+            <HR>
+            </DIV>
+            <P align=center><A href="http://www.ppawlowski.freeserve.co.uk/" 
+            target=_blank><IMG class=border height=31 
+            src="npc helper_file/noodlez.gif" width=88></A> <BR><IMG class=blank 
+            height=15 src="npc helper_file/blank.gif" width=15> <BR><A 
+            href="http://www.paynereactor.com/" target=_blank><IMG class=border 
+            height=31 src="npc helper_file/paynereactor.gif" width=88></A> 
+            <BR><IMG class=blank height=15 src="npc helper_file/blank.gif" 
+            width=15> <BR><A href="http://www.3dactionplanet.com/maxpayne/" 
+            target=_blank><IMG class=border height=31 
+            src="npc helper_file/deepsix.jpg" width=88></A> <BR><IMG class=blank 
+            height=15 src="npc helper_file/blank.gif" width=15> <BR><A 
+            href="http://www.maxpaynesource.com/" target=_blank><IMG 
+            class=border height=31 src="npc helper_file/mpsource.jpg" 
+            width=88></A></P>
+            <P></P>
+            <DIV class=hr>
+            <HR>
+            </DIV>
+            <P align=center>Help me stop the pain! Donate to PayneKiller!</P>
+            <P>
+            <FORM action=https://www.paypal.com/cgi-bin/webscr method=post>
+            <CENTER><INPUT type=hidden value=_xclick name=cmd> <INPUT 
+            type=hidden value=paypal@kipsta.net name=business> <INPUT 
+            type=hidden value=1 name=no_note> <INPUT type=hidden value=GBP 
+            name=currency_code> <INPUT type=hidden value=0 name=tax> <INPUT 
+            type=image height=31 
+            alt="Donate to Paynekiller with PayPal - it's fast, free and secure!" 
+            width=62 src="npc helper_file/paypal.gif" border=0 name=I1> 
+            </CENTER></FORM>
+            <P></P>
+            <DIV class=hr>
+            <HR>
+            </DIV>
+            <CENTER>
+            <P><B>Kipsta<BR>Recommends<BR></B>Prince of Persia and Beyond Good 
+            and Evil, perfect partners on Amazon.co.uk! <A class=_blank 
+            href="http://www.amazon.co.uk/exec/obidos/ASIN/B00009LW8B/kipstanet-21"><IMG 
+            alt="Prince of Persia: Sands of Time (PC) - Kipsta says: FUCKIN' AWESOME GAME!" 
+            hspace=3 src="npc helper_file/amazonpopsm.jpg" vspace=3 
+            border=0></A><BR>and...<BR><A class=_blank 
+            href="http://www.amazon.co.uk/exec/obidos/ASIN/B0000E3GWP/kipstanet-21"><IMG 
+            alt="Beyond Good and Evil - ONLY £14.99!!!! BARGAIN!" hspace=3 
+            src="npc helper_file/amazonbge.jpg" vspace=3 border=0></A><BR><A 
+            class=_blank 
+            href="http://www.amazon.co.uk/exec/obidos/redirect-home?tag=kipstanet-21&amp;site=amazon\">From 
+            Amazon.co.uk</A> <!-- 
+	<A HREF="http://www.amazon.co.uk/exec/obidos/ASIN/0744003237/kipstanet-21" class="_blank"><IMG SRC="layout/ads/amazonmpsg.jpg" border="0" alt="Max Payne 2: Official Strategy Guide (PC)" hspace="3" vspace="3"></A><br><a href="http://www.amazon.co.uk/exec/obidos/redirect-home?tag=kipstanet-21&site=amazon\" class="_blank">From Amazon.co.uk</a> 
+--></P></CENTER>
+            <DIV class=hr>
+            <HR>
+            </DIV>
+            <P></P>
+            <CENTER>
+            <TABLE style="BORDER-COLLAPSE: collapse" borderColor=#111111 
+            cellSpacing=2 cellPadding=2 border=0>
+              <TBODY>
+              <TR>
+                <TD width=120><!-- <p>There are <span class="hl">0</span> visitors browsing this page</p> -->
+                  <P>There are <SPAN class=hl>2</SPAN> active visitors at this 
+                  website</P></TD></TR></TBODY></TABLE></CENTER>
+            <P></P></TD>
+          <TD vAlign=top width=5><IMG class=blank height=10 
+            src="npc helper_file/blank.gif" width=5> </TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD vAlign=top width="100%" height=15>
+      <DIV class=hr>
+      <HR>
+      </DIV></TD></TR>
+  <TR>
+    <TD vAlign=top width="100%" height=15>
+      <DIV align=center><!-- FOOTER, can change often so is variable -->
+      <P align=center><FONT color=#dc0000>Legal:</FONT> <FONT color=#808080><A 
+      href="http://paynekiller.kipsta.net/">Kipsta's PayneKiller website</A>, 
+      created, designed and maintained by <A 
+      href="mailto:%20paynekiller@kipsta.net">Simon 'kipsta' Choo</A>. <BR>All 
+      content is Copyright © 2003 by the creator; Simon Choo unless stated 
+      otherwise. <BR>You may not copy or re-use any work here without the 
+      express written permission of the creator.</FONT> </P>
+      <P align=center><FONT color=#808080>Max Payne 2 and the Max Payne 2 logo 
+      are trademarks of Take-Two Interactive Software, Inc</FONT> 
+  </P></DIV></TD></TR></TBODY></TABLE></CENTER></DIV></BODY></HTML>

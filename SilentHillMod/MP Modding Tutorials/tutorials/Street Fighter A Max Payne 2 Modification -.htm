@@ -1,0 +1,416 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0052)http://www.freewebs.com/asharp/charactertutorial.htm -->
+<HTML><HEAD><TITLE>Street Fighter: A Max Payne 2 Modification -</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="StreetFighter: A Max Payne 2 modification" name=keywords>
+<META content="StreetFighter: A Max Payne 2 modification" name=description>
+<STYLE type=text/css>BODY {
+	FONT-SIZE: 14px; FONT-FAMILY: Tahoma, Geneva, Arial, Verdana
+}
+TD {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px
+}
+</STYLE>
+<!--   
+
+
+
+-->
+<META content="MSHTML 6.00.2737.800" name=GENERATOR></HEAD>
+<BODY text=#003366 bottomMargin=0 vLink=#003366 aLink=#003366 link=#003366 
+bgColor=#003366 leftMargin=0 topMargin=0 rightMargin=0>
+<SCRIPT language=JavaScript>
+
+n=30;
+n4=(document.layers);
+n6=(document.getElementById&&!document.all);
+ie=(document.all);
+d=(n4||ie)?'document.':'document.getElementById("';
+a=(n4||n6)?'':'all.';
+n6r=(n6)?'")':'';
+s=(n4)?'':'.style';
+
+var h,w;
+function Screen(){
+h=(ie)?document.body.clientHeight:window.innerHeight;
+w=(ie)?document.body.clientWidth:window.innerWidth;
+}
+Screen();
+window.onresize=Screen;
+
+y=new Array();
+x=new Array();
+stars = new Array();
+speed = new Array();
+col = new Array('#777777','#aaaaaa','#cccccc','#ffffff');
+
+for (i=0; i < n; i++){
+var size=1+Math.random()*2;
+if (!n4)
+document.write("<div id='strs"+i+"' style='position:absolute;top:0px;left:0px;width:"+size+"px;height:"+size+"px;background:#ffffff;font-size:"+size+"px'></div>");
+if (n4)
+document.write("<layer name='strs"+i+"' top=0 left=0 bgcolor=#000000 width="+size+" height="+size+"></layer>");
+}
+
+//Initial.
+for (i=0; i < n; i++){
+y[i]=Math.random()*h;
+x[i]=Math.random()*w;
+var itemp=eval(d+a+"strs"+i+n6r+s);
+itemp.top=y[i];
+itemp.left=x[i];
+var rcol = col[Math.floor(Math.random()*col.length)];
+(n4)?itemp.bgColor=rcol:itemp.background=rcol;
+if (rcol == col[0]) speed[i]=1+Math.random()*1;
+else if (rcol == col[1]) speed[i]=2+Math.random()*2;
+else if (rcol == col[2]) speed[i]=4+Math.random()*2;
+else speed[i]=6+Math.random()*2;
+}
+
+function fly(){
+sy=(ie)?document.body.scrollTop:window.pageYOffset;
+sx=(ie)?document.body.scrollLeft:window.pageXOffset;
+for (i=0; i < n; i++){
+x[i]-=speed[i];
+//Could randomize everything again but kept simple for slower computers.
+if (x[i] < -10){
+ x[i]=w-((n6)?20:10);
+ y[i]=Math.round(Math.random()*h-10);
+ }
+var temp=eval(d+a+"strs"+i+n6r+s);
+temp.top=y[i]+sy;
+temp.left=x[i]+sx;
+}
+setTimeout('fly()',10);
+}
+window.onload = fly;
+//-->
+</SCRIPT>
+
+<TABLE cellSpacing=0 cellPadding=0 width=760 border=0>
+  <TBODY>
+  <TR vAlign=top bgColor=#ffffff>
+    <TD colSpan=2 height=82>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top><IMG height=82 
+            src="Street Fighter A Max Payne 2 Modification -_file/home.gif" 
+            width=94 align=top useMap=#Map border=0></TD>
+          <TD vAlign=center width="100%" height=34><FONT color=#003366 
+            size=6>&nbsp;<B>Street Fighter: A Max Payne 2 
+            Modification</B></FONT><FONT size=2><B><BR></B></FONT><FONT 
+            face="Tahoma, Verdana, Arial, Times New Roman, Courier, Courier New" 
+            size=2>&nbsp;&nbsp;&nbsp;</FONT><FONT size=2><B> </B></FONT></TD>
+          <TD vAlign=center height=34><A 
+            href="http://www.freewebs.com/asharp/"><IMG id=log height=70 
+            alt="Your Logo Here" 
+            src="Street Fighter A Max Payne 2 Modification -_file/SFlogo.jpg" 
+            border=0></A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD vAlign=top width=612 bgColor=#003366>
+      <TABLE cellSpacing=0 cellPadding=0 width="99%" border=0>
+        <TBODY>
+        <TR>
+          <TD width=608><BR>
+            <BLOCKQUOTE><BR>
+              <P style="COLOR: white" align=left>
+              <TABLE borderColor=#003366 cellSpacing=5 cellPadding=20 
+              width="95%" bgColor=#003366 border=1>
+                <TBODY>
+                <TR bgColor=#dddddd>
+                  <TD vAlign=top align=left width="100%">
+                    <H2><FONT 
+                    face="Tahoma, Verdana, Arial, Times New Roman, Courier, Courier New"><U>CHARACTER 
+                    EXPORT TUTORIAL by Aztec/CJ </U></FONT></H2>
+                    <P><FONT 
+                    face="Tahoma, Verdana, Arial, Times New Roman, Courier, Courier New"><B>
+                    <P>This tutorial assumes that you have a basic knowledge of 
+                    3dmax and that you have the correct resources; </P>
+                    <P>3d Studio Max 5.1 service pack 1 with CS 4.1 </P>
+                    <P>Remedy plugins are installed correctly </P>
+                    <P>&nbsp;</P>
+                    <P>SETTING UP </P>
+                    <P>1. Open either the MaxPayne_ExportPose.max or the 
+                    ManoSax_B_ExportPose.max depending on the gender of your 
+                    model. You can also use the _modellingPose.max files also. 
+                    </P>
+                    <P>2. Delete either the Max Payne/Mona model by selecting it 
+                    and pressing delete. If you cannot select it, it is frozen. 
+                    To unfreeze it, right-click anywhere in the active viewpoint 
+                    and select unfreeze all. You should be able to select and 
+                    delete it. See Pic1.</P>
+                    <P>3. Once the model has been deleted, its time to import 
+                    your model into the scene. You do this by File-&gt;Merge and 
+                    select your character. Click open and your model will appear 
+                    in the scene. </P>
+                    <P>4. Depending on your model, you may need to scale and 
+                    resize the model to fit the skeleton. Note: - Be sure to 
+                    line up your model as close to the skeleton as possible, 
+                    especially around the moving joints to ensure the model 
+                    deforms correctly with the skeleton. </P>
+                    <P>5. Once you’re happy with the alignment with the model, 
+                    its time for some texturing. As your probably aware, MP and 
+                    MP2 uses KFMaterials and KFTextures.</P></B></FONT>
+                    <P></P></TD></TR></TBODY></TABLE><BR>
+              <TABLE borderColor=#003366 cellSpacing=5 cellPadding=20 
+              width="95%" bgColor=#003366 border=1>
+                <TBODY>
+                <TR bgColor=#dddddd>
+                  <TD vAlign=top align=left width="100%">
+                    <H2><FONT 
+                    face="Tahoma, Verdana, Arial, Times New Roman, Courier, Courier New"><U>Pic1</U></FONT></H2>
+                    <P><FONT 
+                    face="Tahoma, Verdana, Arial, Times New Roman, Courier, Courier New"><B>
+                    <CENTER><IMG 
+                    src="Street Fighter A Max Payne 2 Modification -_file/s1.jpg" 
+                    align=center></CENTER></B></FONT>
+                    <P></P></TD></TR></TBODY></TABLE><BR>
+              <TABLE borderColor=#003366 cellSpacing=5 cellPadding=20 
+              width="95%" bgColor=#003366 border=1>
+                <TBODY>
+                <TR bgColor=#dddddd>
+                  <TD vAlign=top align=left width="100%">
+                    <H2><FONT 
+                    face="Tahoma, Verdana, Arial, Times New Roman, Courier, Courier New"><U></U></FONT></H2>
+                    <P><FONT 
+                    face="Tahoma, Verdana, Arial, Times New Roman, Courier, Courier New"><B>
+                    <P>TEXTURING</P>
+                    <P>As described in the official Remedy skinning tutorial, 
+                    you can use the Multi/sub-object material type to keep all 
+                    your textures in one place.<BR>1. To access the material 
+                    editor press <FONT color=#ff0000>M.</FONT> You will see a 
+                    multi/sub-object material type has already been set up, if 
+                    you at its parameters, you’ll see the textures contained 
+                    within it. What you need to do is delete these textures and 
+                    replace them with your own. You do this by simply clicking 
+                    delete until your left with 1 sub material. Once you’ve done 
+                    that rename the material to something that describes the 
+                    texture i.e. Face.</P>
+                    <P>2. Click on the material button (next to the Name box) 
+                    and click on the standard button if it doesn’t say 
+                    KFMaterial. Select KFMaterial from the list and click ok. It 
+                    will now turn into a KFMaterial. Click on the diffuse button 
+                    (box where it says none) and select KF Texture from the list 
+                    and click OK. Click on the Bitmap box and select your 
+                    texture. Click open and your texture will be loaded. Make 
+                    sure the “Show map in Viewpoint” has been pressed (square 
+                    covered cube) and click the “Go to parent” button twice 
+                    (arrow facing upwards). See Pic2.</P>
+                    <P>3. Click and hold the left mouse button on the new 
+                    sub-material and drag it to the desired place on your model. 
+                    You may need to apply UVW mapping for correct texture 
+                    placement. Once you’re happy with that texture, add more 
+                    textures by going back to the material editor and clicking 
+                    Add under the Multi/Sub-Object and using the method as 
+                    described above.</P></B></FONT>
+                    <P></P></TD></TR></TBODY></TABLE><BR>
+              <TABLE borderColor=#003366 cellSpacing=5 cellPadding=20 
+              width="95%" bgColor=#003366 border=1>
+                <TBODY>
+                <TR bgColor=#dddddd>
+                  <TD vAlign=top align=left width="100%">
+                    <H2><FONT 
+                    face="Tahoma, Verdana, Arial, Times New Roman, Courier, Courier New"><U>Pic2</U></FONT></H2>
+                    <P><FONT 
+                    face="Tahoma, Verdana, Arial, Times New Roman, Courier, Courier New"><B>
+                    <CENTER><IMG 
+                    src="Street Fighter A Max Payne 2 Modification -_file/s2.jpg" 
+                    align=center></CENTER></B></FONT>
+                    <P></P></TD></TR></TBODY></TABLE><BR>
+              <TABLE borderColor=#003366 cellSpacing=5 cellPadding=20 
+              width="95%" bgColor=#003366 border=1>
+                <TBODY>
+                <TR bgColor=#dddddd>
+                  <TD vAlign=top align=left width="100%">
+                    <H2><FONT 
+                    face="Tahoma, Verdana, Arial, Times New Roman, Courier, Courier New"><U></U></FONT></H2>
+                    <P><FONT 
+                    face="Tahoma, Verdana, Arial, Times New Roman, Courier, Courier New"><B>
+                    <P>PHYSIQUE AND WIEGHTING VERTICES</P>
+                    <P>1. Once all your KF textures are applied to the model, 
+                    you will need to ensure that the model is one mesh. You do 
+                    this by attaching. Click on one of the editable meshes and 
+                    click on Attach List. Select the parts of the model and 
+                    click Attach. Your model will now be one mesh.</P>
+                    <P>2. Next step is to apply the physique modifier. Select 
+                    your model and from the modifier list, select Physique from 
+                    the <FONT color=#ff0000>Modify</FONT> drop down box. A new 
+                    rollout will appear (under the moodier box). Click the 
+                    “attach to node” (Looks like a stick man with a red dot) and 
+                    select BIP01 from the skeleton. A new window will appear 
+                    once you click on a bone called physique initialization and 
+                    select the following settings;</P>
+                    <P>Blending Between Links: Change to 4 links<BR>Radial 
+                    Falloff Envelopes: Un-tick the Create Envelopes</P>
+                    <P>3. Then click Initialize. Click on the physique modifier 
+                    and tick the “Hide Attached Nodes” (bottom right hand corner 
+                    of the screen) this will make the skeleton disappear. Select 
+                    you model and press Alt and X. You model will now appear to 
+                    be see through.</P>
+                    <P>4. Now here comes the fun/hard part. Click on the + of 
+                    the physique modifier to expand it and select Link. Links 
+                    are the orange lines that make up the skeleton. You can 
+                    deactivate any links you do not wish to use. For example if 
+                    you don’t want your character to have facial expressions, 
+                    you can deactivate the links controlling the jaw bones, 
+                    cheek bones. You do this by click on the desired link and 
+                    under link settings un-tick the Active box. The link should 
+                    now appear grey. You also deactivate links because more than 
+                    one link can represent the same bone...you only need one 
+                    link for each bone(there may be 2 or 3 links in the arm that 
+                    represents the forearm bone...you only need one). See 
+                    Pic3.</P>
+                    <P>5. Once you’ve deactivated unwanted links your ready to 
+                    assign the vertices of your model to the skeleton. Select 
+                    the vertex option in physique and you will see the vertices 
+                    appear on the model. If you highlight all the verts you will 
+                    notice that they are all blue (root). This means that they 
+                    haven’t been assigned to a bone yet.<BR>Note: - This may 
+                    make your computer run slowly!!</P>
+                    <P>6. Ok, now what you do is select the verts you wish to be 
+                    assigned to each link/bone. Once you’ve selected the verts, 
+                    under vertex type select green (Rigid) and “Blending Between 
+                    Links” is set to N Links. Click “Assign to Link” and select 
+                    the link you wish to assign them to. You will notice that 
+                    the verts now turn green to say they have been assigned. Now 
+                    repeat the process until all verts have been assigned a 
+                    bone.</P>
+                    <P>Note: - As described in the official skinning tutorial a 
+                    good idea is to "Lock assignments" after you have assigned 
+                    verts, so you accidentally don’t reassign to different 
+                    bones.</P>
+                    <P>7. Once you’re done assigning, the next step is to test 
+                    the skin with movement. If you turn off figure mode and 
+                    click play, a simple animation will run where you can see 
+                    how your model deforms. It’s also handy to use the Remedy 
+                    weighting tool to see if you’ve missed any vertices. If it 
+                    doesn’t deform properly, turn figure mode back on and select 
+                    the rouge verts and click “remove from link”, then click on 
+                    the link the verts are assigned. Then simply reassign 
+                    them.</P></B></FONT>
+                    <P></P></TD></TR></TBODY></TABLE><BR>
+              <TABLE borderColor=#003366 cellSpacing=5 cellPadding=20 
+              width="95%" bgColor=#003366 border=1>
+                <TBODY>
+                <TR bgColor=#dddddd>
+                  <TD vAlign=top align=left width="100%">
+                    <H2><FONT 
+                    face="Tahoma, Verdana, Arial, Times New Roman, Courier, Courier New"><U>Pic3</U></FONT></H2>
+                    <P><FONT 
+                    face="Tahoma, Verdana, Arial, Times New Roman, Courier, Courier New"><B>
+                    <CENTER><IMG 
+                    src="Street Fighter A Max Payne 2 Modification -_file/s3.jpg" 
+                    align=center></CENTER></B></FONT>
+                    <P></P></TD></TR></TBODY></TABLE><BR>
+              <TABLE borderColor=#003366 cellSpacing=5 cellPadding=20 
+              width="95%" bgColor=#003366 border=1>
+                <TBODY>
+                <TR bgColor=#dddddd>
+                  <TD vAlign=top align=left width="100%">
+                    <H2><FONT 
+                    face="Tahoma, Verdana, Arial, Times New Roman, Courier, Courier New"><U>Exporting 
+                    Options</U></FONT></H2>
+                    <P><FONT 
+                    face="Tahoma, Verdana, Arial, Times New Roman, Courier, Courier New"><B>
+                    <CENTER><IMG 
+                    src="Street Fighter A Max Payne 2 Modification -_file/exp.jpg" 
+                    align=center></CENTER></B></FONT>
+                    <P></P></TD></TR></TBODY></TABLE><BR>
+              <TABLE borderColor=#003366 cellSpacing=5 cellPadding=20 
+              width="95%" bgColor=#003366 border=1>
+                <TBODY>
+                <TR bgColor=#dddddd>
+                  <TD vAlign=top align=left width="100%">
+                    <H2><FONT 
+                    face="Tahoma, Verdana, Arial, Times New Roman, Courier, Courier New"><U></U></FONT></H2>
+                    <P><FONT 
+                    face="Tahoma, Verdana, Arial, Times New Roman, Courier, Courier New"><B>
+                    <P>EXPORTING &amp; TESTING</P>
+                    <P>1. Once you’re happy with the assigned vertices, you’re 
+                    ready to export. First thing to do before anything else is 
+                    to hide the remaining parts of the skeleton, namely BIP01 
+                    and the footsteps. Right click anywhere in the active 
+                    viewpoint and click on <FONT 
+                    color=#ff0000>Display-&gt;Freeze-&gt;unfreeze all</FONT>. 
+                    Select the footsteps (small grey oval at the feet) and right 
+                    click and hide. Select the BIP01 and all its bones and hide 
+                    that too.</P>
+                    <P>2. Once that is done you are ready to export your 
+                    character. <FONT color=#ff0000>Select File-&gt; 
+                    export</FONT>. Name the file something descriptive and 
+                    select the KF exporter from the drop down box. Click on 
+                    save. Now the KF Export window appears, select the following 
+                    options as seen in the pic. You don't need 
+                    Lights/Helpers/Environment selected.</P>
+                    <P><FONT color=#ffffff><FONT color=darkblue>Then click ok. 
+                    Now you have exported your character and created two files, 
+                    kf2 and skd and also a texture directory. </FONT></P>
+                    <P><FONT color=darkblue>To test your new creation in game a 
+                    simple way is to rename the 2 files to MaxPayne_L0.kf2 and 
+                    MaxPayne_L0.skd. Before the next step Back up your original 
+                    Maxpayne files!!! I will not be held responsible if you 
+                    don’t!!!</FONT></P>
+                    <P><FONT color=darkblue>Copy those new files to 
+                    C:\MaxPayne2Dev\Game\data\database\skins\MaxPayne 
+                    overwriting the originals. Copy the textures from the 
+                    directory 3dmax created when you exported your model into 
+                    C:\MaxPayne2Dev\Game\data\database\skins\Sharedtextures.</FONT></P>
+                    <P><FONT color=darkblue>Once you’ve done that start up the 
+                    game and disable Pixel Shader Skins (because they won’t be 
+                    on your model…or delete them from the characters text file) 
+                    in the options menu and play.</FONT></P>
+                    <P><BR><FONT 
+                    color=darkblue>Aztec.</FONT></P></FONT></B></FONT>
+                    <P></P></TD></TR></TBODY></TABLE></P>
+              <HR style="COLOR: #ffffff; size: 1px" align=left width="95%">
+              <I><FONT 
+              face="Tahoma, Verdana, Arial, Times New Roman, Courier, Courier New" 
+              color=#ffffff size=2>©2004 Asharp<BR></FONT></I>
+              <DIV align=left>
+              <TABLE cellSpacing=0 cellPadding=0 width="95%" border=0>
+                <TBODY>
+                <TR>
+                  <TD bgColor=#dddddd>
+                    <DIV align=center><FONT 
+                    face="Tahoma, Verdana, Arial, Times New Roman, Courier, Courier New" 
+                    color=#003366><B><FONT 
+                size=2></FONT></B></FONT></DIV></TD></TR></TBODY></TABLE></DIV>
+              <DIV align=left><I><FONT 
+              face="Tahoma, Verdana, Arial, Times New Roman, Courier, Courier New" 
+              color=#ffffff 
+      size=2></FONT></I></DIV></BLOCKQUOTE></TD></TR></TBODY></TABLE></TD>
+    <TD vAlign=top width=148 bgColor=#003366 height=180>
+      <TABLE 
+      style="BACKGROUND: url(http://images.freewebs.com/Members/Generationz/NewStyles/ProfessionalBlue/gradient.gif)" 
+      height=180 cellSpacing=0 cellPadding=0 width=148 align=left 
+      background="Street Fighter A Max Payne 2 Modification -_file/gradient.gif" 
+      border=0>
+        <TBODY>
+        <TR vAlign=top align=middle>
+          <TD>
+            <TABLE cellSpacing=3 cellPadding=0 width=110 align=center 
+              border=0><TBODY>
+              <TR vAlign=top align=middle>
+                <TD>
+                  <P><FONT 
+                  face="Tahoma, Verdana, Arial, Times New Roman, Courier, Courier New" 
+                  size=2><B><A class=section 
+                  href="http://www.freewebs.com/asharp/index.htm">Home</A> 
+                  </B><BR><B><A class=section 
+                  href="http://www.freewebs.com/asharp/websalbum.htm">WebsAlbum</A> 
+                  </B><BR><B><A class=section 
+                  href="http://www.freewebs.com/asharp/levelpics.htm">Level 
+                  Pics</A> </B><BR><B><A class=section 
+                  href="http://www.freewebs.com/asharp/charactertutorial.htm">Character 
+                  Tutorial</A> </B><BR><B><A class=section 
+                  href="http://www.freewebs.com/asharp/about.htm">About</A> 
+                  </B><BR></FONT></P></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <DIV align=right></DIV></TD></TR></TBODY></TABLE><MAP name=Map><AREA 
+  shape=RECT coords=0,20,92,64 href="http://www.freewebs.com/asharp/" border="0" 
+  usemap="#Home"></MAP><A href="http://members.freewebs.com/"><IMG 
+alt="Free web hosting at www.FreeWebs.com." 
+src="Street Fighter A Max Payne 2 Modification -_file/null.gif" border=0></A>
+<SCRIPT src="Street Fighter A Max Payne 2 Modification -_file/tracker.jsp" 
+type=text/javascript></SCRIPT>
+ <!--- members9-27 ---></BODY></HTML>

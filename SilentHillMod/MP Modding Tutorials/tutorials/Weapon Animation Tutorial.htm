@@ -1,0 +1,2972 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="generator" content="vBulletin 3.8.6">
+
+<meta name="keywords" content=" How to animate Weapons in 3dsMax?, apogee,3d realms,duke,nukem,prey,game,games,dopefish,fun">
+<meta name="description" content=" How to animate Weapons in 3dsMax? Max Payne Modifications">
+
+
+<!-- CSS Stylesheet -->
+<style type="text/css" id="vbulletin_css">
+/**
+* vBulletin 3.8.6 CSS
+* Style: '3D Realms Forums Style'; Style ID: 5
+*/
+body
+{
+	background: #1e1e22;
+	color: #FFFFFF;
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	margin: 5px 10px 10px 10px;
+	padding: 0px;
+}
+a:link, body_alink
+{
+	color: #FFB14D;
+	text-decoration: none;
+}
+a:visited, body_avisited
+{
+	color: #FFB14D;
+	text-decoration: none;
+}
+a:hover, a:active, body_ahover
+{
+	color: #FECC92;
+}
+.page
+{
+	color: #FFFFFF;
+}
+td, th, p, li
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.tborder
+{
+	color: #000000;
+	border: 1px solid #4D4D55;
+	border-spacing: 0px;
+}
+.tcat
+{
+	background: #3B5D93 url(images/3drstyle/bluebar_gradient.gif) repeat-x top left;
+	color: #FFFFFF;
+	font: bold 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.tcat a:link, .tcat_alink
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+.tcat a:visited, .tcat_avisited
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+.tcat a:hover, .tcat a:active, .tcat_ahover
+{
+	color: #FFFF66;
+	text-decoration: underline;
+}
+.thead
+{
+	background: #232327  url(images/3drstyle/headergradient.gif) repeat-x top left;
+	color: #EE9738;
+	font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.thead a:link, .thead_alink
+{
+	color: #EE9738;
+	text-decoration: none;
+}
+.thead a:visited, .thead_avisited
+{
+	color: #EE9738;
+	text-decoration: none;
+}
+.thead a:hover, .thead a:active, .thead_ahover
+{
+	color: #EE9738;
+	text-decoration: underline;
+}
+.tfoot
+{
+	background: #3B5D93 url(images/3drstyle/bluebar_gradient.gif) repeat-x top left;
+	color: #FFFFFF;
+}
+.tfoot a:link, .tfoot_alink
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.tfoot a:visited, .tfoot_avisited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.tfoot a:hover, .tfoot a:active, .tfoot_ahover
+{
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+.alt1, .alt1Active
+{
+	background: #232327;
+	color: #FFFFFF;
+}
+.alt2, .alt2Active
+{
+	background: #232327;
+	color: #FFFFFF;
+}
+.inlinemod
+{
+	background: #FFFFBE;
+	color: #000000;
+}
+.inlinemod a:link, .inlinemod_alink
+{
+	color: #000000;
+	text-decoration: none;
+}
+.inlinemod a:visited, .inlinemod_avisited
+{
+	color: #000000;
+	text-decoration: none;
+}
+.inlinemod a:hover, .inlinemod a:active, .inlinemod_ahover
+{
+	color: #000000;
+	text-decoration: underline;
+}
+.wysiwyg
+{
+	background: #232327;
+	color: #FFFFFF;
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+textarea, .bginput
+{
+	font: 10pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.bginput option, .bginput optgroup
+{
+	font-size: 10pt;
+	font-family: verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.button
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+select
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+option, optgroup
+{
+	font-size: 11px;
+	font-family: verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.smallfont
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.time
+{
+	color: #CCCCCC;
+}
+.navbar
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.highlight
+{
+	color: #FF0000;
+	font-weight: bold;
+}
+.fjsel
+{
+	background: #4A6FA4;
+	color: #E0E0F6;
+}
+.fjdpth0
+{
+	background: #F7F7F7;
+	color: #000000;
+}
+.panel
+{
+	background: #232327;
+	color: #FFFFFF;
+}
+.panelsurround
+{
+	background: #232327;
+	color: #FFFFFF;
+}
+legend
+{
+	color: #FFB14D;
+	font: 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+.vbmenu_control
+{
+	background: #3B5D93 url(images/3drstyle/bluebar_gradient.gif) repeat-x top left;
+	color: #FFFFFF;
+	font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+.vbmenu_control a:link, .vbmenu_control_alink
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_control a:visited, .vbmenu_control_avisited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_control a:hover, .vbmenu_control a:active, .vbmenu_control_ahover
+{
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+.vbmenu_popup
+{
+	background: #1C1C1F;
+	color: #FFFFFF;
+}
+.vbmenu_option
+{
+	background: #28282C;
+	color: #FFFFFF;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_option a:link, .vbmenu_option_alink
+{
+	color: #EE9738;
+	text-decoration: none;
+}
+.vbmenu_option a:visited, .vbmenu_option_avisited
+{
+	color: #EE9738;
+	text-decoration: none;
+}
+.vbmenu_option a:hover, .vbmenu_option a:active, .vbmenu_option_ahover
+{
+	color: #EE9738;
+	text-decoration: underline;
+}
+.vbmenu_hilite
+{
+	background: #52525A;
+	color: #FFFFFF;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_hilite a:link, .vbmenu_hilite_alink
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite a:visited, .vbmenu_hilite_avisited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite a:hover, .vbmenu_hilite a:active, .vbmenu_hilite_ahover
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+/* ***** styling for 'big' usernames on postbit etc. ***** */
+.bigusername { font-size: 12px; font-weight: bold;}
+
+/* ***** small padding on 'thead' elements ***** */
+td.thead, th.thead, div.thead { padding: 4px; }
+
+/* ***** basic styles for multi-page nav elements */
+.pagenav a { text-decoration: none; }
+.pagenav td { padding: 2px 4px 2px 4px; }
+
+/* ***** de-emphasized text */
+.shade, a.shade:link, a.shade:visited { color: #777777; text-decoration: none; }
+a.shade:active, a.shade:hover { color: #FF4400; text-decoration: underline; }
+.tcat .shade, .thead .shade, .tfoot .shade { color: #DDDDDD; }
+
+/* ***** define margin and font-size for elements inside panels ***** */
+.fieldset { margin-bottom: 6px; }
+.fieldset, .fieldset td, .fieldset p, .fieldset li { font-size: 11px; }
+
+/* ***** don't change the following ***** */
+form { margin: 0px; }
+label { cursor: default; }
+.normal { font-weight: normal; }
+.inlineimg { vertical-align: middle; }
+.underline { text-decoration: underline; }
+.vbmenu_hilite * { cursor: pointer; }
+
+/* auto-clearing of floats */
+.floatcontainer:after, .block_row:after { content:"."; display:block; height:0; clear:both; visibility:hidden; }
+.floatcontainer, .block_row { display:inline-block; }
+/* IE-mac hide \*/
+* html .floatcontainer, * html .block_row { height:1%; }
+.floatcontainer, .block_row { display:block; }
+/* end IE-mac hide */
+
+.darktable {
+	background-color: #232327;
+	border-color: #845122;
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+	color: #FFFFFF;
+}
+.tdheader {
+	background-color: #232327;
+        background-image: url(http://forums.3drealms.com/ppvb/images/3drstyle/headergradient.gif);
+        background-repeat: repeat-x;
+	border-color: #FFB15D;
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+	color: #EE9738;
+	font-size: 11px;
+        font-weight: bold;
+}
+
+.signature {
+	font-size: 10px;
+        color: #cccccc;
+}
+
+.reasontext { color: #000000; }
+
+/* 3DR Forum Wrapper CSS */
+#page { width: 98%; margin: 0 auto; }
+.wrapper3dr { background: #28282c url("http://forums.3drealms.com/ppvb/images/3drstyle/main_bg.gif") left top repeat-x; border: 1px solid #3c3c3f; border-top: 0px; }
+.header3dr { height: 115px; padding: 0 10px 0 10px; }
+.nav3dr { float: right; padding-top: 73px; width: 80%; text-align: right; }
+.logo3dr { float: left; width: 10%;}
+#forumcontent { padding: 0px 15px 15px 15px;}
+.wrapper3dr .lt { margin: -1px; background: url("http://forums.3drealms.com/ppvb/images/3drstyle/wrapper_lt.gif") left top no-repeat; }
+.wrapper3dr .rt { background: url("http://forums.3drealms.com/ppvb/images/3drstyle/wrapper_rt.gif") right top no-repeat; }
+.wrapper3dr .lb { background: url("http://forums.3drealms.com/ppvb/images/3drstyle/wrapper_lb.gif") left bottom no-repeat; }
+.wrapper3dr .rb { background: url("http://forums.3drealms.com/ppvb/images/3drstyle/wrapper_rb.gif") right bottom no-repeat; }
+.nav3dr ul { margin:0; float: right; padding: 0 22px 0 0; list-style:none; }
+.nav3dr li { float:left; background:url("http://forums.3drealms.com/ppvb/images/3drstyle/tab_right.gif") no-repeat right top; margin:0; padding:0; padding-right: 6px; }
+.nav3dr a { display:block; background:url("http://forums.3drealms.com/ppvb/images/3drstyle/tab_left.gif") no-repeat left top; padding: 5px 15px; color: #a5a5a7; text-decoration: none; font: bold 12px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif; }
+.nav3dr a:hover { color: #ffffff; }
+.bottomcopy { padding: 10px; text-align: center; font-size: 8pt; }
+/* End 3DR Forum Wrapper CSS */
+</style>
+<link rel="stylesheet" type="text/css" href="Weapon%20Animation%20Tutorial_files/vbulletin_important.css">
+
+
+<!-- / CSS Stylesheet -->
+<script type="text/javascript" src="Weapon%20Animation%20Tutorial_files/resizeall.js"></script>
+<script type="text/javascript" src="Weapon%20Animation%20Tutorial_files/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="Weapon%20Animation%20Tutorial_files/connection-min.js"></script>
+<script type="text/javascript">
+<!--
+var SESSIONURL = "";
+var SECURITYTOKEN = "1287088317-8004036ebf3fcea5de8cfb09091aba39361c27f4";
+var IMGDIR_MISC = "images/misc";
+var vb_disable_ajax = parseInt("0", 10);
+// -->
+</script>
+<script type="text/javascript" src="Weapon%20Animation%20Tutorial_files/vbulletin_global.js"></script>
+<script type="text/javascript" src="Weapon%20Animation%20Tutorial_files/vbulletin_menu.js"></script>
+
+
+	<link rel="alternate" type="application/rss+xml" title="3D Realms Forums RSS Feed" href="http://forums.3drealms.com/vb/external.php?type=RSS2">
+	
+		<link rel="alternate" type="application/rss+xml" title="3D Realms Forums - Max Payne Modifications - RSS Feed" href="http://forums.3drealms.com/vb/external.php?type=RSS2&amp;forumids=36">
+	
+
+<script type="text/javascript" src="Weapon%20Animation%20Tutorial_files/overlib.js"></script>
+
+<script type="text/javascript">
+function gXBL_setcursor(type) {
+	document.getElementsByTagName('body')[0].style.cursor = typeof type == 'undefined' ? 'default' : type;
+	links = document.getElementsByTagName('a');
+	for(i = 0; i < links.length; i++) links.item(i).style.cursor = typeof type == 'undefined' ? 'pointer' : type;
+}
+
+function gXBL_show( type, gamertag) {
+
+	if(type == 'gamercard')
+	{
+		gXBL_setcursor('progress');
+
+		var html = '<iframe onload="gXBL_setcursor();" src="http://gamercard.xbox.com/'+gamertag+'.card" scrolling="no" frameBorder="0" height="140" width="204">'+gamertag+'</iframe>';
+
+		return overlib(html, BORDER, 0, FULLHTML, WIDTH, 204, HEIGHT, 140, VAUTO, HAUTO);
+	}
+
+	if(type == 'nxeavatar')
+	{
+		gXBL_setcursor('progress');
+
+		var html = '<iframe onload="gXBL_setcursor();" src="http://avatar.xboxlive.com/avatar/'+gamertag+'/avatar-body.png" scrolling="no" frameBorder="0" height="300" width="150">'+gamertag+'</iframe>';
+
+		return overlib(html, BORDER, 0, FULLHTML, WIDTH, 150, HEIGHT, 300, VAUTO, HAUTO);
+	}
+
+}
+
+function gXBL_hide() {
+	return nd();
+}
+</script>
+<style type="text/css">
+.gxblhighlight td {
+	border:1px solid yellow;
+}
+</style><!-- Forum Runner Begin -->
+<script type="text/javascript" src="Weapon%20Animation%20Tutorial_files/detect.js"></script>
+<!-- Forum Runner End -->
+	<title> How to animate Weapons in 3dsMax? - 3D Realms Forums</title>
+	<script type="text/javascript" src="Weapon%20Animation%20Tutorial_files/vbulletin_post_loader.js"></script>
+	<style type="text/css" id="vbulletin_showthread_css">
+	<!--
+	
+	#tag_edit_list { list-style:none; margin:0px; padding:0px; }
+	#tag_edit_list li { float:left; display:block; width:200px; }
+	#tag_edit_list li.mine { font-weight:bold; }
+	
+	#links div { white-space: nowrap; }
+	#links img { vertical-align: middle; }
+	-->
+	</style>
+</head><body onload="; fiImageResize()">
+<div id="page">
+<div class="wrapper3dr"><div class="lt"><div class="rt"><div class="lb"><div class="rb">
+	<div class="header3dr">
+		<div class="logo3dr"><a href="http://www.3drealms.com/"><img title="3D Realms" src="Weapon%20Animation%20Tutorial_files/logo3dr.jpg" alt="3D Realms" border="0"></a></div>
+		<div class="nav3dr">
+			 <ul>
+				<li><a href="http://www.buy3drealms.com/">Store</a></li>
+				<li><a href="http://www.3drealms.com/games.html">Games</a></li>
+				<li><a href="http://www.3drealms.com/downloads.html">Downloads</a></li>
+				<li><a href="http://www.3drealms.com/forums.html">Forums</a></li>
+				<li><a href="http://www.3drealms.com/help.html">Support</a></li>
+				<li><a href="http://www.3drealms.com/info.html">Company Info</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="forumcontent">
+
+<!-- content table -->
+<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 100%; text-align: left;">
+		<div style="padding: 0px;" align="left">
+
+
+
+
+<!--  Original code here -->
+
+<div align="center"></div><div class="vbmenu_popup" id="vbbloglinks_menu" style="display: none; margin-top: 3px; position: absolute; z-index: 50;" align="left">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead"><a href="http://forums.3drealms.com/vb/blog.php">Blogs</a></td>
+	</tr>
+	
+	<tr>
+		<td class="vbmenu_option vbmenu_option_alink"><a href="http://forums.3drealms.com/vb/blog.php?u=4022">Your Blog</a></td>
+	</tr>
+	
+	<tr>
+		<td class="vbmenu_option vbmenu_option_alink"><a href="http://forums.3drealms.com/vb/blog.php?do=list">Recent Entries</a></td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option vbmenu_option_alink"><a href="http://forums.3drealms.com/vb/blog.php?do=list&amp;blogtype=best">Best Entries</a></td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option vbmenu_option_alink"><a href="http://forums.3drealms.com/vb/blog.php?do=bloglist&amp;blogtype=best">Best Blogs</a></td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option vbmenu_option_alink"><a href="http://forums.3drealms.com/vb/blog.php?do=bloglist">Blog List</a></td>
+	</tr>
+	
+	<tr>
+		<td class="vbmenu_option vbmenu_option_alink"><a href="http://forums.3drealms.com/vb/blog_search.php?do=search">Search Blogs</a></td>
+	</tr>
+	
+	</tbody></table>
+</div>
+<br>
+
+<!-- breadcrumb, login, pm info -->
+<table class="tborder" align="center" border="0" cellpadding="4" cellspacing="0" width="100%">
+<tbody><tr>
+	<td class="alt1" width="100%">
+		
+			<table border="0" cellpadding="0" cellspacing="0">
+			<tbody><tr valign="bottom">
+				<td><a href="#" onclick="history.back(1); return false;"><img title="Go Back" src="Weapon%20Animation%20Tutorial_files/navbits_start.gif" alt="Go Back" border="0"></a></td>
+				<td>&nbsp;</td>
+				<td width="100%"><span class="navbar"><a href="http://forums.3drealms.com/vb/index.php" accesskey="1">3D Realms Forums</a></span> 
+	<span class="navbar">&gt; <a href="http://forums.3drealms.com/vb/forumdisplay.php?f=4">General Gaming Topics</a></span>
+
+
+	<span class="navbar">&gt; <a href="http://forums.3drealms.com/vb/forumdisplay.php?f=12">Max Payne</a></span>
+
+
+	<span class="navbar">&gt; <a href="http://forums.3drealms.com/vb/forumdisplay.php?f=36">Max Payne Modifications</a></span>
+
+</td>
+			</tr>
+			<tr>
+				<td class="navbar" style="font-size: 10pt; padding-top: 1px;" colspan="3"><a href="http://forums.3drealms.com/vb/showthread.php?t=9990&amp;highlight=weapon+animation+3dsmax"><img title="Reload this Page" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/navbits_finallink_ltr.gif" alt="Reload this Page" border="0"></a> <strong>
+	 How to animate Weapons in 3dsMax?
+
+</strong></td>
+			</tr>
+			</tbody></table>
+		
+	</td>
+
+	<td class="alt2" nowrap="nowrap">
+	<div class="smallfont">
+		<strong>Welcome, <a href="http://forums.3drealms.com/vb/member.php?u=4022">Neo16</a>.</strong><br>
+		You last visited: Today at <span class="time">10:28 PM</span>
+
+		
+			<div><a href="http://forums.3drealms.com/vb/private.php">Private Messages</a>: Unread 0, Total 10.</div>
+		
+
+		
+	</div>
+	</td>
+
+</tr>
+</tbody></table>
+<!-- / breadcrumb, login, pm info -->
+
+<!-- nav buttons bar -->
+<div style="padding: 0px; border-top-width: 0px;">
+	<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr align="center">
+		
+			<td class="vbmenu_control"><a href="http://forums.3drealms.com/vb/usercp.php">User CP</a></td>
+		
+		
+		<td class="vbmenu_control"><a href="http://forums.3drealms.com/vb/misc.php?do=cfrules">Forum Rules</a></td><td class="vbmenu_control"><a style="cursor: pointer;" id="vbbloglinks" href="http://forums.3drealms.com/vb/blog.php">Blogs <img alt="" title="" src="Weapon%20Animation%20Tutorial_files/menu_open.gif" border="0"></a><script type="text/javascript">vbmenu_register("vbbloglinks");</script></td>
+		<td class="vbmenu_control"><a rel="help" href="http://forums.3drealms.com/vb/faq.php" accesskey="5">FAQ</a></td>
+		
+			<td class="vbmenu_control"><a style="cursor: pointer;" id="community" href="http://forums.3drealms.com/vb/showthread.php?t=9990&amp;highlight=weapon+animation+3dsmax&amp;nojs=1#community" rel="nofollow" accesskey="6">Community <img alt="" title="" src="Weapon%20Animation%20Tutorial_files/menu_open.gif" border="0"></a> <script type="text/javascript"> vbmenu_register("community"); </script></td>
+		
+		<td class="vbmenu_control"><a href="http://forums.3drealms.com/vb/calendar.php">Calendar</a></td>
+		
+			
+				
+				<td class="vbmenu_control"><a href="http://forums.3drealms.com/vb/search.php?do=getnew" accesskey="2">New Posts</a></td>
+				
+				<td class="vbmenu_control"><a style="cursor: pointer;" id="navbar_search" href="http://forums.3drealms.com/vb/search.php" accesskey="4" rel="nofollow">Search <img alt="" title="" src="Weapon%20Animation%20Tutorial_files/menu_open.gif" border="0"></a> <script type="text/javascript"> vbmenu_register("navbar_search"); </script></td>
+			
+			
+				<td class="vbmenu_control"><a style="cursor: pointer;" id="usercptools" href="http://forums.3drealms.com/vb/showthread.php?t=9990&amp;highlight=weapon+animation+3dsmax&amp;nojs=1#usercptools" accesskey="3">Quick Links <img alt="" title="" src="Weapon%20Animation%20Tutorial_files/menu_open.gif" border="0"></a> <script type="text/javascript"> vbmenu_register("usercptools"); </script></td>
+			
+		
+		
+		
+			<td class="vbmenu_control"><a href="http://forums.3drealms.com/vb/login.php?do=logout&amp;logouthash=1287088317-8004036ebf3fcea5de8cfb09091aba39361c27f4" onclick="return log_out('Are you sure you want to log out?')">Log Out</a></td>
+		
+		</tr>
+	</tbody></table>
+</div>
+<!-- / nav buttons bar -->
+
+<br>
+
+
+<form action="profile.php?do=dismissnotice" method="post" id="notices">
+<input name="do" value="dismissnotice" type="hidden">
+<input name="securitytoken" value="1287088317-8004036ebf3fcea5de8cfb09091aba39361c27f4" type="hidden">
+<input id="dismiss_notice_hidden" name="dismiss_noticeid" value="" type="hidden">
+<input name="url" value="/vb/showthread.php?t=9990&amp;highlight=weapon+animation+3dsmax" type="hidden">
+	<table class="tborder" align="center" border="0" cellpadding="4" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td class="thead">Notices</td>
+	</tr>
+	<tr>
+		<td class="alt1">
+			<div class="navbar_notice" id="navbar_notice_13">
+	<input onclick="return dismiss_notice(13);" name="dismiss_noticeid_13" src="Weapon%20Animation%20Tutorial_files/cross.png" alt="Dismiss" style="float: right;" type="image">Effective
+ immediately, the Duke Nukem portions of these forums are closed.  They 
+will remain open however for archival purposes, you can still read the 
+msgs here.
+
+<p>No further threads or replies regarding Duke Nukem should be posted 
+on the 3D Realms forums.  For future Duke Nukem posts, you should visit 
+the following link on the Gearbox forums:
+
+</p><p><b><a href="http://gbxforums.gearboxsoftware.com/forumdisplay.php?f=103" target="_blank">http://gbxforums.gearboxsoftware.com/forumdisplay.php?f=103</a></b>.
+
+</p><p>Please don't continue to post Duke Nukem related threads anywhere on the 3D Realms forums, they will be mercilessly deleted.
+
+</p><p>Additionally, no forum accounts from here will be carried over to
+ Gearbox's forums.  If you do not have an account over there, you will 
+have to create one.
+
+</p><p>Thank you.
+
+</p><p>Bryan Turner<br>
+Apogee Software / 3D Realms Entertainment
+</p></div>
+		</td>
+	</tr>
+	</tbody></table>
+	<br>
+</form>
+
+
+
+
+
+<!-- NAVBAR POPUP MENUS -->
+
+	
+	<!-- community link menu -->
+	<div class="vbmenu_popup" id="community_menu" style="display: none; margin-top: 3px;" align="left">
+		<table border="0" cellpadding="4" cellspacing="1">
+		<tbody><tr><td class="thead">Community Links</td></tr>
+		
+		
+					<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/group.php">Social Groups</a></td></tr>
+		
+		
+					<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/album.php">Pictures &amp; Albums </a></td></tr>
+		
+		
+			<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/profile.php?do=buddylist">Contacts &amp; Friends</a></td></tr>
+		
+		
+			<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/memberlist.php">Members List</a></td></tr>
+		
+		
+		</tbody></table>
+	</div>
+	<!-- / community link menu -->
+	
+	
+	
+	<!-- header quick search form -->
+	<div class="vbmenu_popup" id="navbar_search_menu" style="display: none; margin-top: 3px;" align="left">
+		<table border="0" cellpadding="4" cellspacing="1">
+		<tbody><tr>
+			<td class="thead">Search Forums</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option" title="nohilite">
+				<form action="search.php?do=process" method="post">
+
+					<input name="do" value="process" type="hidden">
+					<input name="quicksearch" value="1" type="hidden">
+					<input name="childforums" value="1" type="hidden">
+					<input name="exactname" value="1" type="hidden">
+					<input name="s" value="" type="hidden">
+					<input name="securitytoken" value="1287088317-8004036ebf3fcea5de8cfb09091aba39361c27f4" type="hidden">
+					<div><input class="bginput" name="query" size="25" tabindex="1001" type="text"><input class="button" value="Go" tabindex="1004" type="submit"></div>
+					<div style="margin-top: 4px;">
+						<label for="rb_nb_sp0"><input name="showposts" value="0" id="rb_nb_sp0" tabindex="1002" checked="checked" type="radio">Show Threads</label>
+						&nbsp;
+						<label for="rb_nb_sp1"><input name="showposts" value="1" id="rb_nb_sp1" tabindex="1003" type="radio">Show Posts</label>
+					</div>
+				</form>
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/tags.php" rel="nofollow">Tag Search</a></td>
+		</tr>
+		
+		<tr>
+			<td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/search.php" accesskey="4" rel="nofollow">Advanced Search</a></td>
+		</tr>
+		<tr>
+	<td class="thead">Search Blogs</td>
+</tr>
+<tr>
+	<td class="vbmenu_option" title="nohilite">
+		<form action="blog_search.php?do=dosearch" method="post">
+			<input name="s" value="" type="hidden">
+			<input name="securitytoken" value="1287088317-8004036ebf3fcea5de8cfb09091aba39361c27f4" type="hidden">
+			<input name="do" value="dosearch" type="hidden">
+			<input name="quicksearch" value="1" type="hidden">
+			<div><input class="bginput" name="text" size="25" tabindex="2003" type="text"><input class="button" value="Go" tabindex="2004" type="submit"></div>
+		</form>
+	</td>
+</tr>
+
+<tr>
+	<td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/blog_tag.php" rel="nofollow">Tag Search</a></td>
+</tr>
+
+<tr>
+	<td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/blog_search.php?do=search">Advanced Search</a></td>
+</tr>
+		</tbody></table>
+	</div>
+	<!-- / header quick search form -->
+	
+	
+	
+	<!-- user cp tools menu -->
+	<div class="vbmenu_popup" id="usercptools_menu" style="display: none; margin-top: 3px;" align="left">
+		<table border="0" cellpadding="4" cellspacing="1">
+
+		<tbody><tr><td class="thead">Quick Links</td></tr>
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/search.php?do=getdaily">Today's Posts</a></td></tr>
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/forumdisplay.php?do=markread&amp;markreadhash=1287088317-8004036ebf3fcea5de8cfb09091aba39361c27f4">Mark Forums Read</a></td></tr>
+		<tr><td class="vbmenu_option"><a href="#" onclick="window.open('misc.php?do=buddylist&amp;focus=1','buddylist','statusbar=no,menubar=no,toolbar=no,scrollbars=yes,resizable=yes,width=250,height=300'); return false;">Open Contacts Popup</a></td></tr>
+		
+		
+
+		<tr><td class="thead"><a href="http://forums.3drealms.com/vb/usercp.php">User Control Panel</a></td></tr>
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/profile.php?do=editsignature">Edit Signature</a></td></tr>
+		<!--<tr><td class="vbmenu_option"><a href="profile.php?do=editavatar">Edit Avatar</a></td></tr>-->
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/profile.php?do=editprofile">Edit Your Details</a></td></tr>
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/profile.php?do=editoptions">Edit Options</a></td></tr>
+		
+
+		<tr><td class="thead">Miscellaneous</td></tr>
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/private.php" rel="nofollow">Private Messages</a></td></tr>
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/subscription.php" rel="nofollow">Subscribed Threads</a></td></tr>
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/member.php?u=4022">Your Profile</a></td></tr>
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/online.php?&amp;order=desc&amp;sort=time">Who's Online</a></td></tr>
+		
+<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/gxboxlive.php">gXboxLive</a></td></tr>
+
+		</tbody></table>
+	</div>
+	<!-- / user cp tools menu -->
+
+	
+<!-- / NAVBAR POPUP MENUS -->
+
+<!-- PAGENAV POPUP -->
+	<div class="vbmenu_popup" id="pagenav_menu" style="display: none;">
+		<table border="0" cellpadding="4" cellspacing="1">
+		<tbody><tr>
+			<td class="thead" nowrap="nowrap">Go to Page...</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option" title="nohilite">
+			<form action="index.php" method="get" onsubmit="return this.gotopage()" id="pagenav_form">
+				<input class="bginput" id="pagenav_itxt" style="font-size: 11px;" size="4" type="text">
+				<input class="button" id="pagenav_ibtn" value="Go" type="button">
+			</form>
+			</td>
+		</tr>
+		</tbody></table>
+	</div>
+<!-- / PAGENAV POPUP -->
+
+
+
+
+
+
+
+
+
+
+<a name="poststop" id="poststop"></a>
+
+<!-- controls above postbits -->
+<table style="margin-bottom: 3px;" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="bottom">
+	
+		<td class="smallfont"><a href="http://forums.3drealms.com/vb/newreply.php?do=newreply&amp;noquote=1&amp;p=115779" rel="nofollow"><img title="Reply" src="Weapon%20Animation%20Tutorial_files/reply.gif" alt="Reply" border="0"></a></td>
+	
+	
+</tr>
+</tbody></table>
+<!-- / controls above postbits -->
+
+<!-- toolbar -->
+<table class="tborder" style="border-bottom-width: 0px;" align="center" border="0" cellpadding="4" cellspacing="0" width="100%">
+<tbody><tr>
+	<td class="tcat" width="100%">
+		<div class="smallfont">
+		
+		&nbsp;
+		</div>
+	</td>
+	<td style="cursor: pointer;" class="vbmenu_control" id="threadtools" nowrap="nowrap">
+		<a href="http://forums.3drealms.com/vb/showthread.php?t=9990&amp;highlight=weapon+animation+3dsmax&amp;nojs=1#goto_threadtools">Thread Tools</a>
+		<script type="text/javascript"> vbmenu_register("threadtools"); </script> <img alt="" title="" src="Weapon%20Animation%20Tutorial_files/menu_open.gif" border="0">
+	</td>
+	
+		<td style="cursor: pointer;" class="vbmenu_control" id="threadsearch" nowrap="nowrap">
+			<a href="http://forums.3drealms.com/vb/showthread.php?t=9990&amp;highlight=weapon+animation+3dsmax&amp;nojs=1#goto_threadsearch">Search this Thread</a>
+			<script type="text/javascript"> vbmenu_register("threadsearch"); </script> <img alt="" title="" src="Weapon%20Animation%20Tutorial_files/menu_open.gif" border="0">
+		</td>
+	
+	
+	
+
+	
+
+</tr>
+</tbody></table>
+<!-- / toolbar -->
+
+
+
+<!-- end content table -->
+
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / end content table -->
+
+
+
+
+
+<div id="posts"><!-- post #115779 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 100%; text-align: left;">
+		<div style="padding: 0px;" align="left">
+
+	<div id="edit115779" style="padding: 0px 0px 4px;">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post115779" class="tborder" align="center" border="0" cellpadding="4" cellspacing="0" width="100%">
+<tbody><tr>
+	
+		<td class="thead" style="font-weight: normal;">
+			<!-- status icon and date -->
+			<a name="post115779"><img title="Old" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/post_old.gif" alt="Old" border="0"></a>
+			11-14-2004, 05:58 PM
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead" style="font-weight: normal;" align="right">
+			&nbsp;
+			#<a href="http://forums.3drealms.com/vb/showpost.php?p=115779&amp;postcount=1" target="new" rel="nofollow" id="postcount115779" name="1"><strong>1</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="125">
+
+			<div id="postmenu_115779">
+				
+				<a class="bigusername" href="http://forums.3drealms.com/vb/member.php?u=2058">theHunted</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_115779", true); </script>
+				
+			</div>
+
+			
+			
+			
+
+			
+
+		
+
+	</td>
+	
+	<td class="alt1" id="td_post_115779">
+	
+		
+		
+			<!-- icon and title -->
+<div class="smallfont" style="border-bottom: 1px solid rgb(132, 81, 34); padding: 5px; margin-bottom: 7px;">
+				
+				<strong>How to animate Weapons in 3dsMax?</strong>
+			</div>			
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_115779">
+			
+			well actually the title says it all. could anybody point me to a 
+thread or a tutorial that shows how to set up animations for your 
+weapons properly, then export them and finally get em working ingame? 
+actually i'm aware of the coding part. but the animations i export from <span class="highlight">3dsMax</span> dont seem to be valid and cause the infamous "...is only 0 frames of length" error message. so thats where i'd need some help.
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+		<!-- sig -->
+			<div class="signature">
+				__________________<br>
+				<a href="http://newdawn.paynereactor.com/" target="_blank">M:I - New Dawn</a><br>
+a Max Payne 2 modification 
+			</div>
+		<!-- / sig -->
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img title="theHunted is offline" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/user_offline.gif" alt="theHunted is offline" border="0">
+
+
+		
+		
+		<a href="http://forums.3drealms.com/vb/report.php?p=115779" rel="nofollow"><img title="Report Post" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/report.gif" alt="Report Post" border="0"></a>
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right">
+
+	
+		<!-- controls -->
+		
+		
+		
+			<a href="http://forums.3drealms.com/vb/newreply.php?do=newreply&amp;p=115779" rel="nofollow"><img title="Reply With Quote" src="Weapon%20Animation%20Tutorial_files/quote.gif" alt="Reply With Quote" border="0"></a>
+		
+		
+			<a href="http://forums.3drealms.com/vb/newreply.php?do=newreply&amp;p=115779" rel="nofollow" onclick="return false"><img title="Multi-Quote This Message" src="Weapon%20Animation%20Tutorial_files/multiquote_off.gif" alt="Multi-Quote This Message" id="mq_115779" border="0"></a>
+		
+		
+		
+		
+		
+		
+			
+		
+		<a href="http://forums.3drealms.com/vb/blog_post.php?do=newblog&amp;p=115779"><img src="Weapon%20Animation%20Tutorial_files/blogpost.gif" title="Blog this Post" alt="" border="0"></a>
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 115779 popup menu -->
+<div class="vbmenu_popup" id="postmenu_115779_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">theHunted</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/member.php?u=2058">View Public Profile</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/private.php?do=newpm&amp;u=2058" rel="nofollow">Send a private message to theHunted</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://none/">Visit theHunted's homepage!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/search.php?do=finduser&amp;u=2058" rel="nofollow">Find More Posts by theHunted</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/profile.php?do=addlist&amp;userlist=buddy&amp;u=2058">Add theHunted to Your Contacts</a></td></tr>
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 115779 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #115779 --><!-- post #115780 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 100%; text-align: left;">
+		<div style="padding: 0px;" align="left">
+
+	<div id="edit115780" style="padding: 0px 0px 4px;">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post115780" class="tborder" align="center" border="0" cellpadding="4" cellspacing="0" width="100%">
+<tbody><tr>
+	
+		<td class="thead" style="font-weight: normal;">
+			<!-- status icon and date -->
+			<a name="post115780"><img title="Old" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/post_old.gif" alt="Old" border="0"></a>
+			11-14-2004, 06:22 PM
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead" style="font-weight: normal;" align="right">
+			&nbsp;
+			#<a href="http://forums.3drealms.com/vb/showpost.php?p=115780&amp;postcount=2" target="new" rel="nofollow" id="postcount115780" name="2"><strong>2</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="125">
+
+			<div id="postmenu_115780">
+				
+				<a class="bigusername" href="http://forums.3drealms.com/vb/member.php?u=2383">Uisor</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_115780", true); </script>
+				
+			</div>
+
+			
+			
+			
+
+			
+				<div class="smallfont">
+					<img src="Weapon%20Animation%20Tutorial_files/spacer.gif" alt="" height="3" width="1"><br><a href="http://forums.3drealms.com/vb/member.php?u=2383"><img title="Uisor's Avatar" src="Weapon%20Animation%20Tutorial_files/image.png" alt="Uisor's Avatar" border="0" height="85" width="85"></a>
+				</div>
+			
+
+		
+
+	</td>
+	
+	<td class="alt1" id="td_post_115780">
+	
+		
+		
+			<!-- icon and title -->
+<div class="smallfont" style="border-bottom: 1px solid rgb(132, 81, 34); padding: 5px; margin-bottom: 7px;">
+				
+				<strong>Re: How to animate Weapons in 3dsMax?</strong>
+			</div>			
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_115780">
+			
+			Try this <a href="http://forums.maxpaynedev.com/index.php?topic=1642.0." target="_blank">http://forums.maxpaynedev.com/index.php?topic=1642.0.</a> Doesn't actually tell you how to animate the <span class="highlight">weapon</span>, but tells you how to export and such. But you animate them by moving the mesh itself and adding keyframes for it
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+		<!-- sig -->
+			<div class="signature">
+				__________________<br>
+				<a href="http://www.kolumbus.fi/kim.grondahl/TheAgents/index.html" target="_blank">The Agents are coming...</a>
+			</div>
+		<!-- / sig -->
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img title="Uisor is offline" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/user_offline.gif" alt="Uisor is offline" border="0">
+
+
+		
+		
+		<a href="http://forums.3drealms.com/vb/report.php?p=115780" rel="nofollow"><img title="Report Post" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/report.gif" alt="Report Post" border="0"></a>
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right">
+
+	
+		<!-- controls -->
+		
+		
+		
+			<a href="http://forums.3drealms.com/vb/newreply.php?do=newreply&amp;p=115780" rel="nofollow"><img title="Reply With Quote" src="Weapon%20Animation%20Tutorial_files/quote.gif" alt="Reply With Quote" border="0"></a>
+		
+		
+			<a href="http://forums.3drealms.com/vb/newreply.php?do=newreply&amp;p=115780" rel="nofollow" onclick="return false"><img title="Multi-Quote This Message" src="Weapon%20Animation%20Tutorial_files/multiquote_off.gif" alt="Multi-Quote This Message" id="mq_115780" border="0"></a>
+		
+		
+		
+		
+		
+		
+			
+		
+		<a href="http://forums.3drealms.com/vb/blog_post.php?do=newblog&amp;p=115780"><img src="Weapon%20Animation%20Tutorial_files/blogpost.gif" title="Blog this Post" alt="" border="0"></a>
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 115780 popup menu -->
+<div class="vbmenu_popup" id="postmenu_115780_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">Uisor</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/member.php?u=2383">View Public Profile</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/private.php?do=newpm&amp;u=2383" rel="nofollow">Send a private message to Uisor</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.kolumbus.fi/kim.grondahl/Doragon/Frontpage.htm">Visit Uisor's homepage!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/search.php?do=finduser&amp;u=2383" rel="nofollow">Find More Posts by Uisor</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/profile.php?do=addlist&amp;userlist=buddy&amp;u=2383">Add Uisor to Your Contacts</a></td></tr>
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 115780 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #115780 --><!-- post #115783 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 100%; text-align: left;">
+		<div style="padding: 0px;" align="left">
+
+	<div id="edit115783" style="padding: 0px 0px 4px;">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post115783" class="tborder" align="center" border="0" cellpadding="4" cellspacing="0" width="100%">
+<tbody><tr>
+	
+		<td class="thead" style="font-weight: normal;">
+			<!-- status icon and date -->
+			<a name="post115783"><img title="Old" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/post_old.gif" alt="Old" border="0"></a>
+			11-14-2004, 07:26 PM
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead" style="font-weight: normal;" align="right">
+			&nbsp;
+			#<a href="http://forums.3drealms.com/vb/showpost.php?p=115783&amp;postcount=3" target="new" rel="nofollow" id="postcount115783" name="3"><strong>3</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="125">
+
+			<div id="postmenu_115783">
+				
+				<a class="bigusername" href="http://forums.3drealms.com/vb/member.php?u=3920">Corwin</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_115783", true); </script>
+				
+			</div>
+
+			
+			
+			
+
+			
+				<div class="smallfont">
+					<img src="Weapon%20Animation%20Tutorial_files/spacer.gif" alt="" height="3" width="1"><br><a href="http://forums.3drealms.com/vb/member.php?u=3920"><img title="Corwin's Avatar" src="Weapon%20Animation%20Tutorial_files/image.gif" alt="Corwin's Avatar" border="0" height="120" width="66"></a>
+				</div>
+			
+
+		
+
+	</td>
+	
+	<td class="alt1" id="td_post_115783">
+	
+		
+		
+			<!-- icon and title -->
+<div class="smallfont" style="border-bottom: 1px solid rgb(132, 81, 34); padding: 5px; margin-bottom: 7px;">
+				
+				<strong>Re: How to animate Weapons in 3dsMax?</strong>
+			</div>			
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_115783">
+			
+			Deleted : Oops, I just see it was for <span class="highlight">3DSmax</span>, not milkshape, sorry.
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+		<!-- sig -->
+			<div class="signature">
+				__________________<br>
+				<a href="http://www.clement-melendez.com/" target="_blank">"Everything that is really great and inspiring is created by the individual who can labor in freedom."- Einstein</a>
+			</div>
+		<!-- / sig -->
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img title="Corwin is offline" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/user_offline.gif" alt="Corwin is offline" border="0">
+
+
+		
+		
+		<a href="http://forums.3drealms.com/vb/report.php?p=115783" rel="nofollow"><img title="Report Post" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/report.gif" alt="Report Post" border="0"></a>
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right">
+
+	
+		<!-- controls -->
+		
+		
+		
+			<a href="http://forums.3drealms.com/vb/newreply.php?do=newreply&amp;p=115783" rel="nofollow"><img title="Reply With Quote" src="Weapon%20Animation%20Tutorial_files/quote.gif" alt="Reply With Quote" border="0"></a>
+		
+		
+			<a href="http://forums.3drealms.com/vb/newreply.php?do=newreply&amp;p=115783" rel="nofollow" onclick="return false"><img title="Multi-Quote This Message" src="Weapon%20Animation%20Tutorial_files/multiquote_off.gif" alt="Multi-Quote This Message" id="mq_115783" border="0"></a>
+		
+		
+		
+		
+		
+		
+			
+		
+		<a href="http://forums.3drealms.com/vb/blog_post.php?do=newblog&amp;p=115783"><img src="Weapon%20Animation%20Tutorial_files/blogpost.gif" title="Blog this Post" alt="" border="0"></a>
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 115783 popup menu -->
+<div class="vbmenu_popup" id="postmenu_115783_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">Corwin</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/member.php?u=3920">View Public Profile</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/private.php?do=newpm&amp;u=3920" rel="nofollow">Send a private message to Corwin</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://perso.club-internet.fr/regine.bardet/">Visit Corwin's homepage!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/search.php?do=finduser&amp;u=3920" rel="nofollow">Find More Posts by Corwin</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/profile.php?do=addlist&amp;userlist=buddy&amp;u=3920">Add Corwin to Your Contacts</a></td></tr>
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 115783 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #115783 --><!-- post #115784 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 100%; text-align: left;">
+		<div style="padding: 0px;" align="left">
+
+	<div id="edit115784" style="padding: 0px 0px 4px;">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post115784" class="tborder" align="center" border="0" cellpadding="4" cellspacing="0" width="100%">
+<tbody><tr>
+	
+		<td class="thead" style="font-weight: normal;">
+			<!-- status icon and date -->
+			<a name="post115784"><img title="Old" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/post_old.gif" alt="Old" border="0"></a>
+			11-14-2004, 07:40 PM
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead" style="font-weight: normal;" align="right">
+			&nbsp;
+			#<a href="http://forums.3drealms.com/vb/showpost.php?p=115784&amp;postcount=4" target="new" rel="nofollow" id="postcount115784" name="4"><strong>4</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="125">
+
+			<div id="postmenu_115784">
+				
+				<a class="bigusername" href="http://forums.3drealms.com/vb/member.php?u=2058">theHunted</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_115784", true); </script>
+				
+			</div>
+
+			
+			
+			
+
+			
+
+		
+
+	</td>
+	
+	<td class="alt1" id="td_post_115784">
+	
+		
+		
+			<!-- icon and title -->
+<div class="smallfont" style="border-bottom: 1px solid rgb(132, 81, 34); padding: 5px; margin-bottom: 7px;">
+				
+				<strong>Re: How to animate Weapons in 3dsMax?</strong>
+			</div>			
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_115784">
+			
+			thx, nothing really new to me what was in the tutorial. at least i 
+somehow got rid of the 'has 0 keyframes' error, so it's gotta export at 
+least some information. but still this bloody thing just doesnt wanna 
+move.
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+		<!-- sig -->
+			<div class="signature">
+				__________________<br>
+				<a href="http://newdawn.paynereactor.com/" target="_blank">M:I - New Dawn</a><br>
+a Max Payne 2 modification 
+			</div>
+		<!-- / sig -->
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img title="theHunted is offline" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/user_offline.gif" alt="theHunted is offline" border="0">
+
+
+		
+		
+		<a href="http://forums.3drealms.com/vb/report.php?p=115784" rel="nofollow"><img title="Report Post" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/report.gif" alt="Report Post" border="0"></a>
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right">
+
+	
+		<!-- controls -->
+		
+		
+		
+			<a href="http://forums.3drealms.com/vb/newreply.php?do=newreply&amp;p=115784" rel="nofollow"><img title="Reply With Quote" src="Weapon%20Animation%20Tutorial_files/quote.gif" alt="Reply With Quote" border="0"></a>
+		
+		
+			<a href="http://forums.3drealms.com/vb/newreply.php?do=newreply&amp;p=115784" rel="nofollow" onclick="return false"><img title="Multi-Quote This Message" src="Weapon%20Animation%20Tutorial_files/multiquote_off.gif" alt="Multi-Quote This Message" id="mq_115784" border="0"></a>
+		
+		
+		
+		
+		
+		
+			
+		
+		<a href="http://forums.3drealms.com/vb/blog_post.php?do=newblog&amp;p=115784"><img src="Weapon%20Animation%20Tutorial_files/blogpost.gif" title="Blog this Post" alt="" border="0"></a>
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 115784 popup menu -->
+<div class="vbmenu_popup" id="postmenu_115784_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">theHunted</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/member.php?u=2058">View Public Profile</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/private.php?do=newpm&amp;u=2058" rel="nofollow">Send a private message to theHunted</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://none/">Visit theHunted's homepage!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/search.php?do=finduser&amp;u=2058" rel="nofollow">Find More Posts by theHunted</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/profile.php?do=addlist&amp;userlist=buddy&amp;u=2058">Add theHunted to Your Contacts</a></td></tr>
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 115784 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #115784 --><!-- post #115791 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 100%; text-align: left;">
+		<div style="padding: 0px;" align="left">
+
+	<div id="edit115791" style="padding: 0px 0px 4px;">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post115791" class="tborder" align="center" border="0" cellpadding="4" cellspacing="0" width="100%">
+<tbody><tr>
+	
+		<td class="thead" style="font-weight: normal;">
+			<!-- status icon and date -->
+			<a name="post115791"><img title="Old" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/post_old.gif" alt="Old" border="0"></a>
+			11-14-2004, 09:43 PM
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead" style="font-weight: normal;" align="right">
+			&nbsp;
+			#<a href="http://forums.3drealms.com/vb/showpost.php?p=115791&amp;postcount=5" target="new" rel="nofollow" id="postcount115791" name="5"><strong>5</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="125">
+
+			<div id="postmenu_115791">
+				
+				<a class="bigusername" href="http://forums.3drealms.com/vb/member.php?u=2365">MrUniq</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_115791", true); </script>
+				
+			</div>
+
+			
+			
+			
+
+			
+
+		
+
+	</td>
+	
+	<td class="alt1" id="td_post_115791">
+	
+		
+		
+			<!-- icon and title -->
+<div class="smallfont" style="border-bottom: 1px solid rgb(132, 81, 34); padding: 5px; margin-bottom: 7px;">
+				
+				<strong>Re: How to animate Weapons in 3dsMax?</strong>
+			</div>			
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_115791">
+			
+			Here is an exporting tut from Canada Dry , I don't know if will help 
+you much. But I feel that this hasn't been covered enough in these 
+forums, the only people I know that can animate them in 3dmax has been 
+canada and maddie. <br>
+<br>
+I used this tut and it was great except I had alot of troubles with <span class="highlight">weapon</span> sizes ingame, it was tiny when idle but then normal after i shot it...so i just said forget it  <img src="Weapon%20Animation%20Tutorial_files/tongue.htm" alt="" border="0">
+		</div>
+		<!-- / message -->
+
+		
+		<!-- attachments -->
+			<div style="padding: 4px;">
+
+			
+
+			
+
+			
+
+			
+				<fieldset class="fieldset">
+					<legend>Attached Files</legend>
+					<table border="0" cellpadding="0" cellspacing="3">
+					<tbody><tr>
+	<td><img title="File Type: zip" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/zip.gif" alt="File Type: zip" style="vertical-align: baseline;" border="0" height="16" width="16"></td>
+	<td><a href="http://forums.3drealms.com/vb/attachment.php?attachmentid=1809&amp;d=1100464982">720874-WeaponExportinginMaxPayne2.zip</a> (70.0 KB, 13 views)</td>
+</tr>
+					</tbody></table>
+				</fieldset>
+			
+
+			
+
+			</div>
+		<!-- / attachments -->
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img title="MrUniq is offline" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/user_offline.gif" alt="MrUniq is offline" border="0">
+
+
+		
+		
+		<a href="http://forums.3drealms.com/vb/report.php?p=115791" rel="nofollow"><img title="Report Post" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/report.gif" alt="Report Post" border="0"></a>
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right">
+
+	
+		<!-- controls -->
+		
+		
+		
+			<a href="http://forums.3drealms.com/vb/newreply.php?do=newreply&amp;p=115791" rel="nofollow"><img title="Reply With Quote" src="Weapon%20Animation%20Tutorial_files/quote.gif" alt="Reply With Quote" border="0"></a>
+		
+		
+			<a href="http://forums.3drealms.com/vb/newreply.php?do=newreply&amp;p=115791" rel="nofollow" onclick="return false"><img title="Multi-Quote This Message" src="Weapon%20Animation%20Tutorial_files/multiquote_off.gif" alt="Multi-Quote This Message" id="mq_115791" border="0"></a>
+		
+		
+		
+		
+		
+		
+			
+		
+		<a href="http://forums.3drealms.com/vb/blog_post.php?do=newblog&amp;p=115791"><img src="Weapon%20Animation%20Tutorial_files/blogpost.gif" title="Blog this Post" alt="" border="0"></a>
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 115791 popup menu -->
+<div class="vbmenu_popup" id="postmenu_115791_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">MrUniq</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/member.php?u=2365">View Public Profile</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/private.php?do=newpm&amp;u=2365" rel="nofollow">Send a private message to MrUniq</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/search.php?do=finduser&amp;u=2365" rel="nofollow">Find More Posts by MrUniq</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/profile.php?do=addlist&amp;userlist=buddy&amp;u=2365">Add MrUniq to Your Contacts</a></td></tr>
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 115791 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #115791 --><!-- post #115823 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 100%; text-align: left;">
+		<div style="padding: 0px;" align="left">
+
+	<div id="edit115823" style="padding: 0px 0px 4px;">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post115823" class="tborder" align="center" border="0" cellpadding="4" cellspacing="0" width="100%">
+<tbody><tr>
+	
+		<td class="thead" style="font-weight: normal;">
+			<!-- status icon and date -->
+			<a name="post115823"><img title="Old" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/post_old.gif" alt="Old" border="0"></a>
+			11-15-2004, 01:01 PM
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead" style="font-weight: normal;" align="right">
+			&nbsp;
+			#<a href="http://forums.3drealms.com/vb/showpost.php?p=115823&amp;postcount=6" target="new" rel="nofollow" id="postcount115823" name="6"><strong>6</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="125">
+
+			<div id="postmenu_115823">
+				
+				<a class="bigusername" href="http://forums.3drealms.com/vb/member.php?u=3097">Deflex</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_115823", true); </script>
+				
+			</div>
+
+			
+			
+			
+
+			
+
+		
+
+	</td>
+	
+	<td class="alt1" id="td_post_115823">
+	
+		
+		
+			<!-- icon and title -->
+<div class="smallfont" style="border-bottom: 1px solid rgb(132, 81, 34); padding: 5px; margin-bottom: 7px;">
+				
+				<strong>Re: How to animate Weapons in 3dsMax?</strong>
+			</div>			
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_115823">
+			
+			Press AUTO key. set the time, move the mesh
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+		<!-- sig -->
+			<div class="signature">
+				__________________<br>
+				Modeller, computer fan, Gaming guru, bad english writer/talker 
+			</div>
+		<!-- / sig -->
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img title="Deflex is offline" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/user_offline.gif" alt="Deflex is offline" border="0">
+
+
+		
+		
+		<a href="http://forums.3drealms.com/vb/report.php?p=115823" rel="nofollow"><img title="Report Post" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/report.gif" alt="Report Post" border="0"></a>
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right">
+
+	
+		<!-- controls -->
+		
+		
+		
+			<a href="http://forums.3drealms.com/vb/newreply.php?do=newreply&amp;p=115823" rel="nofollow"><img title="Reply With Quote" src="Weapon%20Animation%20Tutorial_files/quote.gif" alt="Reply With Quote" border="0"></a>
+		
+		
+			<a href="http://forums.3drealms.com/vb/newreply.php?do=newreply&amp;p=115823" rel="nofollow" onclick="return false"><img title="Multi-Quote This Message" src="Weapon%20Animation%20Tutorial_files/multiquote_off.gif" alt="Multi-Quote This Message" id="mq_115823" border="0"></a>
+		
+		
+		
+		
+		
+		
+			
+		
+		<a href="http://forums.3drealms.com/vb/blog_post.php?do=newblog&amp;p=115823"><img src="Weapon%20Animation%20Tutorial_files/blogpost.gif" title="Blog this Post" alt="" border="0"></a>
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 115823 popup menu -->
+<div class="vbmenu_popup" id="postmenu_115823_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">Deflex</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/member.php?u=3097">View Public Profile</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/private.php?do=newpm&amp;u=3097" rel="nofollow">Send a private message to Deflex</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/search.php?do=finduser&amp;u=3097" rel="nofollow">Find More Posts by Deflex</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/profile.php?do=addlist&amp;userlist=buddy&amp;u=3097">Add Deflex to Your Contacts</a></td></tr>
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 115823 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #115823 --><!-- post #115826 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 100%; text-align: left;">
+		<div style="padding: 0px;" align="left">
+
+	<div id="edit115826" style="padding: 0px 0px 4px;">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post115826" class="tborder" align="center" border="0" cellpadding="4" cellspacing="0" width="100%">
+<tbody><tr>
+	
+		<td class="thead" style="font-weight: normal;">
+			<!-- status icon and date -->
+			<a name="post115826"><img title="Old" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/post_old.gif" alt="Old" border="0"></a>
+			11-15-2004, 03:16 PM
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead" style="font-weight: normal;" align="right">
+			&nbsp;
+			#<a href="http://forums.3drealms.com/vb/showpost.php?p=115826&amp;postcount=7" target="new" rel="nofollow" id="postcount115826" name="7"><strong>7</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="125">
+
+			<div id="postmenu_115826">
+				
+				<a class="bigusername" href="http://forums.3drealms.com/vb/member.php?u=2137">Sayantan</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_115826", true); </script>
+				
+			</div>
+
+			
+			
+			
+
+			
+				<div class="smallfont">
+					<img src="Weapon%20Animation%20Tutorial_files/spacer.gif" alt="" height="3" width="1"><br><a href="http://forums.3drealms.com/vb/member.php?u=2137"><img title="Sayantan's Avatar" src="Weapon%20Animation%20Tutorial_files/image_002.gif" alt="Sayantan's Avatar" border="0" height="100" width="100"></a>
+				</div>
+			
+
+		
+
+	</td>
+	
+	<td class="alt1" id="td_post_115826">
+	
+		
+		
+			<!-- icon and title -->
+<div class="smallfont" style="border-bottom: 1px solid rgb(132, 81, 34); padding: 5px; margin-bottom: 7px;">
+				
+				<strong>Re: How to animate Weapons in 3dsMax?</strong>
+			</div>			
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_115826">
+			
+			<div style="margin: 5px 20px 20px;">
+	<div class="smallfont" style="margin-bottom: 2px;">Quote:</div>
+	<table border="0" cellpadding="4" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border: 1px inset;">
+			
+				<b><i>Deflex said:</i></b><br>
+Press AUTO key. set the time, move the mesh <br>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>Wouldn't it be easier saying "<b>Read the User Reference</b>" ?<br>
+Sorry for this poor joke JC. <img src="Weapon%20Animation%20Tutorial_files/tongue.htm" alt="" border="0">
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+		<!-- sig -->
+			<div class="signature">
+				__________________<br>
+				<a href="http://www.linkedin.com/in/sayantanbiswas" target="_blank"><b>LinkedIn Profile</b></a>
+			</div>
+		<!-- / sig -->
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img title="Sayantan is offline" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/user_offline.gif" alt="Sayantan is offline" border="0">
+
+
+		
+		
+		<a href="http://forums.3drealms.com/vb/report.php?p=115826" rel="nofollow"><img title="Report Post" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/report.gif" alt="Report Post" border="0"></a>
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right">
+
+	
+		<!-- controls -->
+		
+		
+		
+			<a href="http://forums.3drealms.com/vb/newreply.php?do=newreply&amp;p=115826" rel="nofollow"><img title="Reply With Quote" src="Weapon%20Animation%20Tutorial_files/quote.gif" alt="Reply With Quote" border="0"></a>
+		
+		
+			<a href="http://forums.3drealms.com/vb/newreply.php?do=newreply&amp;p=115826" rel="nofollow" onclick="return false"><img title="Multi-Quote This Message" src="Weapon%20Animation%20Tutorial_files/multiquote_off.gif" alt="Multi-Quote This Message" id="mq_115826" border="0"></a>
+		
+		
+		
+		
+		
+		
+			
+		
+		<a href="http://forums.3drealms.com/vb/blog_post.php?do=newblog&amp;p=115826"><img src="Weapon%20Animation%20Tutorial_files/blogpost.gif" title="Blog this Post" alt="" border="0"></a>
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 115826 popup menu -->
+<div class="vbmenu_popup" id="postmenu_115826_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">Sayantan</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/member.php?u=2137">View Public Profile</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/private.php?do=newpm&amp;u=2137" rel="nofollow">Send a private message to Sayantan</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.satanworx.metalsoup.com/">Visit Sayantan's homepage!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/search.php?do=finduser&amp;u=2137" rel="nofollow">Find More Posts by Sayantan</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/profile.php?do=addlist&amp;userlist=buddy&amp;u=2137">Add Sayantan to Your Contacts</a></td></tr>
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 115826 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #115826 --><!-- post #115838 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 100%; text-align: left;">
+		<div style="padding: 0px;" align="left">
+
+	<div id="edit115838" style="padding: 0px 0px 4px;">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post115838" class="tborder" align="center" border="0" cellpadding="4" cellspacing="0" width="100%">
+<tbody><tr>
+	
+		<td class="thead" style="font-weight: normal;">
+			<!-- status icon and date -->
+			<a name="post115838"><img title="Old" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/post_old.gif" alt="Old" border="0"></a>
+			11-15-2004, 06:30 PM
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead" style="font-weight: normal;" align="right">
+			&nbsp;
+			#<a href="http://forums.3drealms.com/vb/showpost.php?p=115838&amp;postcount=8" target="new" rel="nofollow" id="postcount115838" name="8"><strong>8</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="125">
+
+			<div id="postmenu_115838">
+				
+				<a class="bigusername" href="http://forums.3drealms.com/vb/member.php?u=2058">theHunted</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_115838", true); </script>
+				
+			</div>
+
+			
+			
+			
+
+			
+
+		
+
+	</td>
+	
+	<td class="alt1" id="td_post_115838">
+	
+		
+		
+			<!-- icon and title -->
+<div class="smallfont" style="border-bottom: 1px solid rgb(132, 81, 34); padding: 5px; margin-bottom: 7px;">
+				
+				<strong>Re: How to animate Weapons in 3dsMax?</strong>
+			</div>			
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_115838">
+			
+			<div style="margin: 5px 20px 20px;">
+	<div class="smallfont" style="margin-bottom: 2px;">Quote:</div>
+	<table border="0" cellpadding="4" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border: 1px inset;">
+			
+				<b><i>theHunted said:</i></b><br>
+but still this bloody thing just doesnt wanna move. <br>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>by that i referred to max-fx. i might be a <span class="highlight">3dsMax</span> noob but the least thing i can do is animate an object to move back and forth on a straight line in <span class="highlight">3dsMax</span> <img src="Weapon%20Animation%20Tutorial_files/tongue.htm" alt="" border="0"><br>
+so, the <span class="highlight">animation</span> has been working fine in <span class="highlight">3dsMax</span> ever since. it's just ingame where the <span class="highlight">animation</span> doesn't show up.<br>
+scripting should be fine because, as said before for a while it gave the
+ '0 kf error' when trying to shoot. that one now dissapeared (i.e. i can
+ shoot without receiving the error anymore), while i didnt change any of
+ the code, but instead just re-exported the <span class="highlight">animation</span>. this tells me that coding is fine and the <span class="highlight">animation</span>
+ for the shooting part is set up properly. anyway, thx to everyone for 
+the help but i'm a bit tired of this and atm don't really care anymore 
+wether these stupid small things on the weapons move or not. during 
+regular gameplay one doesn't really notice it anyway.<br>
+<br>
+so, no need to put further effort into trying to teach me how it works <img src="Weapon%20Animation%20Tutorial_files/smile.htm" alt="" border="0">
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+		<!-- sig -->
+			<div class="signature">
+				__________________<br>
+				<a href="http://newdawn.paynereactor.com/" target="_blank">M:I - New Dawn</a><br>
+a Max Payne 2 modification 
+			</div>
+		<!-- / sig -->
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img title="theHunted is offline" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/user_offline.gif" alt="theHunted is offline" border="0">
+
+
+		
+		
+		<a href="http://forums.3drealms.com/vb/report.php?p=115838" rel="nofollow"><img title="Report Post" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/report.gif" alt="Report Post" border="0"></a>
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right">
+
+	
+		<!-- controls -->
+		
+		
+		
+			<a href="http://forums.3drealms.com/vb/newreply.php?do=newreply&amp;p=115838" rel="nofollow"><img title="Reply With Quote" src="Weapon%20Animation%20Tutorial_files/quote.gif" alt="Reply With Quote" border="0"></a>
+		
+		
+			<a href="http://forums.3drealms.com/vb/newreply.php?do=newreply&amp;p=115838" rel="nofollow" onclick="return false"><img title="Multi-Quote This Message" src="Weapon%20Animation%20Tutorial_files/multiquote_off.gif" alt="Multi-Quote This Message" id="mq_115838" border="0"></a>
+		
+		
+		
+		
+		
+		
+			
+		
+		<a href="http://forums.3drealms.com/vb/blog_post.php?do=newblog&amp;p=115838"><img src="Weapon%20Animation%20Tutorial_files/blogpost.gif" title="Blog this Post" alt="" border="0"></a>
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 115838 popup menu -->
+<div class="vbmenu_popup" id="postmenu_115838_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">theHunted</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/member.php?u=2058">View Public Profile</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/private.php?do=newpm&amp;u=2058" rel="nofollow">Send a private message to theHunted</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://none/">Visit theHunted's homepage!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/search.php?do=finduser&amp;u=2058" rel="nofollow">Find More Posts by theHunted</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/profile.php?do=addlist&amp;userlist=buddy&amp;u=2058">Add theHunted to Your Contacts</a></td></tr>
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 115838 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #115838 --><!-- post #115862 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 100%; text-align: left;">
+		<div style="padding: 0px;" align="left">
+
+	<div id="edit115862" style="padding: 0px 0px 4px;">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post115862" class="tborder" align="center" border="0" cellpadding="4" cellspacing="0" width="100%">
+<tbody><tr>
+	
+		<td class="thead" style="font-weight: normal;">
+			<!-- status icon and date -->
+			<a name="post115862"><img title="Old" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/post_old.gif" alt="Old" border="0"></a>
+			11-15-2004, 10:25 PM
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead" style="font-weight: normal;" align="right">
+			&nbsp;
+			#<a href="http://forums.3drealms.com/vb/showpost.php?p=115862&amp;postcount=9" target="new" rel="nofollow" id="postcount115862" name="9"><strong>9</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="125">
+
+			<div id="postmenu_115862">
+				
+				<a class="bigusername" href="http://forums.3drealms.com/vb/member.php?u=3935">Hellsingmod Timmy</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_115862", true); </script>
+				
+			</div>
+
+			
+			
+			
+
+			
+
+		
+
+	</td>
+	
+	<td class="alt1" id="td_post_115862">
+	
+		
+		
+			<!-- icon and title -->
+<div class="smallfont" style="border-bottom: 1px solid rgb(132, 81, 34); padding: 5px; margin-bottom: 7px;">
+				
+				<strong>Re: How to animate Weapons in 3dsMax?</strong>
+			</div>			
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_115862">
+			
+			<div style="margin: 5px 20px 20px;">
+	<div class="smallfont" style="margin-bottom: 2px;">Quote:</div>
+	<table border="0" cellpadding="4" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border: 1px inset;">
+			
+				<b><i>Corwin said:</i></b><br>
+Deleted : Oops, I just see it was for <span class="highlight">3DSmax</span>, not milkshape, sorry. <br>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>can you describe it for milkshape plz??? =)
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img title="Hellsingmod Timmy is offline" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/user_offline.gif" alt="Hellsingmod Timmy is offline" border="0">
+
+
+		
+		
+		<a href="http://forums.3drealms.com/vb/report.php?p=115862" rel="nofollow"><img title="Report Post" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/report.gif" alt="Report Post" border="0"></a>
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right">
+
+	
+		<!-- controls -->
+		
+		
+		
+			<a href="http://forums.3drealms.com/vb/newreply.php?do=newreply&amp;p=115862" rel="nofollow"><img title="Reply With Quote" src="Weapon%20Animation%20Tutorial_files/quote.gif" alt="Reply With Quote" border="0"></a>
+		
+		
+			<a href="http://forums.3drealms.com/vb/newreply.php?do=newreply&amp;p=115862" rel="nofollow" onclick="return false"><img title="Multi-Quote This Message" src="Weapon%20Animation%20Tutorial_files/multiquote_off.gif" alt="Multi-Quote This Message" id="mq_115862" border="0"></a>
+		
+		
+		
+		
+		
+		
+			
+		
+		<a href="http://forums.3drealms.com/vb/blog_post.php?do=newblog&amp;p=115862"><img src="Weapon%20Animation%20Tutorial_files/blogpost.gif" title="Blog this Post" alt="" border="0"></a>
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 115862 popup menu -->
+<div class="vbmenu_popup" id="postmenu_115862_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">Hellsingmod Timmy</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/member.php?u=3935">View Public Profile</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/private.php?do=newpm&amp;u=3935" rel="nofollow">Send a private message to Hellsingmod Timmy</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/search.php?do=finduser&amp;u=3935" rel="nofollow">Find More Posts by Hellsingmod Timmy</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/profile.php?do=addlist&amp;userlist=buddy&amp;u=3935">Add Hellsingmod Timmy to Your Contacts</a></td></tr>
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 115862 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #115862 --><!-- post #115863 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 100%; text-align: left;">
+		<div style="padding: 0px;" align="left">
+
+	<div id="edit115863" style="padding: 0px 0px 4px;">
+	
+
+
+
+<table id="post115863" class="tborder" align="center" border="0" cellpadding="4" cellspacing="0" width="100%">
+<tbody><tr>
+	
+		<td class="thead" style="font-weight: normal;">
+			<!-- status icon and date -->
+			<a name="post115863"><img title="Old" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/post_old.gif" alt="Old" border="0"></a>
+			11-15-2004, 11:14 PM
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead" style="font-weight: normal;" align="right">
+			&nbsp;
+			#<a href="http://forums.3drealms.com/vb/showpost.php?p=115863&amp;postcount=10" target="new" rel="nofollow" id="postcount115863" name="10"><strong>10</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" width="125">
+
+			<div id="postmenu_115863">
+				
+				<a class="bigusername" href="http://forums.3drealms.com/vb/member.php?u=3097">Deflex</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_115863", true); </script>
+				
+			</div>
+
+			
+			
+			
+
+			
+
+		
+
+	</td>
+	
+	<td class="alt1" id="td_post_115863">
+	
+		
+		
+			<!-- icon and title -->
+<div class="smallfont" style="border-bottom: 1px solid rgb(132, 81, 34); padding: 5px; margin-bottom: 7px;">
+				
+				<strong>Re: How to animate Weapons in 3dsMax?</strong>
+			</div>			
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_115863">
+			
+			Ok i was in a real hurry last time. <img src="Weapon%20Animation%20Tutorial_files/smile.htm" alt="" border="0"> sry for that.<br>
+<br>
+Ok this is an explanation how to make a most common gun <span class="highlight">animation</span>. Its the slide <span class="highlight">animation</span> im talking about.<br>
+<br>
+First go to the fifth button from the right in the lower right corner. 
+Holding the mouse over it should say "&lt;font color="red"&gt;Time 
+Configuration&lt;/font&gt;". Click it, select End Time to 5 and click 
+ok.<br>
+<br>
+Now youre <span class="highlight">animation</span> has 5 frames. Next to
+ the key button is an  "&lt;font color="red"&gt;Auto Key&lt;/font&gt;" 
+click that so it highlights. Now move the Time Slider wich is down on 
+the red stripe that should appere when you pressed Auto Key. Move it to 
+2.<br>
+<br>
+Now move the gun slide where you want it (now that this is a gun it should be to the right or left if you have the <span class="highlight">weapon</span> in the left view) .<br>
+<br>
+When this is done you will se that you have 2 new frames. One on frame 0
+ and one on frame 2. Drag the mouse over the one on frame 0 and press 
+and hold shift, drag it to the last fifth frame. Thats all.<br>
+<br>
+Export only with <span class="highlight">Animation</span> checked in the
+ middle section. I think you can have the other like they allready are. 
+ Hope this helps you and that you understood my english. If you still 
+having problems contact me on <a href="mailto:deflex1@hotmail.com">deflex1@hotmail.com</a>
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+		<!-- sig -->
+			<div class="signature">
+				__________________<br>
+				Modeller, computer fan, Gaming guru, bad english writer/talker 
+			</div>
+		<!-- / sig -->
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt2">
+		<img title="Deflex is offline" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/user_offline.gif" alt="Deflex is offline" border="0">
+
+
+		
+		
+		<a href="http://forums.3drealms.com/vb/report.php?p=115863" rel="nofollow"><img title="Report Post" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/report.gif" alt="Report Post" border="0"></a>
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" align="right">
+
+	
+		<!-- controls -->
+		
+		
+		
+			<a href="http://forums.3drealms.com/vb/newreply.php?do=newreply&amp;p=115863" rel="nofollow"><img title="Reply With Quote" src="Weapon%20Animation%20Tutorial_files/quote.gif" alt="Reply With Quote" border="0"></a>
+		
+		
+			<a href="http://forums.3drealms.com/vb/newreply.php?do=newreply&amp;p=115863" rel="nofollow" onclick="return false"><img title="Multi-Quote This Message" src="Weapon%20Animation%20Tutorial_files/multiquote_off.gif" alt="Multi-Quote This Message" id="mq_115863" border="0"></a>
+		
+		
+		
+		
+		
+		
+			
+		
+		<a href="http://forums.3drealms.com/vb/blog_post.php?do=newblog&amp;p=115863"><img src="Weapon%20Animation%20Tutorial_files/blogpost.gif" title="Blog this Post" alt="" border="0"></a>
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 115863 popup menu -->
+<div class="vbmenu_popup" id="postmenu_115863_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">Deflex</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/member.php?u=3097">View Public Profile</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/private.php?do=newpm&amp;u=3097" rel="nofollow">Send a private message to Deflex</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/search.php?do=finduser&amp;u=3097" rel="nofollow">Find More Posts by Deflex</a></td></tr>
+	
+	
+	<tr><td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/profile.php?do=addlist&amp;userlist=buddy&amp;u=3097">Add Deflex to Your Contacts</a></td></tr>
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 115863 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #115863 --><div id="lastpost"></div></div>
+
+<!-- start content table -->
+<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 100%; text-align: left;">
+		<div style="padding: 0px;" align="left">
+
+<!-- / start content table -->
+
+<!-- controls below postbits -->
+<table style="margin-top: -1px;" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+	
+		<td class="smallfont"><a href="http://forums.3drealms.com/vb/newreply.php?do=newreply&amp;noquote=1&amp;p=115863" rel="nofollow"><img title="Reply" src="Weapon%20Animation%20Tutorial_files/reply.gif" alt="Reply" border="0"></a></td>
+	
+	
+</tr>
+</tbody></table>
+<!-- / controls below postbits -->
+
+
+
+
+<!-- social bookmarking links -->
+	<br>
+	<table class="tborder" align="center" border="0" cellpadding="4" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td class="thead">Bookmarks</td>
+	</tr>
+	<tr>
+		<td class="alt2" style="padding-top: 0px;"><div style="clear: both;"></div><ul style="list-style-type: none; margin: 0px; padding: 0px;"><li class="smallfont" style="width: 25%; min-width: 160px; float: left; margin-top: 4px;">
+	
+		<a href="http://digg.com/submit?phrase=2&amp;url=http%3A%2F%2Fforums.3drealms.com%2Fvb%2Fshowthread.php%3Ft%3D9990&amp;title=How+to+animate+Weapons+in+3dsMax%3F" target="socialbookmark"><img title="Submit Thread to Digg" src="Weapon%20Animation%20Tutorial_files/bookmarksite_digg.gif" alt="Submit Thread to Digg" class="inlineimg" border="0"></a>
+	
+	<a href="http://digg.com/submit?phrase=2&amp;url=http%3A%2F%2Fforums.3drealms.com%2Fvb%2Fshowthread.php%3Ft%3D9990&amp;title=How+to+animate+Weapons+in+3dsMax%3F" target="socialbookmark" style="text-decoration: none;">Digg</a>
+</li><li class="smallfont" style="width: 25%; min-width: 160px; float: left; margin-top: 4px;">
+	
+		<a href="http://del.icio.us/post?url=http%3A%2F%2Fforums.3drealms.com%2Fvb%2Fshowthread.php%3Ft%3D9990&amp;title=How+to+animate+Weapons+in+3dsMax%3F" target="socialbookmark"><img title="Submit Thread to del.icio.us" src="Weapon%20Animation%20Tutorial_files/bookmarksite_delicious.gif" alt="Submit Thread to del.icio.us" class="inlineimg" border="0"></a>
+	
+	<a href="http://del.icio.us/post?url=http%3A%2F%2Fforums.3drealms.com%2Fvb%2Fshowthread.php%3Ft%3D9990&amp;title=How+to+animate+Weapons+in+3dsMax%3F" target="socialbookmark" style="text-decoration: none;">del.icio.us</a>
+</li><li class="smallfont" style="width: 25%; min-width: 160px; float: left; margin-top: 4px;">
+	
+		<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fforums.3drealms.com%2Fvb%2Fshowthread.php%3Ft%3D9990&amp;title=How+to+animate+Weapons+in+3dsMax%3F" target="socialbookmark"><img title="Submit Thread to StumbleUpon" src="Weapon%20Animation%20Tutorial_files/bookmarksite_stumbleupon.gif" alt="Submit Thread to StumbleUpon" class="inlineimg" border="0"></a>
+	
+	<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fforums.3drealms.com%2Fvb%2Fshowthread.php%3Ft%3D9990&amp;title=How+to+animate+Weapons+in+3dsMax%3F" target="socialbookmark" style="text-decoration: none;">StumbleUpon</a>
+</li><li class="smallfont" style="width: 25%; min-width: 160px; float: left; margin-top: 4px;">
+	
+		<a href="http://www.google.com/bookmarks/mark?op=edit&amp;output=popup&amp;bkmk=http%3A%2F%2Fforums.3drealms.com%2Fvb%2Fshowthread.php%3Ft%3D9990&amp;title=How+to+animate+Weapons+in+3dsMax%3F" target="socialbookmark"><img title="Submit Thread to Google" src="Weapon%20Animation%20Tutorial_files/bookmarksite_google.gif" alt="Submit Thread to Google" class="inlineimg" border="0"></a>
+	
+	<a href="http://www.google.com/bookmarks/mark?op=edit&amp;output=popup&amp;bkmk=http%3A%2F%2Fforums.3drealms.com%2Fvb%2Fshowthread.php%3Ft%3D9990&amp;title=How+to+animate+Weapons+in+3dsMax%3F" target="socialbookmark" style="text-decoration: none;">Google</a>
+</li></ul><div style="clear: both;"></div></td>
+	</tr>
+	</tbody></table>
+<!-- / social bookmarking links -->
+
+
+
+<!-- thread tags -->
+	<br>
+	<table class="tborder" align="center" border="0" cellpadding="4" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td class="thead">
+			<div style="float: right;" class="normal">
+				<a href="http://forums.3drealms.com/vb/threadtag.php?t=9990" id="tag_edit_link">Edit Tags</a>
+			</div>
+			<a name="taglist"></a>
+			<a href="http://forums.3drealms.com/vb/tags.php">Tags</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="alt1 smallfont" id="tag_list_cell"><i>None</i> <img src="Weapon%20Animation%20Tutorial_files/11x11progress.gif" id="tag_form_progress" class="inlineimg" style="display: none;" alt=""></td>
+	</tr>
+	</tbody></table>
+
+	<script type="text/javascript" src="Weapon%20Animation%20Tutorial_files/vbulletin_ajax_taglist.js"></script>
+		<script type="text/javascript" src="Weapon%20Animation%20Tutorial_files/vbulletin_ajax_tagsugg.js"></script>
+<!-- / thread tags -->
+
+
+
+
+
+<!-- lightbox scripts -->
+	<script type="text/javascript" src="Weapon%20Animation%20Tutorial_files/vbulletin_lightbox.js"></script>
+	<script type="text/javascript">
+	<!--
+	vBulletin.register_control("vB_Lightbox_Container", "posts", 1);
+	//-->
+	</script>
+<!-- / lightbox scripts -->
+
+
+
+<!-- multiquote scripts -->
+	<script type="text/javascript" src="Weapon%20Animation%20Tutorial_files/vbulletin_multi_quote.js"></script>
+	<script type="text/javascript">
+	<!--
+	var mqlimit = 0;
+	//-->
+	</script>
+<!-- / multiquote scripts -->
+
+
+
+
+
+
+
+
+<!-- next / previous links -->
+	<br>
+	<div class="smallfont" align="center">
+		<strong>«</strong>
+			<a href="http://forums.3drealms.com/vb/showthread.php?t=9990&amp;goto=nextoldest" rel="nofollow">Previous Thread</a>
+			|
+			<a href="http://forums.3drealms.com/vb/showthread.php?t=9990&amp;goto=nextnewest" rel="nofollow">Next Thread</a>
+		<strong>»</strong>
+	</div>
+<!-- / next / previous links -->
+
+
+
+
+
+
+
+<!-- popup menu contents -->
+<br>
+
+<!-- thread tools menu -->
+<div class="vbmenu_popup" id="threadtools_menu" style="display: none;">
+<form action="postings.php?t=9990&amp;pollid=" method="post" name="threadadminform">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">Thread Tools<a name="goto_threadtools"></a></td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option"><img title="Show Printable Version" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/printer.gif" alt="Show Printable Version"> <a href="http://forums.3drealms.com/vb/printthread.php?t=9990" accesskey="3" rel="nofollow">Show Printable Version</a></td>
+	</tr>
+	
+	<tr>
+		<td class="vbmenu_option"><img title="Email this Page" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/sendtofriend.gif" alt="Email this Page"> <a href="http://forums.3drealms.com/vb/sendmessage.php?do=sendtofriend&amp;t=9990" rel="nofollow">Email this Page</a></td>
+	</tr>
+	
+	
+	<tr>
+		<td class="vbmenu_option"><img title="Subscription" class="inlineimg" src="Weapon%20Animation%20Tutorial_files/subscribe.gif" alt="Subscription">
+		
+			<a href="http://forums.3drealms.com/vb/subscription.php?do=addsubscription&amp;t=9990" rel="nofollow">Subscribe to this Thread</a>
+		
+		</td>
+	</tr>
+	
+	
+	
+	</tbody></table>
+</form>
+</div>
+<!-- / thread tools menu -->
+
+<!-- **************************************************** -->
+
+
+<!-- thread search menu -->
+<div class="vbmenu_popup" id="threadsearch_menu" style="display: none;">
+<form action="search.php?do=process&amp;searchthreadid=9990" method="post">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">Search this Thread<a name="goto_threadsearch"></a></td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option" title="nohilite">
+			<input name="s" value="" type="hidden">
+			<input name="securitytoken" value="1287088317-8004036ebf3fcea5de8cfb09091aba39361c27f4" type="hidden">
+			<input name="do" value="process" type="hidden">
+			<input name="searchthreadid" value="9990" type="hidden">
+			<input class="bginput" name="query" size="25" type="text"><input class="button" value="Go" type="submit"><br>
+		</td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option"><a href="http://forums.3drealms.com/vb/search.php?searchthreadid=9990">Advanced Search</a></td>
+	</tr>
+	</tbody></table>
+</form>
+</div>
+<!-- / thread search menu -->
+
+
+<!-- **************************************************** -->
+
+
+
+<!-- / popup menu contents -->
+
+
+<!-- forum rules and admin links -->
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="bottom">
+	<td valign="top" width="100%">
+		<table class="tborder" border="0" cellpadding="4" cellspacing="0" width="210">
+<thead>
+<tr>
+	<td class="thead">
+		<a style="float: right;" href="#top" onclick="return toggle_collapse('forumrules')"><img id="collapseimg_forumrules" src="Weapon%20Animation%20Tutorial_files/collapse_thead.gif" alt="" border="0"></a>
+		Posting Rules
+	</td>
+</tr>
+</thead>
+<tbody id="collapseobj_forumrules" style="">
+<tr>
+	<td class="alt1" nowrap="nowrap"><div class="smallfont">
+		
+		<div>You <strong>may</strong> post new threads</div>
+		<div>You <strong>may</strong> post replies</div>
+		<div>You <strong>may</strong> post attachments</div>
+		<div>You <strong>may</strong> edit your posts</div>
+		<hr>
+		
+		<div><a href="http://forums.3drealms.com/vb/misc.php?do=bbcode" target="_blank">BB code</a> is <strong>On</strong></div>
+		<div><a href="http://forums.3drealms.com/vb/misc.php?do=showsmilies" target="_blank">Smilies</a> are <strong>On</strong></div>
+		<div><a href="http://forums.3drealms.com/vb/misc.php?do=bbcode#imgcode" target="_blank">[IMG]</a> code is <strong>On</strong></div>
+		<div>HTML code is <strong>Off</strong></div>
+		<hr>
+		<div><a href="http://forums.3drealms.com/vb/misc.php?do=cfrules&amp;cfrset=1" target="_blank">Forum Rules</a></div>
+	</div></td>
+</tr>
+</tbody>
+</table>
+	</td>
+	<td class="smallfont" align="right">
+		<table border="0" cellpadding="0" cellspacing="0">
+		
+		<tbody><tr>
+			<td>
+			<div class="smallfont" style="text-align: left; white-space: nowrap;">
+	<form action="forumdisplay.php" method="get">
+	<input name="s" value="" type="hidden">
+	<input name="daysprune" value="" type="hidden">
+	<strong>Forum Jump</strong><br>
+	<select name="f" onchange="this.form.submit();">
+		<optgroup label="Site Areas">
+			<option value="cp">User Control Panel</option>
+			<option value="pm">Private Messages</option>
+			<option value="subs">Subscriptions</option>
+			<option value="wol">Who's Online</option>
+			<option value="search">Search Forums</option>
+			<option value="home">Forums Home</option>
+		</optgroup>
+		
+		<optgroup label="Forums">
+		<option value="3" class="fjdpth0"> 3D Realms Topics</option>
+<option value="51" class="fjdpth1">&nbsp; &nbsp;  Apogee / 3D Realms Memories</option>
+<option value="15" class="fjdpth1">&nbsp; &nbsp;  Duke Nukem</option>
+<option value="17" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Duke Nukem 3D Modifications</option>
+<option value="50" class="fjdpth1">&nbsp; &nbsp;  Duke Nukem 3D Xbox LIVE</option>
+<option value="19" class="fjdpth1">&nbsp; &nbsp;  Other Apogee/3D Realms Games</option>
+<option value="39" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Dopefish.com Forum</option>
+<option value="30" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Shadow Warrior Source Code</option>
+<option value="18" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Rise of the Triad Source Code</option>
+<option value="4" class="fjdpth0"> General Gaming Topics</option>
+<option value="12" class="fjdpth1">&nbsp; &nbsp;  Max Payne</option>
+<option value="36" class="fjsel" selected="selected">&nbsp; &nbsp; &nbsp; &nbsp;  Max Payne Modifications</option>
+<option value="31" class="fjdpth1">&nbsp; &nbsp;  Prey</option>
+<option value="21" class="fjdpth1">&nbsp; &nbsp;  Other Gaming Discussions</option>
+<option value="20" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  UnrealED Help</option>
+<option value="5" class="fjdpth0"> General Topics</option>
+<option value="22" class="fjdpth1">&nbsp; &nbsp;  Hardware Forum</option>
+<option value="23" class="fjdpth1">&nbsp; &nbsp;  Software Forum</option>
+<option value="24" class="fjdpth1">&nbsp; &nbsp;  Programming / HTML Forum</option>
+<option value="25" class="fjdpth1">&nbsp; &nbsp;  Popular Media Forum</option>
+<option value="38" class="fjdpth1">&nbsp; &nbsp;  3DR Forums Help &amp; Assistance</option>
+<option value="26" class="fjdpth1">&nbsp; &nbsp;  General Messages</option>
+<option value="6" class="fjdpth0"> Archives</option>
+<option value="13" class="fjdpth1">&nbsp; &nbsp;  Duke Nukem Forever</option>
+<option value="27" class="fjdpth1">&nbsp; &nbsp;  3DR Forums Greatest Hits</option>
+
+		</optgroup>
+		
+	</select><input class="button" value="Go" type="submit">
+	</form>
+</div>
+			</td>
+		</tr>
+		</tbody></table>
+	</td>
+</tr>
+</tbody></table>
+<!-- /forum rules and admin links -->
+
+<br>
+
+
+
+
+
+<br>
+<div class="smallfont" align="center">All times are GMT +2. The time now is <span class="time">10:31 PM</span>.</div>
+<br>
+
+
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- /content area table -->
+
+<form action="index.php" method="get" style="clear: left;">
+
+<table class="page" align="center" border="0" cellpadding="4" cellspacing="0" width="100%">
+<tbody><tr align="right">
+	<td class="tcat" nowrap="nowrap">
+		<span class="smallfont">Page generated in 0.57820511 seconds (100.00% PHP - 0% MySQL) with 15 queries</span>
+	</td>
+</tr>
+
+<tr>
+	
+	<td class="tfoot" align="right" width="100%">
+		<div class="smallfont">
+			<strong>
+				<a href="http://forums.3drealms.com/vb/sendmessage.php" rel="nofollow" accesskey="9">Contact Us</a> -
+				<a href="http://www.3drealms.com/">3D Realms Site</a> -
+				
+				
+				<a href="http://forums.3drealms.com/vb/archive/index.php">Archive</a> -
+				
+				
+				
+				<a href="#top" onclick="self.scrollTo(0, 0); return false;">Top</a>
+			</strong>
+		</div>
+	</td>
+</tr>
+</tbody></table>
+    </form></div>
+</div></div></div></div></div>
+
+<br>
+
+<div align="center">
+	<div class="smallfont" align="center">
+	<!-- Do not remove this copyright notice -->
+	Powered by vBulletin® Version 3.8.6<br>Copyright ©2000 - 2010, Jelsoft Enterprises Ltd.
+	<!-- Do not remove this copyright notice -->
+	</div>
+
+	<div class="smallfont" align="center">
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+	
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+
+	<br>Website is ©1987-2010 Apogee Software, Ltd.<br>Ideas and messages posted here become property of Apogee Software Ltd.
+	</div>
+</div>
+
+
+
+
+
+
+<script type="text/javascript">
+<!--
+	// Main vBulletin Javascript Initialization
+	vBulletin_init();
+//-->
+</script>
+
+<!-- temp -->
+<div style="display: none;">
+	<!-- thread rate -->
+	
+		
+	
+	<!-- / thread rate -->
+</div>
+
+</div></body></html>

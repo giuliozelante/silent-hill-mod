@@ -1,0 +1,39 @@
+BODY {
+	MARGIN: 16px
+}
+P.fixed {
+	FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: Courier New,Courier New, Courier, sans-serif
+}
+A {
+	COLOR: #bb0000
+}
+A:hover {
+	COLOR: #aa0000
+}
+A:active {
+	COLOR: #bb0000
+}
+A:visited {
+	COLOR: #ff0000
+}
+P {
+	FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: Arial, sans-serif
+}
+H1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 20px; COLOR: #bb0000; FONT-FAMILY: Arial, sans-serif
+}
+H2 {
+	MARGIN-TOP: 35px; FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #000000; FONT-FAMILY: Arial, sans-serif
+}
+TD {
+	FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: Arial, sans-serif
+}
+P.small {
+	FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: Arial, sans-serif
+}
+UL {
+	FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: Arial, sans-serif
+}
+OL {
+	FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: Arial, sans-serif
+}

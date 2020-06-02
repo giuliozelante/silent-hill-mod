@@ -1,0 +1,945 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+<title>Dynamic Content</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<base target="main">
+</head>
+
+<body leftmargin="0" topmargin="0">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" height="80">
+  <tr>
+    <td width="50%" height="80" bgcolor="#000000"><img border="0" src="images/maxlogo.gif" width="260" height="80"></td>
+    <td width="50%" height="80" align="right" bgcolor="#000000"><img border="0" src="images/rmdlogo.gif" width="115" height="64"></td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="16">
+  <tr>
+    <td>
+      <table border="0" cellpadding="0" cellspacing="0" width="640">
+  <tr>
+          <td> <h1> <br>
+              Dynamic Content</h1>
+            <blockquote> 
+              <p>With this tutorial you are going to learn how to create dynamic 
+                objects and interactive gameplay content. We are going to cover 
+                the basics of dynamic content, and also spill out some more advanced 
+                suggestions about how some things should be done to keep your 
+                Finite State Machine (FSM) scripts and all the complex machines 
+                maintainable. We are also going to create a door and turn it into 
+                a &quot;prefab&quot; that can be easily copied around. For this 
+                use the example level that came in the same zip archive as this 
+                help file. You can also download some prefabricated dynamic objects 
+                by Remedy, and also the all the example levels <a href="http://www.maxpayne.com/tutorials/MaxED/downloads.htm" target="_blank">here</a>.</p>
+</blockquote>
+<h2>FSMs, Messages and the hierarchy</h2>
+<blockquote>
+<p>The basis of all the dynamic content are so-called <b>Finite State Machines</b>
+ (FSM). FSM scripting is especially evident in Max Payne because there are no
+pre-made dynamic entities such as &quot;a door&quot; or &quot;a lift&quot; that
+you could use, but rather all the dynamic content is created with <b>dynamic
+objects</b> (DO's) and few other simple entities like triggers. These entities
+can detect various <b>events</b> and send <b>messages</b> to each others to
+control all the things you see happening in the game. For example when the player opens a door, it can
+send
+a message to, say, a huge boulder to make it roll towards the player, and when
+the boulder crashes into something, it can send messages to the nearby enemies
+to make them come and investigate all the noise. As you will learn in this
+tutorial, it's a flexible system and can be used to construct pretty much
+anything you can think of.</p>
+<p>Basic message can look like this:</p>
+<blockquote>
+<p class="fixed">::Cellar_Room2::Enemy1-&gt;C_SetStateMachine(
+CrouchAndShoot );</p>
+</blockquote>
+<p>It consists of the receiver <i>&quot;::Cellar_Room2::Enemy1&quot;</i>,
+the message itself <i>&quot;C_SetStateMachine&quot;</i>, and finally the
+possible parameters<i> &quot;CrouchAndShoot&quot;</i>.</p>
+<p>Other examples:</p>
+<blockquote>
+<p class="fixed">::Room2::Door1-&gt;DO_StopAnimation();<br>
+parent::Enemy4-&gt;C_GoTo( ::Street1::Waypoint1,1);<br>
+Button-&gt;A_Play3DSound( dynamic, switch ,&quot;&quot;
+);<br>
+this-&gt;C_PickUpWeapon( deserteagle );</p>
+</blockquote>
+<p>If messages point to objects that are inside MaxED, they require the <b> hierarchy</b>
+to be defined for the receiver. You can use <b>absolute hierarchy</b> or&nbsp;<b>
+relative hierarchy</b> from the message sender.</p>
+<p>Example: Object A is a top-level object. It has children B
+and C, and B has child D.</p>
+</blockquote>
+    <p align="center">
+ <img src="images/dynami1.gif" v:shapes="_x0000_i1025" align="center" width="187" height="165">
+    <br>
+ <i>A simple
+hierarchy example</i>
+<blockquote>
+<p>The fully qualified names are:
+<blockquote>
+  <p class="fixed">A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ::A<br>
+B&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::A::B<br>
+C&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ::A::C<br>
+D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ::A::B::D
+</blockquote>
+<p>When you define relative names, you have keywords &quot;<b>this</b>&quot;
+and &quot;<b>parent</b>&quot; at your disposal. An object can refer to itself by
+&quot;this&quot;, and to its parent with &quot;parent&quot;. An object can refer
+to its child directly by using the child's name.
+</blockquote>
+<div align="center">
+  <center>
+  <table border="1" cellpadding="4" width="293">
+    <tr>
+      <td valign="top" align="left" width="48"><b>Object</b></td>
+      <td valign="top" align="left" width="85"><b>Can Refer to:</b></td>
+      <td valign="top" align="left" width="120"><b>With relative name</b></td>
+    </tr>
+    <tr>
+      <td valign="top" align="left" width="48">A</td>
+      <td valign="top" align="left" width="85">A<br>
+        B<br>
+        C<br>
+        D</td>
+      <td valign="top" align="left" width="120">this<br>
+        B<br>
+        C<br>
+        B::D</td>
+    </tr>
+    <tr>
+      <td valign="top" align="left" width="48">B</td>
+      <td valign="top" align="left" width="85">A<br>
+        B<br>
+        C<br>
+        D</td>
+      <td valign="top" align="left" width="120">parent<br>
+        this<br>
+        parent::C<br>
+        D</td>
+    </tr>
+    <tr>
+      <td valign="top" align="left" width="48">C</td>
+      <td valign="top" align="left" width="85">A<br>
+        B<br>
+        C<br>
+        D</td>
+      <td valign="top" align="left" width="120">parent<br>
+        parent::B<br>
+        this<br>
+        parent::B::D</td>
+    </tr>
+    <tr>
+      <td valign="top" align="left" width="48">D</td>
+      <td valign="top" align="left" width="85">A<br>
+        B<br>
+        C<br>
+        D</td>
+      <td valign="top" align="left" width="120">parent::parent<br>
+        parent<br>
+        parent::parent::C<br>
+        this</td>
+    </tr>
+  </table>
+  </center>
+</div>
+<blockquote>
+<p>About whether you should use absolute or relative names, it
+really depends on the situation. Usually when you create an enclosed machine,
+such as a door, all the messages that the door sends to the different parts of
+itself should be relative to ensure that when you copy the door around, the copy
+will still have its messages defined correctly (=The new copy won't send
+messages to the original door).
+<p>But then again if the machine sends messages outside of
+itself, for example if the door sends a message to an enemy somewhere else in
+the level, you might want to use absolute naming, which will ensure that the new
+copies of the door will do all the same things as the original. (=All the copies
+of the machine will send the same messages outside themselves)
+<p>In addition to these, there's two more keywords that you
+can use some situations as the receivers; &quot;<b>Activator</b>&quot; and
+&quot;<b>Player</b>&quot;. For example a collision trigger can send messages to
+the Activator when it's been touched, and some messages can be sent simply to
+the player (The character that represents the player).</p>
+<blockquote>
+<p class="fixed">activator-&gt;C_SetHealth( 0 );<br>
+player-&gt;A_StopAll3DSounds( head );
+</blockquote>
+<p>As you can see, there's no hierarchy for these receivers. Likewise there's no
+hierarchy involved if the entities are sending messages to the game modes, for
+example to maxpayne_gamemode for changing the level, or maxpayne_hudmode for
+hudprint, or x_modeswitch to perform a modeswitch (between game, menus and
+graphic novels).</p>
+<blockquote>
+  <p class="fixed">maxpayne_gamemode-&gt;gm_init(The_Next_Level):;<br>
+  maxpayne_hudmode-&gt;mphm_printdirect(&quot;Don't play
+with guns&quot;);<br>
+  x_modeswitch-&gt;s_modeswitch(game);</p>
+</blockquote>
+<p>The complete list of messages can be found from the
+MaxFX-Tools Help.</p>
+</blockquote>
+<h2>The dynamic entities and their purposes</h2>
+<blockquote>
+<p>Here is a list of entities that you can create in MaxED and use as a part of
+your FSM scripting. You can create any of these entities by pressing <b>N</b>
+in F3 mode.</p>
+<p><b>Waypoint</b> - This entity is used for AI scripting.
+Enemies can be commanded to move to waypoints.</p>
+<p><b>Jumppoint</b> - This is the entity where player spawns
+to. The level can include multiple jumppoints, and you can jump between them
+with <b>insert</b> and <b>delete</b> in the game, if developermode is on. The initial jumppoint is
+defined in levels.txt. The level won't run in normal mode if it isn't defined,
+although in developer mode you will just get an error message about it.</p>
+<p><b>Enemy</b> - A character, usually an enemy, although due
+to the flexible nature of the AI scripting, any enemy can be used as a
+non-harmful NPC. You can select what type of an enemy or NPC you want this to be
+from the properties of the entity. (Press <b>enter</b> in F5 mode or click <b>RMB</b>
+to it in the hierarchy tree and select &quot;Properties&quot;.)</p>
+<p><b>Level item</b> - Any item you can find in the game, like ammunition, weapons or
+painkillers. You can choose the type of the
+level item from the properties.</p>
+<p><b>Player collide trigger </b>- A spherical trigger that
+activates when the player touches it. You can change the radius from the
+properties.</p>
+<p><b>Character collide trigger</b> - A spherical trigger that
+activates when any character (including the player) touches it. You can change
+the radius from the properties.</p>
+<p><b>Projectile collide trigger</b> - A spherical trigger
+that activates when any damage-causing projectile touches it. You can change the
+radius from the properties.</p>
+<p><b>Action button trigger </b>- A trigger that has to be
+used by the player in order for it to activate.</p>
+<p><b>Look-at trigger</b> - A trigger which will cause the
+player's character to look towards its center when player is inside it's radius.</p>
+<p><b>Floating FSM</b> - An invisible entity that can be used
+as a part of the FSM logics of a system or as an emitter for sounds and particle
+effects. It's basically an all-around relay entity for messages.</p>
+              <p><b>Pointlight</b> - A Gouraud light for characters and the desired dynamic 
+                objects. The light itself is static in the world and cannot be 
+                moved. More about it in Dynamic lighting section of the <a href="lighting2.htm" target="_self">advanced 
+                lighting</a> article. (Note that you can make moving dynamic lights 
+                that affect the geometry by using such a particle effect)</p>
+</blockquote>
+<h2>Creating DOs</h2>
+      <blockquote>
+        <p>In addition to the entities listed above then there's so called <b>dynamic objects</b>, which
+        make up a big portion of all the dynamic content . These are basically meshes that have some functions. All the doors, cars, crates, lifts and
+choppers you see in the game are dynamic objects which have different FSM
+logics and animations put in by the mapper. As mentioned before, there is no separate entity for
+&quot;Door&quot; or &quot;Car&quot;, everything is the same. A breakable crate is a
+dynamic mesh which hides itself and creates a particle- and sound effect when
+it's hit. A chopper is a dynamic mesh which has lots of invisible parents that
+animate and move the chopper in the sky in a believable manner. Any model that
+moves or interacts with something in the game is a dynamic object.</p>
+  <p>Then into the creation of DO's. Let's try and make a breakable window.
+  First we need some sort of a level to play with. Just create two rooms with a window opening between them (and a 1.5m x
+  2.5m doorway), and create a
+  flat polygon there to act as the glass for the window (You can get the
+  materials from the example level of this tutorial). Create a flat polygon by drawing the shape in F3 mode onto the grid - just like you would
+  create any object - but hold down shift when pressing RMB.</p>
+      </blockquote>
+  <p align="center"><img border="0" src="images/do-1.jpg" width="640" height="480"><br>
+    </p>
+<blockquote>
+  <p>When you import the materials from the example level, click on the glass
+  material in the material window with RMB and make sure <b>Dualsided</b> and <b>Alpha
+  test</b> material flags have been set.</p>
+</blockquote>
+<p align="center"><img border="0" src="images/do-2.jpg" width="286" height="452"><br>
+    </p>
+<blockquote>
+  <p>If it happens that you can't see the glass in the editor when it's Alpha
+  test, check MaxED's &quot;Local Preferences&quot;. There's a value called
+  &quot;AlphaTestReference&quot;, change it to, say, 128 (restart of MaxEd may
+  be needed for this to take effect). This will change the
+  way the material is rendered in MaxED, but don't forget that the game engine
+  itself will draw Alpha test materials differently, so don't worry if it
+  doesn't look very good in the editor.</p>
+  <p>The glass polygon is still static and doesn't really do anything special
+  yet, except let the bullets go through it because of the material category
+  properties. Let's turn the object dynamic by selecting it in F5 mode, and
+  pressing <b>D</b>. The same button also turns dynamic meshes into static ones.
+  MaxED asks if you want to keep the lightmaps of an object when you turn it
+  dynamic. Let's answer yes. DO's generally look better with lightmaps.</p>
+</blockquote>
+  <h2>Setting DO properties</h2>
+<blockquote>
+  <p>Now let's check out the rest of the object properties for dynamic objects.
+  Just like with any object's properties, select the object in F5 mode, and
+  press <b>Return</b>. You can rename the object now into whatever you desire,
+  and under the <b>Statistics</b> tab there's some flags for us to check.
+  Something like this:</p>
+<blockquote>
+  <p align="center"><img border="0" src="images/do-3.jpg" width="356" height="349"></p>
+</blockquote>
+  <p><b>Explanations:</b>
+</p>
+<p><b>Export geometry</b> - This defines whether or not to export the geometry
+  of the object to the .LDB file. By disabling this flag you can, for example,
+  keep pieces of furniture around the .LVL -file while they won't get exported
+  to the game. This flag is enabled by default.
+</p>
+  <p><b>Export lights</b> - When you make a polygon emit light (other than
+  black), a dynamic
+  cone-like light (that affects only characters and the desired DO's) will also
+  be created onto it. With this flag, these lights can be excluded or included
+  to the export. These cone-like lights are however slower in runtime than <b>pointlights</b>,
+  so it is suggested you use them instead. You
+  can see the dynamic lights by selecting <b>View &gt; Visualize lights</b>. This flag is disabled by default.&nbsp;
+</p>
+  <p><b>Cast No Shadows</b> - Even if an object has lightmaps of it own, it can
+  be made not to cast any shadows. This should be set on any DO's that move or
+  disappear at some point (Doors, breakable crates, moving vehicles). Disabled
+  by default. All objects will cast shadows in preview rendering.
+</p>
+  <p><b>Insert into collision BSP</b> - This affects <b> only static objects</b>. A
+  static object can be excluded from the collision BSP by this. If you make very
+  small objects with lots of faces, it is usually a good idea to set this flag.
+  It's good speed wise, and also in many situations it makes a smoother gaming
+  experience when you don't get stuck onto all the little things lying on the
+  floor. Enabled by default.
+</p>
+  <p><b>Block explosions </b>- This defines whether or not the DO blocks
+  explosions. Big things like doors should block the explosions, but small stuff
+  like little bottles shouldn't. Also if an object is blocking explosions, it
+  will also block them from itself, thus not getting any damage from explosions.
+  Enabled by default.
+</p>
+  <p><b>Bullet collisions</b> - You can set the bullet collisions with this
+  flag. Disabled by default.
+</p>
+<p><b>Dynamic collisions</b> - You can set all the other collisions but bullet
+collisions with this flag. Disabled by default.
+</p>
+<p><b>Lightmapped&nbsp;</b> - This defines whether or not the DO uses lightmaps.
+If it doesn't use lightmaps, it is lit merely by dynamic lights.
+</p>
+<p><b>Pointlights affect</b> - With this flag you can make the dynamic lights to
+affect the DO even if it uses lightmaps. This is a bit of a hack and it's not
+recommended to be used often.
+</p>
+<p><b>Cont. upd.</b> - Continuous update, If the object is animating, setting this flag will make
+the object animate all the time even when it's not in the view cone. This flag
+doesn't have any effect on non-animating DO's.
+</p>
+  <p>TIP: You can make all the names of the DO's visible in the rendering window
+  by selecting <b>View &gt; Dynamic Object Text Modes &gt; Name</b>
+</p>
+</blockquote>
+<h2>Finite state machine scripting
+</h2>
+<blockquote>
+<p>By finite state machine scripting, we mean putting in the messages that link
+the entities together. Or as it is in the case of our example, the breakable glass, putting
+in messages that the glass sends to itself. We are going to add messages to make
+the glass disappear and to play some breaking particle effects. First select the glass, and press <b>4</b>
+to bring up the FSM dialog.
+</p>
+<p align="center"><img border="0" src="images/do-4.jpg" width="342" height="270">
+</p>
+<p>In this first dialog we can add <b>states</b> to the object. The FSM scripts
+we need for a breakable glass won't require any states, so we won't add any. We
+can also bring up the <b>Custom strings</b> dialog from here, but we won't need
+any customs strings now either. Let's just press <b>Messages</b>-button.
+</p>
+<p align="center"><img border="0" src="images/do-5.jpg" width="361" height="380">
+</p>
+<p>The tabs you can see in the upper part of this dialog are <b>events</b> that
+can occur to the object. In this case there's 5 of them:
+</p>
+<p><b>DO_BulletCollides</b> - Send messages if a bullet collides the object, or
+it receives damage by explosion.
+</p>
+<p><b>DO_CharacterCollides</b> - Send messages if a character collides the
+object.
+</p>
+<p><b>DO_MovedToInvalidPosition</b> - Send messages if the object is animating
+and something blocks it's path.
+</p>
+<p><b>DO_OnDeath</b> - Send messages when the hitpoints of the object are
+depleted.
+</p>
+<p><b>Startup</b> - Send messages at startup.
+</p>
+<p>There's three similar message boxes in all the tabs. The first box is for
+messages which are to be sent first if the given event occurs. The second box is
+for messages that are sent only <b>if the DO is in a specific state when the
+even occurs</b>. The third box is for messages which are to be sent <b>after</b>
+the state-specific messages (Sometimes the order does matter). Within the
+message boxes, the messages are also sent in the order they are listed, from up
+to down. You can change the order of the messages with <b>PageUp</b> and <b>PageDown</b>.
+Try adding some messages into the message boxes just to see how it works. For
+example <i>this-&gt;do_stopanimation();</i> or <i>this-&gt;a_stopall3dsounds(&quot;&quot;);</i>
+</p>
+<p>You can add messages from the <b>Add</b>-buttons. You can delete messages by
+selecting them from the message boxes, and pressing <b>Delete</b>. You can cut,
+copy and paste messages directly from and into the message boxes with <b>CTRL-X</b>,
+<b>CTRL-C</b> and <b>CTRL-V</b>.
+</p>
+<p>Note however that you can't add any messages to the state-specific message
+boxes before you have some states defined.
+</p>
+<p>Notice also that pressing <b>TAB</b> completes object and message names up to
+as far as they logically can be completed. <b>Example</b>: you're editing a new
+message on an object with a child called &quot;the_door&quot;. Typing in
+&quot;t&quot; and pressing tab will complete the line to read &quot;th&quot;
+(because after that the strings &quot;this&quot; and &quot;the_door&quot;
+differ). You get the picture.
+</p>
+<p>Ok, after you've got the hang of it, delete all the messages you added, and
+let's make the glass breakable. We can make it break by first hit, in which case
+we'll simply use <b>DO_BulletCollides</b> -tab. When the glass breaks, we want
+it to disappear, make a breaking sound, and emit a particle effect. Let's add
+these messages:
+</p>
+<p align="center"><img border="0" src="images/do-6.jpg" width="519" height="289">
+</p>
+<p>About the messages we used; <b>DO_Hide(true);</b> obviously hides the
+receiver. <b>DO_Hide(false);</b> would unhide it.&nbsp;</p>
+<p><b>A_Play3DSound</b> plays the desired sound from the receiver. <b>Breakable</b>
+is the sound category here, and <b>glass_shatter</b> is the sound block inside
+the category. You can see all the sounds there is at your disposal by extracting
+the Max Payne .RAS files with RASMaker, and browsing your way to the Max Payne
+database sound directory ...<b>\data\database\sounds\</b>. There's multiple .txt
+files in there, which all represent a sound category. Opening
+&quot;breakable.txt&quot;, you will find sound blocks, firstly
+&quot;videotape_break&quot;, and also somewhere in there
+&quot;glass_shatter&quot;. The third parameter for this message is the bone
+where to emit the sound from. It makes a difference only for characters. For
+DO's, where there are no bones (only characters have bones), we just leave it empty with quotation marks.</p>
+<p><b>PS_StartEffect</b> emits a particle effect from the object. There are no
+categories there, just the name of the particle effect. You can see the names of
+all the particle effects from the Max Payne database once again ...<b>\data\database\particles\particles.txt</b>.</p>
+<p>Particle effects are always emitted from the center of the object, and their
+orientation is adopted from the orientation of the object's <b> pivot point.</b> There's
+no way of directly seeing in the editor what is the internal orientation of the
+given particle effect though, so that is just something you need to know or try
+out. For most effects in Max Payne database, if there's a direction
+for a particle effect, it's towards the Z-axis. You can see the pivot point of a
+DO by selecting it in F5 mode. The yellow line is the Z-axis. Now, in
+order the glass_shatter effect to have a correct orientation, let's set the pivot point
+of the glass to a correct orientation. We need to have the Z-axis pointing straight
+outwards from the surface normal. Align the grid on the surface of the glass,
+and move it in F12 mode so that the grid center is positioned on the glass surface. The
+origin of the grid shows its axis's, and now you can see that the yellow line is
+pointing straight outwards from the glass surface. Then go to F5 mode, select
+the object, and press <b>P</b>. This will make the object to adopt the pivot
+point from the grid.</p>
+</blockquote>
+<p align="center"><img border="0" src="images/do-7.jpg" width="640" height="480"></p>
+<blockquote>
+<p>Hopefully that was not too confusing. Now we get to try out our level, so
+export the level and load it up to the framework.</p>
+<p>At this point, we should see some
+tips about exporting the levels. Generally when
+doing dynamic content, you need to export often, and you want to make it as easy
+to you as possible. Firstly, you should run the game with command line options
+as below:</p>
+<blockquote>
+<p class="fixed"> maxpayne.exe -developer -developerkeys -screenshot -window -nodialog -skipstartup</p>
+</blockquote>
+<p>This will make the game run in developer mode with developer keys, it will be
+windowed, and it will skip the startup dialog and the video. Also if you are
+running Windows2000, you want to make a .bat file that runs Max Payne as below:</p>
+<blockquote>
+<p class="fixed">start /low maxpayne.exe -developer -developerkeys -screenshot -window -nodialog -skipstartup</p>
+</blockquote>
+<p>This will make the game run in the lowest priority setting automatically
+always when you run it, thus when the game is on the background, it won't take
+any resources from MaxED. Although depending on your video hardware and drivers,
+you might not be able to run MaxED and Max Payne simultaneously, or at least
+either one of them can be very prone to crash. Using low color depths to save
+video memory might help somewhat.</p>
+<p> Also it is sometimes a good
+idea to add your level to the menu.txt so that you can conveniently load it up
+through the menu (Take a look at menu.txt of the BasicRoomExample that came with
+the game).</p>
+<p>Now when you get the game running, you can try shooting the window and it
+should break. Needless to say, it's usually a good idea to quicksave as soon as the level has
+loaded up if you are testing some dynamic content.&nbsp;</p>
+<p>If you still want to play around with the window, you can try adding
+hitpoints to it. Add <i>this-&gt;DO_SetHitpoints(15);</i> to it's <b>StartUp</b>
+tab, and then move all the messages from it's DO_BulletCollides tab to&nbsp; <b>DO_OnDeath</b>
+tab. This is a special event which is triggered only when a DO has hitpoints and
+they are depleted in startup. Obviously you can add hitpoints to an object upon any event
+that occurs in the level, not just at its own startup.</p>
+</blockquote>
+<h2>Another DO example, creating a door</h2>
+
+<blockquote>
+  <p>Next let's create a functional door. First, if you didn't make a
+  doorway to your level yet, let's do that. Simply Boolean a hole between the
+  two rooms. Do not forget though that <b>you can't boolean two rooms&nbsp; together
+  if they are sharing an exit</b>, so if you made an exit to the window opening, you need to delete
+  it (in F4 mode) before you can Boolean another hole between the rooms. In Max
+  Payne the standard doorway size is some 1.5 x 2.5 meters.</p>
+  <p>Model a door for the doorway, and turn it dynamic by pressing <b>D</b>.
+  Then check the object's properties, and make sure it's got the following flags
+  enabled.</p>
+  <p align="center"><img border="0" src="images/do-8.jpg" width="356" height="349"></p>
+  <p>Now it might be a good idea to render lightmaps onto the door by selecting
+  it in F5 mode and pressing <b>R</b>. Just make sure you don't have <b>Hide
+  other objects</b> enabled in the preferences, or&nbsp; the door won't take any
+  light sources into account. In general you should relentlessly exploit the
+  ability to render lightmaps on single objects or single rooms at a time, and
+  fix the possible anomalies by copy/pasting lightmaps.
+</p>
+  <p>Now you should be seeing something like below, and we can start adding
+  functionality to our door.
+</p>
+</blockquote>
+  <p align="center"><img border="0" src="images/do-9.jpg" width="640" height="480">
+</p>
+<blockquote>
+  <p>Do notice that there is countless ways of making doors in MaxED. You can
+  make sliding door (the easiest door type) or you can make regular doors that
+  rotate open. The doors can be swinging &quot;kitchen doors&quot; that close
+  automatically. The doors can open only one way or both ways. There can be dual
+  doors. You can require the player to use the door before it opens, or you can
+  make a control panel for the door. You can do almost anything your imagination can conceive. You can try
+  and make all the super complex sci-fi doors you ever imagined. You know, the ones that
+  open for 10 minutes with a lot of hissing noise and moving parts. But for this
+  tutorial, we'll settle for doing the most typical door we had in Max Payne.
+  That's a regular door that opens when any character runs against it. It can
+  open both ways and it stays open.
+</p>
+  <p>Let's start by adding animations to our door. Briefly, the animation system
+  in MaxED works so that you define <b>keyframes</b> (different positions in the
+  worldspace) for an object, and then define animations between the keyframes.
+</p>
+  <p>And since the door is going to be rotating, we are going to have to place
+  its pivot point correctly. All the rotating objects always rotate around their
+  pivot point, and if the pivot point is in the wrong place in our door, the
+  door will move around from it's location while it's rotating. The location of
+  the pivot point of the door of course depends on what kind of door we are
+  making, but since we are making a door that opens both ways, we should place
+  it as below. In real life, you do not see much doors that are hinged like
+  this. Also if you make the door frame to match the door exactly like in here,
+  the meshes are going to overlap when the door opens -- nobody will notice :-)
+</p>
+</blockquote>
+  <p align="center"><img border="0" src="images/do-10.jpg" width="640" height="480">
+</p>
+<blockquote>
+  <p>So move the grid center as it is in the picture, select the door, and press
+  <b>P</b> to adopt the pivot from the grid.
+</p>
+  <p>Next we get to add the actual keyframes. Select the door, and press <b>TAB</b> to bring up the keyframe dialog. There's one
+  existing keyframe there. Rename it as &quot;closed&quot;. Then press <b>Add</b>.
+  It asks for a name for the new keyframe, so let's name it as
+  &quot;opened1&quot;.
+</p>
+  <p align="center"><img border="0" src="images/do-11.jpg" width="449" height="257">
+</p>
+  <p>Next we need to define what is the position of the door in the
+  &quot;opened1&quot;-keyframe. Double click on the name of the keyframe to make
+  sure it's the current one, and close the dialog. Now we need to rotate the
+  door, and there's few things to consider when rotating objects in MaxED. First
+  of all, <b>around which point in the the world to rotate the object?</b> We
+  can rotate objects around any of their <b>vertices</b>, or around their <b> pivot
+  point</b>. Rarely used is the option to keep <b>Shift</b> pressed while
+  rotating, which makes the object rotate around it's geometry center.&nbsp; And we can select whether to rotate by <b> world axis</b>, or by the object's <b> local
+  axis</b>. Or obviously we can make a temporary object anywhere in the world and
+  rotate any other object around any of it's vertices. It's easier to just try
+  out rotating things than to try to explain it. First take a look at the lower
+  right corner of the rendering window in F5 mode. There it indicates the
+  current <b>rotation mode</b>. In this picture it says <b>VTX</b> (vertex) and<b>
+  WLD </b>(world), which means if you now rotate the door, it will rotate around
+  the selected vertex and by the world axis. Try it around, you can rotate with
+  keys <b>X</b>, <b>Y</b> and <b>Z</b>, or optionally with <b>1</b>, <b>2</b>,
+  and <b>3</b>. Might be a good idea to save before you mess around too much
+  though.
+</p>
+  <p align="center"><img border="0" src="images/do-12.jpg" width="337" height="480">&nbsp;
+</p>
+  <p>You can toggle between vertex and pivot rotation with <b>A,</b> and between
+  world and local rotation with <b>W</b>. Change the modes and try out rotating
+  the door around again.
+</p>
+  <p>Got it? Ok, good, now as your door is &quot;all over the place&quot;, it's
+  a good idea to revert to that save you had before you started messing around
+  with rotating things. Then make sure pivot rotation by world axis is selected
+  (PVT WLD). Select the door, press down <b>Y</b> (or <b>2</b>), and move the
+  mouse sideways until the door is in its desired position.
+</p>
+</blockquote>
+  <p align="center"><img border="0" src="images/do-13.jpg" width="640" height="480">
+</p>
+<blockquote>
+  <p>TIP: You can change the angle snap from the Preferences. It's a setting
+  called <b>Kbd Tilt angle</b>, but it affects to all rotations in MaxED,
+  including polygon tilting. Also if you've got an exit on the doorway, the door
+  might appear to partially disappear. This is nothing to worry about though,
+  but if it cause problems, you can turn the exit acceleration off from the
+  Preferences.
+</p>
+  <p>Now we have the first keyframe in position. Since we want to door to open
+  both ways, we add another keyframe to the opposite direction. Open up the
+  keyframe dialog (<b>TAB</b>), add a new keyframe called &quot;opened2&quot;,
+  close the dialog, and rotate the door 180 degrees around.
+</p>
+  <p>Got it? Good, then we can add the animations. Select the door, and press <b>Shift+TAB</b>.
+  You get the animation dialog, in which you can <b>add</b>, <b>delete</b> and <b>rename</b>
+  animations. You can change the <b>keyframes</b> and the <b>length</b> of the
+  animations, and you can manipulate the <b>animation graphs</b>. You can also
+  enter the message dialog from here.
+</p>
+  <p>Press <b>Add</b>-button to add an opening animation. Select
+  &quot;closed&quot; as the <b>Start keyframe</b> and &quot;opened1&quot; as the
+  <b>End keyframe</b>, and press OK. Now it might be a good idea to rename the
+  animation as &quot;open1&quot;, and alter it's length to, say, 1 second.
+</p>
+  <p>Also add the animation for opening to the other direction. Obviously
+  otherwise do all the same, but select &quot;opened2&quot; as the End keyframe.
+</p>
+</blockquote>
+  <p align="center"><img border="0" src="images/do-14.jpg" width="561" height="335">
+</p>
+<blockquote>
+  <p>Now you can view the animations by double-clicking on the name of the
+  animation. Also try manipulating the rotation graph to see what it does. It's
+  actually pretty self-explanatory. Try pressing <b>Ctrl+Q</b> in the rotation
+  graph dialog. Also you can change the sample rate of the animation by pressing
+  <b>Ctrl+numpad/</b>&nbsp; and <b>Ctrl+numpad*</b>. You can also copy and paste
+  animation graphs with <b>Ctrl+C</b> and <b>Ctrl+V</b>
+</p>
+  <p>Next let's add triggers for the door. You should add triggers to the both
+  sides of it. So align the grid on the door, and add a <b>character collision
+  trigger</b> (<b>N</b> in F3 mode)<b> </b>on the middle of the door. Name it as
+  <b>T1</b>, and change it's radius to 0.2m from its properties, and then lift
+  it up from the door a bit. Repeat to the other side. It's also be a good idea
+  to group the triggers to the door directly. (Select a trigger, press <b>G</b>,
+  and click <b>LMB</b> to the door)
+</p>
+</blockquote>
+  <p align="center"><img border="0" src="images/do-15.jpg" width="640" height="480">
+</p>
+<blockquote>
+  <p>Then open the FSM message dialog of either one of the triggers (<b>4</b> in
+  F5 mode). When any character touches the trigger, we want it to animate the
+  door. So, add message <i>parent-&gt;do_animate(open1); </i>to it's T_Activate
+  tab. Make sure though that the animation indeed is &quot;open1&quot; that you
+  want the door to execute. It's obviously &quot;open1&quot; for the other
+  trigger and &quot;open2&quot; for the other.
+</p>
+  <p align="center"><img border="0" src="images/do-16.jpg" width="308" height="192">
+</p>
+  <p>Then open the FSM message dialog of the door, and there you will find tabs
+  called <b>Animation(open1)</b> and <b>Animation(open2)</b>. Add these messages
+  to the both tabs:</p>
+  <p align="center"><img border="0" src="images/do-17.jpg" width="449" height="485"></p>
+  <p><i>T_Enable(false);</i> messages are for disabling the triggers as the door
+  opens</p>
+  <p><i>A_Play3DSound(dynamic, door_wood_medium_open, &quot;&quot;);</i> is for
+  playing a sound effect as the door opens.</p>
+  <p>These messages above are in a message list called <b>Leaving 1st keyframe</b>,
+  which means the messages are sent at the start of the animation. There's also <b>Reaching
+  2nd keyframe</b> message list that sends messages at the end of the animation,
+  but we won't need it now.</p>
+  <p>The rest of the messages are in a message list called <b>Returing to 1st
+  keyframe</b>, which means these messages are sent if the given animation
+  starts to play, but is ordered to return back to the beginning for some
+  reason. So <i>T_Enable(true); </i>messages obviously enable the triggers if it
+  happens that the door closes. And also a sound effect is played here. Now
+  don't forget to copy these messages to the &quot;open2&quot; tab as well.</p>
+  <p>Still one more message to add, and it goes to <b>DO_MovedToInvalidPosition</b>
+  tab. As you might remember, this is event is triggered if something blocks an
+  animation. Let's add message <i> this-&gt;DO_InvertAnimation();</i> there. This is the
+  message that makes a currently playing animation to return to the first
+  keyframe.</p>
+  <p>Now you can export the level and try it out! You should add a jumppoint to
+  the other side of the door as well so that you can jump there in the game
+  (with <b>insert</b> or <b>delete</b>) to make sure the door works from both
+  ways. Also try typing <b>DrawFSM</b> to the console to see visualizations of
+  the triggers and DO's, and to see if the triggers disable themselves as you
+  intended them to. You can disable it with <b>DrawFSM_Off</b>.</p>
+  <p>Then we have just one problem left, we need to make sure there's no AI net
+  passing through the door when it's opened. Otherwise enemies might run against
+  the opened door like a bunch of suicidal lemmings. There's a special material
+  category called<b> ai_node_collision_nodraw</b>, and if you texture an object
+  with a material in this category, it means that AI nodes will collide against it. Without
+  going into the details yet, you fix this problem by adding these little AI
+  blocks to the positions where the door would be when it's open. Remember to do
+  this to the both sides of the door.</p>
+</blockquote>
+  <p align="center"><img border="0" src="images/do-18.jpg" width="640" height="480"></p>
+<blockquote>
+  <p>Let's not get into calculating AI network yet, we'll get to that with the AI
+  tutorial, but for now, let's settle for this.</p>
+  <p>TIP: Now that you've got a DO with keyframes with it, you might wonder how
+  to move and rotate the whole object around, not just the selected keyframe.
+  You can do that by <b>pressing down Ctrl while moving objects</b>. Otherwise
+  all the moving and rotating commands are just the same. Although notice that
+  you can't use Z or X for rotating objects while keeping Ctrl pressed, because
+  these would equal to Undo and Cut. Even though there is no undo in MaxED,
+  Windows takes over when pressing <b>Ctrl+Z</b> and it doesn't work. You should
+  use <b>Ctrl+1</b>, <b>Ctrl+2</b> and <b>Ctrl+3</b> instead when rotating
+  objects with keyframes.</p>
+</blockquote>
+<h2>Coder attitude with FSM's</h2>
+<blockquote>
+  <p>You have probably already realized that there are countless of ways to make
+  same things happen in Max Payne, and it might be that we did things here a bit
+  differently as you would've liked to do them. For example, you might want to
+  disable the door triggers in their own t_activate tabs. However if you do
+  that, you still need to disable both triggers always when either one is
+  touched. In general when doing FSM's and you aren't sure how you should do
+  something, try to do scripts so that messages that do the same thing aren't
+  sent from multiple different places or objects. For example the door we
+  did, as the
+  animation itself disables the triggers, it is easy to add more triggers all
+  over the place. All you need to add is that you send <i>DO_Animate();</i> message to
+  the door from the new trigger, and disable the trigger via the door's
+  animation (and enable it back if the animation returns to the 1st keyframe). This
+  way you can keep things structured logically and in the same place even if you
+  do additions to your FSM's.</p>
+  <p align="center"><img border="0" src="images/fsm_structure_incorrect.jpg" width="370" height="293"><br>
+  <img border="0" src="images/fsm_structure_correct.jpg" width="370" height="293"></p>
+  <p>The door we did is not the best example to describe the importance of the
+  structure in FSM scripts, but above is a door that is controlled by five
+  triggers, and two ways of enabling and disabling the triggers. As you can see,
+  you can make simple things surprisingly complicated if the structure is wrong.
+  Because of the flexibility of Max Payne's FSM scripting, it is perfectly
+  possible to create spaghetti and get yourself into troubles if you don't pay
+  attention to how you do things. This is especially true when we get to
+  advanced AI-scripting. Putting some time into thinking about this is
+  definitely worth it. If you just fire away and send messages from whatever
+  object first comes to mind, you will soon find yourself typing in a lot more
+  messages than you should, and eventually you will spend 10 times more time
+  fixing bugs than it would've taken to structure it properly.</p>
+  <p>Talk about fixing bugs, there's some methods of finding them from your FSM
+  scripts. You can try this with the level you've done so far. One aid is taking
+  an FSM dump of the level. You do this in movement mode (<b>space</b>) from <b>Mode
+  commands &gt; Dump FSMs as XML</b>. You can seek for errors from there. Also
+  in the game, you can type<b> messagefilter_levelonly</b> to the console to get
+  a continuous dump of the messages moving in the level to the console. You can
+  get a filedump of the console with <b>x_consolemode-&gt;cm_dumptofile(
+  my_dump1.txt );</b>. And don't forget <b>Draw_FSM</b> that was mentioned
+  above.</p>
+  <p>Also something you will be using a lot for testing and debugging your
+  dynamic content is <b>Partial export</b>. You do this simply by selecting a
+  room or multiple rooms (by pressing down <b>Shift</b>) in F5 mode, and then
+  selecting <b>Export selection</b> from the Mode commands dialog. Notice
+  however that the selection must contain a jumppoint.</p>
+</blockquote>
+  <h2>Exit disabling</h2>
+      <blockquote>
+  <p>Exit optimization is a powerful optimizer already on it's own. In some cases you might want to help it
+  even more to gain some extra speed by manually opening and closing exits. The most obvious use for disabling an exit is when there's a
+  door that is closed on top of the exit, especially if the door happens to be a swinging door that
+  closes automatically.</p>
+  <p> Let's add exit disabling functionality for our door.
+  First make sure the exit is totally enclosed by the door at it's
+  &quot;closed&quot; keyframe. If it isn't, either delete the exit and create a
+  new one to the correct position, or move the door so that it encloses the
+  exit. Then enter the door's keyframe dialog (<b>TAB</b>) and double-click on
+  either one if it's &quot;opened&quot; keyframes (we do this just so that we
+  can actually see the exit).</p>
+  <p>Now make sure that &quot;Select culled polygons&quot; is not enabled in the
+  Preferences. If it was enabled, it would make it harder to do what we'll do
+  next. Enter F4 mode, point to the exit and press <b>Enter</b>. This will bring
+  up the exit renaming dialog. Name it as <b>toggle1</b>. Now go to the other
+  side of the exit, point to the exit, press <b>Enter</b>, and rename it with
+  the same name. That's right, there's not actually just one exit there, but
+  two! The reason we can name them with the same names is that they belong to
+  the different rooms. And now as there's two exits, it is possible to create
+  doorways that are disabled only from the other side. The reason we disabled
+  &quot;Select culled polygons&quot; was that if we had it enabled, MaxED could
+  select either one of the exits regardless of in which side we were ourselves.</p>
+  <p>Let's still rename the rooms in this level so that we know what they are
+  called. The other one is probably already called <b>Startroom</b> (if it
+  isn't, rename it), and let's rename the other one as <b>room2</b>. Now open up
+  the FSM message dialog of the door, and to its <b>Startup</b> tab add
+  messages:</p>
+  <p><i>::startroom::toggle1->EnableExit(false);<br>
+  ::room2::toggle1->EnableExit(false);</i></p>
+  <p>This will close the exit at the startup. Then we need to make sure it gets
+  enabled as the door opens, so to <b>both </b>of the animation tabs add</p>
+  <p><i>::startroom::toggle1->EnableExit(true);<br>
+  ::room2::toggle1->EnableExit(true);</i></p>
+  <p>Obviously put these into the <b>Leaving first keyframe</b> message list.
+  Then still just to make it perfect, let's disable the exits if the door closes
+  because of something. Just copy the messages from the Startup tab to the <b>Returning
+  to 1st keyframe</b> message list.</p>
+  <p>Now just export the level and try it out. You can make sure the exit is
+  disabled when the door is closed by typing <b>maxpayne_gamemode-&gt;gm_drawoutlines(1);</b>
+  to the console. You can see all the outlines that the engine draws through
+  walls, and if you did things correctly, you can see it doesn't draw any
+  outlines through the door before it's opened.
+</p>
+      </blockquote>
+<h2>FSM states and custom strings
+</h2>
+            <blockquote> 
+              <p>Let's use an existing object for clarifying the use of <b> FSM</b> 
+                <b>states</b> and <b>custom strings</b>. Open up the example (dynamic_objects.zip) 
+                level of this tutorial, which should be in the zip archive that 
+                this Help file came in, if not get it here <a href="http://www.maxpayne.com/tutorials/MaxED/downloads.htm" target="_blank">here</a>. 
+                You will find a breakable crate from the level. As you can see, 
+                the crate breaks in 5 different pieces. 4 sides and the top. What 
+                we had to achieve here was that the top piece falls down if any 
+                of the two other pieces were destroyed. Opening up the FSM dialog 
+                of the <b>top</b> piece, you can see it has some states and custom<b> 
+                </b>strings. </p>
+  <p align="center"><img border="0" src="images/do-20.jpg" width="342" height="270">
+</p>
+  <p>If you open up the message dialog of any of the side pieces, you can see
+  that when they break, they send <i>FSM_Send( add );</i> to the top piece.
+  Opening up the message dialog of the top piece again, you'll find a tab there
+  called <b>FSM_Send(Add)</b>. Yes, there's a connection between there. This is
+  a custom event for the object that is triggered when it receives <i>FSM_Send(Add);</i>
+  from somewhere.
+</p>
+  <p>As you can see from the FSM dialog of the object, it's in state called <b>1</b>
+  by default. In it's FSM_Send(Add) tab you can see that if it triggers the
+  event while in state 1, it will send a message <i>FSM_Switch(2);</i>
+</p>
+  <p align="center"><img border="0" src="images/do-21.jpg" width="285" height="488">
+</p>
+  <p>This means it will change its state to <b>2</b>. In other words, this
+  happens when the first one of the side pieces is broken. Then let's see what
+  would happen if the top piece would receive <i>FSM_Send(Add);</i>  now again,
+  when another second side piece breaks. Select &quot;2&quot; from the &quot;state-specific&quot;
+  drop-down list of the FSM_Send(add) tab.
+</p>
+  <p align="center"><img border="0" src="images/do-22.jpg" width="264" height="140"><br>
+</p>
+  <p align="left">As you can see, when the second piece breaks, the top piece receives<i>
+  FSM_Send(Add);</i> for the second time, and it will animate itself to drop down.
+  It will also change its state to &quot;disabled&quot; so that none of the &quot;Add&quot; custom strings it will be receiving from now on has any effect.
+</p>
+  <p>Custom strings are especially useful for structuring things properly. You
+  can keep the messages where they'd logically belong. The camera prefab (look
+  below) is a good example of this, there is a number of messages to send when
+  you startup a cinematic. Now you can either send them from whatever triggers
+  the cinematic (there can be multiple events that do that), or then you can just send
+  one custom string to the camera from wherever and you'll know where the messages
+  are when you need them. If you have multiple events that might trigger the
+  camera, you can easily use &quot;enabled&quot; and &quot;disabled&quot; states
+  for the camera, so that it switches itself to &quot;disabled&quot; when the
+  cinematic starts, and all the custom strings it might receive while in the
+  cinematic, it will ignore. And/or you can of course disable all the triggers
+  from the camera's &quot;start&quot; custom string tab.
+</p>
+</blockquote>
+<h2>Exploiting prefabs</h2>
+<blockquote>
+  <p><b>Prefabs</b> are some commonly used objects that are prefabricated and
+  ready to be put into the levels. This obviously saves a lot of time and nerves
+  of the mapper as he doesn't have to make every single door from scratch, for
+  example. For the end of this tutorial, let's cover some preferred ways of
+  using prefabs. As already mentioned, There is no special prefab-system or UI
+  in MaxED. But if you make your dynamic objects cleverly and prepare them
+  properly, you can reach something that&nbsp; can be described as a prefabs
+  system.</p>
+  <p>How to make one? Open up the level where you made your door again. After you have tested your door and you
+  are sure it's 100% working and all, let's
+  make a prefab out of it. First we should create a handy <b>parent</b> for the
+  whole machine, and group everything to it. Create an object next to the door
+  with <b>dummy</b> material (If you don't have one yet, add dummy material
+  category and import some texture in there). Then set its pivot point to some
+  convenient corner that you want to use as a <b>reference point</b> when
+  copying the object. Note that you can't see the pivot points of the static
+  objects, but that doesn't mean they don't have one. Yu can set
+  it just like you would for a dynamic object; move the grid's pivot to the
+  desired position, select the object and press <b>P</b>.</p>
+  <p>TIP: If you have to group objects that are in different rooms together, you
+  can do it by first selecting the desired children, then moving to the room
+  with the parent, entering F5 mode, and selecting <b>Mode commands &gt;
+  Grouping &gt; Group selected</b>. In other words; don't use the keyboard
+  shortcut.</p>
+</blockquote>
+  <p align="center"><img border="0" src="images/do-19.jpg" width="640" height="480"></p>
+<blockquote>
+  <p>Next select the door parent dummy in F5 mode, and copy&nbsp; it to the
+  clipboard (<b>Ctrl+C</b>). Now you can either make a copy of the door by
+  pasting in F5 mode, when the new door appears to the same position as the
+  original and you have to move it a new position with arrow keys, or you can
+  paste it in the F3 mode, when it will get pasted to the grid tick by the
+  reference point. Try it out. You can delete objects with their children in F5
+  mode by <b>Ctrl+Delete</b>; a handy feature once you've got dozens of doors
+  around the room.</p>
+  <p>To create yourself a library of prefabs, import all the materials that you
+  need to separate empty document (insert them from your current file) paste the object (in this case,
+  the door) into that somewhere around the world origo. Make sure,
+  that in that level there just the door object with all the necessary stuff,
+  but no room or something other extra around it. Finally it is wise to purge all
+  unused materials to make sure that the prefab has just the textures it needs.</p>
+  <p>Then, as you need a good working door when you are working with some other
+  level, just use&nbsp; <b>File &gt; Insert document...</b> to get it in. This
+  inserts the door and those materials that are not yet there. If the your door
+  prefab was near the world origo, you should be able to locate it pretty easily
+  (Use F12/C to reset the grid and the camera) after insertion. Then, just cut
+  it and paste around as usual (F3/Paste to is good for this). If you do lot of
+  different general objects and put them into some folder with descriptive
+  names, you have something that can be described as a library of prefabs.&nbsp;</p>
+  <p>With a door though there's typically one thing that causes problems when
+  it's prefabricated; it's usually placed on top of an exit. The game will complain
+  if you've got static objects going through exits, or static objects that are
+  grouped to an object in some other room (in this case the door parent might go
+  through an exit, and the other one of the AI net block definitely will be in a
+  wrong room for its grouping). It is perfectly fine for dynamic objects to go
+  through exits, but when there's static objects involved, you might have to do
+  some regrouping after you've pasted the prefab to its location. Also if you
+  need to rotate the prefab, don't forget to rotate all of it's keyframes (press
+  down <b>Ctrl</b> while rotating).</p>
+</blockquote>
+<h2>Prefabs from Remedy
+</h2>
+<blockquote>
+              <p><a href="http://www.maxpayne.com/tutorials/MaxED/downloads.htm" target="_blank">Here</a> 
+                is also some prefabs that were used in Max Payne, you can take 
+                a look at them and try to figure out how they work. </p>
+  <p><b>Cameras</b> - Two cameras that work by custom strings. It's easy to copy
+  more cameras for your cinematic. The animation in the camera defines the
+  length of the cut for each camera, and obviously you can just add keyframes to
+  the camera to move it. Or you can make a &quot;camera_mover&quot; dummy to
+  which the camera is grouped to.
+</p>
+  <p><b>Ceiling fans</b> - Three breakable ceiling fans
+</p>
+  <p><b>Crates</b> - A set of breakable crates.
+</p>
+  <p><b>Exploding barrels</b> - Four different kind of exploding barrels.
+</p>
+  <p><b>Fire extinguisher</b> - Breaks when the valve is hit.
+</p>
+  <p><b>Gas bottles</b> - Various gas bottles. Break when the valve is hit. Some
+  fly out, some rotate, some just explode.
+</p>
+  <p><b>Gasoline canister</b> - A simple gasoline canister that explodes.
+</p>
+  <p><b>Small breakables</b> - Some bottles, a drinking glass and a porcelain
+  plate.
+</p>
+  <p><b>Soda machine</b> - A vending machine.
+</p>
+  <p><b>Sodacans</b> - Four cans of soda. Two of these fly in the air when hit.
+</p>
+  <p><b>Swing door</b> - Kitchen doors that close automatically.
+</p>
+  <p><b>TV's</b> - Four similar TV's with just different colors.
+</p>
+  <p><b>Valkyr containers</b> - Breakable Valkyr containers. The one that is
+  standing tips over when it breaks.
+</p>
+  <p><b>Wooden door</b> - The door we did in this tutorial as a prefab.
+</p>
+  <p>--- --- ---
+</p>
+              <p><b><a href="http://www.maxpayne.com/tutorials/MaxED/downloads.htm" target="_blank">Chopper</a></b> 
+                - Due to numerous requests by modding community, the police helicopter 
+                prefab used in the game is now available. You should be warned 
+                that this is one of the most complex dynamic objects used in Max 
+                Payne. Understanding the operation requires fluent animating and 
+                FSM scripting skills. </p>
+</blockquote>
+    </td>
+  </tr>
+</table>
+	</td>
+  </tr>
+</table>
+</body>
+
+</html>

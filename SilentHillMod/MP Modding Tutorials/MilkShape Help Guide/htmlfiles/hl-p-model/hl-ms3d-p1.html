@@ -1,0 +1,173 @@
+<html> 
+<h1><font color="#00CC00" face="Arial, Helvetica, sans-serif"><b><font color="#000000">Half-Life 
+  Tutorials</font></b></font> </h1>
+<h2><font face="Arial, Helvetica, sans-serif"><b>Making a 3rd Person Model for 
+  Half-Life - by <a href="mailto:rat@polycount.com">Rat</a></b> <br>
+  </font></h2>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td width="70"><a href="hl-ms3d-p8.html"><img src="../Images/previous.gif" width="70" height="58" border="0"></a></td>
+    <td>&nbsp;</td>
+    <td width="70"><a href="hl-ms3d-p2.html"><img src="../Images/next.gif" width="70" height="58" border="0"></a></td>
+  </tr>
+</table>
+<p><font face="Arial, Helvetica, sans-serif" size="2">A lot of you that have dropped 
+  in on the some of the chat channels I frequent to say thanks. I am proud to 
+  see such budding artist in the 3D realm and the prais is much appreciated! As 
+  mentioned on the last page of <em><strong>&quot;Making a World Model for Half-Life&quot;</strong></em> 
+  we will be taking the model that we just made into a <em><strong>&quot;p_&quot;</strong></em> 
+  model. And if all goes well with the series, we will move on to a <em><strong>&quot;v_&quot;</strong></em> 
+  model, which will require animation. Then I hope to help you make a character 
+  model. download of this entire Tutorial in HTML is available at: <a
+href="http://www.drawcad.com/upload/HL-P-model-Tutorial.zip">http://www.drawcad.com/upload/HL-P-model-Tutorial.zip</a> 
+  </font> 
+<blockquote><font face="Arial, Helvetica, sans-serif" size="2"><i> <b>Note:</b> 
+  You will need to have Internet Explorer version 4.0 or higher to view this on 
+  your computer as it was written in the Microsoft CHM help file format.</i></font></blockquote>
+<p></p>
+<h3><font face="Arial, Helvetica, sans-serif"><strong>What is needed to complete 
+  your model</strong></font></h3>
+<p><font face="Arial, Helvetica, sans-serif" size="2">As mentioned in the <em><strong>&quot;Making 
+  a World Model for Half-Life&quot;</strong></em> tutorial, you will need to get 
+  a copy of the Milkshape 3D program by Mete Ciragan. This can be found at the 
+  following web site: <a
+href="http://www.swissquake.ch/chumbalum-soft/index.html">http://www.swissquake.ch/chumbalum-soft/index.html</a> 
+  </font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Another program that we 
+  will be using for the extraction of Valves and other add on packs and Modifications 
+  models is called Qped. You can find this at:</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><a href="http://www.planetquake.com/qped/">http://www.planetquake.com/qped/</a></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Another program that will 
+  be useful in your creation of models is the Half-Life Model Viewer that can 
+  be found at:</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><a href="http://www.swissquake.ch/chumbalum-soft/hlmv/">http://www.swissquake.ch/chumbalum-soft/hlmv/</a></font></p>
+<h3><font face="Arial, Helvetica, sans-serif"><strong>The p_ model and what it 
+  is</strong></font></h3>
+<p><font face="Arial, Helvetica, sans-serif" size="2">These models are what you 
+  see in the 3rd person, as what you see another player hanging onto in battle, 
+  e.g. a glock, etc. This is a required model to be able to view your model if 
+  someone else happens to be using it to get you with it.There is no animations 
+  that are involved in it. In actuality it should be easier than a world model, 
+  because on rare occasions you see a world model that has some animations. For 
+  example, take a&nbsp; look at the <font color="#0000FF">&quot;w_squeaknest&quot;</font> 
+  model in <font
+color="#0000FF">&quot;HLMViewer.exe.&quot;</font> You will see it has 2 animations, 
+  one that never is used in HL, called <em>&quot;walk.&quot;</em> The hard part 
+  about the <font
+color="#0000FF">&quot;p_&quot;</font> model is that you have to have the supporting 
+  biped's bones added to it, or at least a portion of it, for it to look like 
+  it is attached to the model that is using it. Look at Figure 1.1 for an example 
+  of our <em><strong>&quot;p_knife2.mdl,&quot;</strong></em> to see how this weapon 
+  will look with a partial Skeleton that has to be used to reference the full 
+  <em><strong>&quot;biped,&quot;</strong></em> (a biped is the skeleton or all 
+  the joints of a model. You have to make some sort of a biped so that the mesh 
+  of your model can distort to look like it is alive or in movement). of the model.Where 
+  as our World Model, or <font color="#0000FF">&quot;v_&quot;</font> model, scale 
+  is slightly larger than , 3rd Person, or <font color="#0000FF">&quot;p_&quot;</font> 
+  model, around 1.3 instead, compared to that of 1.0, you can use the very same 
+  model..Now you know why we made the World Model first! A modified version is 
+  made for the ViewModel, or <font color="#0000FF">&quot;v_&quot;</font> model, 
+  in which you can remove the hidden faces to reduce the polygon count. But more 
+  on that latter. On with the <font color="#0000FF">&quot;p_&quot;</font> model!</font></p>
+<p align="center"><font face="Arial, Helvetica, sans-serif"><img src="pics/mt-fig2-1.gif" width="840" height="410"
+alt="mt-fig2-1.gif (37959 bytes)"> </font></p>
+<p align="center"><font face="Arial, Helvetica, sans-serif"><strong><font size="2">Figure 
+  1.1 Screen shot of completed&nbsp; 3rd person model in Milkshape 3D</font></strong> 
+  </font></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif" size="2">In this tutorial, 
+  we will be learning how to get the model so you can view the knife2 model that 
+  we made in the first tutorial as a world model, as a 3rd person world model. 
+  There is not much going on with it, but you can have some fun with it as I show 
+  you a few tricks in how to get it ingame to look at your handy work.</font></p>
+<h3><font face="Arial, Helvetica, sans-serif"><strong>Creating a Skeleton or Biped 
+  for your 3rd Person Model</strong></font></h3>
+<p><font face="Arial, Helvetica, sans-serif" size="2">You will need to either 
+  create Skeleton, partially that has the same joint, or bone names that the player 
+  model has that you wish to see you model attached to. Here is where, if you 
+  wish to not create a entire Skeleton, or Biped, from scratch, is to steal from 
+  a previously created Skeleton.</font></p>
+<blockquote> 
+  <p><font face="Arial, Helvetica, sans-serif" size="2"><em>Note: If you choose 
+    to create a new biped, you will have to animate each and every animation that 
+    is required for a DM player in HL. There are presently 77 animations, (some 
+    are two of them combined called &quot;blends,&quot; that are a combination 
+    of 2 animation to make 1 animation. A blending of two separate animations 
+    to effectively make it look like you are changing or morphing from one animation 
+    to the next, to create an illusion of if you happen to be using the mouse 
+    up, or the page up, or else you would be using the mouse down, or page down 
+    in aiming, shooting, etc. This brings us to 129 total animations that have 
+    to be made for scratch!).</em></font></p>
+</blockquote>
+<p><font face="Arial, Helvetica, sans-serif" size="2">The reason behind doing 
+  skeletal animations is that you do not have to make or distort your model's 
+  mesh for each frame of action. Quake models used mesh animations, and this took 
+  forever to do this kind of thing to hammer out a model. With Skeletal animation, 
+  you only need to create the mesh, once. The skeleton is then animated and the 
+  mesh is later deformed to fit the skeletons animation on the fly. This is done 
+  by code that checks for the particular position of all the bones and making 
+  sure that the mesh that is assigned to the proper bones are in place for that 
+  particular frame of animation. e.g. if you are walking, the code checks the 
+  frame of animation that is current, and places the foot where the skeletons 
+  animation currently is. Some deforming has to be done, this is why some animations 
+  may not be perfect, and reassignments of joints, or bones are done so the deformation 
+  looks realistic. i.e. if you assign on of the fingers on a hand on the left 
+  hand to the right hands finger of the same position, it will look as if the 
+  finger had stretched to the tip of the bone on the right hand, causing an unwanted 
+  distortion! No we do not want to create an unusual creature from the murky depths, 
+  but a natural looking humanoid!</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Open the &quot;<em><strong>w_knife2.ms3d&quot;</strong></em> 
+  file that you created in the last tutorial, or download it from:</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2"><a href="http://www.drawcad.com/upload/p_knife2.zip">http://www.drawcad.com/upload/p_knife2.zip</a> 
+  </font></p>
+<blockquote> 
+  <p><font face="Arial, Helvetica, sans-serif" size="2"><em>Note: You will need 
+    Milkshape Version 1.4.0 to open the Ms3d file that is contained in the zip</em>.</font></p>
+</blockquote>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Of course you will want 
+  to be making a new directory for this <font color="#0000FF">&quot;p_&quot;</font> 
+  model and we will name the directory <em><strong>&quot;p_knife2&quot;</strong></em> 
+  so as not to be confused with the <em><strong>&quot;w_knife2.mdl&quot;</strong></em> 
+  that we made in the last tutorial. save this file as <em><strong>&quot;p_knife2.ms3d.&quot;</strong></em></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Lets get to work on our 
+  Skeleton. I am going to be looking at a similar biped that would be used for 
+  the creation of the character that we will be eventually be making. This is 
+  going to be a secret for now as to how the player model is going to look.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">First off you do not have 
+  to create the skeleton completely to make a <font
+color="#0000FF">&quot;p_&quot;</font> you only have to make a portion of it. But 
+  as mentioned before, these &quot;joints&quot; or bones need to have the bone 
+  names exactly the same as the &quot;biped,&quot; or skeleton of the full character 
+  model that we will eventually create.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">I would like to pause here 
+  a bit to show you how you can save yourself some time in the creation process 
+  of a biped. Milkshape 3D has as mention in the &quot;Making a model for Half-Life&quot; 
+  tutorial, has a decompile utility. This means that you can decompile models 
+  that have a similar mesh build and taking the biped out of it.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Create a new directory called&nbsp; 
+  <em><strong>&quot;op4_knife&quot;</strong></em> to save to when we export the 
+  knife for the next step.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">You will be looking for 
+  the op4 knife in the add on pak0 file of <em><strong>&quot;Opposing Force®&quot;</strong></em> 
+  and decompiling it to see how its <em><strong>&quot;p_knife.mdl&quot;</strong></em> 
+  looks like and what the bone names are called. So start up Qped and lets extract 
+  it. Choose <font color="#0000FF">&quot;<u>F</u>ile-&gt;Open...&quot;<strong> 
+  </strong></font>and find your &quot;pak0.pak&quot; file from the <em><strong>&quot;Opposing 
+  Force®&quot;</strong></em> directory. I found mine in this directory structure: 
+  <em><strong>&quot;C:\SIERRA\Half-Life\gearbox&quot;</strong></em> yours may 
+  vary.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Export the knife to your 
+  <em><strong>&quot;op4_knife&quot;</strong></em> directory. See Figure 1.2 for 
+  and example of this.</font></p>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="2"><img src="pics/mt-fig2-2.gif" width="438" height="303"
+alt="mt-fig2-2.gif (8448 bytes)"></font></p>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="2"><strong>Figure 
+  1.2 Exporting the op4 p_knife.mdl</strong></font></p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td width="70"><a href="hl-ms3d-p8.html"><img src="../Images/previous.gif" width="70" height="58" border="0"></a></td>
+    <td>&nbsp;</td>
+    <td width="70"><a href="hl-ms3d-p2.html"><img src="../Images/next.gif" width="70" height="58" border="0"></a></td>
+  </tr>
+</table>
+<p align="right"><font face="Arial, Helvetica, sans-serif" size="2"></font></p>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!-- Viewpoint Experience Technology scene description file.				 -->
+<!-- Created: Mon Oct 16 19:22:46 2006			 -->
+<!-- Creator: VET Tool for MilkShape 3D -->
+<!-- Author: Neo16 -->
+
+<MTSScene Version="308" >
+	<MTSSceneParms RenderMode="LightTexture"  BlendShadow="1"  BoundShadow="0"  EdgeBias="1" />
+	<MTSCamera OrbitDist="3.63" >
+		<Rotate x="-7.44844"  y="-29.79374"  z="0" />
+		<Translate x="-0.0975"  y="1.1975"  z="-0.11" />
+		<ViewLocation x="0"  y="0"  z="4" />
+	</MTSCamera>
+	<MTSInstance Name="Instance" >
+		<Transform>
+			<Scale x="1"  y="1"  z="1" />
+			<Position x="0"  y="1"  z="0" />
+		</Transform>
+		<MTSGeometry Name="ModelName"  BackFaceDir="-1" />
+	</MTSInstance>
+	<MTSTimeElem Type="MTSStream"  Name="cybyl_body"  Path="cybyl_body.mts" >
+		<Target Name="MTSInstance.Instance" />
+	</MTSTimeElem>
+</MTSScene>

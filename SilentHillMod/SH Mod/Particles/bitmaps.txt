@@ -1,0 +1,99 @@
+[leaves]
+{
+	[Settings]
+	Extension = jpg;
+	BlendingMode = Alpha;
+	AlphaExtension = pcx;
+
+	[Container]
+	Leaves\leaves;
+}
+[Spark_Halo]
+{
+	[Settings]
+	Extension = jpg;
+	BlendingMode = Additive;
+
+	[Container]
+	Sparks\Spark_Halo\spark_halo;
+}
+
+[Looping_Smoke]
+{
+	[Settings]
+	Extension = jpg;
+	BlendingMode = Alpha;
+	AlphaExtension = pcx;
+
+	[Container]
+	Smoke\Smoke-Loop\SmokeL%04d;
+}
+
+[AlphaSmoke]
+{
+	[Settings]
+	Extension = jpg;
+	BlendingMode = Alpha;
+	AlphaExtension = pcx;
+
+	[Container]
+	Smoke\AlphaSmoke\Smoke%04d;
+}
+
+[Generic_debris]
+{
+	[Settings]
+	Extension = jpg;
+	AlphaExtension = pcx;
+	BlendingMode = Alpha;
+
+	[Container]
+	Debris\generic\generic%04d;
+}
+
+[Snow]
+{
+	[Settings]
+	Extension = jpg;
+	AlphaExtension = pcx;
+	BlendingMode = Alpha;
+
+	[Container]
+	Debris\Snow\Snow_%04d;
+}
+
+[ReelFlames_Additive]
+{
+	[Settings]
+	BlendingMode = additive;
+	Extension = jpg;
+
+	[Container]
+	Fire\ReelFlames\Flame1_%04d;
+
+	[Container]
+	Fire\ReelFlames\Flame2_%04d;
+
+	[Container]
+	Fire\ReelFlames\Flame3_%04d;
+
+	[Container]
+	Fire\ReelFlames\Flame4_%04d;
+
+	[Container]
+	Fire\ReelFlames\Flame5_%04d;
+
+	[Container]
+	Fire\ReelFlames\Flame6_%04d;
+}
+
+[GenericMuzzle]
+
+{
+	[Settings]
+	Extension = jpg;
+	Blendingmode = Additive;
+
+	[Container]
+	muzzles\MuzzleB%04d;
+}
