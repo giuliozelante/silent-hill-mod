@@ -1,0 +1,18 @@
+INPUT {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; COLOR: #bccbdc; BORDER-BOTTOM: 1px solid; BACKGROUND-COLOR: #2e425a
+}
+TEXTAREA {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; COLOR: #bccbdc; BORDER-BOTTOM: 1px solid; BACKGROUND-COLOR: #2e425a
+}
+SELECT {
+	BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; COLOR: #bccbdc; BORDER-BOTTOM: 1px solid; BACKGROUND-COLOR: #2e425a
+}
+INPUT {
+	TEXT-INDENT: 2px
+}
+INPUT.button {
+	BORDER-TOP-WIDTH: 1px; BORDER-LEFT-WIDTH: 1px; BORDER-BOTTOM-WIDTH: 1px; BORDER-RIGHT-WIDTH: 1px
+}
+.postbody {
+	LINE-HEIGHT: 18px
+}

@@ -1,0 +1,128 @@
+<html>
+<head>
+<title>Part 2: Assigning Vertices to Bones</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="../ms3dhelp.css" type="text/css">
+</head>
+<div style='left:0px;position:absolute;top:0px;z-index:1; width: 308px; height: 88px' id=Layer1> 
+<img width=350 height=100 src="../Images/ms3dhelptop.gif">
+</div>
+
+  
+<div style='left:10px;position:absolute;top:10px;z-index:2; width: 100%; height: 2232px' id=Layer2> 
+  <table class=MsoNormalTable border=0 cellpadding=0 width=100%>
+    <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes' valign="top"> 
+        <td style='padding:.75pt .75pt .75pt .75pt'> 
+          <h1>Part 2: Assigning Vertices to Bones</h1>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr> 
+              <td width="70"><a href="AnimTutoPart1.html"><img src="../Images/previous.gif" width="70" height="58" border="0"></a></td>
+              <td>&nbsp;</td>
+              <td width="70"><a href="AnimTutoPart3.html"><img src="../Images/next.gif" width="70" height="58" border="0"></a></td>
+            </tr>
+          </table>
+          <p>The next step in setting a model up for animation is assigning the 
+            vertices of the model to the bones (you are actually assigning vertices 
+            to joints but the word bones is used). This process is sometimes complicated, 
+            the level of complexity depending on how densely populated your model 
+            is with vertices and bones.</p>
+          <p>The reason you need to assign vertices to bones is so that MilkShape 
+            3D (and any other application you may export it to) knows which parts 
+            of the model move in relation to the joints they are assigned to. 
+            If you don't assign bones then animate your model, only the skeleton 
+            will move, the model won't.</p>
+          <p>It is best to think about how you will assign vertices to bones when 
+            modelling so you know where to place vertices to give the best mesh 
+            deformation. The model I made contains logically arranged vertices 
+            that originate around where I thought I would be placing the joints.</p>
+          <p>It is important to<span lang=EN-GB style='mso-ansi-language:EN-GB'> 
+            familiarise</span> yourself with the process of assigning vertices 
+            to joints the steps are:</p>
+          <ul type=disc>
+            <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><span
+       style='font-size:10.0pt;font-family:Arial'>Select the desired joint in 
+              the Joints tab of the toolbox (its best to do it this way rather 
+              than select in a viewport).<o:p></o:p></span></li>
+            <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><span
+       style='font-size:10.0pt;font-family:Arial'>Use the Select tool with the 
+              Vertex modifier to select the vertices you want to assign to the 
+              joint.<o:p></o:p></span></li>
+            <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:
+       auto;mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><span
+       style='font-size:10.0pt;font-family:Arial'>Press the 'Assign' button on 
+              the Joints tab of the Toolbox.<o:p></o:p></span></li>
+          </ul>
+          <p>To confirm the assignation of the vertices to the joint de-select 
+            the vertices, click the joint again then click 'SelAssigned'. This 
+            will select the vertices assigned to the selected joint. Now to assign 
+            the vertices.</p>
+          <blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'> 
+            <p>1. Make sure you are <b>not</b> in animation mode.<br>
+              2. Select the 'cranium' joint from the Joints tab of the Toolbox.<br>
+              3. Use the Select tool with the vertex modifier and drag a box over 
+              the vertices that make up the head to select the joints shown below.</p>
+            <blockquote style='margin-top:5.0pt;margin-bottom:5.0pt'> 
+              <p><img width=448 height=240 id="_x0000_i1026"
+  src="../Images/AnimationTuto/HeadSelect.gif"></p>
+            </blockquote>
+            <p>The white box shows my region selection with tool Select Vertices 
+              (Left-Click Drag).<br>
+              4. When you have selected the vertices the joint will turn to the 
+              default colour again (blue in this case) indicating that it is not 
+              selected but don't worry the name of the joint in the Joints tab 
+              of the Toolbox is still highlighted so all you have to do is press 
+              'Assign'. Now deselect the vertices (just click in the empty workspace 
+              in the viewport) and click 'SelAssigned', the vertices you just 
+              assigned will be selected again confirming that the 'Assign' action 
+              worked.</p>
+          </blockquote>
+          <p>I won't bother going through the whole process of assigning every 
+            vertex in the model to a bone but I will highlight some scenarios 
+            such as limb movement...</p>
+          <p>When I first started modelling I used to assign the vertices that 
+            formed the joint in the limb to the bone, I later found out after 
+            rotating joints around in animation mode that the way I had assigned 
+            vertices was totally wrong. You see, the vertices that are assigned 
+            to that joint are the ones that will move when that joint is moved. 
+            I left out the vertices in the middle of limbs because they weren't 
+            vertices that formed a joint, therefore I thought that they would 
+            move because the rest of the vertices moved, if you see what I mean 
+            - I was wrong. The image below shows an example of the scenario I'm 
+            talking about, the joints that I assigned to start with and the ones 
+            I should have assigned...</p>
+          <blockquote> 
+            <p><img src="../Images/AnimationTuto/animvertassign.gif" width="500" height="369"></p>
+          </blockquote>
+          <p>You might think that there is no problem with this but when we come 
+            to animating the right knee joint watch what happens...</p>
+          <blockquote> 
+            <p><img src="../Images/AnimationTuto/animvertassign2.gif" width="500" height="303"></p>
+          </blockquote>
+          <p>The view on the left shows that the unassigned vertices stayed in 
+            the same position because they were not assigned to the joint, this 
+            creates the abnormality you see circled in red. The view on the right 
+            shows the correct way in which the vertices were assigned therefore 
+            making the vertices rotate with the joint. Keep this in mind when 
+            you are assigning the rest of the vertices to bones throughout the 
+            model. </p>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr> 
+              <td width="70"><a href="AnimTutoPart1.html"><img src="../Images/previous.gif" width="70" height="58" border="0"></a></td>
+              <td>&nbsp;</td>
+              <td width="70"><a href="AnimTutoPart3.html"><img src="../Images/next.gif" width="70" height="58" border="0"></a></td>
+            </tr>
+          </table>
+          <p>&nbsp;</p>
+          </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

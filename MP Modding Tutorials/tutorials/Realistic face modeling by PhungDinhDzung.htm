@@ -1,0 +1,1233 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Realistic face modeling by PhungDinhDzung</title>
+<style fprolloverstyle="">A:hover {color: #FFFFFF; font-weight: bold; font-family: Arial, Helvetica, sans-serif}
+A:link{font-family:Arial, Helvetica, sans-serif;} 
+A:visited{font-family:Arial, Helvetica, sans-seri;}
+</style>
+<script type="text/javascript" src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/gradualfader.js"></script><style type="text/css">
+.gradualfader{filter:progid:DXImageTransform.Microsoft.alpha(opacity=50); -moz-opacity:0.5; opacity:0.5;}
+</style></head>
+
+<body alink="#FF3300" background="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/bg.gif" bgcolor="#000000" link="#FF3300" text="#FFFFFF" vlink="#FF3300">
+
+<div align="center">
+  <center>
+  <table bgcolor="#000000" border="1" bordercolor="#FFFFFF" cellpadding="0" cellspacing="0" width="100%">
+    <tbody><tr>
+      <td width="100%">
+        <div align="center">
+          <center>
+          <table border="0" cellpadding="0" cellspacing="0" width="101%">
+            <tbody><tr>
+              <td rowspan="3" width="33%">&nbsp;&nbsp;&nbsp; </td>
+              <td background="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/bg_color.jpg" width="36%">   
+
+<div align="center">
+  <table border="0" cellpadding="0" cellspacing="0" height="22538" width="100%">
+    <tbody><tr>
+      <td background="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/secondary_bg_color_gradien_top.jpg" height="14" valign="top" width="100%">
+
+
+
+
+
+
+<script languge="javascript" src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/code.js"></script>
+
+
+<script type="text/javascript" src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/gradualfader.js">
+</script><style type="text/css">
+.gradualfader{filter:progid:DXImageTransform.Microsoft.alpha(opacity=50); -moz-opacity:0.5; opacity:0.5;}
+</style>
+
+
+<link rel="ICON" href="http://www.phungdinhdung.org/icon.ico">
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>1</title>
+<style fprolloverstyle="">A:hover {color: #FFFFFF; font-weight: bold}
+</style>
+<!-- base href="http://www.phungdinhdung.org/Studies_paper/Realistic_face_modeling.shtm" -->
+
+
+
+
+
+<div align="left">
+  <table align="left" background="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/bg_color.jpg" border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tbody><tr>
+          <td background="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/banner_bg.jpg">
+            <p align="center"><a href="http://www.phungdinhdung.org/ver4/main.shtm" target="_self"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/banner.jpg" border="0" height="159" width="727">
+            </a>
+            </p></td></tr>
+      <tr><td width="100%">
+        <font face="arial"><a href="http://www.phungdinhdung.org/ver4/main.shtm" target="_self"><img style="opacity: 0.5;" src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/HomePage.jpg" class="gradualfader" align="left" border="0" height="60" width="173"></a></font>
+      </td>
+  </tr></tbody></table>
+</div>
+
+
+
+   
+
+      </td>
+    </tr>
+    <tr>
+      <td background="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/secondary_bg_color.jpg" height="408" valign="top" width="100%">
+
+<font color="#FFFFFF" face="Arial"><span style="font-size: 20.0pt; mso-bidi-font-size: 12.0pt" lang="EN-US"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/banner_002.jpg" border="0" height="400" width="1081">
+</span>
+</font>
+
+      </td>
+    </tr>
+    <tr>
+      <td background="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/secondary_bg_color_gradien_bottom.jpg" height="46" valign="top" width="100%">
+
+&nbsp;
+
+      </td>
+    </tr>
+    <tr>
+      <td height="22070" width="100%">
+
+<p class="MsoNormal" style="tab-stops: 504.0pt" align="left"><a href="http://www.phungdinhdung.org/Studies_paper/studies_index.shtm" target="_self"><img style="opacity: 0.5;" src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/back.jpg" class="gradualfader" border="0" height="73" width="173"></a></p>
+
+<p class="MsoNormal" style="tab-stops: 504.0pt" align="left"><font color="#FF9933" face="Arial" size="6"><span style="mso-bidi-font-size: 12.0pt" lang="EN-US"><br>
+Content:</span></font></p>
+        <p class="MsoNormal" style="tab-stops: 504.0pt" align="left">
+<font size="3"><b>&nbsp;&nbsp;
+        </b><span style="mso-bidi-font-size: 16.0pt; font-family: Arial; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA" class="TitleChar" lang="EN-US"><font color="#FFFFFF"><b><a href="#introduction">1-
+        Introduction</a></b><br>
+        <b>&nbsp;&nbsp; <a href="#pre_modeling">2- Pre modeling</a></b><br>
+        <b>&nbsp;&nbsp; <a href="#edge_planning_&amp;_topology">3- Egde Planning &amp; Topology</a></b><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#3.1-+Human+Face+topology%A0"> 3.1-
+        </a> </font></span></font><span lang="EN-US"><font color="#FFFFFF" face="Arial"><a href="#3.1-+Human+Face+topology%A0">Human
+        Face Topology</a>&nbsp;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#3.2-%20Topology:"> 3.2- Topology</a><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#3.3-%20Modeling%20rules:"> 3.3- Modeling rules</a><br>
+        <b>&nbsp;&nbsp; <a href="#modeling"> 4- Modeling</a></b><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#4.1-%20Polygon%20Modeling:%A0"> 4.1- Polygon Modeling</a><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#4.2-%20Sub-D%20Modeling:"> 4.2- Sub-D Modeling</a><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#4.3-%20Nurb%20Modeling:%A0"> 4.3- NURB Modeling</a><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#4.4-%20Zbrush/Mudbox%20Sculpting%20Modeling:"> 4.4-
+        Zbrush/Mudbox Sculpting
+        Modeling</a><br>
+        <b>
+        &nbsp;&nbsp; <a href="#common_mistake_&amp;tips">5- Common mistakes &amp; tips</a></b><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#5.1-+Eye+areas%A0"> 5.1- Eye areas</a><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#5.2-+Eye+Balls%A0"> 5.2- Eye balls</a><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#5.3-%20Eye%20lashes%20&amp;%20tear"> 5.3- Eye lashes &amp; tear</a><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#5.4-%20Nose%20&amp;+lips%A0"> 5.4- Nose &amp; lip</a><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#5.5-+Chin%A0"> 5.5- Chin</a><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#5.6-%20Ears:%A0"> 5.6- Ears</a><br>
+        <b>
+        &nbsp;&nbsp; <a href="#optimizing">6- Optimizing</a><br>
+        &nbsp;&nbsp; <a href="#conclusion">7- Conclusion</a> </b></font></span></p>
+        <p class="MsoNormal" style="tab-stops: 504.0pt" align="left">
+        &nbsp;</p>
+<p class="MsoNormal" style="tab-stops: 504.0pt" align="left"><font color="#FF9933" face="Arial" size="6"><span style="mso-bidi-font-size: 12.0pt" lang="EN-US">References:</span></font></p>
+<p class="MsoNormal" style="tab-stops: 504.0pt" align="left"><span style="font-family:Arial" lang="EN-US"><font color="#FFFFFF"><span style="font-family: Arial"><font size="3"><b>Books
+&amp; DVD:</b></font><br>
+- </span></font><i><font color="#FFFFFF" face="Arial" size="2">"ESSENCE:
+TheFace Modeling and Texturing" - Ballistic Publishing 2007<br>
+&nbsp;- <font color="#ffffff" face="Arial" size="2">"D'artiste:&nbsp;
+Character Modeling" - Ballistic Publishing 2005<br>
+</font></font><font color="#ffffff" face="Arial" size="2">&nbsp;- Gnomon
+Workshop tutorial DVD: " Head Modeling in Maya"<br>
+<br>
+</font></i><font color="#ffffff" face="Arial" size="3"><b>Artists: </b></font><font color="#ffffff" face="Arial" size="2"><i><br>
+- SoaLee<br>
+- Max Kor<br>
+- Steven Stahlberg<br>
+- Maxwagyudi<br>
+- Francisco A.Cortina</i></font><i><font color="#ffffff" face="Arial" size="2"><br>
+<br>
+</font></i><font color="#ffffff" face="Arial" size="3"><b>Websites:</b></font><i><font color="#FFFFFF" face="Arial" size="2"><br>
+</font><font color="#ffffff" face="Arial" size="2">&nbsp;- <a href="http://www.cgsociety.org/">www.cgsociety.org<br>
+</a>&nbsp;- <a href="http://www.phungdinhdung.org/www.3dvn.com">www.3dvn.com</a></font></i></span></p>
+<p class="MsoNormal" style="tab-stops: 504.0pt" align="left">&nbsp;</p>
+        <p class="MsoNormal" style="tab-stops: 504.0pt" align="left">
+        &nbsp;</p>
+<p class="MsoNormal" style="tab-stops: 504.0pt" align="center"><font color="#FFFFFF" face="Arial"><span style="font-size: 20.0pt; mso-bidi-font-size: 12.0pt" lang="EN-US"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/horizon.gif" border="0" height="15" width="931">
+</span>
+</font></p>
+<p class="MsoNormal" style="tab-stops: 504.0pt" align="center">&nbsp;</p>
+<p class="MsoNormal" style="tab-stops: 504.0pt" align="center">&nbsp;</p>
+<p class="MsoNormal" align="left"><font color="#FF9933" face="Arial" size="6"><span style="mso-bidi-font-size: 12.0pt" lang="EN-US"><span style="mso-bidi-font-size: 12.0pt">1-</span><a name="introduction">Introduction</a>:</span></font><font color="#FFFFFF" face="Arial"><span style="font-size: 20.0pt; mso-bidi-font-size: 12.0pt" lang="EN-US"></span></font> </p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span style="font-size: 20.0pt; mso-bidi-font-size: 12.0pt" lang="EN-US">&nbsp;&nbsp;&nbsp;</span></font> <span style="font-family:Arial" lang="EN-US"><font color="#FFFFFF">Creating
+believable human face is one of ultimate goals of every 3D artist. The process of
+creating an average human face is nothing new, however to get the realistic and
+natural looking we have to make the best out of every step we do: from
+collecting references, planning before modeling, texturing, rendering...etc. In this
+essay i will only go into studying the modeling process, i will skip talking
+        about fundamental basic things such as how to use tools in Maya or step
+        by step instruction but pay more attention to upper level things</font></span>
+        <font color="#FFFFFF"><span style="font-family:Arial" lang="EN-US">such
+        as : work flow, different method in modeling, topology, common mistakes
+        ...etc all the things that you should put your mind on while modeling to
+        create a realistic head model.<br>
+        </span></font></p>
+<p class="MsoNormal" align="center"><font color="#FFFFFF" face="Arial"><span style="font-size: 20.0pt; mso-bidi-font-size: 12.0pt" lang="EN-US"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/horizon.gif" border="0" height="15" width="931"></span></font><font color="#FFFFFF"><span style="font-size:20.0pt;mso-bidi-font-size:12.0pt;font-family:Arial" lang="EN-US">
+</span></font></p>
+<p class="MsoNormal" align="left"><font color="#FF9933" face="Arial" size="6"><span style="mso-bidi-font-size: 12.0pt" lang="EN-US"><span style="mso-bidi-font-size: 12.0pt">2-</span><a name="pre_modeling">Pre
+modeling</a>:</span></font><span style="font-size: 20.0pt; mso-bidi-font-size: 12.0pt" lang="EN-US"><font color="#FFFFFF" face="Arial">
+</font>
+</span>
+        </p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF"><span lang="EN-US"><font face="Arial"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></font></span>
+</font><span lang="EN-US"><font color="#FFFFFF" face="Arial">Before going into modeling process, i
+researched
+at how should we set up references and concept arts as these process have a
+direct<span style="mso-spacerun: yes">&nbsp; </span>influence<span style="mso-spacerun: yes">&nbsp;
+</span>on our models later. The most important things in this part is the
+accuracy and quality of reference photographs or concept arts, if we under
+estimate or make mistake in this process, we might face problem in modeling when
+we realize that the model fit with the front view image plane but does not fit
+with the side view, or there is chance that our model look exactly fit in
+orthographic view but in perspective view it doesn't look alike the person in
+reference and this will consume a lot of time to make any changes once we have
+moved into modeling part.<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF"><span lang="EN-US"><font face="Arial"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></font></span>
+</font><span lang="EN-US"><font color="#FFFFFF" face="Arial">If we are 
+going to take photograph of a real
+person for references, It is important to take photograph at right angle
+ or else
+our model will look wrong and we will have to spend considerable amount 
+of time
+to adjust it. we should also take into account of our camera 's focal 
+length.
+the longer our focal length is, the better reference photographs we 
+have. Because the longer our focal length is, the closer our view angle 
+to
+orthographic view ( like front view, side view<span style="mso-spacerun:
+yes">&nbsp; </span>which we base our modeling on). However, in theory we never
+get a orthographic reference photograph due to distortion of view angle so the
+models in 3D always look a little bit fatter than the real person, but this can
+be solved by additional editing in perspective view. The other thing is we
+should use even lighting because all the detail will be washed out or become
+hidden with too strong or too low lighting.</font></span></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US"><o:p>
+</o:p>
+<img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/01_reference_image.jpg" border="0" height="527" width="600"></span></font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US"><b>&nbsp;Getting
+reference images into Maya : <o:p>
+ </o:p></b>
+</span></font></p>
+<p class="MsoNormal" align="left">&nbsp;&nbsp;&nbsp; <font color="#FFFFFF" face="Arial"><span lang="EN-US">We
+cant get the raw photograph straight from camera into Maya image plane for
+modeling yet, because of the deviation during photographing process we have to
+check whether these image are exactly fit with each other or not. we should
+correct our reference<span style="mso-spacerun: yes">&nbsp; </span>images in
+Photoshop or any other images processing application.<o:p>
+</o:p>
+</span></font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;</span></font></p>
+<p class="MsoNormal" align="left"><font face="Arial"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/02_reference_image_match.jpg" border="0" height="639" width="466"><span lang="EN-US"><font color="#FFFFFF"><o:p>
+ &nbsp;<br>
+</o:p></font></span></font><font color="#FFFFFF" face="Arial" size="2"><span lang="EN-US"><i>(
+references images from "ESSENCE: TheFace Modeling and Texturing" -
+Ballistic Publishing 2007 )</i></span></font><font face="Arial"><span lang="EN-US"><font color="#FFFFFF">
+</font></span></font></p>
+<p class="MsoNormal" align="left">&nbsp;</p>
+<p class="MsoNormal" align="left">&nbsp;</p>
+<p class="MsoNormal" align="center"><font color="#FFFFFF" face="Arial"><span style="font-size: 20.0pt; mso-bidi-font-size: 12.0pt" lang="EN-US"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/horizon.gif" border="0" height="15" width="931"></span></font></p>
+<p class="MsoNormal" align="left">&nbsp;
+        </p>
+<p class="MsoNormal" align="left">&nbsp;
+        </p>
+<p class="MsoNormal" align="left"><font color="#FF9933" face="Arial" size="6"><span style="mso-bidi-font-size: 12.0pt" lang="EN-US"><span style="mso-bidi-font-size: 12.0pt">3-</span><a name="edge_planning_&amp;_topology">Edge
+planning &amp; Topology:</a></span></font><span style="font-size: 18.0pt; mso-bidi-font-size: 12.0pt" lang="EN-US"><font color="#FFFFFF" face="Arial">
+</font>
+</span>
+        </p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span style="font-size: 18.0pt; mso-bidi-font-size: 12.0pt" lang="EN-US">&nbsp;<img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/03_edge_planning.jpg" border="0" height="262" width="596"><o:p>
+</o:p>
+<br>
+</span>
+<font size="2">
+<span lang="EN-US"><i>( references images from "ESSENCE: TheFace Modeling
+and Texturing" - Ballistic Publishing 2007 )<span style="mso-bidi-font-size: 12.0pt">
+<o:p>
+</o:p></span>
+</i></span></font><span style="font-size: 18.0pt; mso-bidi-font-size: 12.0pt" lang="EN-US">
+
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font face="Arial"><font color="#FFFFFF"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+we
+should always plan before modeling or else we will get lost in maze of edge
+loops or have too many unnecessary faces, triangle or pole ( vertex that shares
+more than 4 edges )<o:p>.initially
+we have to sketch out the main shape of the head then base from that we plan our
+edge structure. Having good topology<span style="mso-spacerun: yes"> </span>for
+our face model is even more important than other object in 3D.</o:p></span></font><span lang="EN-US"><font color="#FFFFFF"><o:p>
+</o:p>
+</font></span></font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF"><font face="Arial" size="3"><b><span lang="EN-US">Why
+? <o:p>
+</o:p></span> </b></font><font face="Arial"><span lang="EN-US">
+
+ </span>
+ </font>
+</font><span lang="EN-US"><font color="#FFFFFF" face="Arial"><o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF"><span lang="EN-US"><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+B</font></span></font><span lang="EN-US"><font color="#FFFFFF" face="Arial">ecause
+topology and edge loops play an important part in building up the head volume,
+characteristic as well as deciding what the head model can do in animation,
+moreover unlike other parts of character, the head have much more screen time
+with many close up shots that involve complex facial expression animation. With
+a good topology, it 's possible for our head model to have realistic expression,
+if we have messed up topology, our head model cant do a single facial animation
+and if it can, the expression will look very un-natural. <o:p>
+</o:p>
+ In addition a nice topology will also make it possible to build the model with less
+geometry but still look realistic and accurate.</font></span></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF"><span lang="EN-US"><font face="Arial"><o:p>
+</o:p>
+<img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/04_topology.jpg" border="0" height="791" width="600"></font></span></font><span lang="EN-US"><font color="#FFFFFF" face="Arial"><o:p>
+ &nbsp;<br>
+</o:p>( <i><font size="2">Top: "Europa" by SoaLee<br>
+Bottom: "The Night Elf" by Max Kor )</font></i></font></span></p>
+        <p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial">
+<span lang="EN-US">
+This is an example on how bad topology affects your animation deformer. Due to
+poor skinning and topology, the polygons at the mouth corner are being sketched
+as bad as they can.&nbsp;</span></font></p>
+        <p class="MsoNormal" align="left"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/face04.gif" border="0" height="424" width="654"></p>
+        <p class="MsoNormal" align="left"><font face="Arial">With a correct topology we can
+        achieve a much better result with less poly count.</font></p>
+        <p class="MsoNormal" align="left"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/open_1.gif" border="0" height="349" width="400"></p>
+        <p class="MsoNormal" align="left">&nbsp;</p>
+<p class="MsoNormal" align="left"><span lang="EN-US"><font color="#FFFFFF" face="Arial"><o:p>
+</o:p></font></span></p>
+<p class="MsoNormal" align="left"><span lang="EN-US"><font color="#FF9933" face="Arial" size="4"><b><a name="3.1- Human Face topology&nbsp;">3.1-
+Human Face topology&nbsp;</a></b></font></span></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF"><span lang="EN-US"><font face="Arial"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+" So
+what is a correct head topology? how should we know it is good or bad ? <o:p>
+ "</o:p>
+</b>
+</font></span>
+</font></p>
+        <p class="MsoNormal" align="left"><font color="#FFFFFF"><span lang="EN-US"><font face="Arial">
+<br>
+</font></span>
+</font><span lang="EN-US"><font face="Arial"><span style="mso-tab-count:1"><font color="#FFFFFF">&nbsp;</font></span><font color="#FFFFFF">&nbsp;&nbsp;&nbsp;<span style="mso-tab-count: 1">
+        </span>In
+order to answer this question we should go back and look at human face anatomy. </font></font></span><font color="#FFFFFF" face="Arial"><span lang="EN-US">As
+        you can see, the shape of human head as well as winkles and expressions are
+formed by muscles and shape of skull, the muscles that create the nasolabial
+fold is : <o:p>
+</o:p>
+        </span></font></p>
+        <div align="left">
+          <table border="0" cellpadding="0" cellspacing="0" height="0" width="1008">
+            <tbody><tr>
+              <td width="238">
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">-
+Zygomaticus major and minor,<o:p>
+</o:p>
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">-
+Levator anguli oris<o:p>
+</o:p>
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">-
+Depressor anguli oris<o:p>
+</o:p>
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">-Levator
+Labii<o:p>
+</o:p>
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">-
+Risorious
+</span></font></p>
+                <p align="left">&nbsp;</p></td>
+              <td width="766">
+                <p align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">
+<img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/05_muscle_face.jpg" border="0" height="347" width="734"><br>
+                <i><font size="2">( Reference images from "D'artiste:&nbsp;
+                Character Modeling" - Ballistic Publishing 2005 )</font></i>
+</span></font></p>
+              </td>
+            </tr>
+          </tbody></table>
+        </div>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;
+But
+these muscles dont help in determining the shape or the topology of the
+surface or the nasolabial fold but we should know about them as they are the
+source of what causing emotion.<o:p>
+</o:p>
+</span>
+</font></p>
+        <div align="left">
+<table border="0" cellpadding="0" cellspacing="0" height="0" width="888">
+  <tbody><tr>
+    <td width="432">
+      <p align="left"><font color="#FFFFFF"><span lang="EN-US"><font face="Arial">"
+how facial muscles work :<o:p>
+</o:p>
+<br>
+&nbsp;&nbsp;&nbsp;</font></span></font><span lang="EN-US"><font face="Arial"><span style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="mso-tab-count:1"><font color="#FFFFFF">&nbsp;
+</font></span></font><font color="#FFFFFF" face="Arial">imagine a thick sheet of foam rubber lying
+on a table, with strings attached to its underside. when one or another string
+is pulled, part of the sheet slides and wrinkles. The strings are invisible to
+us - all we see is the wrinkle on the surface. To get it exactly right we must
+study the outside shape of the sheet, possible also the table, but not the
+strings themselves"<o:p>
+      &nbsp;</o:p></font></span>
+      </p><p align="left"><font face="Arial" size="2"><span lang="EN-US"><i><font color="#ffffff"><b>Steven
+      Stahlberg</b> - </font><font color="#FFFFFF">"D'artiste:&nbsp;
+      Character Modeling"&nbsp;<br>
+      Ballistic Publishing 2005
+</font></i></span></font></p>
+    </td>
+    <td width="13">
+      <p align="left"></p></td>
+    <td width="441">
+      <p align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/06_foam.jpg" border="0" height="347" width="391">
+      <br>
+      <i><font size="2">( Reference images from "D'artiste:&nbsp; Character
+      Modeling" - Ballistic Publishing 2005 )</font></i>
+      </span>
+</font></p>
+    </td>
+  </tr>
+</tbody></table>
+        </div>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The
+foam rubber is the skin surface which our model is, and the strings are muscle,
+and the table is skull. so we should study the movement and shape of the outside
+skin not the muscle. <o:p>
+</o:p></span></font></p>
+<p class="MsoNormal" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#FFFFFF" face="Arial"><span lang="EN-US">So
+we
+ decide the topology base on the major wrinkles which is formed by 
+facial
+muscles. so a good knowledge about muscle and facial anatomy is a bonus 
+but our head model might not look realistic if we try to plan the edge 
+structure on
+exactly every muscles and wrinkles, it would lead to a dead end.<o:p>
+</o:p>it
+'s better for us to exaggerate the wrinkles on the reference images and build
+our topology upon that.&nbsp;</span></font></p>
+<p class="MsoNormal" align="left"><font face="Arial"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/squint.jpg" border="0" height="512" width="712"><br>
+</font><font color="#FFFFFF" face="Arial" size="2"><span lang="EN-US"><i>( reference images
+by Steven Stahlberg at <a href="http://www.cgsociety.com/"> www.cgsociety.com</a>&nbsp; )</i></span></font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial" size="2"><span lang="EN-US"><i><br>
+</i></span></font><span lang="EN-US"><font color="#FF9933" face="Arial" size="4"><b><a name="3.2- Topology:">3.2-
+Topology:</a></b></font></span></p>
+        <p class="MsoNormal" align="left">&nbsp;&nbsp;&nbsp;<span lang="EN-US"><font color="#FF9933" face="Arial" size="4"><b>&nbsp;&nbsp;&nbsp;&nbsp;
+        </b></font></span><font color="#FFFFFF" face="Arial"> <span lang="EN-US"> This
+        is a basic example of how should we sketch out our topology on reference
+        images, we start with the most identical wrinkles then build up
+        intersected edge flows upon that.</span></font><span lang="EN-US"><font color="#FF9933" face="Arial" size="4"><b><br>
+        </b></font></span><font face="Arial"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/07_red_blue_planning.jpg" border="0" height="410" width="800"><br>
+</font><font color="#FFFFFF" face="Arial" size="2"><span lang="EN-US"><i>( Reference images from
+        "D'artiste:&nbsp; Character Modeling" - Ballistic Publishing 2005
+)</i></span></font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"> <span lang="EN-US"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Since most of human face are about 99 % similar to each other
+in anatomy, so the <o:p>
+</o:p>topology
+would not change dramatically. These are some good and bad examples of face
+topology I found:&nbsp;</span></font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial">
+<span lang="EN-US">
+<img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/08_bad_good_topo.jpg" border="0" height="655" width="973">
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;<o:p><br>
+&nbsp;&nbsp;&nbsp;
+However, we can see that, in those good topology example, each model has a slightly
+different topology but they still base on the same way of conceptualize.<o:p>
+</o:p>
+</o:p></span></font></p>
+<p class="MsoNormal" align="left"><span lang="EN-US"><i><font color="#FFFFFF" face="Times New Roman">"
+Humans are genetically similar to 99.97 percent or something like that. Yes the
+lines in the face look different, but we all have the same underlying topology,
+the potential for those lines. It's like lines in the hands of our palms, all
+slightly different but basically very similar - for instance you'll never see
+someone with the lines going in the opposite direction, from the thumb to the
+pinkie."<o:p>
+ </o:p></font></i><font color="#FFFFFF" face="Arial">
+</font></span></p>
+<p class="MsoNormal" align="left"><font face="Arial" size="2"><span lang="EN-US"><i><font color="#ffffff"><b>Steven
+Stahlberg</b> - "D'artiste:&nbsp; Character Modeling"&nbsp;<br>
+Ballistic Publishing 2005</font></i></span></font><font color="#FFFFFF" face="Arial"><span lang="EN-US">
+</span></font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;<o:p>
+</o:p>
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US"><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" alt="" style='width:381.75pt;
+ height:192.75pt'>
+ <v:imagedata src="face_modeling_images/Realis1.jpg"
+  o:href="http://www.androidblues.com/example1.jpg"/>
+</v:shape><![endif]-->
+<img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/Realis1.jpg" v:shapes="_x0000_i1025" height="257" width="509"><br>
+<font size="2"><i>
+( reference images by Steven Stahlberg at </i></font></span></font><font color="#FFFFFF" face="Arial" size="2"><span lang="EN-US"><i><a href="http://www.cgsociety.com/"> www.cgsociety.com</a>&nbsp;</i></span></font><span lang="EN-US"><font color="#FFFFFF" face="Arial"><font size="2"><i>
+)</i></font><br>
+<br>
+</font><i><font color="#FFFFFF" face="Times New Roman" size="3">
+"On the guy, the typical doubled-semi-colon shape that's created by
+the nasolabial folds as they run into the chin, together with the next wrinkle
+parallel to it. Almost every single person on the planet shows something quite
+similar. (Although a few have the nasolabial fold hooking up a bit lower on the
+chin.)<o:p>
+ "</o:p></font></i>
+</span>
+        </p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US"><font size="2"><i><b> Steven Stahlberg</b> at
+</i></font>
+</span>
+</font><font color="#FFFFFF" face="Arial" size="2"><span lang="EN-US"><i><a href="http://www.cgsociety.com/"> www.cgsociety.com</a></i></span></font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;
+It 's also better to know that there is no such looping structure in our human face, as we
+can see in those reference, breaking our face structure into edge loop is
+for sufficient and simplification of polygon topology. So that the face's&nbsp; topology
+in 3D technical term is approximated and there is no absolute single perfect topology for head,
+it 's depended on our reference and purpose of modeling.<o:p>
+&nbsp;</o:p></span>
+</font></p>
+<p class="MsoNormal" align="left"><span lang="EN-US"><font color="#ff9933" face="Arial" size="4"><b><a name="3.3- Modeling rules:">3.3-
+Modeling rules: </a> </b></font></span><font face="Arial"><span lang="EN-US"><font color="#FFFFFF">
+</font></span></font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">The
+rule for human face modeling is the same as other objects:<span style="mso-spacerun: yes">&nbsp;
+</span><o:p>
+</o:p></span></font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;
+-As
+low res as possible, <o:p>
+</o:p>
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;
+-
+Use quad as much as possible and use triangle when necessary, we should not
+avoid triangle at all cost because having triangle, despite of the fact that<span style="mso-spacerun: yes">&nbsp;
+</span>the model might not deform nicely when animated but it will save we
+unnecessary edge loop and faces.<o:p>
+</o:p>
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;
+- Avoid poles ( where vertex share more than 4 edges, it 's
+impossible to avoid pole in our model but we should hide these at those area
+that are less seen in the model because the areas that have pole are not
+smoothed properly )<span style="mso-spacerun: yes">&nbsp; </span>these are some
+area that usually have pole and they are acceptable.<o:p>
+ &nbsp;</o:p></span>
+</font></p>
+<p class="MsoNormal" align="left"><font face="Arial"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/09_pole.jpg" border="0" height="348" width="500"></font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;
+-
+polygon should always be as chubby or square, no long thin nor diamond shaped (
+some of these are acceptable to form wrinkles ) <o:p>
+</o:p>
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;
+-
+the edge direction should not run across form of surface or expression. the
+worst case is topology running at 45 degrees to the decline curve of the
+surface.<o:p>
+&nbsp;</o:p></span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/10_45degree.jpg" border="0" height="305" width="639"><br>
+<i><font size="2">
+( Reference images from "D'artiste:&nbsp; Character Modeling" - Ballistic Publishing
+2005 )</font></i>
+</span></font></p>
+<p class="MsoNormal" align="left"><span lang="EN-US"><font color="#FFFFFF" face="Arial">also
+an important things is : <o:p>
+</o:p></font><font color="#FFFFFF" face="Times New Roman">
+
+</font>
+</span>
+        </p>
+<p class="MsoNormal" align="left"><span lang="EN-US"><i><font color="#FFFFFF" size="3"><font face="Times New Roman">"
+the most difficult part is finding the balance between having enough detail to
+achieve what is needed and building as light a model as possible "
+</font><font color="#FFFFFF" face="Arial">&nbsp;
+</font></font></i>
+</span>
+        </p>
+<p class="MsoNormal" align="left"><span lang="EN-US"><font color="#FFFFFF" face="Arial"><i><font size="2"><b> -
+Francisco A.Cortina</b> - <font color="#ffffff" face="Arial">"D'artiste:&nbsp;
+Character Modeling" - Ballistic Publishing 2005</font>.</font><o:p>
+</o:p>
+</i>
+</font>
+</span>
+        </p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The
+more edge and polygon we have, the more accurate and realistic our model is but
+the more difficult we can edit it. This apply for both still image and
+animation. With still image sometime it 's ok but it 's a good practice to keep our
+model light and low res. If we want to have extra details, the key thing lies in
+the texture part.: especially normal and displacement map.<o:p>
+</o:p>
+</span>
+</font></p>
+<p class="MsoNormal" align="left">&nbsp;</p>
+<p class="MsoNormal" align="left">&nbsp;</p>
+<p class="MsoNormal" align="center"><font color="#FFFFFF" face="Arial"><span style="font-size: 20.0pt; mso-bidi-font-size: 12.0pt" lang="EN-US"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/horizon.gif" border="0" height="15" width="931"></span></font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;<o:p>
+</o:p></span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">
+
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font face="Arial" size="6"><span lang="EN-US"><font color="#ff9933">4- </font><font color="#FF9933"><a name="modeling">Modeling</a>:</font></span></font><font color="#FFFFFF" face="Arial"><span lang="EN-US">
+        </span></font></p>
+        <p class="MsoNormal" align="left">&nbsp;&nbsp;&nbsp;<font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;
+Not as strictly as<span style="mso-spacerun: yes">&nbsp; </span>modeling rules, there are many way of modeling a human face, everyone
+finds their own a comfortable way to do modeling. These are some method that I have found :</span></font></p>
+        <p class="MsoNormal" align="left"><span lang="EN-US"><b><font color="#ff9933" face="Arial" size="4"><a name="4.1- Polygon Modeling:&nbsp;">4.1-
+        Polygon Modeling:&nbsp;</a></font></b></span></p>
+        <p class="MsoNormal" align="left">&nbsp;&nbsp;&nbsp;<font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;
+        Polygon is the most popular, basic, essential<span style="mso-spacerun: yes">&nbsp;
+</span>and straight forward modeling method. And&nbsp; it varies in different ways : <o:p>
+&nbsp;</o:p></span></font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/11_box_modeling.jpg" border="0" height="166" width="800"><br>
+<font size="2"><i>
+( Reference images from Gnomon Workshop tutorial DVD: " Head Modeling in Maya" )</i></font>
+</span></font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF"><span lang="EN-US"><font face="Arial"><span style="mso-spacerun: yes">&nbsp;</span></font></span></font><span lang="EN-US"><font color="#FFFFFF" face="Arial"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>- <b> Start from a primitive shape </b> ( cube or sphere...etc) : some people
+start by modifying primitive basic mesh like cube or sphere. We block out the
+overall shape of the head first and delete some unnecessary face and edge loop
+to form a basic topology. after that we start to go into detail by adding more
+edge and face around area like eye, nose, mouth....etc <o:p>&nbsp;</o:p></font></span></p>
+<p class="MsoNormal" align="left">&nbsp;</p>
+<p class="MsoNormal" align="left">&nbsp;</p>
+<p class="MsoNormal" align="left"><font face="Arial"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/12_line_extrude.jpg" border="0" height="179" width="982"><br>
+</font><font color="#FFFFFF" face="Arial" size="2"><span lang="EN-US"><i>( Reference images from
+Nnso'n: head modeling tutorial at <a href="http://www.3dvn.com/">www.3dvn.com</a>
+)</i></span></font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF"><span lang="EN-US"><font face="Arial"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></font></span>
+</font><span lang="EN-US"><font color="#FFFFFF" face="Arial">- <b> Start from curve/lines :</b> some people
+prefer to draw curves that run along the most identifiable<span style="mso-spacerun: yes">&nbsp;
+</span>lines of reference images, then edit these lines to form a basic head shape.
+Then do a extrude command around the lines and start building separated<span style="mso-spacerun: yes">&nbsp;
+</span>parts of the face then connect them together when done and carry on
+editing those gap to form a completed face.<o:p>
+&nbsp;</o:p></font></span></p>
+<p class="MsoNormal" align="left">&nbsp;</p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial">
+<span lang="EN-US">
+<img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/13_plane.jpg" border="0" height="179" width="449">
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF"><span lang="EN-US"><font face="Arial"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></font></span>
+</font><span lang="EN-US"><font color="#FFFFFF" face="Arial"><b>- From plane :</b> this method can be consider
+as the first method i mentioned, we start from a plane and we draw a rough
+topology on it using split polygon tool or any other drawing edge, cut face tool
+from plugin. Once we have we basic topology done, we can start pulling the
+point to form a face that match up with the side view image.<o:p>
+</o:p>
+</font></span></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Polygon
+modeling let us have direct control over edges, faces and vertices, it 's fast
+and easy to keep track of modeling process however it require a lot of editing
+work and sometime it does not work efficiently with surface that need high
+smoothness and accuracy.<o:p>
+</o:p>
+</span>
+</font></p>
+        <p class="MsoNormal" align="left"><span lang="EN-US"><b><font color="#ff9933" face="Arial" size="4"><a name="4.2- Sub-D Modeling:">4.2-
+        Sub-D Modeling:</a>&nbsp;</font></b></span></p>
+<p class="MsoNormal" align="left"><font face="Arial">&nbsp;&nbsp; <span lang="EN-US"><font color="#FFFFFF"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/14-Sub_d.jpg" border="0" height="286" width="800">
+</font></span></font></p>
+<p class="MsoNormal" align="left">&nbsp;&nbsp;&nbsp;<font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;
+<b>
+SUB-D</b> : this can be also called polygon modeling. Not many people choose this method to work with. At the beginning, it is
+the same as polygon modeling, once we have our basic head model, we can go into
+detail by sub-divide one more level to have more vertex for editing. we can
+also go back and forth during the modeling process to edit vertex at different
+level. the advantage of this method is the hierarchy workflow it allow we to
+easily edit the vertex at level 0 if we want to change the overall shape of the
+head while not being confused by the detail that kept in higher level of
+Subdivide. the other advantage is the low res version of the model doesn't need
+to be perfect in topology when we go to higher level, all these N-gone will be
+all quad and smooth without losing any detail.<o:p>
+&nbsp;</o:p></span>
+</font></p>
+        <p class="MsoNormal" align="left">&nbsp;</p>
+        <p class="MsoNormal" align="left"><span lang="EN-US"><b><font color="#ff9933" face="Arial" size="4"><a name="4.3- Nurb Modeling:&nbsp;">4.3-
+        Nurb Modeling:&nbsp;</a></font></b></span></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;<o:p>
+ <img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/15_nurb.jpg" border="0" height="286" width="495"></o:p>
+</span>
+</font></p>
+<p class="MsoNormal" align="left">&nbsp;&nbsp;&nbsp;<font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;
+<b>
+NURB</b> : nurb is great for modeling automotives, symmetrical objects and accuracy
+surfaces but it can be used for head modeling as well as other organic objects.
+the work flow also depend on how skillful we are with NURB, we can make the
+whole model from start to end with NURB, but it will be a hard work with all the
+detail of the model, we will have to plan every surface patches for the details we
+want to add to the model. the common workflow is we usually make the basic head
+model in NURB then convert it to polygon, and<span style="mso-spacerun:
+yes">&nbsp; </span>we can
+chose ether SUB -D or polygon to go from there.<o:p>
+</o:p>
+</span>
+</font></p>
+        <p class="MsoNormal" align="left"><span lang="EN-US"><b><font color="#ff9933" face="Arial" size="4"><a name="4.4- Zbrush/Mudbox Sculpting Modeling:">4.4-
+        Zbrush/Mudbox Sculpting Modeling:</a>&nbsp;</font></b></span></p>
+<p class="MsoNormal" align="left">&nbsp;</p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial">
+<span lang="EN-US">
+<img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/16_zbrush.jpg" border="0" height="552" width="900">
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">+ <b>
+ZBRUSH / MUDBOX</b> : an alternative way to modeling a human head is using 3D
+sculpting software like Zbrush or Mudbox, we can start with Zphere, or any
+rough head model, then we start sculpting and adding detail to the model. After
+satisfies with the detail we have added to the model, we can use the retopology
+tool in Zbrush or resurface it with new topology in maya to create a lighter model but still keep
+the similar look of our high res model in Zbrush.&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The advantage is<span style="mso-spacerun:
+yes">&nbsp; </span>we can
+detail our head model with millions of polygon, also<span style="mso-spacerun: yes">&nbsp;
+</span>the process of modeling and topology is separated so<span style="mso-spacerun: yes">&nbsp;
+</span>we can concentrate
+on one thing at a time, they said " modeling first, topology later!".
+Moreover from the high res model we can generate normal map, cavity map,
+displacement map...etc these will help we a lot in texturing work later.&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The
+disadvantage are : This method take a lot a time, we have to create both super high res model
+and&nbsp; low res model. In addition we need to have a good sculpting skill in order to
+sculpt a good high res model with details. But these are only few disadvantage i can find of this
+method, overall i think it is really good and being used by many people
+nowadays. <o:p>
+</o:p>
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;<o:p>
+</o:p>
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Among all the modeling method i mentioned above, i find my self comfortable with
+the basic polygon modeling which i will use to create the base mesh in Maya and
+then i will bring it into Zbrush for sculpting and re-topology. Finally i export
+the lowest level mesh in Zbrush back in to Maya and apply a displacement map
+&amp; normal map generated in Zbrush to make it look like high res model in
+Zbrush.<o:p>
+</o:p></span>
+</font></p>
+<p class="MsoNormal" align="left">&nbsp;</p>
+<p class="MsoNormal" align="center"><font color="#FFFFFF" face="Arial"><span style="font-size: 20.0pt; mso-bidi-font-size: 12.0pt" lang="EN-US"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/horizon.gif" border="0" height="15" width="931"></span></font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">
+
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><span lang="EN-US"><font face="Arial" size="6"><font color="#ff9933">5-
+</font><font color="#FF9933"><a name="common_mistake_&amp;tips">Common Mistake &amp;
+tips</a>:</font></font></span><font color="#FFFFFF" face="Arial"><span lang="EN-US">
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">However,
+despite of what modeling method we use, there are some common mistakes and areas
+on the face we should watch out. <o:p>
+</o:p>
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><span lang="EN-US"><font color="#ff9933" face="Arial" size="4"><b><a name="5.1- Eye areas&nbsp;">5.1-
+Eye areas&nbsp;</a></b></font></span></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial">
+<span lang="EN-US">
+<img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/17_eye_good.jpg" border="0" height="162" width="780">
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF"><span lang="EN-US"><font face="Arial"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></font></span>
+</font><span lang="EN-US"><font color="#FFFFFF" face="Arial">Because they often say that eyes are the
+window of the soul, they are the ultimate important element in 2D painting as
+well as 3D. Viewers always look at the eyes of character first. it 's the eyes
+that make the most characteristic out of character's face. So it is never
+redundant when we spend extra time for the eyes. <o:p>
+&nbsp;</o:p></font></span></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial">
+<span lang="EN-US">
+</span></font></p>
+<div align="left">
+<table border="0" cellpadding="0" cellspacing="0" width="86%">
+  <tbody><tr>
+    <td valign="top" width="61%">
+      <p align="left"><font color="#FFFFFF"><span lang="EN-US"><font face="Arial"><span style="mso-tab-count:1">&nbsp;&nbsp;</span></font></span>
+</font><span lang="EN-US"><font color="#FFFFFF" face="Arial"><span style="mso-tab-count: 1">&nbsp;&nbsp; </span>it
+      's better to use a sphere as reference to model the eye lids or else they
+      will look unnatural and intersect with the eyeball. the eye lids are
+      decided mainly by two curve that formed by upper and lower eyelids. we
+      should also have an extra edge loop inward to make the thickness of the
+      eyelids.<o:p>
+      &nbsp;</o:p></font></span></p>
+    </td>
+    <td valign="middle" width="65%">
+      <p align="left"><font color="#FFFFFF"><span lang="EN-US"><font face="Arial"><span style="mso-tab-count:1">&nbsp;&nbsp;
+      </span></font></span>
+</font><span lang="EN-US"><font color="#FFFFFF" face="Arial"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/18_sphere_ref.jpg" border="0" height="286" width="400">
+      </font></span></p></td>
+  </tr>
+</tbody></table>
+</div>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span style="mso-tab-count:1" lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></font></p>
+<div align="left">
+<table border="0" cellpadding="0" cellspacing="0" width="86%">
+  <tbody><tr>
+    <td valign="middle" width="61%">
+      <p align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;
+      the eye's canthus should also be modeled or else our eyeball wont fit in
+      the eye holes some people make eye's canthus separately from the face, but
+      this will make it look like having dirt in the eye's comer so it 's better
+      to having everything as one union mesh object. <o:p>
+      &nbsp;</o:p></span>
+</font></p>
+    </td>
+    <td valign="middle" width="65%">
+      <p align="left"><font color="#FFFFFF" face="Arial"><span style="mso-tab-count: 1" lang="EN-US"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/19_eyecorner.jpg" border="0" height="219" width="502">&nbsp;&nbsp;&nbsp;</span></font></p></td>
+  </tr>
+</tbody></table>
+</div>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US"></span>
+</font></p>
+<div align="left">
+<table border="0" cellpadding="0" cellspacing="0" width="86%">
+  <tbody><tr>
+    <td valign="middle" width="61%">
+      <p align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;
+      The upper eyelid also have to be modeled as well. some people often make mistake
+when making a absolute edge loop around eye areas, in stead we should have a
+line go out from the outside eyes corner.<o:p>
+      &nbsp;&nbsp;&nbsp;&nbsp;</o:p></span>
+</font></p>
+    </td>
+    <td valign="middle" width="65%">
+      <p align="left"><font color="#FFFFFF" face="Arial"><span style="mso-tab-count: 1" lang="EN-US"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/20_eye_far_corner.jpg" border="0" height="393" width="476">&nbsp;&nbsp;&nbsp;</span></font></p></td>
+  </tr>
+</tbody></table>
+</div>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+These
+small detail seem not to be noticeable<span style="mso-spacerun: yes">&nbsp; </span>from
+far distance, but in close up scene they make the eyes look much more realistic
+and soulful.<o:p>
+</o:p>
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;<o:p>
+ </o:p>
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><span lang="EN-US"><font color="#ff9933" face="Arial" size="4"><b><a name="5.2- Eye Balls&nbsp;">5.2-
+Eye Balls&nbsp;</a></b></font></span></p>
+<p class="MsoNormal" align="left">&nbsp;</p>
+<table border="0" cellpadding="0" cellspacing="0" width="54%">
+  <tbody><tr>
+    <td width="50%">
+      <p align="left"><font face="Arial"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/22_error_eyes.jpg" border="0" height="335" width="438"><br>
+      <font size="2"><i>
+      Bad example of 3D eyes</i></font></font></p></td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <font color="#FFFFFF" face="Arial"><span lang="EN-US"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/21_real_eye.jpg" border="0" height="333" width="724"><br>
+      <i><font size="2">
+      Real eye photographs</font></i></span></font></td>
+  </tr>
+</tbody></table>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Many people underrate this part and they only use one single simple
+sphere for the eye ball, this make the eye look robotic and dollish. Looking at
+realistic eyeball, we can see that the eyeball look much deeper and glossier.
+The key is we have to mimic the real anatomy of the human eyeball. the most used
+method in modeling realistic eyes nowadays is breaking the eye ball into two
+separate part:<o:p>
+</o:p>
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US"><b>&nbsp;&nbsp;&nbsp;
+-
+the cornea and the eyeball.<o:p>
+ </o:p></b>
+
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+the
+cornea is like a sphere but more bent forward at the center, and it's
+transparency with only catch specular, reflection and even refraction.<o:p>
+</o:p>
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;
+-The
+eye ball is a sphere but sunken inward at the center to form iris.<o:p>
+</o:p>
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">This
+detail modeling can make our model 's eyes believable.<o:p>
+&nbsp;</o:p></span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">
+<img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/22_eye.jpg" border="0" height="759" width="984"><br>
+<font size="2"><i>
+( Reference images from <b>Nnso'n</b>: head modeling tutorial at <a href="http://www.3dvn.com/">www.3dvn.com</a>
+)<br>
+( Reference images from <b>Maxwagyudi</b> : Making of Ingrid Bergman&nbsp; )</i></font><br>
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">
+<img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/22_1_a_eye_water.jpg" border="0" height="234" width="611"></span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The water part between the eye lid and eye ball should also be modeled to give
+more realistic looking of the eyes.</span></font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;<o:p>
+</o:p>
+</span>
+</font></p>
+        <p class="MsoNormal" align="left"><span lang="EN-US"><font color="#ff9933" face="Arial" size="4"><b><a name="5.3- Eye lashes &amp; tear">5.3-
+        Eye lashes &amp; tear </a> </b></font></span><font color="#FFFFFF" face="Arial"><span lang="EN-US">
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><span lang="EN-US"><font color="#FFFFFF" face="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The
+important thing is the natural shape of eye slashes. the shade is depended on
+the many elements of the eye slashes.<o:p>
+</o:p></font><font color="#FFFFFF" face="Arial" size="3">
+
+</font>
+</span>
+        </p>
+<p class="MsoNormal" align="left"><span lang="EN-US"><i><font color="#FFFFFF" face="Times New Roman" size="3">"
+an important thing to remember is to get to correct amount of bunching and
+randomness in both length and placement. The lower lid's lashes tend to bunch in
+smaller numbers, while the upper lid's lashes bunch in greater numbers. The small
+membrane on the inner corner of the eyelids, or the 'caruncula lacrimalis', is
+one of the most important elements of the eyes."<o:p>
+&nbsp;</o:p></font></i>
+</span>
+        </p>
+<p class="MsoNormal" align="left">&nbsp;&nbsp; <span lang="EN-US"><font color="#FFFFFF" face="Arial"><font color="#ffffff" face="Arial" size="2"><i>-
+<b>Francisco A.Cortina</b> - <font color="#ffffff" face="Arial">"D'artiste:&nbsp;
+Character Modeling" - Ballistic Publishing 2005</font>.</i></font>
+</font>
+</span>
+        </p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;<o:p>
+ <img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/23_eye_lash.jpg" border="0" height="163" width="589"></o:p>
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I see that many people use image plane with eye lashes texture on it. But this
+will make the eye lash look flat, and not good enough in close-up shot.I do
+some extra study of different method in making eye lashes. some people use Hair
+&amp; fur in Maya or Hair plugin to make this, but it 's still not really food
+for close-up.I find out that the best way to do eye lashes is : polygon eye
+lashes !. Despite of what method we use but the output should be polygon.
+Polygon eye lashes have a better look with more depth feeling and cast nicer
+shadows.</span></font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">
+<img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/24_polygon_eye_lash.jpg" border="0" height="246" width="600">
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font face="Arial"><span lang="EN-US"><font color="#FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+we
+can
+use Maya paintFX or third party- plugin to make the eye slashes then convert it
+to polygon.<o:p>
+</o:p></font></span></font><font color="#FFFFFF" face="Arial"><span lang="EN-US">I
+find myself comfortable with the method of using Maya paintFX hair to model eye
+lashes then convert it to polygon, this way i can still render the eyelash
+properly in polygon form while keeping the construct history of PaintFX, i can
+modify the randomness, the thickness as well as the number of strands ).<o:p>
+&nbsp;
+</o:p></span>
+</font></p>
+<p class="MsoNormal" align="left"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/25_paint_FX.jpg" border="0" height="296" width="818"></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Beside,
+as the number of eye slashes is small ( around roughly 350 strands overall in
+both side of the face ), converting it to polygon is not a big problem
+nowadays. If we want to animate without lagging, we can make it
+invisible since it 's a minor part in animation.<o:p>
+</o:p>
+</span></font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">
+
+</span>
+</font></p>
+        <p class="MsoNormal" align="left"><span lang="EN-US"><font color="#ff9933" face="Arial" size="4"><b><a name="5.4- Nose &amp; lips&nbsp;">5.4-
+        Nose &amp; lips&nbsp;</a></b></font></span></p>
+        <div align="center">
+<table border="0" cellpadding="0" cellspacing="0" width="89%">
+  <tbody><tr>
+    <td width="33%">
+      <p align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">"
+      both nose and lips contain some of the most subtle variations in shape on
+      the faces. As with drawing and sculpting faces, the key is understanding
+      the planes and angles they flow based one the underlying bones and
+      muscles."<o:p>
+      &nbsp;
+</o:p></span>
+</font></p>
+      <p align="left"><span lang="EN-US"><font color="#ffffff" face="Arial" size="2"><i>-
+      <b>Francisco A.Cortina</b> - <font color="#ffffff" face="Arial">"D'artiste:&nbsp;
+      Character Modeling" - Ballistic Publishing 2005</font>.</i></font></span></p>
+    </td>
+    <td width="67%">
+      <p align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/26_nose_lip.jpg" border="0" height="268" width="600">
+      <br>
+      <font size="2"><i>
+      ( Reference images from "D'artiste:&nbsp; Character Modeling" - Ballistic Publishing
+      2005 )</i></font>
+</span>
+</font></p>
+    </td>
+  </tr>
+</tbody></table>
+        </div>
+<p class="MsoNormal" align="left">&nbsp;&nbsp;&nbsp; <font color="#FFFFFF" face="Arial"><span lang="EN-US">Through
+researching, I found out some good topology for those areas <o:p></o:p>:</span></font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;<o:p>
+ <img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/27_nose_lip_topo.jpg" border="0" height="331" width="764"></o:p></span></font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The
+edge around nose area form a round curve starts from top of the nose and go
+along ala and terminate at area where Philtrum meet nostrils. The mistake we
+often have is that edge loop doesn't go around the nose but grid-like edge loop
+instead, it make the nose
+look square and big.<o:p>
+</o:p><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In
+the lips area, we should have at least 2 edge loops go out at the lip's corner
+or else the model's mouth look like being cut. Also, To
+emphasize the shape of the lips, we should add an extra edge loop around lips
+areas because without this edge loop<span style="mso-spacerun: yes">&nbsp; </span>when
+we smooth or subdivide one more level, the lib shape will be smoothed out.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In addition we model the head with
+close mouth but it 's better to have some extra face loop inside the mouse just
+in case to hide the border edge when character open his mouth.<o:p>
+&nbsp;</o:p></span></font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US"><br>
+ <img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/28_bad_nose_tip.jpg" border="0" height="295" width="732">
+</span></font></p>
+      <p class="MsoNormal" align="left"><span lang="EN-US"><font color="#ff9933" face="Arial" size="4"><b><a name="5.5- Chin&nbsp;">5.5-
+      Chin&nbsp;</a></b></font></span></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/29_chin.jpg" border="0" height="235" width="893"></span></font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+At the chin area we should terminate edge that run from above with a square
+polygons area. This topology will make we adjust the shape of the chin easier
+or just in case when our character have a double chin. <o:p></o:p></span></font><font face="Arial"><span lang="EN-US"><font color="#FFFFFF">we
+should
+also have an edge loop start from chin and terminate at ear, this will form our
+character 's jaw bone more nicely.<o:p>
+</o:p>
+</font></span></font></p>
+      <p class="MsoNormal" align="left"><span lang="EN-US"><font color="#ff9933" face="Arial" size="4"><b><a name="5.6- Ears:&nbsp;">5.6-
+      Ears:&nbsp;</a></b></font></span></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">
+<img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/30_ear.jpg" border="0" height="235" width="893">
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Ear
+is a very tricky area in the face, it has spiral structure with a lot of
+detail in, if we are not careful we might end up spending too many polygon
+for it. what people often do is: they model the ear separately and then adjust
+its to meet with the head topology, after all they sew the ear with the head
+model, we may have some triangle around the ear but since the area behind the
+ear is hardly seen it 's fine. This ear model can be reused for any other models
+too.<o:p>
+</o:p>
+</span></font></p>
+<p class="MsoNormal" align="left">&nbsp;</p>
+<p class="MsoNormal" align="left">&nbsp;</p>
+<p class="MsoNormal" align="center"><font color="#FFFFFF" face="Arial"><span style="font-size: 20.0pt; mso-bidi-font-size: 12.0pt" lang="EN-US"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/horizon.gif" border="0" height="15" width="931"></span></font></p>
+<p class="MsoNormal" align="left">&nbsp;</p>
+<p class="MsoNormal" align="left">&nbsp;</p>
+<p class="MsoNormal" align="left"><span lang="EN-US"><font color="#FFFFFF" face="Arial">
+</font><font color="#ff9933" face="Arial" size="5">6- </font>
+<a name="optimizing"><font color="#FF9933" face="Arial" size="5">Optimizing</font></a><font color="#FF9933" face="Arial" size="5">:</font>
+</span></p>
+      <p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      It
+'s essential to keep in mind while modeling that whether our model are suitable
+      to other process or not. <o:p>
+</o:p></span></font><span lang="EN-US"><font color="#FFFFFF" face="Arial">We should always review our topology one
+more time before continue moving to next step to check for unnecessary edge
+loop, triangles...etc. This will make our work easier later.
+</font></span></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US"><b>-
+UV mapping : <o:p>
+&nbsp;</o:p></b>
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">
+<img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/31_sym.jpg" border="0" height="316" width="600">
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF"><span lang="EN-US"><font face="Arial"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>It is necessary&nbsp; </font></span></font><span lang="EN-US"><font color="#FFFFFF" face="Arial">to<span style="mso-spacerun: yes">&nbsp;
+</span>keep the topology of the model as symmetrical as possible unless we have
+to model character with half of his face altered. This will help us a lot in UV
+and texturing whether we do it<span style="mso-spacerun: yes">&nbsp; </span>in Maya
+or other software.<o:p>
+</o:p>
+</font></span></p>
+      <p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US"><b>-
+Animation :<br>
+      &nbsp;&nbsp;&nbsp; </b>- Review our topology to check whether our
+character 's face will have a good deform when doing expression or not.<o:p>
+</o:p><br>
+      &nbsp;&nbsp;&nbsp;</span></font> <span lang="EN-US"><font color="#FFFFFF" face="Arial">- If our character will talk or open his
+mouth, we will have to hide the open edge of the inside
+lips area and model the interior of the mouth as well.<o:p>
+</o:p><br>
+      &nbsp;&nbsp;&nbsp;</font></span> <font color="#FFFFFF" face="Arial"><span lang="EN-US">-
+we also have to put extra edge loop in the upper eye lids area so we will have
+enough polygon for the eyelid to cover the eye ball when character closes his
+eyes.<o:p>
+</o:p><br>
+      &nbsp;&nbsp;&nbsp;</span></font> <font color="#FFFFFF" face="Arial"><span lang="EN-US">-Just
+in case that the character might have frowning or glaring expression, the
+forehead area will form some wrinkles here. unless if we want to do it by
+texturing, we can add some extra edge loop here so that we can have enough
+polygon to make those wrinkles. But this is not really necessary if we dont want
+such a realistic deform, remove it can help we to have a lighter model.<o:p>
+</o:p>
+</span>
+</font></p>
+<p class="MsoNormal" align="left">&nbsp;</p>
+<p class="MsoNormal" align="center"><font color="#FFFFFF" face="Arial"><span style="font-size: 20.0pt; mso-bidi-font-size: 12.0pt" lang="EN-US"><img src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/horizon.gif" border="0" height="15" width="931"></span><span lang="EN-US">
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;<o:p>
+</o:p>
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><span lang="EN-US"><font face="Arial" size="6"><font color="#ff9933">6-</font><font color="#FF9933"><a name="conclusion">Conclusion</a>:</font></font>
+</span></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Modeling human face is a common topic in 3D graphic. It can be said that face
+modeling is a simple task, but the most difficult things lie in the harmony of
+details and shape that make up the unique characteristic and natural of the
+face. A small change can lead to a vast difference, sometimes it 's difficult to
+evaluate whether the face look right or wrong, if it looks wrong, which part
+should be edited ?.A realistic and successful face model will depend much on
+texture, shader and lighting, however these parts can never be success if they
+don't have a solid base - the model itself. <o:p>
+</o:p>
+</span>
+</font></p>
+<p class="MsoNormal" align="left"><font color="#FFFFFF" face="Arial"><span lang="EN-US">&nbsp;<o:p>
+</o:p>
+</span>
+</font></p>
+<p align="left">&nbsp;</p></td>
+    </tr>
+  </tbody></table>
+</div>
+
+                <p><a href="http://www.phungdinhdung.org/Studies_paper/studies_index.shtm" target="_self"><img style="opacity: 0.5;" src="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/back.jpg" class="gradualfader" border="0" height="73" width="173"></a></p></td>
+              <td rowspan="3" width="33%">&nbsp;&nbsp;&nbsp;&nbsp; </td>
+            </tr>
+            <tr>
+              <td background="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/bg_color.jpg" width="36%">
+  <table align="left" background="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/bg_red.htm" border="0" cellpadding="0" cellspacing="0" height="63" width="100%">
+    <tbody><tr>
+      <td background="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/ngang_2.htm" height="17" width="100%">&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="59" width="100%"><font color="#FFFFFF" face="arial"><span class="style1"><font size="3">&nbsp;©</font><span class="style14"><font size="3">
+ 2007-2011</font></span><font size="3"> | Phung Dinh Dzung -    
+All r</font></span><span class="style14"><font size="3">ights reserved</font><br>   
+        &nbsp;  
+</span><font color="#a6a6a6" size="1">No part of this    
+website may be reproduced without prior written permission from Phungdinhdung. </font></font></td>
+    </tr>
+    <tr>
+      <td background="Realistic%20face%20modeling%20by%20PhungDinhDzung_files/ngang_2.htm" height="10" width="1024">&nbsp;</td>
+    </tr>
+  </tbody></table>
+   
+
+              </td>
+            </tr>
+            <tr>
+              <td width="36%"></td>
+            </tr>
+            <tr>
+              <td colspan="3" width="100%">   
+
+ </td>
+            </tr>
+          </tbody></table>
+          </center>
+        </div>
+      </td>
+    </tr>
+  </tbody></table>
+  </center>
+</div>
+<script type="text/javascript">        
+gradualFader.init() //activate gradual fader        
+</script> 
+
+
+
+</body></html>

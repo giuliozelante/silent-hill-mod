@@ -1,0 +1,688 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+<title>Enemies and AI</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<base target="main">
+</head>
+
+<body leftmargin="0" topmargin="0">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" height="80">
+  <tr>
+    <td width="50%" height="80" bgcolor="#000000"><img border="0" src="images/maxlogo.gif" width="260" height="80"></td>
+    <td width="50%" height="80" align="right" bgcolor="#000000"><img border="0" src="images/rmdlogo.gif" width="115" height="64"></td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="16">
+  <tr>
+    <td> 
+      <table border="0" cellpadding="0" cellspacing="0" width="640">
+  <tr>
+          <td> <h1><br>
+              Enemies and AI</h1>
+            <blockquote> 
+              <p>With this tutorial you are going to learn how to script the AI 
+                for enemies and other NPC's. That includes messages to change 
+                the behavior and the perceiving properties of the enemies, and 
+                the messages to make them move around in the level. We are going 
+                to learn how to calculate AI network to the levels, and we are 
+                going to make the enemies switch weapons. Also deathcams and custom 
+                animations are going to be covered. You can use the example level 
+                included in the zip archive that this help file came in, or you 
+                can go to the online download page <a href="http://www.maxpayne.com/tutorials/MaxED/downloads.htm" target="_blank">here</a>.</p>
+</blockquote>
+<h2>The Statemachine States</h2>
+<blockquote>
+  <p>One of the basic blocks of the AI scripting in Max Payne is so called <b>statemachine
+  states</b>. They are different states for enemies that define their behavior. The usable
+  statemachine states that define the <b>combat behavior</b> are:</p>
+  <p><b>MercCombat</b> - General combat statemachine. The enemy will follow player and
+  perform dodges spontaneously during combat.</p>
+  <p><b>MercCombatDefensive</b> - Same as above, but the enemy won't follow the
+  player very far.</p>
+  <p><b>MobsterCombat</b> - The same as MercCombat but the enemy won't perform
+  dodges.</p>
+  <p><b>MobsterCombatDefensive</b> - The same as MercCombatDefensive, but the
+  enemy won't perform dodges.</p>
+  <p><b>MeleeCombat</b> - Combat statemachine for enemies who are using a melee weapon.</p>
+  <p><b>CrouchAndShoot </b>- Crouches and shoots. If it looses player from
+  sight, it will start following.</p>
+  <p><b>CrouchAndShootStatic</b> - Crouches and shoots. Won't follow player.</p>
+  <p><b>StandAndShoot</b> - Stands and shoots. Follows the player if the sight
+  is lost.</p>
+  <p><b>StandAndShootStatic</b> - Stands and shoots. Won't follow the player.</p>
+  <p><b>WalkAndShoot</b> - Walks towards the player while shooting. Will start
+  running if loses the sight to the player.</p>
+  <p><font color="#808080"><b>CrouchWaitAndShoot</b> - Was used for statemachine
+  testing purposes. Redundant.</font></p>
+  <p><font color="#808080"><b>CrouchWaitAndShootStatic</b> - Was used for
+  statemachine testing purposes. Redundant.</font></p>
+  <p><font color="#808080"><b>RunWalkAndShoot</b> - Runs towards the player and
+  once close enough, starts walking and shooting. Redundant.</font></p>
+  <p><font color="#808080"><b>WalkStopAndShoot </b>- Same as WalkAndShoot but
+  won't shoot while walking. Redundant.</font></p>
+  <p>You can get pretty far with the statemachines above, but every now and then
+  you want to do some more specific moves, and they are handled with
+  statemachines as well:</p>
+  <p><b>SingleDodgeLeft, -Right, -Forward, -Backward</b> - Performs a dodge and
+  returns to the previous statemachine in the stack.</p>
+  <p><b>SingleShootDodgeLeft, -Right, -Forward, -Backward</b> - Performs a
+  shootdodge and returns to the previous statemachine in the stack.</p>
+  <p><b>SingleShootAccurately</b> - Shoots once (relatively) accurately, and
+  then returns to the previous statemachine. Quite redundant to be honest, maybe useful
+  in cinematics.</p>
+  <p>With the statemachines above you can already do some simple combat. Load up
+  the level as it was left after the FSM &amp; DO tutorial, or just download the
+  example level of that tutorial.</p>
+  <p>Then let's place an enemy into the level. As you might remember, you can
+  place entities to the grid by pressing <b>N</b> in F3 mode. Select&nbsp; <b>Enemy</b>
+  from the drop-down dialog. The properties of the newly created enemy will pop
+  up. Rename it to <b>e1</b>. You can now also change the type of the enemy from the
+  <b>Entity</b>-tab if you want to. You can also rotate the enemy into the
+  desired orientation by selecting the enemy, pressing <b>Y</b> in F5 mode and
+  moving the mouse. But don't forget that you have to be in pivot rotation mode
+  (<b>A</b> to toggle) in order to rotate any entity.</p>
+  <p>Now as you've got an enemy in the level, it doesn't do anything by default.
+  It's just standing there in <b>idle</b> statemachine state (more about idle
+  states in a moment). You can open the FSM dialog of the enemy (<b>4</b> in F5
+  mode) and change its statemachine state at its <b> Startup</b> into any of the states
+  above with a message called <i>C_SetStateMachine</i>.</p>
+  <p align="center"><img border="0" src="images/ai-1.jpg" width="326" height="172"></p>
+  <p>Now you can try and export the level and see how it works, although in order
+  for the enemy to be able to follow the player through rooms and around
+  obstacles correctly, we are going to have to calculate the <b>ai-network</b>
+  for the level. You already know how to add your levels to the levels.txt
+  correctly, so add a new block for this level of ours, but make sure it will
+  have the flag <b>EnableAI</b> set as true. This will tell the engine to look
+  for AI network for this level.</p>
+  <p>The actual calculation of the network happens in the game. Once you've
+  exported the level .LDB, and you have the levels.txt all sorted out, launch
+  the game and type the following to the console:</p>
+  <p class="fixed">MaxPayne_GameMode-&gt;GM_InitAndCalcAI( my_AI_level );<br>
+  X_ModeSwitch-&gt;S_ModeSwitch(Game);</p>
+  <p>You will need to do this only once if you don't touch the geometry of your
+  level, as the game will save the AI net to the same directory as where your
+  .LDB file is, with .AI-file extension.</p>
+  <p>Once the level has loaded up and your PC has done all the crunching, you
+  can view the AI network by pressing <b>F7</b>. Or view the AI nodes by
+  pressing <b>F8</b> (Of course, only in developer mode with developer keys
+  enabled).</p>
+  <p>You can try to combat against the enemy now. Notice how it can navigate
+  from one room to another without problems.</p>
+</blockquote>
+<h2>Perceiving properties</h2>
+<blockquote>
+  <p>Note how the enemy can hear you if you start shooting even if it
+  can't see you. We can change the perceiving properties of the enemies by using
+  the following statemachine states:</p>
+  <p><b>Idle</b> - This is the default statemachine. The enemy can hear and see
+  the player.</p>
+  <p><b>IdleUntilEnemySeen</b> - In this statemachine the enemy can't hear the
+  player at all. Very useful for setting up ambushes.</p>
+  <p><b>Nonreactive</b> - In this statemachine the enemy won't perceive the
+  player at all.</p>
+  <p>To get an enemy into any of these statemachines, use once again the <i>C_SetStateMachine</i>
+  -message. And when the enemy perceives the player, it actually means it will
+  trigger its <b>OnActivate</b> event, thus you can add whatever messages to the
+  OnActivate -message tab of the enemy to make various things happen. Most
+  commonly to make the enemy to react to the player somehow (Switch into a
+  combat statemachine). In all the combat
+  statemachines that were listed before, the enemies have the same hearing and
+  seeing properties as in Idle statemachine, thus they will also trigger the
+  OnActivate event once the player is perceived.&nbsp;</p>
+  <p> Notice though that the enemy <b>
+  won't re-trigger</b> its OnActivate event when perceiving player multiple
+  times for as long as it
+  has not forgotten the
+  player (30 seconds from the last sight), or as long as its statemachine hasn't
+  been re-switched
+  into Idle, Idleuntilenemyseen or Nonreactive.&nbsp;</p>
+  <p>Some examples, let's say you want the enemy not to be able to hear
+  player. You do this by adding the following to the <b>Startup</b> tab:</p>
+  <blockquote>
+  <p class="fixed">This-&gt;C_SetStateMachine( idleuntilenemyseen);</p>
+  </blockquote>
+  <p>And to the <b>OnActivate</b> tab:</p>
+  <blockquote>
+  <p class="fixed">This-&gt;C_SetStateMachine( mobstercombat );</p>
+  </blockquote>
+  <p>You can also <b>stack</b> the statemachines, so if you want an enemy to do
+  a shootdodge backwards when it perceives you, and then start chasing you, you
+  can do it by sending these messages at <b>OnActivate</b>:</p>
+  <blockquote>
+  <p class="fixed">this-&gt;C_SetStateMachine(mobstercombat);<br>
+  this-&gt;C_SetStateMachine(singleshootdodgebackward);</p>
+  </blockquote>
+  <p>What this does is that it first sets the statemachine into MobsterCombat,
+  and immediately after that into SingleShootDodgeBackward. The statemachines
+  are stacked, so now the enemy has these two statesmachines stacked on top of
+  the IdleUntilEnemySeen. The statemachines are stacked in the order of
+  execution, so the enemy will in practice go into SingleShootDodgeBackward
+  statemachine first (which ends up on top of the stack), and once it's been
+  executed, it will revert to the previous statemachine in the stack, which is
+  MobsterCombat. Play around with it. You can stack multiple dodges and
+  shootdodges in there if you wish.</p>
+  <p>Here's still some more statemachines you should find useful:</p>
+  <p><b>StandAndIdle</b> - Same as idle but faces the player at all times, and
+  won't cause the re-trigger of OnActivate event.</p>
+  <p><b>Crouch</b> - Same as idle, but crouching, and won't cause the re-trigger
+  of OnActivate event.</p>
+  <p><b>Delay500ms</b> - A statemachine that forces the enemy into
+  &quot;idle&quot; state for half a second and then reverts to the previous
+  statemachine in the stack.</p>
+  <p><b>Delay1s</b> - Same as above but lasts one second.</p>
+  <p><b>Delay2s</b> - Same as above but lasts two seconds.</p>
+</blockquote>
+  <h2>More advanced actions</h2>
+<blockquote>
+  <p>Let's next try and add a little animation and some sound for the enemy once
+  it spots you. To the <b>StartUp</b> tab, put these messages:</p>
+  <blockquote>
+  <p class="fixed">This-&gt;C_SetStateMachine( idleuntilenemyseen );<br>
+  This-&gt;C_RemoveAllWeapons( Deserteagle );<br>
+  This-&gt;C_PickupWeapon( Pumpshotgun );<br>
+  This-&gt;C_PickupAmmo( Pumpshotgun, 3);</p>
+  </blockquote>
+  <p>To the <b>OnActivate</b> tab replace the existing messages with the following:</p>
+  <blockquote>
+  <p class="fixed">This-&gt;C_SetStateMachine( mobstercombat );<br>
+  This-&gt;C_SetStateMachine( delay1s );<br>
+  This-&gt;C_SetIdle(1, false);<br>
+  This-&gt;A_Play3DSound(enemy, mobster_alert,head);</p>
+  </blockquote>
+  <p>And to its <b>OnDeath</b> tab:</p>
+  <blockquote>
+  <p class="fixed">This-&gt;A_StopAll3DSounds(Head);<br>
+  This-&gt;CAM_AnimateParented( Death_03 );</p>
+  </blockquote>
+  <p>Now you can export the level and try it out. The enemy will initially have
+  a pumpshotgun at hand, and when it sees the player, it will shout an alert, mess with
+  its weapon for a moment,
+  and then start to shoot at you. Once it has shot you three times with a
+  pumpshotgun, it will switch to deserteagle.</p>
+  <p>Here's some explanations about the new messages in Startup tab:</p>
+  <p><b>C_RemoveAllWeapons( deserteagle );</b> - Removes all the weapons from
+  the character, but gives it the weapon defined in the parameters, plus
+  infinite ammo for that weapon. With this message, the weapon will just suddenly appear into the hand of
+  the enemy, so it's mostly useful just for the startup of the level. The valid
+  parameters are <b>baseballbat</b>, <b>beretta</b>, <b>berettadual</b>, <b>deserteagle</b>,
+  <b>grenade</b>, <b>ingram</b>, <b>ingramdual</b>, <b>jackhammer</b>, <b>m79</b>,
+  <b>molotov</b>, <b>mp5</b>, <b>pumpshotgun</b>, <b>sawedshotgun</b>, <b>sniper</b>,
+  <b>leadpipe</b> and <b>empty</b>. See data\database\weapons\.</p>
+  <p><b>C_PickupWeapon( Pumpshotgun );</b> - Gives the enemy a pumpshotgun in
+  addition to the desert eagle. With this message, the enemy will take the
+  weapon out of his pocket with an animation, so it can be sent to an enemy in
+  the middle of a combat situation if that is desired. Or you can for example
+  have an enemy with <b>empty</b> weapon at startup, and send this message to
+  the enemy as it spots the player. The enemy doesn't get any
+  ammo with this message, and it won't use the weapon it has if it doesn't have
+  any ammo. The valid parameters are the same as above.</p>
+  <p><b>C_PickupAmmo( Pumpshotgun, 3 );</b> - Gives the enemy three shells for
+  the pumpshotgun. Once again the valid&nbsp; weapon names are the same as
+  above.</p>
+  <p>Whenever an enemy has multiple weapons, it will always use the most
+  powerful ones first, and if it depletes all the ammo, switch to the second
+  best weapon, etc. The priority list can be seen from <b>data\database\weaponid.h</b></p>
+  <p>What happens in the OnActivate event is that the very first message sets the statemachine into MobsterCombat, and the
+  second message <b>immediately stacks another statemachine (Delay1s) up on top
+  of it</b>, thus causing the enemy to idle for 1 additional second after
+  perceiving the player. This additional second is in there just so that we can
+  animate the enemy at idle instead of making it start the combat immediately.</p>
+  <p>With <b>C_SetIdle</b> we change the idle animation to be &quot;1&quot;
+  instead of the default &quot;0&quot;. The idle animation &quot;1&quot; is a
+  reaction animation to the player for all common mobsters. The
+  &quot;false&quot; flag in there means that the animation won't be looping. If
+  we set it to looping, the enemy would restart doing this animation every time
+  it went idle. As it's false, the enemy will execute the animation only once,
+  and after that it's idle animation will be whatever it previously was.</p>
+  <p>There's basically 5 regular slots for idle animations per character, plus 5
+  more slots to be used if the character is wounded. You can make use for all 10
+  slots in MaxED by using <i>C_SetIdle</i> and <i>C_SetWoundedAnimations</i>
+  messages. The default animations are:</p>
+  <p><b>Slot 0</b> - The default standing animation</p>
+  <p><b>Slot 1</b> - Reaction to Max</p>
+  <p><b>Slot 2</b> - Aim (handy for ambushes)</p>
+  <p><b>Slot 3</b> - Get up from sitting</p>
+  <p><b>Slot 4</b> - Using something</p>
+  <p>To change the animation between any of these you do it with <i>C_Setdle</i>,
+  as you noticed. In the parameters you define the actual slot, and whether you
+  want the animation to loop or not. Note that some animations are set to not
+  loop within themselves.</p>
+  <p>In order to use the additional 5 slots, you set the slot itself with <i>C_SetIdle</i>,
+  and then force the enemy into wounded state with <b>C_SetWoundedAnimations(
+  true );</b>. Don't forget to disable the wounded animations when you want the
+  enemy to move though.</p>
+  <p><b>Slot 0 wounded</b> - The wounded standing animation</p>
+  <p><b>Slot 1 wounded</b> - Custom action, varies between skins. Usually
+  something enemies do while idling bored</p>
+  <p><b>Slot 2 wounded</b> - Aiming while crouched</p>
+  <p><b>Slot 3 wounded</b> - Sitting</p>
+  <p><b>Slot 4 wounded</b> - Talking</p>
+  <p>All the custom idle animations are defined in the skeleton and skin
+  scripts.</p>
+  <p><b>A_Play3DSound</b> obviously triggers an alert sound from the enemy's
+  head. Since we are playing the sound through a character, we need to define
+  the <b>bone</b>. The most obvious bone in this case to be used is <b>head</b>.
+  As you know, you can see all the sounds you have at your disposal from the
+  sound script files, but here's a brief list of the most useful enemy sounds:</p>
+  <p><b>junkie_alert</b> - Junkie shouting</p>
+  <p><b>junkie_noise</b> - Junkie making noise</p>
+  <p><b>junkie_talk</b> - Junkie having a conversation with himself</p>
+  <p><b>killersuit_alert</b> - Killersuit spotting Max</p>
+  <p><b>whistle</b> - Enemy whistling</p>
+  <p><b>whistle_quiet</b> - Same, but bit more quiet</p>
+  <p><b>mobster_alert</b> - A regular mobster spotting Max</p>
+  <p><b>mobster_group_alert</b> - A mobster group spotting Max</p>
+  <p><b>mobster_alert_known</b> - A mobster who knows Max spotting him</p>
+  <p><b>mobster_group_alert_known</b> - A mobster group who knows Max spotting
+  him</p>
+  <p><b>mobster_noise</b> - Mobsters making noise, used to warn the player</p>
+  <p><b>mobster_group_noise</b> - A mobster group making noise</p>
+  <p><b>merc_alert</b> - A merc getting alerted</p>
+  <p><b>merc_group_alert</b> - A merc group getting alerted</p>
+  <p><b>merc_noise</b> - Merc making noise</p>
+  <p><b>merc_report</b> - Essentially the same as above</p>
+  <p><b>police_alert</b> - Police getting alerted</p>
+  <p><b>police_noise</b> - Police making noise</p>
+  <p>The messages in the <b>OnDeath</b> tab:</p>
+  <p><b> A_StopAll3DSounds</b>  - Stops the enemy playing any sounds, basically
+  ensures that
+  the enemy won't shout its alert in case player kills him immediately with a
+  headshot.&nbsp;</p>
+  <p><b>This-&gt;CAM_AnimateParented( Death_03 ); </b>- Runs a deathcam for the
+  enemy. Basically you can use <b>Death_01</b>, <b>Death_02</b> or <b>Death_03</b>
+  here The camera paths are defined in
+  data\database\camerapaths\camerapaths.txt.</p>
+</blockquote>
+  <h2>Movement messages</h2>
+<blockquote>
+  <p>There are four messages you can use to command the enemies move around the
+  levels:</p>
+  <p><b>C_GoTo</b> - Moves to a waypoint.</p>
+  <p><b>C_GoToAndShoot&nbsp;</b> - Moves to a waypoint while shooting at the
+  targetcharacter (usually the player).</p>
+  <p><b>C_GoToPlayer </b>- Moves towards the player.</p>
+  <p><b>C_Patrol&nbsp;</b> - Patrols between a maximum of three waypoints.</p>
+  <p>Let's try and make the enemy in our test level to run to a waypoint when
+  the glass window in there breaks. First add a <b>waypoint</b> entity somewhere
+  into the level. There doesn't need to be a direct line between the enemy and
+  the waypoint, for as long as there is a valid AI network in the level, the
+  enemy can find its way to the waypoint no matter where it is (As long as
+  it is also possible for the enemy to move to that location). Name the waypoint as <b>w1</b>.</p>
+  <p>To the <b>DO_BulletCollides</b> tab of the breaking glass, add:</p>
+  <blockquote>
+  <p class="fixed">::room2::e1-&gt;C_GoToAndShoot(::startroom::w1, 1);</p>
+  </blockquote>
+  <p>What this does is that it commands the enemy to move to the defined
+  wayppoint (while shooting) with a speed of <b>1</b>. That is the maximum speed
+  and means running, the other option is walking, which would be <b>0.5</b>. Pay
+  attention to the object hierarchies in this message though, as they obviously
+  might not be the same in your level.</p>
+  <p>Once it reaches the waypoint it will basically start behaving according to
+  its statemachine. In this case, since the enemy would be in Mobstercombat, it
+  will start shooting and chasing the player. If it was for example in
+  CrouchAndShootStatic, it would start crouching and shooting, and wouldn't
+  chase the player. Notice that enemies do obey the movement messages even if their
+  statemachine states that they should be static.</p>
+  <p>Now try out changing the C_GoToAndShoot message into:</p>
+  <blockquote>
+  <p class="fixed">::room2::e1-&gt;C_GoTo(::startroom::w1, 1);</p>
+  </blockquote>
+  <p>The parameters are the same. One major difference with C_GoTo over
+  C_GoToAndShoot is that if the enemy perceives the player while moving, it will
+  immediately start acting according to its statemachine. For example, if in
+  combat statemachine, <b>it
+  will stop moving</b>, forget about the waypoint and start shooting.</p>
+  <p>So if you now shoot the glass before the enemy has
+  noticed you, it will start moving to the waypoint until it sees you. If it
+  won't see you, it will reach the waypoint and stand there, <b> adopting the
+  orientation from the waypoint</b>. If you howerever shoot the glass while the
+  enemy is already shooting at you, it won't basically do seemingly nothing (The
+  enemy starts to move, but at the same time perceives&nbsp; you immediately,
+  and thus won't actually move anywhere. Unless of course you are hiding...) And
+  basically if you want to make an enemy to run to a waypoint even if the player
+  is around, all you have to do is to &quot;blindfold&quot; it by using <b>Nonreactive</b>
+  statemachine.</p>
+  <p>Next try changing the movement message into:</p>
+  <blockquote>
+    <p class="fixed">::room2::e1-&gt;C_GoToPlayer(1);</p>
+  </blockquote>
+  <p>The parameter indicates the movement speed. This makes the enemy,
+  obviously, run to the player, and once it spots the player, act according to
+  the statemachine it is in. Basically all the NPC helpers there was in Max
+  Payne applied this movement message, and it is also useful in some combat
+  scripts.</p>
+  <p>Here's an example of C_Patrol message:</p>
+  <blockquote>
+  <p class="fixed">::room2::e1-&gt;C_Patrol( ::room2::w1, ::room2::w2, ::room2::w3, 0.5 );</p>
+  </blockquote>
+  <p>So you define three waypoints and the movement speed. Two of the defined
+  waypoints can be the same, if you want to patrol between two waypoints. Also
+  in C_Patrol the enemy will start acting according to the statemachine if it
+  perceives the player. You can try and make the enemy to patrol at its startup
+  between some waypoints.</p>
+</blockquote>
+<h2>AI net manipulation</h2>
+<blockquote>
+  <p>Sometimes you might have to manipulate the AI network a bit, for example if
+  you don't want to have an AI network somewhere on the floor, or if you want to
+  create an AI network on the air, or if the AI network is not dense enough.</p>
+  <p>First of all you can control the density of the AI net for any given room
+  from the properties of the room. Select a room in F5 mode, press <b>enter</b>,
+  and select the Statistics tab.</p>
+  <p align="center"><img border="0" src="images/ai-2.jpg" width="356" height="349"></p>
+  <p align="left">The number you can see there on the AI net density slider is <b>meters
+  per AI node</b>. You can try changing the value, and then re-calculating the
+  AI network and view the results with F7 and F8 in the game.</p>
+  <p align="left">Another way of manipulation is something we already applied
+  when we did the door in FSM &amp; DO tutorial; AI Blocks. AI blocks are
+  objects that are using a material from the AI_node_collision_nodraw category.
+  What they do is, that the engine takes them into account as geometry when it
+  calculates the AI network, even though they aren't drawn or collided into when
+  playing the game.&nbsp; As you might remember, we created AI blocks by the
+  door so that AI net wouldn't be created to the locations where the door would
+  be once opened. Basically in the AI net calculation process, the AI blocks are
+  considered as just another walls, and obviously no AI net will be passing
+  through them.</p>
+</blockquote>
+  <p align="center"><img border="0" src="images/ai-3.jpg" width="640" height="480"></p>
+      <blockquote>
+  <p align="left">&nbsp;You can also build platforms in the air so that AI net will be
+  created into mid-air, if that is desired. Try for example building a wedge and
+  you'll see how it affects the AI net.</p>
+      </blockquote>
+  <p align="center"><img border="0" src="images/ai-4.jpg" width="640" height="480"></p>
+<blockquote>
+  <p align="left">Notice how the AI net visualization shows lines pointing
+  downwards from the upper parts of the wedge. They are indicating that an enemy
+  can jump down from those locations. If the wedge would be higher, the AI net
+  wouldn't allow the enemies to jump down from too high. Building AI net into
+  air is useful sometimes because the AI net calculation doesn't take any
+  dynamic objects into account at all. You can, for example, build an
+  AI net inside elevators with AI blocks.</p>
+  <p align="left">When you experiment with this, don't forget that the <b>game
+  strips out AI nets when there is no way for any enemy to reach that place</b>.
+  For example no AI net is created on top of shelves, unless there is an enemy
+  or a waypoint there (Where enemy could be teleported). Likewise, if there are
+  no enemies or waypoints in your level, no AI net will be created into the
+  level at all.</p>
+</blockquote>
+  <h2 align="left">Team combat</h2>
+<blockquote>
+  <p align="left">Making a combat with several enemies involved might sometimes
+  be a bit tricky if you don't build the structure of the FSM-script properly.
+  Next we are going to suggest a way of doing team combat properly, and explain
+  how to do death cinematic for the last dying enemy of a bunch.</p>
+  <p align="left">The whole idea here is that when any of the enemies spots the
+  player, all the others should notice this as well. It is very easy to go wrong
+  here by making all the enemies to send messages to all the other enemies. As
+  was already explained in the FSM &amp; DO tutorial, it is always better to
+  gather all the messages into one location that will then send the required messages
+  to every entity involved from there. So once again:</p>
+</blockquote>
+  <p align="center"><img border="0" src="images/fsm_02b.gif" width="640" height="320"></p>
+<blockquote>
+  <p align="left">Imagine the joy of debugging an FSM structure as shown on the
+  right. But as the left-hand picture is trying to illustrate, we are going to use a
+  sort of a FSM relay with a custom string which sends all the messages to the
+  involved enemies when its custom event is triggered. And obviously it is
+  triggered as any of the enemies perceives the player.</p>
+  <p align="left">Before adding any actual enemies, let's first copy/paste one
+  more room for our level, and add a door between. Rename the room as <b>room3</b>.
+  Then let's put some
+  decoration into the room for our enemies to take cover. I'm simply using
+  crates for this tutorial, although I assume you will come up with something
+  more interesting in your real levels.</p>
+</blockquote>
+  <p align="center"><img border="0" src="images/ai-5.jpg" width="640" height="480"></p>
+<blockquote>
+  <p align="left">The next time you export the level, don't forget to recalculate the AI net since the geometry of
+  the level has changed. Usually the game lets you know if the AI net is not
+  valid, but in some cases it can just crash. Also it can't detect it if the
+  furniture inside the room has changed, just if the room itself or the room
+  count has changed.</p>
+  <p align="left">Then first create one <b>dummy object </b>(object with dummy
+  texture) into the new room, and turn it dynamic. This will function as the
+  relay FSM illustrated in the FSM structure pictures before, and also as a
+  timer for our combat script. We are using a DO instead of a Floating FSM Name
+  it as, say, <b>script</b>, set its <b>Cont. upd.</b> flag on, and add two
+  states to it; <b>enabled</b> (default), and <b>disabled</b>. Also add custom
+  strings called <b>start</b> and <b>initialize</b>.</p>
+  <p align="left">Then add one enemy into the room. Rename it as <b>e1</b>, and
+  for its <b>Startup</b> tab add:</p>
+  <blockquote>
+  <p align="left" class="fixed">this-&gt;C_SetStateMachine(nonreactive);<br>
+  this-&gt;C_RemoveAllWeapons(berettadual);<br>
+  this-&gt;C_PickupWeapon(pumpshotgun);<br>
+  this-&gt;C_PickupAmmo(pumpshotgun, 3);</p>
+  </blockquote>
+  <p align="left">And to its <b>OnActivate</b> tab:</p>
+  <blockquote>
+  <p align="left" class="fixed">::room3::script-&gt;FSM_Send(start);</p>
+  </blockquote>
+  <p align="left">Now we have the first enemy in, which we can use as a sort of
+  a template for the others. It is nonreactive from the level start, it's got a
+  dual beretta and pumpshotgun with it. It's gonna trigger a custom event called
+  <b>start</b> for the script DO when it perceives the player.</p>
+  <p align="left">Next. copy/paste the enemy into three (in F5 mode), and place
+  them around as you wish. You can change the enemy types from their properties
+  to get some variation. Also you should vary their weaponry somewhat. And let's
+  also make two of the enemies to run for cover. For that, we are going to have to add
+  some waypoints into the room. Where should you add them depends wholly on
+  where do you want the enemies to run and how do you want them to behave after
+  that. For this example, we'll make <b>e1</b> to just follow the player, <b>e2</b>
+  will run for cover and tries to stay there, moving back and forth between two
+  waypoints, and <b>e3</b> will run for cover
+  for a while and run out as soon as <b>e1</b> is killed. So let's set up
+  waypoints like this:</p>
+</blockquote>
+  <p align="center"><img border="0" src="images/ai-7.jpg" width="557" height="480"></p>
+<blockquote>
+  <p align="left">Obviously, e1 won't need any waypoints. There's two
+  waypoints for e2 so that we can make it run between them from time to time;
+  totally static targets are just too easy to shoot. And one waypoint for e3
+  since it won't be spending much time in its cover anyway.</p>
+  <p align="left">But it is now, the enemies would be just standing around with
+  their weapons, without being able to even perceive the player. They
+  are standing as nonreactive initially because we don't want them to hear the
+  player too soon, from behind the door. But we do want them to become aware once
+  the player opens the door. So, let's do that next. First, add a message to the
+  door opening animation (pay attention to which one of the opening animations,
+  if the door opens both ways):</p>
+  <blockquote>
+  <p align="left" class="fixed">::room3::script-&gt;fsm_Send( initialize );</p>
+  </blockquote>
+  <p align="left">So it's going to trigger this custom event for the <b>script</b>
+  DO as it is opened. If your door is such a door that it closes automatically,
+  do not forget to add logics there that will send the message only for the first
+  time the door is opened.</p>
+  <p align="left">Next open up the FSM dialog of the <b>script</b> DO, and for
+  the custom event <b>initialize</b>, add messages:</p>
+  <p align="center"><img border="0" src="images/ai-6.jpg" width="352" height="230"></p>
+  <p align="left">In other words, once the door is opened, all the enemies will
+  go into idle, and one of the enemies will walk to the player. Essentially,
+  since the enemies are going to start a combat as soon as the spot the player,
+  it will work so that one of the enemies will turn towards the player, or if
+  the player manages to hide before he is spotted, this same enemy will walk to
+  the door and towards the player to &quot;investigate&quot; what is going on.</p>
+  <p align="left">Then to the actual reactions for when they perceive the
+  player. First of all, we are going to need couple of timers for making the e2
+  to run between the two waypoints. So add two animations to the <b>script</b>
+  DO:</p>
+</blockquote>
+  <p align="center"><img border="0" src="images/ai-8.jpg" width="561" height="335"></p>
+<blockquote>
+  <p align="left">And then to the custom even <b>start</b>, add these messages
+  to the state-specific message list for <b>enabled</b> state:</p>
+  <blockquote>
+  <p align="left" class="fixed">this-&gt;FSM_Switch(disabled);<br>
+  ::room3::e1-&gt;C_SetStateMachine(mobstercombat);<br>
+  ::room3::e2-&gt;C_SetStateMachine(crouchandshootstatic);<br>
+  ::room3::e3-&gt;C_SetStateMachine(crouchandshootstatic);<br>
+  ::room3::e1->A_Play3DSound(enemy, mobster_group_alert, head);<br>
+  ::room3::e1->C_SetIdle(1, false);<br>
+  ::room3::e1->C_SetStateMachine(delay500ms);<br>
+  ::room3::e3->C_GoToAndShoot(::room3::e3w1, 1);<br>
+  this->DO_Animate(e2_timer1);</p>
+  </blockquote>
+  <p align="left">The first message switches the state to <b>disabled</b>, so
+  that the <b>start</b> custom event getting triggered won't have any effect
+  after it's been triggered once. Then it sets the enemies into combat
+  statemachines. It makes e1 shout an alert, and mess with its weapon
+  for half a second. e3 will run to its cover while shooting at the player, and
+  because of having crouchandshootstatic statemachine set, it will stay there
+  then as well. Lastly, it will start the first timer animation that we just
+  added in.</p>
+  <p align="left">And notice that since e1 is going to shout something, we
+  should add little something to it's <b>OnDeath</b> tab:</p>
+  <blockquote>
+  <p align="left" class="fixed">this->A_StopAll3DSounds(head);</p>
+  </blockquote>
+  <p align="left">Then to the messages that the animation keyframes of the <b>script</b>
+  DO should
+  trigger:</p>
+</blockquote>
+  <p align="center">&nbsp;&nbsp;&nbsp; <img border="0" src="images/ai-10b.jpg" width="640" height="599"></p>
+<blockquote>
+  <p align="left">As you can see, the movement messages for e2 are sent from
+  here, because they have to be re-sent over and over until e2 dies. And as you
+  can see, the two timers start up each others at the end keyframes. We still
+  have to make sure the animation does end when e2 dies, or otherwise the object
+  would keep animating until the end of the level, causing some overhead. So to
+  the <b>OnDeath</b> tab of e2, add:</p>
+  <blockquote>
+  <p align="left" class="fixed">::room3::script-&gt;DO_StopAnimation();</p>
+  </blockquote>
+  <p align="left">And still to make e3 come out of the cover as e1 dies, to the <b>OnDeath</b>
+  tab of e1, add:</p>
+  <blockquote>
+  <p align="left" class="fixed">::room3::e3-&gt;C_SetStateMachine(mobstercombat);<br>
+  ::room3::e3->C_GoToPlayer(1);</p>
+  </blockquote>
+  <p align="left">There, now you can export the level and try it out!</p>
+  <p align="left">Once you are through with testing and seen that everything
+  works as is supposed to, let's still add logics to show a cinematic death cam
+  of the last person who dies. First add a <b>Floating FSM</b> into the room, name it as <b>death_counter</b>,
+  add states <b>1</b> (default), <b>2 </b>and <b>3</b> to it, and add a custom strings
+  called <b>add1</b>, <b>add2</b> and <b>add3</b> to it.</p>
+  <p align="left">Then to the <b>OnDeath</b> of e1, add:</p>
+  <blockquote>
+  <p align="left" class="fixed">::room3::death_counter-&gt;FSM_Send(add1);</p>
+  </blockquote>
+  <p align="left">To the <b>OnDeath</b> of e2, add:</p>
+  <blockquote>
+  <p align="left" class="fixed">::room3::death_counter-&gt;FSM_Send(add2);</p>
+  </blockquote>
+  <p align="left">To the <b>OnDeath</b> of e3, add:</p>
+  <blockquote>
+  <p align="left" class="fixed">::room3::death_counter-&gt;FSM_Send(add3);</p>
+  </blockquote>
+  <p align="left">So each one of the enemies will trigger their own custom event
+  to the death_counter. Now make it so that each time any of these events gets
+  triggered, the custom FSM will change its state to the next one. Basically
+  upon the custom event <b>add1</b>, when on state <b>1</b>, send <i>this-&gt;FSM_Switch(2);.
+  </i>When on state <b>2</b>, send <i>this-&gt;FSM_Switch(3); </i>etc... This is
+  from the FSM dump of the death_counter:</p>
+  <blockquote>
+  <p align="left" class="fixed">Send on "FSM_Send(add1)"<br>
+  Send on &quot;1&quot;<br>
+  this->FSM_Switch(2);<br>
+  Send on &quot;2&quot;<br>
+  this->FSM_Switch(3);</p>
+  <p align="left" class="fixed">Send on "FSM_Send(add2)"<br>
+  Send on &quot;1&quot;<br>
+  this->FSM_Switch(2);<br>
+  Send on &quot;2&quot;<br>
+  this->FSM_Switch(3);</p>
+  <p align="left" class="fixed">Send on "FSM_Send(add3)"<br>
+  Send on &quot;1&quot;<br>
+  this->FSM_Switch(2);<br>
+  Send on &quot;2&quot;<br>
+  this->FSM_Switch(3);</p>
+  </blockquote>
+  <p align="left">So basically just add all the six FSM_Switch messages to the
+  correct state-specific message lists. Take a look at the example level if it's
+  hard to figure out.</p>
+  <p align="left">Then to the <b>add1</b> custom event when on state <b>3</b>,
+  add:</p>
+  <blockquote>
+  <p align="left" class="fixed">::room3::e1->CAM_AnimateParented(death_01);</p>
+  </blockquote>
+  <p align="left">This means if <b>e1</b> sends custom event <b>add1</b> to the
+  death_counter when it's in state 3 (=both other enemies have been killed
+  already), it will trigger the death cam for <b>e1</b>. As you propably guessed
+  already, you add similar message to the other custom events as well.</p>
+  <p align="left">To the <b>add2</b> custom event when on state <b>3</b>, add:</p>
+  <blockquote>
+  <p align="left" class="fixed">::room3::e2-&gt;CAM_AnimateParented(death_01);</p>
+  </blockquote>
+  <p align="left">To the <b>add3</b> custom event when on state <b>3</b>, add:</p>
+  <blockquote>
+  <p align="left" class="fixed">::room3::e3-&gt;CAM_AnimateParented(death_01);</p>
+  </blockquote>
+  <p align="left">And there you have it. Export the level and try it out.</p>
+</blockquote>
+<h2>Debugging combat scripts</h2>
+<blockquote>
+  <p>By now you propably noticed that it's sometimes easy to forget something
+  when making combat scripts, and when it happens that your enemies aren't
+  behaving as you intented them to, there are few methods to debug your combat scripts.</p>
+  <p>One&nbsp; method is to print an XML dump if the FSMs; While in move mode in
+  MaxED, select <b>Dump FSM's as XML</b> from the Mode commands dialog. You can
+  investigate the FSM messages that way for errors.</p>
+  <p>Or in some cases it is useful to dump the information of a given character
+  to the console in order to see which statemachine it is in and various other
+  useful information:</p>
+  <blockquote>
+  <p class="fixed">::room2::e1-&gt;c_dump();</p>
+  </blockquote>
+  <p>You can scroll the console list with <b>Ctrl+arrow keys</b>. If you can't remember the name of the enemy, you can get it printed into
+  the console by typing <i>MaxPayne_GameMode-&gt;GM_DrawTarget(1);</i> and then
+  aiming at the character.</p>
+</blockquote>
+<h2>Few other useful commands</h2>
+<blockquote>
+  <p>There are some other commands that are pretty simple to use and you might
+  find them useful. I'll explain them through simple examples:</p>
+  <p><b>P_CreateProjectileToBone( enemy_painkiller, 1, gun );</b> - The first
+  parameter is the <b>projectile</b> to create, the second parameter is the <b>number
+  of projectiles</b> to create, and the third parameter is the <b>bone</b> where
+  to create the projectile. This message typically used at the OnDeath tab of an
+  enemy, so that it will drop something when it dies. You can see the valid
+  projectiles to be used in here from data\database\projectiles\. Basically use
+  anything with <b>enemy_</b> prefix.</p>
+  <p><b>C_SetTargetCharacter( ::Room3::NPC1 ); </b>- This will make a character
+  to consider someone else as its enemy than player. So basically you can make
+  enemies shoot at each others. As a parameter you can define any character in
+  the level, or then simply <b>player</b>.</p>
+  <p><b>C_ForceUpdate( 15 ); </b>- Typically the engine doesn't handle the
+  behaviour of any enemy unless the enemy is in the view (or has been a while
+  back), or some movement message has been sent to an enemy. So sometimes you
+  might need to use this message to force the engine to start handling some
+  enemy, in order for it to be able to see the player, etc...<font face="Arial" size="2">
+  The parameter is the time in seconds how long the engine will keep updating
+  the character even if it keeps staying out of the view.</font></p>
+  <p><font face="Arial" size="2"><b>C_Teleport( ::Room2::w1 ); </b>- Is used to
+  teleport enemies to the waypoints. It teleports the message receiver to the
+  waypoint defined in the parameters.</font></p>
+  <p><font face="Arial" size="2"><b>C_SendSpecial();</b> - This is typically sent to the <b>activator</b>
+  from a character collide trigger. It is used to make something happen when a
+  specific enemy touches a trigger. You propably noticed the mysterious event
+  called <b> OnSpecial</b> in the message dialog of the characters. When
+  C_SendSpecial(); is sent to the activator, it will trigger the OnSpecial event
+  for the character, thus if you for example want a character <b>A</b> to die as
+  it touches a trigger, you send this to the activator, and from the OnSpecial
+  tab of <b>A</b>, you send <i>this-&gt;c_sethealth(0);</i> and also in most
+  cases disable the trigger as it's of no use anymore.</font></p>
+</blockquote>
+
+    </td>
+  </tr>
+</table>
+	</td>
+  </tr>
+</table>
+</body>
+
+</html>

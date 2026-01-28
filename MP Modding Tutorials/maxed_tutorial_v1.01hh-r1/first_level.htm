@@ -1,0 +1,486 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+<title>Creating Your First Level</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<base target="main">
+</head>
+
+<body leftmargin="0" topmargin="0">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" height="80">
+  <tr>
+    <td width="50%" height="80" bgcolor="#000000"><img border="0" src="images/maxlogo.gif" width="260" height="80"></td>
+    <td width="50%" height="80" align="right" bgcolor="#000000"><img border="0" src="images/rmdlogo.gif" width="115" height="64"></td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="16">
+  <tr>
+    <td>
+      <table border="0" cellpadding="0" cellspacing="0" width="640">
+        <tr> 
+          <td> <h1 align="left"><br>
+              Creating Your First Level</h1>
+      <blockquote>
+        <p>With this tutorial you are going to learn some of the MaxED basics.
+        Issues like basic modeling, booleaning, exit creation (visibility
+        optimization) and exporting the level to
+        the game are covered. Please refer to other MaxED
+        documentation or other tutorials for additional information .
+              <p> Start MaxED. Make sure that you have set it up correctly (see 
+                &quot;<a href="setup_maxed.htm" target="_self">Setting up MaxED</a>&quot;) 
+                and it is working with the game database. Open the tutorial file 
+                (Creating_first_level.zip, which is in the zip archive that this 
+                help file came in, or you can download it <a href="http://www.maxpayne.com/tutorials/MaxED/downloads.htm" target="_blank">here</a> 
+                along with some other nice things.) to see what will be our goal. 
+                Then, it might be best to close the document and start from scratch. 
+            </blockquote>
+      <h2>
+      A new document...</h2>
+      <blockquote>
+      <p>
+      By default, MaxED opens an empty level file with no textures and no
+      geometry, just the blue grid and the camera in their default positions.
+        <p>If you do not already have an empty level file open for some reason,
+        you can get one by selecting <b>File/New</b>...</p>
+      </blockquote>
+      <p align="center"> <img border="0" src="images/tut1_01.jpg" width="600" height="450"></p>
+      <h2>Few words about modes... 
+      
+      </h2>
+      <blockquote>
+      <p>Editing-wise, MaxED is based on different editing <b>modes</b>:<br>
+      <br>
+      <b>F3</b> &#8211; &#8220;Model&#8221; - New entities/key points/meshes are created in this mode.<br>
+      <b>F4</b> &#8211; &#8220;Extrude&#8221; &#8211; This is essentially a polygon editing mode.<br>
+      <b>F5</b> &#8211; &#8220;Transform&#8221; &#8211; An object editing mode.<br>
+      <b>F6</b> &#8211; &#8220;Texture&#8221; - Most of the texture related editing is done in this mode.<br>
+      <b>F7</b> &#8211; &#8220;Exit creation&#8221; - Exits are created in this mode<br>
+      <b>F12</b> &#8211; &#8220;Move grid&#8221; - Most of the grid functions are available always, but some additional grid manipulation is done in this mode<br>
+      <b>SPACE</b> &#8211; &#8220;Move&#8221; &#8211; The movement mode.</p>
+      <p>Whatever manipulation you want to do to your level, you have to be in the correct editing mode before you can do
+      the right things. Some commands can be done in multiple editing modes for user&#8217;s
+      convenience. For example you can do some texture operations in F5 mode as well. You can get a list of available commands in each mode from the &#8220;Mode Commands&#8221; menu. It only shows the commands of the current mode you are in. You can also get the &#8220;Mode Commands&#8221; menu by pressing the middle mouse button or
+      CTRL+SPACE
+      in the render window.&nbsp;
+      </p>
+      </blockquote>
+      <h2>
+      Moving around&nbsp; (Move mode)</h2>
+      <blockquote>
+        You can now try moving around in the world. You can look around freely by pressing down LEFT MOUSE BUTTON (<b>LMB</b>) and moving the mouse.
+        Move forwards and backwards by pressing down RIGHT MOUSE BUTTON (<b>RMB</b>) and moving the mouse forwards or backwards.
+        Strafing is done by pressing down <b> SHIFT and moving the mouse</b>.
+        <p>TIP: If you can't move, make sure you are in "Move" mode by pressing <b>spacebar</b>.
+        Note that pressing spacebar multiple times toggles between two types of movement modes.
+        The regular and a so called "Around"-mode. The "Around" mode makes the view move around any given point in the level
+        geometry (pressing and holding <b> LMB</b> initiates horizontal rotation around
+        that point, <b> RMB</b> is for vertical rotation). Since we don't have any geometry yet, we can't use it.</p>
+      </blockquote>
+      <h2>
+      Adding textures</h2>
+      <blockquote>
+        <p>
+      First, you will need to add textures to your level. MaxED handles textures
+      as &quot;materials&quot;. There are several material categories to which
+      organize your textures, each with their own properties (sound, decals,
+      etc.), and all textures in a specific category will behave the same in the
+      game. This means that if you put a brick texture to the wood -category, it
+      will emit wood particles when shot, sound like wood when stepped on, and
+      leave a wood decal in the game.<p>Adding textures to a level can be done
+        in more than one way, but the best way, at least for now (to get our
+        tutorial rolling) is to grab
+        all the textures of another level file, in this case from the example
+        level &quot;creating_first_level.lvl&quot;. To do this, select <b>Insert materials from file</b> from the Material menu.&nbsp;<p>Navigate the selector to the
+        &quot;creating_first_level.lvl&quot;,
+        select it and press OK.<p>
+      After small preprocessing delay, you should see a bunch of textures in the material palette
+        window bottom-left corner of the MaxED window, with texture names and texture sizes shown.&nbsp;<p>Take
+        a moment to get yourself acquainted with the few materials (textures)
+        you just inserted, notice also that above the material selector there is
+        a pop-up list that shows the current material category. Select also other categories to check out
+        their contents.<p>When you click a
+        texture with LMB, you make that the <b>current material</b>. The active texture is indicated by a blue highlight.<p>TIP:
+      If
+        you want to add some of your own textures, you can <b>drag and drop</b>
+        them from windows to material palette or use <b>Insert bitmaps</b>.
+        MaxED can handle JPG, TGA, PCX, SCX and BMP formats, but it is recommend
+        you use jpg, since at its highest quality the difference to, for
+        instance TGA, is almost unnoticeable and the file size still a lot smaller
+        (much of the size of a level comes from the textures). The textures can
+        be of any size, but for compatibility reasons and better performance on some
+      hardware, <b> it is better to keep the dimensions in 2 based figures: 2, 4, 8,
+      16, 32, 64, 128, 256 etc.</b> As texture memory and rendering speed are always
+      something to consider, texture resolution should not usually exceed 1024
+        in any dimension.<p>Right-clicking
+        the material in the material palette will bring up a a menu with lot of
+        settings for materials, but we will jump into that in more detail later.
+      </blockquote>
+      <h2>
+      Creating some room geometry (F3 mode)</h2>
+      <blockquote>
+        <p>By default MaxEd is in <b> wireframe</b> mode. Use <b> F2</b> to toggle into
+      <b> texture</b> <b>
+      rendering </b> mode (alternatively toggle Mode/Wireframe tick off from the
+      menus). Generally all MaxEd work is recommended to be done in the textured
+      mode and you need the WF mode very rarely, if ever. Try to toggle between
+        the modes now.&nbsp;
+        <p>TIP: If nothing seems to happen, try right-clicking inside the
+        rendering window first. Some options (like switching modes) in MaxED
+        aren't available before you make the rendering window active by clicking
+        in it. It is recommended that you right-click as this minimizes the risk
+        of accidentally moving something.
+        <p>Lets adjust the preferences a little before we proceed any further.
+        Open preferences dialog by pressing&nbsp; <b>Ctrl+P</b>.&nbsp;
+      </blockquote>
+      <blockquote>
+      <p>
+      At this early stage, we do not want to worry about exits or lightmaps. So
+      remove the tick from <b>Exit
+      acceleration</b> and make sure that the radio button at Texture display
+      is set to <b>Only primary texture</b>. We'll get to these issues later,
+      so let's just press OK for now.
+      </blockquote>
+      <p align="center">
+      <img border="0" src="images/tut1_02b.gif" width="360" height="213">
+      <blockquote>
+      <p>
+      Next we&#8217;ll create a simple room. Press <b> numpad +/-</b> to adjust <b> grid
+      size</b>, by default it is 0.5 meters so let's make it one meter by pressing
+      numpad + once. You can see the current grid unit in the bottom right
+      corner. Move closer to the grid and turn yourself a little more towards
+      the grid (i.e. look down a little).<p>Press <b> F3</b> to switch into <b> Model
+      mode</b>.
+      Click the brick material in the default category if you have not already
+      done so.<p>Now draw a shape onto the grid.
+      Do this by pressing <b>LMB</b> on the grid points. While drawing, keep an eye on the lower right corner to see the
+      <b> measurements</b> of the shape you&#8217;re creating. Draw a 6m x
+      8m square on the grid.
+      </blockquote>
+      <p align="center"><img border="0" src="images/tut1_03.jpg" width="300" height="250">
+      <blockquote>
+      <p>While drawing, remember that the shape can not intersect itself, a
+      vertex causing this is considered illegal, and MaxED won't let you place
+      such a vertex (the shape will turn red). You can press <b> delete</b> during
+      the drawing to undo last vertex placement. By pressing <b> spacebar or ESC
+      </b>you can
+      cancel the drawing altogether.&nbsp;<p>
+      When you have placed all the 4 points, press <b> RMB to extrude</b> the shape into a
+      3D object.&nbsp;<p>The shape now changes from a 2D shape into a 3D-object
+      with texturing visible (unless you are in WF mode) with the mesh faces pointing
+      inwards, meaning that you see all the faces when you are inside it (these
+      are used for rooms).
+      If you are outside the mesh (like here), the faces that have their backsides towards
+      you get <b>culled</b> and are not visible. We are making a room, so this
+      is exactly what we want.<p>TIP: From the preferences
+      (&#8220;flip faces after mesh creation&#8221;) you can set whether all the
+      objects are by default created with their polygon faces pointing outwards
+      or inwards. You can manually flip the object with &#8216;CTRL-F&#8217;
+      while pointing at the object in F4-mode.
+      </blockquote>
+      <p align="center"><img border="0" src="images/tut1_04.jpg" width="300" height="250">
+      <blockquote>
+      <p>You should also
+      see a new mesh appear in <b> hierarchy</b>  <b> list</b> in top-left corner named &quot;New Mesh
+      00&quot;.&nbsp; Right-click the name in the list and select <b> Properties</b>
+      from the menu. You get a dialog with the name on the middle, change this
+      to &quot;Startroom&quot;.
+      </blockquote>
+      <p align="center"><img border="0" src="images/tut1_05.jpg" width="354" height="349">
+      <blockquote>
+      <p>If you think that your shape was a
+      complete failure, you can delete the mesh either from the hierarchy list
+      by right-clicking the name and selecting <b>kill</b>, or by going to
+      F5 mode, selecting the room with LMB click and pressing <b>delete</b>.&nbsp;<p>TIP:
+      You can move around with <b> arrow keys</b> while you are drawing objects outlines
+      in F3 mode. To make use of this while creating bigger, more complex
+      objects, it's a good idea to first point the camera directly towards the
+      grid so the distance to the grid remains the same when moving. Ctrl
+      combined with up and down arrow will advance and back up during drawing.<p>TIP: If you don't want to model a mesh with volume, but rather just a single polygon,
+      a 2D-object, draw the desired outlines to the grid just as above, but
+        <b> hold down SHIFT when clicking RMB.</b> Note however, that while
+      sometimes useful, 2D-objects are a lot more cumbersome than 3D-objects
+      because they cannot be transformed later as 3D-objects can. If you want a
+      2D-object in a level that you can fully manipulate in MaxED, make it a
+      3D-object, and texture all but one face with a dummy texture (any texture
+      that you put in the &quot;dummy&quot; -category). All polygons with this
+      texture will be completely unnoticeable in the game.&nbsp;</p>
+      </blockquote>
+      <h2>Editing room polygons&nbsp;(F4 mode)</h2>
+      <blockquote>
+      <p>You have created a basic form for the room, but it is only one
+      current grid unit thick (1 meter, if that's what you had for the grid size
+      when you extruded the object). That is clearly not enough
+      (Max requires some 2 meters minimum as he is 185 cm tall, and the camera
+      works best if the rooms are some 4 meters or more tall) so we have to <b>
+      extrude</b> the shape a little by modifying its polygons.&nbsp;<p>Switch into
+      <b> F4 mode</b>, move cursor over the &#8216;ceiling&#8217; polygon (but
+      do not click) to select a poly (You will see the active polygon indicated by yellow/red outline).
+      Below left you see what might happen when you point at the roof from
+      above, and <b>&quot;select culled polygons&quot;</b> in the preferences is
+      not on: the floor gets selected, not the roof. To select the
+      roof, either move down and look up to see the roof, or even better, use <b>insert</b>
+      key to toggle &quot;select culled polygons&quot; option on/off. Once on, you
+      can select polygons even from their back side as seen on right.
+      </blockquote>
+      <p align="center">&nbsp;<img border="0" src="images/tut1_06.jpg" width="600" height="200">
+      <blockquote>
+      <p>Now you can extrude shape by pressing <b> LMB and dragging mouse
+      up/down</b>.
+      In this case, it may be easier to press <b>arrow keys up/down</b> to get more
+      accurate control. If your grid unit is still 1 meter, press cursor up 3
+      times to extrude mesh 4 meters high as seen here. If you do not move your
+      mouse, you can keep pressing cursors up/down till you are satisfied.
+      Pressing cursors right/left or <b> RMB</b> would skew the face in relation to
+      active edge (red one) but lets not get into that now.
+      </blockquote>
+      <p align="center"><img border="0" src="images/tut1_07.jpg" width="400" height="300">
+      <blockquote>
+        <p align="left">Congratulations, you have made your first room, you will
+        be making killer levels in no time :-)<p align="left">Notice that in
+        MaxED usually all of the meshes you make are volumes, not just a bunch
+        of polygons. MaxED is a so called 'solid modeler'. You can not
+        extrude or skew polygons of an object through itself (or any edges),
+        because that would result into illegal volumes and would mess up the
+        Boolean operation functionality. For instance,
+        you can not bring the roof down to absolutely touch the floor -- that
+        would make the walls zero height and the room volume non-existing. You
+        can get closer than one meter though by making the grid unit smaller.
+        You should not also ever delete faces from rooms or anything that you
+        plan to Boolean later. If a face (polygon) is deleted a volume is is no longer
+        defined -- Booleans become impossible. We'll get back to these issues in
+        more detail later.
+      </blockquote>
+      <h2>The Grid (F4/F12 mode)</h2>
+      <blockquote>
+      <p>Before we proceed, you should learn to use the grid a bit better -- it
+      is your most important tool in MaxED.&nbsp;&nbsp;<p>The grid can be
+      aligned by hovering over a polygon in F4 mode and pressing <b> A </b> (free align)
+      or <b> Shift-A</b> (align in world coordinates). Remember to turn the grid on (<b>numpad
+      *</b>).&nbsp;<p>Please note that the grid will be placed to the intersection
+      of your camera's normal (a 'beam' away from the middle of the screen) and
+      the polygons plane that you point. You should always look fairly directly
+      to the polygon that you want the grid to be aligned to. If you are in a very
+      low angle, the grid might be placed pretty far as. See the example below
+      left, where the grid is aligned to the floor.&nbsp; The one on the
+      right is a much more successful alignment, as the middle of the screen is
+      better positioned in relation to the plane of the desired polygon.
+      </blockquote>
+      <p align="center"><img border="0" src="images/tut1_13.jpg" width="600" height="210">
+      <blockquote>
+      <p>Practice a little: Move around your model and switch to F4 mode to
+      align the grid. Try to align to another polygon (wall for instance) and
+      move again. Try switching the backface selection on/off by pressing <b> Insert
+      </b>
+      when
+      aligning. Also try to change the grid size (<b>numpad +/-</b>).<p>Go into the
+      Grid mode by pressing F12. In this mode you can move the grid around with <b>
+      LMB</b> and raise and lower it in steps of one current unit by <b> RMB</b> --
+      alternatively by using <b> cursor keys</b> and <b> PageUp/PageDown</b>.<p>Notice the spot
+      in the middle of the grid, that is the grids origin. You need that in some
+      operations, like when you want to place the pivot point of an object.<p>If
+      you get completely lost, go to F12 mode and press <b> R</b> to reset the grid and
+      the camera to their default positions.
+      </blockquote>
+      <h2>
+      Handling objects, using Booleans&nbsp; (F5 mode)</h2>
+      <blockquote>
+      <p>Let's copy the room mesh to get another room. Go to <b>F5</b> mode, then select the
+      room by clicking <b> LMB</b> on it. Now copy/paste it by pressing <b>CTRL-C</b>,
+      <b> CTRL-V</b>
+      in a sequence, and move the new room to the desired position with the <b>arrow
+      keys</b>. The copied room is automatically selected after the paste, so
+      you do not have to select it (top left image)
+      <p>To join the rooms you should create a short corridor between them. Move the camera
+        so that you can see in between the two and enter <b> F3</b> mode once
+        again. Draw the outline of the corridor.
+        Extrude the ceiling of the corridor to be high enough. Make it 3 meters high
+        (see top-right and bottom-left pictures below). Of course you CAN make
+      doors that are real-life sized (some 1x2 meters), but if you are planning
+      to move around in the level fluently, you should pretty much multiply all
+      real-life measurements by 150%, thus making a &quot;good&quot; door
+      something like 1,5m x 3m in size. Max's collision capsule prevents Max
+      going through an opening smaller than 98 cm in width and some 195 in
+      height.</p>
+      </blockquote>
+      <p align="left"><img border="0" src="images/boolean-1_2.jpg" width="640" height="240"><br>
+      <br>
+      <img border="0" src="images/boolean-3_4.jpg" width="640" height="240"></p>
+      <blockquote>
+        Now we need to Boolean the meshes together. It's better to stay where
+        you are (between and outside the rooms). Enter <b>F5</b> mode and click
+        the corridor object with
+        <b> LMB</b> to select it, press <b>U</b> (Union), and click the room on
+        the left with
+        <b> LMB</b>. You get a dialog where you can still change the Boolean operation, or
+        Cancel it altogether. Union the
+        hallway to each one of the room meshes. As a result, you'll have two
+        rooms with a hallway between them.
+      </blockquote>
+      <h2>
+      Placing exits&nbsp; (F7 mode)</h2>
+      <blockquote>
+      <p>For visibility optimization, Max Payne uses <b>exits</b>, which
+      basically are planes that define the boundaries of the rooms. What the
+      engine always draws is everything inside the room you are in, and
+      everything you can see through exits. This means if you didn't make a
+      single exit to a level, the engine would render the whole level all the
+      time regardless of how small portion of it you would see. But don't forget
+      that exit processing also takes time so you shouldn't make too many exits
+      into the level. Typically you make exits to the doorways. So let's make an
+      exit to the doorway of our example level. <b>(note that you can only
+      create an exit so that all of it's edges touch the room object that it is
+      dividing)</b></p>
+      <p>
+       Align the grid to the wall with the corridor. Switch to Exit (<b>F7</b>) mode.
+      </p>
+      <p>Draw the exit along the outlines of the corridor. Place a vertex at each edge position with
+      <b> LMB</b>. Do notice that in this mode MaxED shows polygon and edge selections, just like in F4 mode (Yellow and red lines). The edge that is closest to the mouse cursor is always the one that is
+      <b>selected</b>. <b> Make sure that an edge that intersects with the grid is selected when you click the mouse button</b>.
+      </p>
+      </blockquote>
+      <p align="center"><img border="0" src="images/exits-1.jpg" width="320" height="240"></p>
+      <blockquote>
+      <p>
+      TIP: If the corridor doesn&#8217;t match with the grid you can use <b> A</b>
+      in F3 mode to align grid origin to the selected edge. (Obviously the edge has to be intersecting with the grid).&nbsp;</p>
+      <p>After drawing the outlines, press <b> RMB</b> to place the exit.</p>
+      </blockquote>
+      <p align="center"><img border="0" src="images/exits-2.jpg" width="320" height="240"></p>
+      <blockquote>
+      <p>
+       You should now see a &#8216;Mesh Separated into two by exits&#8217; message on screen. Accept that with
+       OK and you will see the exit appear in the rendering mode showing as a cyan plane between the
+      room and the corridor.</p>
+      <p>The room gets split into two (look at the hierarchy tree), and now  you should have &#8220;Startroom01&#8221; and &#8220;Startrom02&#8221; in there. Rename &#8220;Startroom01&#8221;
+      to &#8220;Startroom&#8221;.</p>
+      </blockquote>
+      <h2 align="left">
+      Exporting level</h2>
+      <blockquote>
+      <p align="left">
+      First let&#8217;s add a player <b>Startpoint</b> to the level. Place the grid on the floor of the &#8220;Startroom&#8221;, and press
+      <b>N</b> to
+      insert
+      a new entity onto the grid. A&nbsp; &#8220;New Entity&#8221;-dialog will appear. Choose &#8220;Jumppoint&#8221; from the list. Now group the Jumppoint to the room it&#8217;s in by pressing
+      <b> CTRL+E</b> in F5 mode (Autogroup All).
+        </p>
+        <p> <b>Few words on grouping and hierarchy levels</b></p>
+        <p> All the grouping commands you can use are:</p>
+        <p> <b>G</b> &#8211; Group Selected; Select a mesh, press G, and press LMB to the desired parent mesh<br>
+        <b>
+      CTRL+G</b> -  Lift Children; Lifts all the children of the selected mesh up one hierarchy level.<br>
+        <b>
+      SHIFT+G</b> &#8211; Lift This; Lifts the selected mesh up by one hierarchy level.<br>
+        <b>
+      E</b> &#8211; Autogroup; Groups all the meshes inside the selected room to it.<br>
+        <b>
+      CTRL+E</b> &#8211; Autogroup All; Goes through all the rooms in the level and does the above.</p>
+        <p> In MaxED, the level consists of &#8220;Rooms&#8221; (The topmost meshes in the hierarchy tree), which are separated by exits.  All the objects inside a given room are hierarchized to be
+        it's children. This way the engine can do visibility optimization
+        properly. For dynamic content, MaxED uses messages that are sent to
+        specified objects. The objects are defined not only by their name but also by their
+        hierarchy level. For example &#8220;::Startroom::Startpoint 00&#8221;. Also for animating objects, an animating parent always moves its children along with it. In
+        MaxED, when you select a parent, all it&#8217;s children are also selected,
+        and when you move a parent somewhere, all it&#8217;s children move too.</p>
+              <p align="left">Once the necessary grouping and Startpoint adjustments are 
+                done, you are ready to take the level to the game.&nbsp; Check 
+                the <a href="setup_maxed.htm" target="_self">Setting up MaxED</a> 
+                -section about the necessary modifications that you might want 
+                to make to the game before doing any of the following. </p>
+      <p align="left">When all that is done, export the level to the .LDB format that the game engine uses. Select &#8220;File&#8221; -> &#8220;Export X_LevelDB&#8230;&#8221; Click
+      on ok to
+      both questions. Next browse your way through to the game directory, and from there go to: &#8220;&#8230;\data\database\levels\examples\&#8221;-directory. Export your level with the name of
+      <b>my_level.ldb</b>. Alternatively, if you so choose, you can overwrite
+      the basic_room.ldb example so that you will not have to do the following
+      changes into levels.txt
+        </p>
+              <p align="left"> If you decided to use my_level.ldb as the name, you need 
+                to edit the <b>levels.txt</b> that we extracted from the ExampleMod 
+                (see <a href="setup_maxed.htm" target="_self">Setting up MaxED</a>). 
+                Opening it up, you will see the topmost level block (basic_room) 
+                that is used by the example level. Make a copy of the whole block 
+                (copy/paste) so that you have two of them one after the other. 
+                Then rename the new block to <b>my_level</b>. Also change the 
+                &#8220;Level&#8221; definition to be <b>my_level.ldb</b> instead 
+                of &#8220;basic_room.ldb&quot;. Below is a part of the file as 
+                you now should have it (opened in UltraEdit). Now save the file. 
+              </p>
+      </blockquote>
+      <p align="left"><img border="0" src="images/blockinue.gif" width="640" height="351">
+        </p>
+      <blockquote>
+              <p align="left">As also described in the <a href="setup_maxed.htm" target="_self">Setting 
+                up MaxED</a> section, we will have to run Max Payne with some 
+                additional command line options in order to get into the developer 
+                mode. Create a new shortcut for MaxPayne.exe or modify your previous 
+                one: </p>
+      <blockquote>
+      <p align="left" class="fixed">MaxPayne.exe -developer -developerkeys &#8211;window
+        </p>
+      </blockquote>
+      <p align="left">TIP: Depending on your video hardware,  you might have to
+      close MaxED when you run the game. Sometimes it is enough, that you just off the texture rendering (F2) while you are running the
+      game, as having these both open and consuming graphics memory is sure to
+      cause some problems, except perhaps on a very state-of-the-art hardware.
+        </p>
+      <p align="left">If you overwrote the basic_room.ldb, you can access you
+      level by choosing that menu item in the developer menu. If not, use the
+      console to init your level. Once you have the game running in developer mode, you can access to the game console with
+      <b>F12</b>. It has three modes which you toggle by pressing F12 multiple
+      times:&nbsp;
+        </p>
+      <ul>
+        <li>
+          <p align="left">Logging (console and it's output is visible but the keyboard commands go to the game)&nbsp;</li>
+        <li>
+          <p align="left">Disabled (game behaves like it does without developer mode)&nbsp;</li>
+        <li>
+          <p align="left">Enabled (your keyboard input goes to the console)</li>
+      </ul>
+      <p align="left">Now type into the console:
+        </p>
+      <blockquote>
+      <p align="left" class="fixed">Maxpayne_gamemode-&gt;gm_init(my_level);
+        </p>
+      </blockquote>
+      <p align="left">This will load up your level. However, as you are still in &#8220;menu&#8221; mode,
+      the level won&#8217;t start loading before you switch into game mode.
+        </p>
+      <blockquote>
+      <p align="left" class="fixed">X_modeswitch-&gt;s_modeswitch(game);
+        </p>
+      </blockquote>
+      <p align="left">The level should now start loading.
+        </p>
+      </blockquote>
+      <h2 align="left">Reviewing your work
+        </h2>
+      <blockquote>
+        <p align="left">Now you should see the level in the game and be able to
+        run around with Max. If you have followed this tutorial, well...
+        admittedly there is still some room for improvement in the level
+        :-)&nbsp;
+        </p>
+              <p align="left">Naturally to make it good, you need to do the <a href="lighting.htm" target="_self">lighting</a> 
+                and more appropriate <a href="texturing.htm" target="_self">texturing</a> 
+                right. A little more furniture and other props would not hurt 
+                also. If you have not lit and calculated the radiosity yet, the 
+                most notable strangeness is likely the odd looks of the walls, 
+                which is due to (uncalculated) lightmaps. </p>
+        <p align="left">Now that you have established the pipeline to get the
+        level to the game, you can always see your progress. If you have not yet
+        done so, next take a look at the other basic&nbsp; tutorials which teach
+        more. Whenever you feel like it, export the
+        level again and review it in the game.
+        </p>
+      </blockquote>
+    </td>
+  </tr>
+</table>
+	</td>
+  </tr>
+</table>
+</body>
+
+</html>

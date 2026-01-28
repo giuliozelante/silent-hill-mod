@@ -1,0 +1,102 @@
+<html> 
+<h1><font color="#00CC00" face="Arial, Helvetica, sans-serif"><b><font color="#000000">Half-Life 
+  Tutorials</font></b></font> </h1>
+<h2><font face="Arial, Helvetica, sans-serif"><b>Making a World model for Half-Life 
+  - by <a href="mailto:rat@polycount.com">Rat</a></b> <br>
+  </font></h2>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td width="70"><a href="hl-ms3d-w6.html"><img src="../Images/previous.gif" width="70" height="58" border="0"></a></td>
+    <td>&nbsp;</td>
+    <td width="70"><a href="hl-ms3d-w8.html"><img src="../Images/next.gif" width="70" height="58" border="0"></a></td>
+  </tr>
+</table>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Again you will have to switch 
+  back to the <font color="#0000FF">&quot;Groups&quot;</font> rollout to see if 
+  this did indeed assign the material, due to many unexplainable reasons, sometimes 
+  the first click doesn't do it. Don't ask me the reasons for this, it just happens 
+  that way sometimes.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">At this time we will have 
+  to do some bit twiddling of the texture coordinates so that the material that 
+  we have chosen to assign to this side of the blade is going to align to the 
+  faces of our left side of the knife blade.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">To do this click on <font color="#0000FF">&quot;<u>W</u>indow-&gt;<u>T</u>exture 
+  Coordinate Editor&quot;</font> on the menu selections. Here you will have to 
+  chose the group that is presently selected. Next you will click the <font color="#0000FF">&quot;Region&quot;</font> 
+  button on the dialog box and click and drag a box around only the blade portion 
+  as shown in Figure 1.24. Also you will now turn on your <font color="#0000FF">&quot;Textured&quot;</font> 
+  option in the <font color="#0000FF">&quot;3D&quot;</font> viewport by right 
+  clicking in it and clicking on the menu option <font color="#0000FF">&quot;Textured&quot;</font> 
+  also shown in Figure 1.24.</font></p>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="2"><img src="ms3d_hl-1/mt-fig24.gif" width="649" height="413"
+alt="mt-fig24.gif (48849 bytes)"></font></p>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="2"><strong>Figure 
+  1.24 Adjusting the Material to the Group and setting 3D viewport to Textured</strong></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Now it is starting to look 
+  like a knife! We will now make a duplicate of this and mirror this duplicate. 
+  To do this you must still have all the faces of the <em><strong>&quot;Blade-Left&quot;</strong></em> 
+  group selected. If you do not you can switch to the &quot;Groups&quot; rollout 
+  and highlight the <em><strong>&quot;Blade-Left&quot;</strong></em> group and 
+  click the <font
+color="#0000FF">&quot;Select&quot;</font> button. You will need to switch to the 
+  <font
+color="#0000FF">&quot;Model&quot;</font> rollout. Here we will chose the <font
+color="#0000FF">&quot;<u>E</u>dit-&gt;<u>D</u>uplicate Selection&quot;</font> 
+  on the menu selections to make a copy of the group. After this is done we will 
+  chose the <font
+color="#0000FF">&quot;<u>V</u>ertex-&gt;Mirror <u>L</u>eft&lt;-&gt;Right&quot;</font> 
+  on the menu selections. it should perfectly align with the <em><strong>&quot;Blade-Left&quot;</strong></em> 
+  group. You should rename this new group by switching to the <font color="#0000FF">&quot;Groups&quot;</font> 
+  rollout and renaming it to <em><strong>&quot;Blade-Right&quot;</strong></em> 
+  to avoid future confusion.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Now this duplicate does 
+  not have a material assigned to it. First to see a bit of texture magic, spin 
+  the view of the knife blades around in the &quot;3D&quot; viewport, by click 
+  and holding you mouse button down and dragging it to the left or to the right 
+  in the view port window. Spin it until you can see the backside that has no 
+  material. Now click on the <font color="#0000FF">Material&quot;</font> rollout 
+  and click the assign button. Now you duplicate will assume the texture material 
+  and place it perfectly as you have on the <em><strong>&quot;Blade-Left&quot;</strong></em> 
+  group. Now takes some bows for your magic act!</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">The next thing we need to 
+  do is weld the halves together, that's right! Get out your blow torch and lets 
+  weld this puppy! You do this by selecting the vertices that appear in this case 
+  to be already joined on the knifes cutting edge. Look at figure 1.25 to see 
+  all off the ones that are selected that need to be welded. We will have to do 
+  this one by one to insure that they will be done right.</font></p>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="2"><img src="ms3d_hl-1/mt-fig25.gif" width="345" height="290"
+alt="mt-fig25.gif (15427 bytes)"></font></p>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="2"><strong>Figure 
+  1.25 The 4 vertices to be welded</strong></font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">Now switch to the &quot;Model&quot; 
+  rollout if you haven't already done so and select one of the four to be welded 
+  with the <font color="#0000FF">&quot;Select&quot;</font> tool set to the <font color="#0000FF">&quot;Vertex&quot;</font> 
+  mode. Next, click on the <font
+color="#0000FF">&quot;<u>V</u>ertex-&gt;Snap <u>T</u>ogether&quot;</font> menu 
+  selection. Now comes the welding part we were discussing. Fire up that Acetylene 
+  Torch and, lets do this! Click on the <font color="#0000FF"><u>V</u>ertex-&gt;<u>W</u>eld 
+  <u>T</u>ogether&quot;</font> menu selection. If you watch in the <font color="#0000FF">&quot;3D&quot;</font> 
+  viewport, you may see it go into action, depending on how your looking at it. 
+  You might see the faces look like they are fitting together better and change 
+  their looks a bit.</font></p>
+<p><font face="Arial, Helvetica, sans-serif" size="2">At this point we will have 
+  to fill the gaps on the back side of the blade. We will first be selecting all 
+  the vertices that might get in the way of our creating faces as mentioned earlier 
+  about the dented box syndrome. Deselect any vertices that may still be selected 
+  from the previous operation, by clicking in a blank area in the <font
+color="#0000FF">&quot;Left&quot;</font> viewport. Next, you will be selecting 
+  all of the vertices except the ones on the left outer most edges in the <font color="#0000FF">&quot;Left&quot;</font> 
+  viewport as Figure 1.26 shows.</font></p>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="2"><img src="ms3d_hl-1/mt-fig26.gif" width="367" height="413"
+alt="mt-fig26.gif (10585 bytes)"></font></p>
+<p align="center"><font face="Arial, Helvetica, sans-serif" size="2"><strong>Figure 
+  1.26 Selected vertices to be hidden</strong></font></p>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td width="70"><a href="hl-ms3d-w6.html"><img src="../Images/previous.gif" width="70" height="58" border="0"></a></td>
+    <td>&nbsp;</td>
+    <td width="70"><a href="hl-ms3d-w8.html"><img src="../Images/next.gif" width="70" height="58" border="0"></a></td>
+  </tr>
+</table>
+<p align="right">&nbsp;</p>
+</html>

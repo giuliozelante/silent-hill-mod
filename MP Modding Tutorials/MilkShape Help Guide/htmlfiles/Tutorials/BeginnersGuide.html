@@ -1,0 +1,525 @@
+<html>
+<head>
+<title>The Beginners Guide</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="../ms3dhelp.css" type="text/css">
+</head>
+<div style='left:0px;position:absolute;top:0px;z-index:1; width: 308px; height: 88px' id=Layer1> 
+<img width=350 height=100 src="../Images/ms3dhelptop.gif">
+</div>
+<div id="Layer2" style="position:absolute; left:10px; top:10px; width:100%; height:57px; z-index:2"> 
+  <table width="100%" border="0">
+    <tr valign="top"> 
+      <td> 
+        <h1>The Beginners Guide</h1>
+        <h2>Contents</h2>
+        <blockquote> 
+          <p><a href="#Intro">1.0 Introduction</a></p>
+          <p><a href="#Mid-Section">2.0 Mid-Section</a></p>
+          <p><a href="#Front">3.0 Front of Airplane</a></p>
+          <p><a href="#Tail">4.0 Tail of Airplane</a></p>
+          <p><a href="#Wing">5.0 The Wing</a></p>
+          <p><a href="#Finish">6.0 Tidying Up &amp; Finishing Off</a></p>
+        </blockquote>
+        <h2><a name="Intro"></a>Introduction</h2>
+        <p>This is intended as a streamline guide to get you started in MilkShape 
+          3D. It should hopefully help you understand some of the concepts that 
+          are used when modelling.</p>
+        <p>For this tutorial we will build a simple model of a plane using various 
+          techniques. When modelling, it is common to stick to one feature such 
+          as extrude and shape the faces using scale and move as the model progresses. 
+          We are going to tackle the task by using a combination of face creation 
+          using placed vertices and extruding faces.</p>
+        <p>This tutorial is very much 'on rails' but if you feel that at any point 
+          you are getting bored or just don't like the way I'm doing things feel 
+          free to break off and try it you own way. After all, self-tought skills 
+          are often the hardest to forget, just reading instructions doesn't give 
+          the same learning. Trial and error is how I learned to model.</p>
+        <h2><a name="Mid-Section"></a>Mid-Section</h2>
+        <p>To start off with we will create one half of the model, this is becuase 
+          the model will be symetrical. The only way to guarantee symetry is to 
+          work with one half, duplicate it then mirror it. When working in this 
+          way you also have to remember to weld the vertices in the middle of 
+          the model to the adjoining vertices of the other half so that the completed 
+          model is shaded properly throughout its vertical equator. For the sake 
+          of perfection we wouldn't like to leave it in two halfs anyway.</p>
+        <p>1. To start off with, create a box. Do this by clicking box on the 
+          Model tab of the Toolbox on the right. </p>
+        <p>2. Create the box in the Front perspective in the top left viewport, 
+          this is really just a matter of preference. </p>
+        <p>3. Drag the box from the top left grid line...</p>
+        <p>4. to the bottom right grid line to create a box whos extremes lie 
+          on a grid line, this again is another preference rather than a must 
+          but it ensures the steps mentioned later will give the desired effect.</p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Image1.gif" width="526" height="344"></p>
+        </blockquote>
+        <p>5. The box will turn red to indicate that it is selected. Select the 
+          scale tool from the Model tab, the same panel you selected the Box tool 
+          from. In the Scale Options panel that appears below the main part of 
+          the Model panel enter 0.2 in the box above the Y axis button. This panel 
+          is explained more in the <a href="../ToolboxModel.html">Toolbox: Model</a> 
+          section. Then press the Scale button.</p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Image2.gif" width="474" height="175"> 
+          </p>
+        </blockquote>
+        <p>This box will form the main part of the fuselage of the plane we are 
+          creating.</p>
+        <p>6. I usually prefer working with the left hand side (viewed from behind) 
+          of the model when creating symetrical models so we will delete the faces 
+          that are facing to the right (when viewing the model from the back). 
+          Click the Select button in the model panel then click the Face button 
+          in the panel that pops up below this. Make sure the 'Ignore Backfaces' 
+          checkbox is checked.</p>
+        <p>7. Goto the viewport that has Left side view in the <a href="../Panels%20&amp;%20Windows/ViewCaption.html">Viewport 
+          Caption</a>. If none do then just click the drop down perspective list 
+          and select the Left view. If the viewport caption is not visible then 
+          click the menu item Window-&gt;Show Viewport Caption.</p>
+        <p>8. Select the two faces (triangles) that make up the side of the box. 
+          Do this by holding in shift and clicking approximetely in the centre 
+          of both faces, their wireframe outline will appear red to indicate they 
+          are selected. Press delete, this will remove the faces.</p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Image3.gif" width="521" height="338"></p>
+        </blockquote>
+        <p>One side of the model should now have no faces. The inside of the model 
+          is usually black as this is where no light reaches.</p>
+        <p>9. Now we are going to scale the box and move it so it is on the line 
+          of symetry (in this case the YZ plane). Use the select tool with the 
+          Face button pressed in, except this time uncheck the 'Ignore Backfaces' 
+          checkbox. Drag a selection box over the box in any view to select the 
+          whole model.</p>
+        <p>10. Click the Move button in the Model panel. In the panel that pops 
+          up below, enter 10 in the box above the X button then press move. This 
+          moves the box over 10 units. You will notice that it does not sit on 
+          the line yet, but the next step will make this so. You will come to 
+          realise that at this zoom level (in the 2D orthographic viewports) that 
+          each grid unit equals a 20 by 20 unit area. Therefore moving the box 
+          by 10 units moves it halfway through the grid boxes.</p>
+        <p>11. Click the Scale button. The Scale panel will pop up below the main 
+          Model panel. The last operation left the value in the Y box at 0.2 so 
+          to avaid changing the Y axis again enter 1.0. Enter 0.5 into the X box 
+          then press 'Scale'.</p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Image4.gif" width="523" height="560"></p>
+        </blockquote>
+        <p>12. This block represents the mid-section of the plane's fuselage so 
+          we will shape it a bit better, after all a blocky mid-section would 
+          look kind of boring. So Use the select tool but instead of pressing 
+          the Face button in the Select Options panel, press the Vertex button 
+          instead, make sure 'Ignore Backfaces' is un-checked.</p>
+        <p>13. Use the Front viewport perspective and select the top left vertex 
+          of the box (a vertex is a dot in the viewport it appears bigger than 
+          the lines that construct the model wireframe). Because 'Ignore Backfaces' 
+          is turned off the vertex toward the front and the vertex towards the 
+          back in the region you selected are both selected. This is what we want.</p>
+        <p>14. Use the Move tool again and click and hold in the viewport in which 
+          the vertices were selected and drag the vertices up a bit.</p>
+        <p>15. Do the same again with the vertices on the bottom left of the box. 
+        </p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Image5.gif" width="389" height="531"> 
+          </p>
+        </blockquote>
+        <p>16. The next step is to bring in the vertices to the back right of 
+          the shape. In the top view select the vertices at the top right hand 
+          corner of the shape. Move these vertices to the left a bit, bringing 
+          them closer to the center of the x axis. Here is the result.</p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Image6.gif" width="334" height="204"></p>
+        </blockquote>
+        <h2><a name="Front"></a>Front of Airplane</h2>
+        <p>17. Now we can start forming the front of the aircraft. Choose the 
+          Select Tool and in the Select Otions panel choose Face and make sure 
+          'Ignore Backfaces' if checked. In the Front viewport (remember that 
+          if there is no front viewport, use the viewport caption to change one 
+          of the others to a front viewport) select the two prodominant faces 
+          (the ones facing you). Remember to select these faces hold shift and 
+          click approximately in the centre of each face.</p>
+        <p>18. Now go into the Top perspective. From the Model panel on the Toolbox, 
+          choose the Extrude tool.</p>
+        <p>19. In the Top viewport click and hold in an area just off to the side 
+          of the model, drag the cursor down. The faces that you selected will 
+          start to move down as you move the cursor down. This is called an extrude 
+          operation, new faces are created in the gaps between the selected faces 
+          and the faces that they were attatched to. Keep extruding until the 
+          faces reach about halfway through another grid square, to stop extruding 
+          just let off the mouse button. If you cannot get a good view of the 
+          extrude operation as you perform it, Undo (Ctrl+Z) the extrude operation 
+          and press Control on the keyboard and Left Click and drag in the viewport. 
+          This pans the camera around. Notice, in the following image, the extrusion 
+          to the front of the shape we had before.</p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Image7.gif" width="291" height="219"></p>
+        </blockquote>
+        <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;mso-padding-alt:1.5pt 1.5pt 1.5pt 1.5pt'>
+          <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'> 
+            <td style='background:#FFFFCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'> 
+              <p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Arial'>Note</span></b><span
+    style='font-size:10.0pt;font-family:Arial'>: At this Point you may want to 
+                take into consideration the different types of shading available 
+                in the 3D viewport. Throughout this tutorial I have been using 
+                Flat Shaded. This is becuase polygons are more defined in this 
+                view than in Smooth Shaded; the default. Flat Shading is useful 
+                in model creation whereas smooth shaded is good to see the final 
+                result. To change the shading type right click in the 3D viewport 
+                and from the popup menu choose Flat Shaded.<o:p></o:p></span></p>
+            </td>
+          </tr>
+        </table>
+        <p>20. This new extrusion is the first part of the front of the plane. 
+          We will shape it a bit now. In the Top viewport, select (with Vertix 
+          and 'Ignore Backfaces' unchecked) the vertices to the bottom right of 
+          the model (the ones on the extrusion that we just made). Use the move 
+          tool to shift these a bit to the right to create a shallower gradient 
+          than that of the line above it, i.e. creating an acute angle instead 
+          of the obtuse angle it was after extrusion.</p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Image8.gif" width="300" height="219"></p>
+        </blockquote>
+        <p>21. Now deselect the moved vertices (just click in the viewport with 
+          the select tool). Go into the Left viewport. The extrusion should be 
+          to the right of the viewport now. Use the select tool again (with Vertex 
+          and 'Ignore Backfaces' unchecked) and select the two vertices to the 
+          top right of the extrusion. Move these up a bit.</p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Image9.gif" width="418" height="139"></p>
+        </blockquote>
+        <p>22. Deselect the vertices. Go back to the Front view and again select 
+          (Faces with 'Ignore Backfaces' checked) the front two most prodiminant 
+          faces (the two facing you in the front view). Remember to select these 
+          faces hold shift and click approximately in the centre of each face.</p>
+        <p>23. Go to the Top view. Extrude the faces as we did in the last extrude 
+          operation; downwards, about one and a half grid squares in distance 
+          this time.</p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Image10.gif" width="280" height="255"></p>
+        </blockquote>
+        <p>24. Use the select tool (Vertex and 'Ignore Backfaces' unchecked) to 
+          select the vertices in the bottom right corner of the extrusion that 
+          was just created, this will select both the vertex you can see and the 
+          one underneath it.</p>
+        <p>25. Use the Move tool to shift the selected vertice to the left, bringing 
+          them closer to the centre point on the x axis.</p>
+        <p>26. To add a bit more shape, I used the front view to select the top 
+          left vertex on the extrusion that was just created, I moved this down 
+          a bit because this is very near the tip and will give it an aerodynamic 
+          look. I also moved the vertex to the top right of the new extrusion 
+          down a bit in the front view. I used the Select tool with Vertex and 
+          'Ignore Backfaces' checked. In the top view I also selected the bottom 
+          left vertex of the previous extrusion, then used the left view to drag 
+          it up a bit. Finally I selected the two top vertices at the opposite 
+          end of the model (in the top view using 'Ignore Backfaces' with the 
+          select tool) and moved them down a bit using the left view.</p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Image11.gif" width="299" height="167"></p>
+        </blockquote>
+        <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
+   style='width:100.0%;mso-cellspacing:0cm;mso-padding-alt:1.5pt 1.5pt 1.5pt 1.5pt'>
+          <tr style='mso-yfti-irow:0;mso-yfti-lastrow:yes'> 
+            <td style='background:#FFFFCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'> 
+              <p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Arial'>Note</span></b><span
+    style='font-size:10.0pt;font-family:Arial'>: <o:p>If you have been using the 
+                Toolbox to select a tool each time, let me introduce you to shortcuts. 
+                MilkShape 3D is designed so you can have one hand on the keyboard 
+                and one on the mouse, using the keyboard hand to select shortcuts 
+                and the mouse for the actual modelling. The shortcut for Select 
+                is F1 and Move is F2, these are the ones you will probably use 
+                the most, but of course that depends on your work methods. See 
+                the section on <a href="../Appendices/KeyboardShortcuts.html">Shortcuts</a> 
+                for a full run down.</o:p></span></p>
+            </td>
+          </tr>
+        </table>
+        <p>26. For the tip of the plane, select the front two faces of the model 
+          in the front view with the select tool (Face, 'Ignore Backfaces' checked), 
+          then once again extrude them. Extrude them about half a grid box in 
+          distance.</p>
+        <p>27. To create the tip is easy, if you have not done so already deselect 
+          the faces. Now use the select tool (Vertex, 'Ignore Backfaces' unchecked) 
+          and select in the top view (or appropriate) the vertices of the new 
+          extrusion. Now goto the menu and click Vertex-&gt;Snap Together (or 
+          Ctrl+N) don't deselect the vertices just yet... After snapping you must 
+          remember to weld (it may not always be neccessary to weld but this depends 
+          on your needs), so goto the menu and click Vertex-&gt;Weld Together 
+          or (Ctrl+W). You now have one vertex where four previously existed.</p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Image12.gif" width="473" height="250"></p>
+        </blockquote>
+        <p>28. Don't deselect the vertex just yet, Move it to the x axis centre 
+          line to the left. To keep with the laws of airodynamics (roughly) I 
+          have also moved the bottom right vertex of the previous extrusion a 
+          bit more to the left, towards the centre of the x axis.</p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Image13.gif" width="238" height="233"></p>
+        </blockquote>
+        <h2><a name="Tail"></a>Tail of Airplane</h2>
+        <p>29. Now we will start to work on the tail of the airplane. Change your 
+          front view to a back view if a back view is not already available, if 
+          you do not know how to do this see the <a href="../Panels%20&amp;%20Windows/ViewCaption.html">Viewport 
+          Caption</a> section or right click in the viewport and from the popup 
+          menu choose Projection-&gt;Back.</p>
+        <p>30. Now for the aid of making future modelling easier, to temporarily 
+          hide sections that we are not working on we will create a new group 
+          and hide it. Click on your <a href="../ToolboxGroups.html">Groups</a> 
+          tab on the Toolbox. In the list box immediately below the Group name 
+          on the tab you should see one group called 'Box01' by default. This 
+          is because the first thing we created was a box.</p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Image14.gif" width="201" height="80"></p>
+        </blockquote>
+        <p>31. In the box to the right of the Rename button enter 'MidSection' 
+          then press the Rename button.</p>
+        <p>32. Next, in the top view use the select tool (Face, 'Ignore Backfaces' 
+          unchecked) to select the faces shown in the next image.</p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Image15.gif" width="293" height="188"></p>
+        </blockquote>
+        <p>33. Now, with these faces selected, goto the Groups panel again and 
+          click the Regroup button. A new group will be created called Regroup01. 
+          This group contains the faces that were selected. Enter the name 'Front' 
+          in the box next to the Rename box then press the Rename button. Two 
+          groups are now shown in the Groups list box, MidSection and Front. Click 
+          on the Front group in the list box and click the Hide button. This removes 
+          the group from the display so that it is easier for use to model the 
+          back of the aircraft.</p>
+        <p>34. We can now model the back of the aircraft. In the back view that 
+          you created in a viewport (step 29) select the two faces facing you 
+          (with select tool, Face and 'Ignore Backfaces' checked).</p>
+        <p>35. In the top view (or the left view whichever you prefer) extrude 
+          these faces about three quarters of a grid box distance. Don't deselect 
+          yet... create another extrusion in the same manner about the same distance. 
+          These extrusion will form the basis of the tail. Now deselect the faces.</p>
+        <p>36. Now using the select tool (Vertex, 'Ignore Backfaces' unchecked) 
+          in the top view select the top three vertices down the right hand side 
+          of the model and the Move them to the left a bit.</p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Image16.gif" width="262" height="239"></p>
+        </blockquote>
+        <p>37. If you have not got a Right side view visible change your Left 
+          view to a Right view. Choose the select tool again (Face, 'Ignore Backfaces' 
+          checked). Now select the two faces on the side of the last extrusion, 
+          these are facing directly toward you in the right side view. Remember 
+          to use the shifl key when selecting multiple faces, and to click approximately 
+          in the middle of each face you mean to select.</p>
+        <p>38. In the Top viewport, use the extrude tool on the Model tab of the 
+          Toolbox to extrude these faces about three quarters of a grid box in 
+          distance to the right.</p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Image17.gif" width="316" height="266"></p>
+        </blockquote>
+        <p>39. Deselect the faces. This will form the back wing of the plane. 
+          Still in the top view use the select tool (Vertex, 'Ignore Backfaces' 
+          unchecked) to select the top right vertex of the new extrusion. Move 
+          them back a touch to create an airodynamic look, much as they would 
+          look like on a commercial airliner. Do the same with the lower right 
+          vertex of the same extrusion. Move it back a bit and in to the left 
+          a bit.</p>
+        <p>40. In the Right viewport, use the select tool (Vertex, 'Ignore Backfaces 
+          checked) to select the four vertices of the new extrusion, the ones 
+          that you just moved in the previous step. Don't drag a region over them 
+          because you will end up selecting other vertices as well. Instead drag 
+          a box around the first two, to the front then hold shift and drag a 
+          box over the next two, to the back. </p>
+        <p>41. Use the scale tool on the Model tab of the Toolbox, then click 
+          in the Right viewport and hold, drag the mouse down to make the top 
+          and bottom vertices come closer together. When you are satisfied with 
+          the height between the vertices. This is called an arbitary scale operation. 
+          If you wish you can move the vertices up a bit before deselecting them.</p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Image18.gif" width="308" height="279"></p>
+        </blockquote>
+        <p>42. Now we will create the back fin of the aircraft. In the top view 
+          select (I'll leave you to figure out the select configuration combination 
+          for this one) the two faces at the top of the model on the new extrusion 
+          that was created, these are the two faces to the left of the tail wing 
+          we just created.</p>
+        <p>43. Use the extrude tool in the back or right viewport to extrude the 
+          faces up a bit.</p>
+        <p>44. Using the scale tool, perform an arbitary scale operation (mouse 
+          click-hold and drag), in the top view port to decrease the width of 
+          the extruded faces (they should be the selected ones). Decrease the 
+          height of the section a bit as well. </p>
+        <p>45. Next, move the two selected, extruded faces to line up with the 
+          back of the model. Then move them to the right a bit to be closer to 
+          the back fin.</p>
+        <p>46. From the back view, with the same faces still selected, use the 
+          Rotate tool in the Model tab of the Toolbox to rotate the faces. Do 
+          this by clicking and hold in the back viewport to the right of the faces 
+          then drag the mouse cursor down. The way the faces rotate in reaction 
+          to the direction you drag in depends on where you originally clicked 
+          to begin the operation. The markings shown in the image are just a guide. 
+          This operation is called an arbitary rotate operation, that is controlled 
+          by the mouse and not actual values (as would be entered in the Rotate 
+          Options panel that appears upon selection of the tool see the <a href="../ToolboxModel.html">Toolbox: 
+          Model</a> section for more details).</p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Image19.gif" width="483" height="442"></p>
+        </blockquote>
+        <p>47. From the back view Move the faces down and to the left a bit. Then 
+          extrude them upwards, creating the back fin. Feel free to shape this 
+          as you desire, using any tools you deem neccessary.</p>
+        <p>48. We are now getting close to something resembling an airplane. We 
+          will create another group of the back section so that if we require 
+          it, we can hide it. Select the faces shown in the image below, using 
+          the select tool. Goto the Groups tab and click Regroup, rename the group 
+          'Tail' (do this by entering the name in the box first then clicking 
+          the Rename button). </p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Image20.gif" width="95" height="239"></p>
+        </blockquote>
+        <h2><a name="Wing"></a>The Wing</h2>
+        <p>49. The wing will be realtively simple, or at least, it should be by 
+          now. Unhide the Front group in the Group panel of the Toolbox, do this 
+          by clicking on the name of the group in the list box then click the 
+          Hide button. The Hide button acts like a toggle, turning the display 
+          of the group on and off depending on its current display setting (visible/not 
+          visible).</p>
+        <p>50. Goto the Right side view of the craft. Select the vertex indicated 
+          in the image below and move it to be in a straight line with the remainder 
+          of that section.</p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Image21.gif" width="377" height="212"></p>
+        </blockquote>
+        <p>51. Now, still in the right view, select the four faces that are immediately 
+          to the right of this vertex that you just moved. (I'm assuming now that 
+          you know what Select Options to choose).</p>
+        <p>52. In the top view Extrude these faces to the right, about one and 
+          a half grid boxes distance.</p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Image22.gif" width="129" height="280"></p>
+        </blockquote>
+        <p>53. Still in the top view use the select tool to select the vertices 
+          at the back of the wing (to the top in the image above). Move these 
+          vertices back a bit more to create a streamlined effect, move them to 
+          the right a bit more as well as this will be the part of the wing that 
+          protrudes the furthest from the fuselage.</p>
+        <p>54. I finished up the wing by moving the other two sets of vertices 
+          to the front of the wing (the vertices to the bottom of the wing in 
+          the image above) into a position that would give a better look of aerodynamics. 
+          I also selected all of the wing vertices (six in total) and scaled them 
+          in the right view in height for a structure that would cut the air better 
+          (if it were a real plane). Here is the final top and right views of 
+          the wing.</p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Image23.gif" width="505" height="295"></p>
+        </blockquote>
+        <h2><a name="Finish"></a>Tidying Up &amp; Finishing Off</h2>
+        <p>55. If you were paying particularly close attention during the modelling 
+          process you would have realised that there were new faces created as 
+          we went along on the side visible from the Left side viewport. Change 
+          your right viewport back to a Left viewport, there are nine faces in 
+          total to be deleted, so use the select tool and select the faces shown 
+          in the image below.</p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Image24.gif" width="378" height="104"></p>
+        </blockquote>
+        <p>56. Just press delete to be rid of these unwanted faces. Keeping them 
+          won't make any physical difference to the overall structure of the plane 
+          but they add to the poly count and aren't seen so we should remove them.</p>
+        <p>57. When we extruded the wings we selected four faces in total. When 
+          we did the extrude operation an extra four faces were created in the 
+          wing shown in the image immediately below. To get rid of these faces 
+          is quite a complex operation so I will elaborate.</p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Image25.gif" width="280" height="252"></p>
+          <p>57.1. Goto the front view.<br>
+            57.2. Hide the Front group (in the Groups tab of the model panel). 
+            Hide the tail group as well if you are having difficulty seing the 
+            faces properly.<br>
+            57.3. Using the select tool, select the two faces on the front of 
+            the wing section still shown, these are shown in the image below.</p>
+          <blockquote> 
+            <p><img src="../Images/BeginnersTuto/Image26.gif" width="490" height="229"></p>
+          </blockquote>
+          <p>57.4. Press delete to remove them.<br>
+            57.5. Now change to the back view and hide the MidSection group, unhide 
+            the Front group.<br>
+            57.6. Use the select tool again to select the two offending faces 
+            which face backwards, shown in the image below.</p>
+          <blockquote> 
+            <p><img src="../Images/BeginnersTuto/Image27.gif" width="435" height="278"></p>
+          </blockquote>
+          <p>57.7. Press delete to remove those 'waskawy fwaces' - Elmer Fudd 
+            joke.</p>
+        </blockquote>
+        <p>58. Because of the extrusion of the wing and the faces we deleted the 
+          shading of the model will now be wrong (look strange) when we come to 
+          finally give it a shading group (more about this later). So we have 
+          to weld the vertices that were left behind. For every vertex between 
+          groups and on the wing, select it then press Ctrl+W to weld the vertices. 
+          Why is this you ask? Because in certain places in the model two vertices 
+          exist where it might seem like there is only one, don't get paranoid, 
+          this happens as a result of the modelling process we used in this tutorial. 
+          To sort it, for every vertex selected in the image below, select them 
+          individually (one at a time - I have only selected all the vertices 
+          in this image to show you which ones need welded) and press Ctrl+W or 
+          click menu command Vertex-&gt;Weld Together. As you do this and before 
+          you start, goto Tools-&gt;Show Model Statistics and check the number 
+          beside the vertices entry (at the top). You should see the number decrease 
+          as you progress. I managed to get the number from 53 to 43.</p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Image28.gif" width="370" height="98"></p>
+        </blockquote>
+        <p>59. Now that the model is clean, here comes the last bit. Use the select 
+          tool to select all of the faces in the model, this is done to select 
+          the whole model (all groups), you could also use the groups panel to 
+          individually select each group or use the select tool with the 'Groups' 
+          option.</p>
+        <p>60. With the model selected goto Edit-&gt;Duplicate Selection (Ctrl+D). 
+          Then goto Vertex-&gt;Mirror Left &lt;--&gt; Right. You will now see 
+          in the 3D view a complete aeroplane, but we are not finished yet. Deselect 
+          the duplicate.</p>
+        <p>61. The vertices down the middle of the model are not welded together, 
+          becuase it's a duplicate of the original. The effect this would have 
+          in the final shading is that a split would be obvious down the centre 
+          of the model. This split cannot be seen in Flat Shaded so switch to 
+          Smooth Shaded briefly to see the effect (right click in the 3D viewport 
+          and select Smooth Shaded from the popup menu).</p>
+        <p>62. We must therefore weld all the vertices down the centre of the 
+          model. The image below shown all the vertices that must be individually 
+          welded. As said before the image only shows all the vertices that must 
+          be welded... <i>individually</i>. So start at the front of the model 
+          in the top view with 'Ignore Backfaces' checked when using the select 
+          tool so that you don't select any of the underlying vertices (remember 
+          that there are vertices on the underside as well), then weld them as 
+          before. Then switch to the bottom view and do the same again. The vertex 
+          at the front of the plane only has to be done once as it is a point. 
+          Use the back or front view to make sure you are selecting only a vertex 
+          from the top <i>OR</i> the bottom side, <i>NOT</i> both. Switch to Smooth 
+          Shaded while you are doing this to see the effect it is having on the 
+          shading of the centre part of the plane.</p>
+        <p>63. Lastly, we will assign a smoothing group to the model. So use the 
+          select tool to select all of the model. Goto the groups tab of the Toolbox 
+          and in the Smoothing Groups panel to the bottom of the Groups tab click 
+          assign if it's not already pressed down (if should be paler if pressed 
+          down) then press 1. This should clean up the last bits of shading on 
+          the model. As you assign Smoothing Groups you may want to assign different 
+          groups or faces to different Smoothing Group numbers. Think of the 32 
+          numbers there as 'slots' for you to store your Smoothing Groups in. 
+          To read more on Smoothing Groups goto the <a href="../ToolboxGroups.html">Toolbox: 
+          Group</a> section.</p>
+        <h2><a name="Summary"></a>Summary</h2>
+        <p>This tutorial may have been hard for you to understand as it was for 
+          me when I first started with MilkShape 3D, although when I first started 
+          I had a decent grounding in programming computer graphics so it wasn't 
+          <i>as</i> hard for me to pick up, fortunately. With perseverance, however 
+          nothing in this tutorial should pose a challenge (other than my English, 
+          perhaps). If you are computer litterate and are determined chances are 
+          this will have been a breeze.</p>
+        <p>I hope you like the model even if it is a little basic, with time, 
+          experience and skill you should be able to knock something like this 
+          up in minutes.</p>
+        <blockquote> 
+          <p><img src="../Images/BeginnersTuto/Final.gif" width="403" height="369"></p>
+        </blockquote>
+        <p>*Sob*, goodbye!</p>
+        <p>&nbsp;</p>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

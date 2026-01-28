@@ -1,0 +1,50 @@
+<html><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>ParticleFX - Using Particles in the Game</title>
+<!-- base -->
+<link rel="stylesheet" type="text/css" href="using_particle_effects_in_game_files/style.css">
+<script type="text/javascript" src="using_particle_effects_in_game_files/cookieCheck.js"></script>
+</head><body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="640">
+  <tbody><tr>
+    <td>
+      &nbsp;
+      <h1>Using the particle effects in the game</h1>
+      <blockquote>
+      <p class="MsoNormal">To use a particle effect in the
+      game, it needs to be exported. Open a particle effect and select
+      Export from the File menu. The effect is exported into a .RPS (Realtime
+      Particle Set) which is a stand-alone file, containing the bitmaps and the
+      needed parameters.</p>
+      <p class="MsoNormal">&nbsp;If you have created a large
+      set of particle effects and bitmaps and then modify one bitmap set, it can
+      get difficult to re-export them all. To help with this, you can export
+      particle effects with a command line. You can create a batch file, which
+      exports all the particles to their respective folders. Here is an example
+      export command line (NOTE: this is only an example; the paths and
+      directories need to correspond your setup).</p>
+        <dl>
+          <dd>
+      <p class="fixed">ParticleFX.exe -y -e "\particle effects\fire\*.pse"
+      -d "\database\particles\fire\"</p>
+          </dd>
+        </dl>
+      <p>After the effects have been
+      exported, they need to be plugged into the game&#8217;s database thru the
+      particle script file. This file (particles.txt) can be found in the
+      game&#8217;s data\database\particles\ directory.</p>
+      <p class="MsoNormal">Once in the game, the effects are
+      started with the <b>ps_starteffect </b> message. For further info, consult
+      the level editor documentation.</p>
+      </blockquote>
+    </td>
+  </tr>
+</tbody></table>
+
+</body></html>

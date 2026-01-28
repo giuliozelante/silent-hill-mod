@@ -1,0 +1,140 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+<title>Basic Lighting</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<base target="main">
+</head>
+
+<body leftmargin="0" topmargin="0">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" height="80">
+  <tr>
+    <td width="50%" height="80" bgcolor="#000000"><img border="0" src="images/maxlogo.gif" width="260" height="80"></td>
+    <td width="50%" height="80" align="right" bgcolor="#000000"><img border="0" src="images/rmdlogo.gif" width="115" height="64"></td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="16">
+  <tr>
+    <td>
+      <table border="0" cellpadding="0" cellspacing="0" width="640">
+  <tr>
+          <td> <h1> <br>
+              Basic lighting</h1>
+      <blockquote>
+      <p>
+      With this tutorial you are going to learn the basics of MaxED radiosity lighting.
+      Good lighting is half of the looks of a level and
+      a very essential part of Max Payne technology. Just like with other
+      aspects of mapping, there's a lot to learn in lighting. Technical
+      knowledge is of course important but the real key is an understanding of
+      what kind of lights to place and where, to create an environment with an
+      atmosphere. Luckily, the radiosity is a
+      bit like pizza -- even when it's bad, it's actually pretty good :-)&nbsp;
+      </blockquote>
+      <p><b><font size="3">Hands on</font></b>
+            <blockquote> 
+              <p> Let's continue working with the level you've made. Have a look 
+                at the example level (lighting.zip, in the same zip archive as 
+                this Help file came in), that's how it looks after adding a couple 
+                of lights. We'll keep things on a practical level so can you just 
+                get started with lighting and develop an understanding of what 
+                you can do with it. First, We will add one piece of geometry on 
+                the floor so something to cast shadows. Let's make a box...
+<p>1. Hit space to go to movement mode, and
+      move to inside one of the rooms positioning yourself so that you see the
+      floor well.<p>2. Align the grid to the floor (grid size is up to you): In <b>F4</b>-mode,
+      activate the floor polygon by pointing at it, and hit <b>A</b>. If you
+      want to make sure that the grid lines match the walls, switch to <b>F3</b>-mode,
+      point one of the wall corners so that it highlights, and press <b>A</b>
+      again.<p>3. Now draw the box (or say, a pillar) to any shape and size you
+      please and extrude it. Depending on if you had &quot;preferences/flip faces after
+      mesh creation&quot; selected or not, the box is now either object-like (polys pointing
+      outward) or room-like (polys pointing inward). Obviously we need to make
+      it an object, so if the polys are pointing in, flip them: go to <b>F4</b>-mode,
+      point at the box it to make sure it's highlighted and&nbsp; press <b> Ctrl-F</b>.
+              <p>4. To use the same texture as the ceiling, you can either select 
+                it from the materials menu, or just grab it from the ceiling (in 
+                <b>F6</b>-mode, point the ceiling and press <b>G</b>). Since you 
+                now know the basics of <a href="texturing.htm" target="_self"> 
+                texturing</a> you can try for yourself and see what kind of a 
+                box you come up with.
+<p>5. Remember to group the box to the room: Go to <b>F5</b>-mode, <b>LMB</b>
+      click the box, press <b>G</b> and <b>LMB</b> click the room it's in. Rooms are always the top-most objects in the hierarchy tree and all other objects have to be below them in some order.<p>&nbsp;
+      <p align="center">
+      <img border="0" src="images/lighting1.jpg" align="center" width="500" height="375"><p>As you can
+      see, simple shapes inherit much to their looks just from the way the
+      texture is placed. With this texture placement it looks as if the box had
+      an extruding top and bottom.<p>As lighting calls for a lamp mesh, it is the obvious choice
+      for our next piece of furniture.&nbsp;Following the above sequence, make a
+      light element above the door and texture it. Note that besides the color
+      that you assign to a light, the actual color of the light is also affected
+      by its texture; if you assign white color to a light that has a blue
+      texture, the resulting light color will pretty much be blue.
+      </blockquote>
+      <p align="center">
+      <img border="0" src="images/lighting2.jpg" width="500" height="375">
+      <blockquote>
+      <p>When you have your light element in place, it's time to add the actual
+      light. Also turn on the rendering of the lightmaps. To do that, open
+      preferences and from the &quot;<b>texture display</b>&quot; -radio
+      buttons, check &quot;<b>primary texture and lightmap</b>&quot;. Now you'll
+      see both the texture and the lightmap on top of it.
+      <p align="center">
+      <img border="0" src="images/lighting3.jpg" width="500" height="375">
+      <p>
+      In <b>F6</b>-mode, point at the surface of your light element that you
+      want to cast light, press <b>L</b> and pick any color you like. In
+      general, plain, almost white hues work well, since the light will gather a
+      lot of color from both the texture of the light surface, and any
+      successive surfaces it bounces from.
+      <p align="center">
+      <img border="0" src="images/lighting4.jpg" width="500" height="375"><p>1. Open preferences and set
+      &quot;radiosity viewport size&quot; to 32, &quot;radiosity passes&quot; to
+      2 and &quot;radiosity boost&quot; to 200. Click OK. These values are
+      quite enough to show the resulting amount and placing of light and shadow.<p>2. Go to <b>F5</b>-mode and press <b>CTRL-E</b>
+      to autogroup all objects to the rooms they are in, in case you left
+      something ungrouped.<p>3. Still in <b>F5</b>-mode, press <b>ESC</b> (to
+      clear selection), switch to move mode (<b>SPACE</b>) and press <b>R</b>
+      (start rendering)<p>4. Click &quot;NO&quot; when asked if you want to use
+      the preview algorithm. This level is very small and with the above
+      settings won't take more than couple of minutes to render on a ~700MHz
+      machine.<p>
+      MaxED goes to the wireframe mode after it has rendered the lightmaps, so when it&#8217;s done, switch back to texture rendering mode (F2) to see the results. The level should look something like this:
+      <p align="center">
+      <img border="0" src="images/lighting5.jpg" width="500" height="375">
+      <p align="left">
+      Just how well you managed to get this kind of results doesn't matter, the
+      important thing is that you become accustomed to how the lights work.
+      <p align="left">
+      Ok you've done well. I'll add one more light element and you can just
+      watch.
+      <p align="center">
+      <img border="0" src="images/lighting6.jpg" width="500" height="375"><p>This
+      one will go to the ceiling killing a lot of the shadows. It's also a bit
+      longer than the door light
+      <p align="center">
+      <img border="0" src="images/lighting7.jpg" width="500" height="375">
+      <p>As you can see, from the room the lamps are in, shadows are now practically gone, due to
+      the extra amount of light coming straight down from the new element. Since there are no light elements in the other room, the light can be seen "pouring" in through the doorway, creating a nice effect.<p>You can now use <b> NumPad /</b> to cycle
+      Textures/Textures+Light/Lighting modes in the render display,
+        or use the Preferences dialog. Note however, that while in small maps
+        it's faster to use numpad / to cycle the modes, in larger maps the
+        transition takes time and in the lack of immediate response, it might be
+        unclear whether you pressed / the correct amount of times and it is
+        simpler and oftentimes just quicker to open preferences (CTRL-P) and
+        select the right mode.<br>
+      <br>
+      Also try rendering with the preview lighting. It doesn&#8217;t give you as good results, but it&#8217;s a lot faster. Start rendering as you did before, but choose &#8220;Yes&#8221; to the question about preview
+      lighting and accept the default shoot amount, it's good for mostly all
+      occasions.
+      </blockquote>
+    </td>
+  </tr>
+</table>
+	</td>
+  </tr>
+</table>
+</body>
+
+</html>

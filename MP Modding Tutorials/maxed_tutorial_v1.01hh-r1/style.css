@@ -1,0 +1,67 @@
+BODY { background-color: white; }
+a {
+	color: #BB0000;
+}
+
+a:visited {
+	color: #FF0000;
+}
+
+a:hover {
+	color: #AA0000;
+}
+
+a:active {
+	color: #BB0000;
+}
+
+h1 {
+	color: #BB0000;
+	font-family: Arial, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+h2 {
+	color: #000000;
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: 35px;
+}
+
+ol {
+	color: #000000;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+}
+
+p {
+	color: #000000;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+}
+
+p.fixed {
+	color: 000000;
+	font-family: Courier New,Courier New, Courier, sans-serif;
+	font-size: 12px;
+}
+
+p.small {
+	color: #000000;
+	font-family: Arial, sans-serif;
+	font-size: 10px;
+}
+
+td {
+	color: #000000;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+}
+
+ul {
+	color: #000000;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+}

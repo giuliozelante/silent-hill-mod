@@ -1,0 +1,192 @@
+A:link {
+	COLOR: #ffb14d; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #ffb14d; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #fecc92; BACKGROUND-COLOR: transparent; TEXT-DECORATION: underline
+}
+A:active {
+	COLOR: #ffb14d; BACKGROUND-COLOR: transparent; TEXT-DECORATION: none
+}
+BLOCKQUOTE {
+	BORDER-RIGHT: #efbe87 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #efbe87 1px solid; PADDING-LEFT: 5px; FONT-SIZE: 9pt; PADDING-BOTTOM: 0px; MARGIN: 0px 10px; BORDER-LEFT: #efbe87 1px solid; WIDTH: 100%; PADDING-TOP: 0px; BORDER-BOTTOM: #efbe87 1px solid
+}
+BLOCKQUOTE .small {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 2px; PADDING-BOTTOM: 1px; MARGIN-LEFT: -10px; COLOR: #000000; PADDING-TOP: 1px; BACKGROUND-COLOR: #efbe87
+}
+BLOCKQUOTE BR {
+	FONT-SIZE: 1px
+}
+BLOCKQUOTE HR {
+	VISIBILITY: hidden; HEIGHT: 1px
+}
+BODY {
+	FONT-SIZE: 11px; COLOR: #a8a8a8; SCROLLBAR-ARROW-COLOR: #000000; SCROLLBAR-TRACK-COLOR: #313134; SCROLLBAR-BASE-COLOR: #c07018; BACKGROUND-COLOR: #28282c
+}
+BODY {
+	FONT-SIZE: 11px; COLOR: #a8a8a8; FONT-FAMILY: verdana, helvetica, sans-serif
+}
+P {
+	FONT-SIZE: 11px; COLOR: #a8a8a8; FONT-FAMILY: verdana, helvetica, sans-serif
+}
+TABLE {
+	FONT-SIZE: 11px; COLOR: #a8a8a8; FONT-FAMILY: verdana, helvetica, sans-serif
+}
+TD {
+	FONT-SIZE: 11px; COLOR: #a8a8a8; FONT-FAMILY: verdana, helvetica, sans-serif
+}
+TR {
+	FONT-SIZE: 11px; COLOR: #a8a8a8; FONT-FAMILY: verdana, helvetica, sans-serif
+}
+FORM {
+	DISPLAY: inline; MARGIN-BOTTOM: 0px
+}
+PRE {
+	BORDER-RIGHT: #efbe87 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #efbe87 1px solid; PADDING-LEFT: 10px; FONT-SIZE: 9pt; PADDING-BOTTOM: 0px; MARGIN: 0px 20px; BORDER-LEFT: #efbe87 1px solid; PADDING-TOP: 0px; BORDER-BOTTOM: #efbe87 1px solid
+}
+SELECT {
+	FONT-SIZE: 10px; COLOR: #ffffff; BACKGROUND-COLOR: #000000
+}
+.alternatetable {
+	COLOR: #ffffff; BACKGROUND-COLOR: #424242
+}
+.buttons {
+	BORDER-RIGHT: #24407c 1px solid; BORDER-TOP: #abb5d1 1px solid; FONT-SIZE: 11px; BORDER-LEFT: #abb5d1 1px solid; COLOR: #f9cf82; BORDER-BOTTOM: #24407c 1px solid; BACKGROUND-COLOR: #4a6fa4
+}
+.catandforum {
+	FONT-SIZE: 11px; BACKGROUND-COLOR: transparent
+}
+.cleartable {
+	BACKGROUND-COLOR: transparent
+}
+.darktable {
+	BORDER-RIGHT: #845122 0px solid; BORDER-TOP: #845122 0px solid; BORDER-LEFT: #845122 0px solid; COLOR: #ffffff; BORDER-BOTTOM: #845122 1px solid; BACKGROUND-COLOR: transparent
+}
+.footertable {
+	BACKGROUND-COLOR: #ffffff
+}
+.formboxes {
+	BORDER-RIGHT: #ffb14d 1px solid; BORDER-TOP: #ffb14d 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #ffb14d 1px solid; COLOR: #ffffff; BORDER-BOTTOM: #ffb14d 1px solid; FONT-FAMILY: Verdana,Arial; BACKGROUND-COLOR: #000000
+}
+.forumdescript {
+	COLOR: #ffffff
+}
+.forumtitle {
+	COLOR: #fecc92
+}
+.lighttable {
+	BORDER-RIGHT: #845122 0px solid; BORDER-TOP: #845122 0px solid; BORDER-LEFT: #845122 0px solid; COLOR: #ffffff; BORDER-BOTTOM: #845122 1px solid; BACKGROUND-COLOR: transparent
+}
+.menubar {
+	FONT-SIZE: 11px; COLOR: #abb5d1; BACKGROUND-COLOR: transparent
+}
+.modcolumn {
+	FONT-SIZE: 11px; COLOR: #424242; BACKGROUND-COLOR: #424245
+}
+.navigation {
+	BORDER-RIGHT: #454547 1px solid; BORDER-TOP: #454547 1px solid; FONT-SIZE: 10px; BORDER-LEFT: #454547 1px solid; COLOR: #666666; BORDER-BOTTOM: #454547 1px solid; BACKGROUND-COLOR: #000000; TEXT-ALIGN: center
+}
+.new {
+	FONT-SIZE: 10px; COLOR: #ff0000
+}
+.newdarktable {
+	BORDER-RIGHT: #845122 0px solid; BORDER-TOP: #845122 0px solid; FONT-WEIGHT: bold; BORDER-LEFT: #845122 0px solid; COLOR: #4a6fa4; BORDER-BOTTOM: #845122 1px solid; BACKGROUND-COLOR: #000000
+}
+.newlighttable {
+	BORDER-RIGHT: #845122 0px solid; BORDER-TOP: #845122 0px solid; FONT-WEIGHT: bold; BORDER-LEFT: #845122 0px solid; COLOR: #4a6fa4; BORDER-BOTTOM: #845122 1px solid; BACKGROUND-COLOR: #000000
+}
+.newpostsincat {
+	COLOR: #000000; BACKGROUND-COLOR: #ffb14d
+}
+.onbody {
+	COLOR: #ffffff; BACKGROUND-COLOR: transparent
+}
+.onbody A:link {
+	COLOR: #f6a247; BACKGROUND-COLOR: transparent
+}
+.onbody A:visited {
+	COLOR: #a8a8a8; BACKGROUND-COLOR: transparent
+}
+.onbody A:active {
+	COLOR: #800000; BACKGROUND-COLOR: transparent
+}
+.pollcolor {
+	COLOR: #ffffff; BACKGROUND-COLOR: #ff0000
+}
+.poll-border {
+	BORDER-RIGHT: #865123 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: #865123 1px solid; PADDING-LEFT: 3px; FONT-SIZE: 11px; PADDING-BOTTOM: 3px; BORDER-LEFT: #865123 1px solid; COLOR: #b16f36; PADDING-TOP: 3px; BORDER-BOTTOM: #865123 1px solid; BACKGROUND-COLOR: transparent
+}
+.post {
+	FONT-SIZE: 12px; COLOR: #ffffff; BACKGROUND-COLOR: transparent
+}
+.post:first-letter {
+	
+}
+.post:first-line {
+	
+}
+.post-color {
+	COLOR: #ffffff; BACKGROUND-COLOR: #1f1f22
+}
+.post-color-a {
+	COLOR: #ffffff; BACKGROUND-COLOR: #424242
+}
+.post-color-1 {
+	COLOR: #ffffff; BACKGROUND-COLOR: #28282c
+}
+.posted-by {
+	BORDER-RIGHT: #845122 0px solid; PADDING-RIGHT: 3px; BORDER-TOP: #845122 0px solid; PADDING-LEFT: 3px; FONT-WEIGHT: normal; FONT-SIZE: 11px; PADDING-BOTTOM: 3px; BORDER-LEFT: #845122 0px solid; COLOR: #ffffff; PADDING-TOP: 3px; BORDER-BOTTOM: #845122 1px solid; BACKGROUND-COLOR: transparent
+}
+.post-footer {
+	BORDER-RIGHT: #845122 0px solid; PADDING-RIGHT: 3px; BORDER-TOP: #845122 1px solid; PADDING-LEFT: 3px; FONT-WEIGHT: normal; FONT-SIZE: 11px; PADDING-BOTTOM: 3px; BORDER-LEFT: #845122 0px solid; COLOR: #ffffff; PADDING-TOP: 3px; BORDER-BOTTOM: #845122 0px solid; BACKGROUND-COLOR: transparent
+}
+.post-icon {
+	BORDER-RIGHT: #845122 1px solid; BORDER-TOP: #845122 1px solid; FONT-WEIGHT: normal; FONT-SIZE: 11px; BORDER-LEFT: #845122 1px solid; COLOR: #ffffff; BORDER-BOTTOM: #845122 0px solid; BACKGROUND-COLOR: transparent
+}
+.postrow {
+	BORDER-RIGHT: #865123 0px solid; BORDER-TOP: #865123 0px solid; BORDER-LEFT: #865123 0px solid; COLOR: #ffffff; BORDER-BOTTOM: #865123 1px solid; BACKGROUND-COLOR: transparent
+}
+.posttime {
+	BORDER-RIGHT: #845122 0px solid; BORDER-TOP: #845122 0px solid; BORDER-LEFT: #845122 0px solid; COLOR: #ffffff; BORDER-BOTTOM: #845122 1px solid; BACKGROUND-COLOR: transparent
+}
+.post-title {
+	FONT-SIZE: 11px; COLOR: #ffffff
+}
+.posttotal {
+	BORDER-RIGHT: #845122 0px solid; BORDER-TOP: #845122 0px solid; BORDER-LEFT: #845122 0px solid; COLOR: #ffffff; BORDER-BOTTOM: #845122 1px solid; BACKGROUND-COLOR: transparent
+}
+.preview {
+	BORDER-RIGHT: #845122 2px solid; BORDER-TOP: #845122 2px solid; BORDER-LEFT: #845122 2px solid; BORDER-BOTTOM: #845122 2px solid; BACKGROUND-COLOR: transparent
+}
+.signature {
+	FONT-SIZE: 10px; COLOR: #cccccc
+}
+.small {
+	COLOR: #ffffff; BACKGROUND-COLOR: transparent
+}
+.staff {
+	COLOR: #ffffff; BACKGROUND-COLOR: #000033
+}
+.standouttext {
+	COLOR: #ff0000; BACKGROUND-COLOR: transparent
+}
+.subjecttable {
+	COLOR: #ffffff; BACKGROUND-COLOR: transparent
+}
+.tableborders {
+	BACKGROUND-COLOR: transparent
+}
+.tablesurround {
+	
+}
+.tdheader {
+	BORDER-RIGHT: #ffb15d 0px solid; BORDER-TOP: #ffb15d 0px solid; FONT-SIZE: 11px; BORDER-LEFT: #ffb15d 0px solid; COLOR: #b16f36; BORDER-BOTTOM: #ffb15d 1px solid; BACKGROUND-COLOR: transparent
+}
+.threadtotal {
+	BORDER-RIGHT: #845122 0px solid; BORDER-TOP: #845122 0px solid; BORDER-LEFT: #845122 0px solid; COLOR: #ffffff; BORDER-BOTTOM: #845122 1px solid; BACKGROUND-COLOR: transparent
+}
+.threaded-view {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 3px; OVERFLOW: auto; WIDTH: 700px; PADDING-TOP: 3px; HEIGHT: 400px
+}

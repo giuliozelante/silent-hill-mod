@@ -1,0 +1,276 @@
+<html><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>ParticleFX - Step-by-step</title>
+<link rel="stylesheet" type="text/css" href="step-by-step_tutorial_files/style.css">
+<!-- base -->
+<script type="text/javascript" src="step-by-step_tutorial_files/cookieCheck.js"></script>
+</head><body>
+
+<table border="0" cellpadding="0" cellspacing="0" width="640">
+  <tbody><tr>
+    <td>
+      &nbsp;
+      <h1>
+      A Step-by-Step Tutorial</h1>
+      <blockquote>
+      <p>This section familiarizes you with
+      creating a particle effect from scratch with a step-by-step procedure. If
+      you&#8217;re already familiar with the process and need more specific
+      information, skip this section. Creating your own bitmaps and plugging
+      them into the particle editor is described later in this document. This
+      procedure uses the example bitmaps provided with the editor, and the
+      resulting effect is available as one of the example files (well,
+      almost...). But now, let&#8217;s get into the tutorial.</p>
+      </blockquote>
+      <h2>Creating a Fire Effect</h2>
+      <blockquote>
+      Start ParticleFX and create a new effect by clicking the New
+      button. A new document window appears.
+      <p>It&#8217;s handy to have something in the background of the preview
+      scene to see how large the effect is. Click the &lt;none&gt; button next
+      to &#8220;KF Scene&#8221;, and browse into the Examples \
+      Backgrounds directory. Select grid.txt and press OK. This puts a
+      translucent grid with 1 meter squares into the preview scene.
+      </p><p>Now you need to create a Particle. Select &#8220;Particle&#8221;
+      from the selector under the &#8220;Element and Emitter properties&#8221;
+      then click the New button in the lower left corner of the window.
+      This creates a new Particle and opens the properties window for it.
+      </p><p>The particle is named &#8220;Unnamed Particle&#8221; as default.
+      Change the name into something appropriate, like &#8220;Flames&#8221;.
+      </p><p>First off, your particle needs a bitmap. Click the Import
+      button under &#8220;Particle Bitmaps&#8221;. A file browser opens. Go to
+      the &#8220;Bitmaps&#8221; directory under the directory where you&#8217;ve
+      installed ParticleFX, and open the bitmaps.txt file.
+      </p><p>The bitmaps.txt file has several particle bitmaps plugged in. A
+      selector appears. Select the reelflames_additive one (the second
+      lowest in the list) and click OK. The &#8220;Reel Flames&#8221; are a set
+      of flame bitmaps captured from real flame footage. There are 6 sequences
+      in total, each consisting of a different number of bitmaps. (If there
+      are several &#8220;containers&#8221; in one particle bitmap set,
+      ParticleFX automatically randomizes between the bitmap sets. This gives
+      the particles variety. A particle effect can appear artificial if all the
+      particles look identical.)
+      </p><p>OK, the particle now has a bitmap, so it can be previewed. Skip
+      this step and move to the next step if you can hold your curiosity for a
+      little while. However, if you can&#8217;t wait to see what the effect
+      looks like at this point, select Emitter from the Element and
+      Emitter properties then click the New button to create a new Particle
+      Emitter. After that, go to Emission Control, and click New to
+      create a new emission, select &#8220;Flames&#8221; and the emitter you
+      just created (&#8220;Unnamed Particle Emitter&#8221;) from the pop-up
+      window and press OK. Press F2 to view the effect. You see a
+      fountain of flame-like glowing, repetitively looping blobs spewing out of
+      the emitter. Doesn&#8217;t look like flames? Of course not. There&#8217;s
+      still a lot of tweaking to do. Close the preview by pressing F4.
+      </p></blockquote>
+      <p align="center"><img src="step-by-step_tutorial_files/step-b1.jpg" v:shapes="_x0000_i1027" height="238" width="318"><br>
+      <i>This is what the results should look like with a flame bitmap and
+      default parameters applied</i></p>
+      <blockquote>
+      First off, you need to change some of the particle&#8217;s
+      properties. Go back to the Particles section of the Element and Emitter
+      properties, and double-click on the Flames particle to open it up.
+      Here&#8217;s what you need to do:
+      <p>Change the Animation type to Lifetime.
+      The flame bitmaps consist of sequences where a few different flames die
+      away, so they should not loop.
+      </p><blockquote>
+          <ul>
+            <li>
+              <p>      Ignore the animation FPS and random
+      1st frame properties, as they only apply to looping bitmap
+      sequences.
+              </p></li><li>
+                <p>      Set the Particle Random Rotation
+      from &#8211;180 degrees to 180 degrees. This randomizes the
+      particles&#8217; on-screen rotation by 360 degrees, giving the flames
+      further variety. Also check the Randomize rotation direction
+      checkbox.
+                </p></li><li>
+                  <p>Check the Random mirroring X and Y
+      checkboxes. The particle bitmaps will now be randomly mirrored by both
+      axes, to give further variety to the particles.
+                  </p></li><li>
+                    <p>Flames tend to travel upwards. Change the
+      flame&#8217;s Gravity multiplier to &#8211;2.5. It&#8217;s a
+      good idea to use negative gravity instead of directed emission. This
+      ensures that the flames always travel upwards regardless of the
+      orientation of the emitter.
+                    </p></li><li>
+                      <p>Change the Air Resistance (El.
+      Velocity) to Cubic. This increases the flames&#8217; air
+      resistance when they gain velocity, preventing them from flying up way too
+      fast.
+                      </p></li><li>
+                        <p>Change Air Resistance (El. Size)
+      to Linear. (With this particular effect though, the size-related
+      air resistance has little effect).
+                        </p></li><li>
+                          <p>Set the Air Resistance Constant to
+      4. Flames should have a reasonable amount of air resistance.</p>
+                          </li>
+                          </ul>
+      </blockquote>
+      Try previewing the effect now, and see what
+          happens. A tower of flames flying upwards. Looks better, but still not
+          quite there! Let&#8217;s do some further tweaking with the particle
+          before moving to the emitter. Click the Size Graph  button, and
+          edit the graph to look something like this:
+      </blockquote>
+      <p align="center"><img src="step-by-step_tutorial_files/step-b2.jpg" v:shapes="_x0000_i1028" height="199" width="319"></p>
+      <blockquote>
+        <p>
+          Since the graph is not very detailed, drop its sample rate to 8. The
+          graph dictates that the particles will start from zero size, then grow
+          up to size 1 (full size), and towards the end of their life cycle,
+          shrink a little.
+        </p>
+        Click the Rotation Graph button, and edit the graph to look
+      like this:
+      </blockquote>
+      <p align="center">
+          <img src="step-by-step_tutorial_files/step-b3.jpg" v:shapes="_x0000_i1029" height="199" width="319"></p>
+      <blockquote>
+        <p>
+      This makes the particles to rotate at a constant speed from &#8211;187
+      degrees to 0 degrees. The &#8220;Randomize Rotation Direction&#8221;
+      checkbox randomly flips this graph for different particles for variety (the
+      emitter&#8217;s Rotation Multiplier also affects the particles&#8217;
+      rotation, we&#8217;ll get into that later). Again, since the graph is
+      only a straight line, you can reduce its sample rate to 2.</p>
+        Next, click the Vertex Alpha Graph and edit it to look like
+      this:
+      </blockquote>
+      <p align="center">
+          <img src="step-by-step_tutorial_files/step-b4.jpg" v:shapes="_x0000_i1030" height="200" width="320"></p>
+      <blockquote>
+      Because the flame bitmap sequences don&#8217;t have that many frames, this
+      helps to smooth out the last frames where the flame dies out.
+        <p>Finally, click the RGB Color Graph button, and edit the
+      graph to look like this:
+      </p></blockquote>
+      <p align="center">
+          <img src="step-by-step_tutorial_files/step-b5.jpg" v:shapes="_x0000_i1031" height="199" width="319"></p>
+      <blockquote>
+        <p>
+      Just if you want to be fancy. This fades the flames&#8217; color towards
+      red as they die out.</p>
+      <p>All right! You&#8217;ve created
+        a working flame particle! If you preview the effect now, it looks like a
+        flame tower, and it still leaves a lot to be desired:
+        </p>
+      </blockquote>
+      <p align="center"><img src="step-by-step_tutorial_files/step-b6.jpg" v:shapes="_x0000_i1032" height="238" width="318"></p>
+      <blockquote>
+        <p>You see, particles alone
+        don&#8217;t make the effect. The Emitter also needs to be tweaked
+        carefully, because the Emitter has a lot of influence on how the
+        particles behave.</p>
+      </blockquote>
+        <h2>Tweaking the emitter</h2>
+      <blockquote>
+        <p>The next thing to do is to start
+        tweaking the Emitter you created. Select Particle Emitter from
+        the Element and Emitter properties and double-click the &#8220;Unnamed
+        Particle Emitter&#8221; to open its properties window.</p>
+            <p>The emitter needs a better name. Change it to something
+      appropriate, like &#8220;Flaming&#8221;.
+            </p><p>Since the flames travel upwards on their own, emission direction is
+      not needed at this time. Leave the Direction graph unedited (except
+      maybe dropping its sample rate to 2).
+            </p><p>Just for the hell of it, also leave the Emission Random Velocity
+      graph as it is. As default, the flames get tiny random velocity
+      variation, but not much. Reduce the graph&#8217;s sample rate to 2.
+            </p><p>Now let&#8217;s move to the Emitter Shape section. The flames
+      probably look best when emitted from a flat plane. Change the Geometry
+      under Emitter Shape to Square.
+            </p><p>Set the minimum and maximum values for X to &#8211;0.15 and 0.15
+      meters. Leave the Y min and max values to 0. Set the minimum and maximum
+      values for Z to &#8211;0.15 and 0.15 meters. This creates a flat square 30
+      by 30 centimeter plane inside which all the particles are generated. The
+      origo of the effect is in the center of the plane.
+            </p><p>The
+flame effect we&#8217;re working on is constant, and meant to loop
+indefinitely. Set the Cycle length to 20 seconds, and edit the Emission
+Rate graph so that the upper graph is at roughly 80 and the lower graph
+roughly at 10. This is easiest to do by dragging the graphs up and down
+with the right mouse button. It doesn&#8217;t matter which line is higher and
+which lower. Since the graphs are used only for constant values this
+time (ie. horizontal lines), reduce their sample rate to 2. The
+particle effect will now run for 20 seconds after started, and emits 10
+to 80 particles per time unit. Check the Cycle Looping checkbox.
+Particle effects can be either looped by checking this checkbox, or set
+to &#8220;looping&#8221; in the scripts (these details will be covered in other
+documentation). </p><p>Edit the Element Lifetime Graph so that the upper line is
+      roughly at 1 and the lower line is roughly at 0.3. Again, drop the sample
+      rate to 2. As a result, the emitted particles will have a lifetime between
+      0.3 and 1 seconds throughout the 20-second cycle.
+            </p><p>Edit the Size Multiplier Graph so that the upper line is
+      roughly at 0.9 and the lower line roughly at 0.4. The particles&#8217;
+      size will be randomized between 0.4 and 0.9 units throughout the cycle.
+            </p><p>As with the above graphs, edit the Rotation Multiplier Graph
+      to 0.2 and 0.6. This way, some flames will rotate less, some more. A
+      rotation multiplier of 1 has no effect on the particle&#8217;s rotation
+      graph; values larger than 1 increase the rotation, and positive values
+      smaller than 1 reduce it.
+            </p><p>Try previewing the flames. Looks
+      much better now, doesn&#8217;t it?
+      </p></blockquote>
+            <p align="center">
+            <img src="step-by-step_tutorial_files/step-b7.jpg" v:shapes="_x0000_i1033" height="476" width="636">
+      </p><blockquote>
+      <p>The example file provided is
+      actually a combination of two flame effects. The original emitter was
+      cloned with the Clone button and edited a little. The first emitter spews
+      smaller flames with a bit shorter lifetime, and the other one spews larger
+      flames with a longer lifetime. This was done to prevent the smallest
+      flames from flying too high up, which happens if you try to emit all
+      flames from one emitter with a lot of size variation. This can result in
+      very long-living, small flames if you&#8217;re not careful.</p>
+      <p>You may have noticed that the
+      example fire effect that came with ParticleFX also contains a pillar of
+      rising smoke. As an exercise, try to re-create the smoke from scratch.
+      Here&#8217;s some pointers:</p>
+        <ul>
+          <li>The
+          smoke bitmap provided with the example files is very bright in itself.
+          Use the Color Graph to darken it.</li>
+          <li>Smoke
+          fades out smoothly. Ramp down the Vertex Alpha Graph. Since the smoke
+          bitmap is quite opaque, you can start the opacity graph at an already
+          low value and go down from there.</li>
+          <li>Smoke
+          rises upwards, but slower than flames. Use a smaller negative gravity
+          multiplier.</li>
+          <li>Smoke
+          clouds tend to live a lot longer than flames. Random Element Lifetime
+          from 2 to 5 seconds should be fine. Because of their long lifetime,
+          they should be emitted at a lower rate to prevent excessively dense
+          smoking.</li>
+        </ul>
+      <p>Another interesting exercise
+      could be to change the fire effect into a fireball-style explosion. Change
+      the flame cycle&#8217;s length to 10 seconds, then give the Emission Rate,
+      Size and Lifetime graphs more resolution, and make the effect first emit a
+      lot of very large, long-living flames, then ramp the values down. As a
+      result, the fire should start with a blast, then burn away until the
+      flames go out. Here&#8217;s how to change the graphs:</p>
+      </blockquote>
+      <p align="center">&nbsp;
+      <img src="step-by-step_tutorial_files/step-b8.jpg" v:shapes="_x0000_i1034" height="201" width="319">
+      </p>
+      <p align="center"><img src="step-by-step_tutorial_files/step-b9.jpg" v:shapes="_x0000_i1025" height="201" width="319">
+      </p>
+      <p align="center">&nbsp;
+      <img src="step-by-step_tutorial_files/step-b10.jpg" v:shapes="_x0000_i1026" height="200" width="322">
+      </p>
+    </td>
+  </tr>
+</tbody></table>
+
+</body></html>

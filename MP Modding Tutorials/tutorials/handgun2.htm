@@ -1,0 +1,572 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0059)http://paynekiller.kipsta.net/showtutorial.php?id=10&page=2 -->
+<HTML><HEAD><TITLE>Kipsta's PayneKiller :: Max Payne 2 Mod Resource Site</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252"><LINK 
+href="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/style.css" 
+type=text/css rel=stylesheet>
+<SCRIPT language=Javascript type=text/javascript>
+function storeCaret (textEl) {
+	if (textEl.createTextRange)
+		textEl.caretPos = document.selection.createRange().duplicate();
+} // end fn
+
+function addsmiley (textEl, text) {
+	if (textEl.createTextRange && textEl.caretPos) {
+		var caretPos = textEl.caretPos;
+		caretPos.text =
+			caretPos.text.charAt(caretPos.text.length - 1) == ' ' ?
+			text + ' ' : text;
+	} else {
+		textEl.value  = textEl.value + text; // for non MSIE browsers just append it
+	}
+
+	return true;
+}// fn
+</SCRIPT>
+
+<META content="MSHTML 6.00.2737.800" name=GENERATOR></HEAD>
+<BODY>
+<DIV align=center>
+<CENTER>
+<TABLE style="BORDER-COLLAPSE: collapse" height="100%" cellSpacing=0 
+cellPadding=0 width=720 bgColor=#ffffff border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%" height=10><!-- SPACER --><IMG class=blank height=10 
+      src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/blank.gif" 
+      width=10> </TD></TR>
+  <TR>
+    <TD height=160><!-- FLASH MENU -->
+      <OBJECT id=menu 
+      codeBase='"http:/download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0/"' 
+      height=160 width=720 classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000><PARAM NAME="movie" VALUE="layout/menu.swf"><PARAM NAME="quality" VALUE="High"><PARAM NAME="menu" VALUE="false">
+      																								<EMBED src="layout/menu.swf" menu=false 
+      quality=High WIDTH="720" HEIGHT="160" NAME="menu" 
+      TYPE="application/x-shockwave-flash" 
+      PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer"></EMBED></OBJECT></TD></TR>
+  <TR>
+    <TD vAlign=top width="100%"><IMG class=blank height=16 
+      src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/blank.gif" 
+      width=16> 
+      <TABLE style="BORDER-COLLAPSE: collapse" borderColor=#111111 height="100%" 
+      cellSpacing=0 cellPadding=0 width=720 border=0>
+        <TBODY>
+        <TR>
+          <TD vAlign=top width=10><IMG class=blank height=20 
+            src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/blank.gif" 
+            width=10> </TD>
+          <TD class=tdmain vAlign=top width=540>
+            <P>
+            <CENTER>
+            <TABLE style="BORDER-COLLAPSE: collapse" borderColor=#111111 
+            cellSpacing=3 cellPadding=2 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <H1>Modelling a Handgun in 3D Studio Max 5</H1>
+                  <TABLE style="BORDER-COLLAPSE: collapse" borderColor=#111111 
+                  cellSpacing=3 cellPadding=2 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD width="50%">Jump to page: <A 
+                        href="http://paynekiller.kipsta.net/showtutorial.php?id=10&amp;page=1">1</A> 
+                        <A 
+                        href="http://paynekiller.kipsta.net/showtutorial.php?id=10&amp;page=2">2</A> 
+                        <A 
+                        href="http://paynekiller.kipsta.net/showtutorial.php?id=10&amp;page=3">3</A> 
+                      </TD>
+                      <TD width="50%">
+                        <P align=right><A 
+                        href="http://paynekiller.kipsta.net/showtutorial.php?id=10&amp;page=1">&lt; 
+                        Previous page</A> | <A 
+                        href="http://paynekiller.kipsta.net/showtutorial.php?id=10&amp;page=3">Next 
+                        page &gt;</A></P></TD></TR></TBODY></TABLE>
+                  <DIV class=hr>
+                  <HR>
+                  </DIV>
+                  <P><SPAN class=numlist>16.</SPAN> Ohkee Dohkie... picking up 
+                  from the last page... believe me we have a shit load more to 
+                  go through, but hopefully after you have made this one weapon 
+                  you will have the knowledge you need to experiment and make 
+                  more weapons... I dread to think of how many "Look!!1!!11 My 
+                  New Glock Weapon" mods there will be floating around after 
+                  this tutorial... OW MY HEAD!!! STOP THE VOICES!!! <IMG 
+                  class=blank alt=:lol: 
+                  src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/lol.gif" 
+                  align=top></P>
+                  <P>Yo! so... the next step here is to bring the length of the 
+                  extruded part back so that it will cover the breach hole (when 
+                  we make one). So bring the camera around to look at the back 
+                  end of the part you just made, you have the view shown in the 
+                  screener. <SPAN class=hl>Select "vertex" from the modifier 
+                  stack</SPAN> and select all of the vertices (dots) on my 
+                  screener...</P>
+                  <P align=center><IMG 
+                  src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/pic16.jpg"></P>
+                  <DIV class=hr>
+                  <HR>
+                  </DIV>
+                  <P><SPAN class=numlist>17.</SPAN> Now <SPAN class=hl>DRAG 
+                  these vertices back</SPAN> and watch the whole extruded part 
+                  move with it. Uhm, just a reminder to use the <SPAN 
+                  class=hl>MOVE tool along the X-Axis (red arrow)</SPAN>. Use 
+                  the TOP view to move this section back... I'd say to just over 
+                  half of the length of the gun - or if you like; where the 
+                  trigger guard meets the handle. It should now look like 
+                  this... </P>
+                  <P align=center><IMG 
+                  src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/pic17.jpg"></P>
+                  <DIV class=hr>
+                  <HR>
+                  </DIV>
+                  <P><SPAN class=numlist>18.</SPAN> So, hey? Remember earlier 
+                  when we hid some parts of the gun? Well it's time to unhide 
+                  them! First though you need to <SPAN class=hl>save-as "Glock 
+                  5"</SPAN>. Go to the <SPAN class=hl>"display panel"</SPAN> 
+                  where you hid those items, and<SPAN class=hl> CLICK "Unhide 
+                  all"</SPAN>... (now if only I could do that to find my 
+                  keys...). Ok so you have all your parts back, now you are 
+                  reminded of just how shitty the model looks, but that will 
+                  change over the course of this tutorial... I hope... *gulp*. 
+                  Ok, so... you should now <SPAN class=hl>SELECT</SPAN> the<SPAN 
+                  class=hl> trigger guard object</SPAN>, and in the "<SPAN 
+                  class=hl>absolute positioning boxes</SPAN>" (those 3 input 
+                  boxes I have mentioned a few times... X, Y, Z...) - in 
+                  the<SPAN class=hl><B> Z box TYPE&nbsp; "10.0"</B></SPAN> The 
+                  trigger guard should be half-way up and in the middle of the 
+                  handle. Like this...</P>
+                  <P align=center><IMG 
+                  src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/pic18.jpg"></P>
+                  <DIV class=hr>
+                  <HR>
+                  </DIV>
+                  <P><SPAN class=numlist>19.</SPAN> What we're about to do is 
+                  UNION or if you like FUSE the trigger guard to the handle but 
+                  first... we need to make the backend of the trigger guard 
+                  bigger so it transitions nicely into the handle. So turn <SPAN 
+                  class=hl>WIREFRAME</SPAN> mode on in your <SPAN class=hl>3D 
+                  view</SPAN> and rotate the camera to look at the backend of 
+                  the trigger guard so it looks like the screener.</P>
+                  <P>Before you can proceed, you might remember from the first 
+                  part that we needed to make the BASE object editable? Well we 
+                  need to do the <SPAN class=hl>same for the trigger guard 
+                  object</SPAN> too! So from the modifiers stack/list, <SPAN 
+                  class=hl>RIGHT CLICK on the "extrude" item/modifier</SPAN> (as 
+                  before) and from the menu that pops up, <SPAN class=hl>select 
+                  "collapse to"...</SPAN> now select the back end of the trigger 
+                  guard using <SPAN class=hl>POLYGON selection mode</SPAN> from 
+                  the modifiers stack... (Look at my screener it's highlighted 
+                  yellow). Select the <SPAN class=hl>SCALE tool</SPAN> and along 
+                  the <SPAN class=hl>BLUE arrow (Z axis) drag upwards</SPAN> so 
+                  it's slopping but still remains <SPAN class=hl>inside the 
+                  bounds of the handle...</SPAN> if you feel like tweaking other 
+                  parts of the guard object some more, then use <SPAN 
+                  class=hl>EDGE for selection</SPAN> from the modifier stack and 
+                  tweak away, just stay symmetrical. Here's what my gun looks 
+                  like...</P>
+                  <P align=center><IMG 
+                  src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/pic19.jpg"></P>
+                  <DIV class=hr>
+                  <HR>
+                  </DIV>
+                  <P><SPAN class=numlist>20.</SPAN> Ok now we are ready to UNION 
+                  the 2 shapes. By the way, now is a good time to save...</P>
+                  <P>From the <SPAN class=hl>creation tab</SPAN> (1st icon with 
+                  the mouse pointer)... <SPAN class=hl>select the "geometry" 
+                  button</SPAN> which is the sphere icon, then from the drop 
+                  down list below that find and <SPAN class=hl>click "compound 
+                  objects"</SPAN>. Now you have some new options for object 
+                  creation, <SPAN class=hl>click the "BOOLEAN" button</SPAN>. 
+                  Now make sure that <SPAN class=hl>UNION is selected</SPAN> and 
+                  then <SPAN class=hl>press "Pick operand B"</SPAN> now <SPAN 
+                  class=hl>click the main base of the gun</SPAN>. At this stage, 
+                  your weapon will be triangulated where there is a union. This 
+                  is fine. And your weapon should look like this...</P>
+                  <P align=center><IMG 
+                  src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/pic20.jpg"></P>
+                  <DIV class=hr>
+                  <HR>
+                  </DIV>
+                  <P><SPAN class=numlist>21.</SPAN> Ok, so now we work on the 
+                  breach! Hiiii hoooo silver! For this part we are going to be 
+                  making the ejection hole where the bullet casing flies out, 
+                  since I don't have a reference for where this is on the gun 
+                  I'm going to be guessing *cough*... We'll start out from where 
+                  the extruded part we made earlier ends... this is where the 
+                  casings will be ejected...</P>
+                  <P>Right so in the <SPAN class=hl>creation tab select 
+                  BOX</SPAN>, now drag out a cube to like in my screener, I 
+                  didn't have any measurements in mind... you may need to tweak 
+                  it up with the <SPAN class=hl>SCALE and MOVE tools</SPAN>... 
+                  but as long as you have it looking like in my picture, it'll 
+                  look fine... Don't forget the Glock18c (like most guns) is a 
+                  right handed gun and the bullets will be ejected from the 
+                  <SPAN class=hl>RIGHT HAND SIDE</SPAN>! So naturally because of 
+                  this, your hole will need to be carved out from the 
+                  underside... </P>
+                  <P align=center><IMG 
+                  src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/pic21.jpg"></P>
+                  <DIV class=hr>
+                  <HR>
+                  </DIV>
+                  <P><SPAN class=numlist>22.</SPAN> Now, the next step will be 
+                  to <SPAN class=hl>Boolean SUBTRACT the two objects</SPAN>, so 
+                  that the box you just made gets removed from the breach 
+                  object. But before this can happen the breach needs to be 
+                  collapsed and made into an Editable mesh. D'you remember how 
+                  this is done??? ... I just knew you'd say no... uhm, that's 
+                  fine... so... from the top; go to the <SPAN class=hl>modifiers 
+                  panel</SPAN>, <SPAN class=hl>select the top item</SPAN> in 
+                  your list (will have a light bulb next to it)... and it should 
+                  be called <SPAN class=hl>"extrude"</SPAN> <IMG class=blank 
+                  alt=;) 
+                  src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/wink.gif" 
+                  align=top> then <SPAN class=hl>RIGHT CLICK</SPAN> it and <SPAN 
+                  class=hl>select "collapse to"</SPAN> <IMG class=blank alt=:D 
+                  src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/grin.gif" 
+                  align=top></P>
+                  <P>Cool if you had no problems there, then... go <SPAN 
+                  class=hl>back to the "creation panel"</SPAN>, select <SPAN 
+                  class=hl>"compound object"</SPAN>, then <SPAN 
+                  class=hl>"Boolean"</SPAN>. Ensure the breach is selected 
+                  first, then <SPAN class=hl><U>make sure that you have 
+                  "subtract" selection (A-B) selected!!!</U></SPAN>, now <SPAN 
+                  class=hl>press "pick operand B"</SPAN> then <SPAN 
+                  class=hl>click the new box object</SPAN>, this is what you 
+                  get...</P>
+                  <P align=center><IMG 
+                  src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/pic22.jpg"></P>
+                  <DIV class=hr>
+                  <HR>
+                  </DIV>
+                  <P><SPAN class=numlist>23.</SPAN> Ok uh... Gosh... from here, 
+                  I will just go onto making the trigger and then well, I'll 
+                  leave it to you model in the small details. I'm gonna also 
+                  finish up my model with some minor detail tweaks and then move 
+                  straight onto texturing...</P>
+                  <P>Ok that trigger... this is simple as can be... basically 
+                  you should <SPAN class=hl>outline the trigger in TOP 
+                  view</SPAN> using the same method when you modelled the other 
+                  gun parts. </P>
+                  <P>Well, now you are asking why didn't I get you to do it back 
+                  then? Well, I want you to do it now for practice! So you can 
+                  see how much you remember! But, when you come to extrude it, 
+                  make the extrude value <SPAN class=hl>20.0</SPAN> (same as the 
+                  trigger guard)... then click the MOVE button and enter into 
+                  the Z box, <SPAN class=hl>10.0</SPAN>. Come on dude! You know 
+                  what I'm asking next... Boolean the trigger and the base unit 
+                  objects together using <SPAN class=hl><B>UNION</B></SPAN>... 
+                  when you final pull all your hair out and manage to do it on 
+                  your own... you get this... (again I say... I HOPE).</P>
+                  <P align=center><IMG 
+                  src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/pic23.jpg"></P>
+                  <DIV class=hr>
+                  <HR>
+                  </DIV>
+                  <P><SPAN class=numlist>24.</SPAN> Ok I know I've been sketchy 
+                  on the detail modelling, but most of you really should have 
+                  some basic 3DsMax Knowledge before attempting this tutorial. I 
+                  mean, I know some of you reading this are novices and that's 
+                  cool but, the thought of dragging on for another freakin' 3 
+                  pages telling you in step by step detail how to produce a 
+                  simple box or cube is ... err... yeah... well, you get the 
+                  point. Anyhow, by this time you have hopefully tweaked your 
+                  weapon and added detail to it... and you'll be ready for 
+                  texturing. </P>
+                  <P>All I did for detail was carve out the barrel hole from the 
+                  breach and body, tweaked the trigger, and the trigger guard, 
+                  then extruded the back end of the handle and added vertices 
+                  right down the center to make it smoother. I also added a 
+                  smooth shader, which does nothing to the geometry, just the 
+                  way a texture appears. And of course the Castle (Aiming 
+                  sights).</P>
+                  <P>My weapon now comes to a nasty 470 polys. Well, it ain't 
+                  all that bad... but could probably be reduced further to about 
+                  420 polys. Right-o, so let's get texturing, firstly you will 
+                  need to HAVE a texture to apply to the gun, for now you should 
+                  just use the background image you outlined earlier. Select 
+                  both the main part of the gun and the breach, this can by done 
+                  by using the select tool, from duh, the toolbar (it looks like 
+                  a mouse pointer)... <SPAN class=hl>CLICK the base 
+                  object</SPAN>, then <SPAN class=hl>hold CTRL</SPAN> and <SPAN 
+                  class=hl>CLICK the breach object</SPAN>. Now <SPAN 
+                  class=hl>press "M"</SPAN> on your keyboard and a material 
+                  window opens up... this is a handy window that allows you to 
+                  texture shit and make it look schvveeet <IMG class=blank 
+                  alt=:P 
+                  src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/blah.gif" 
+                  align=top> The window will look like this...</P>
+                  <P align=center><IMG 
+                  src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/pic25.jpg"></P>
+                  <DIV class=hr>
+                  <HR>
+                  </DIV>
+                  <P><SPAN class=numlist>25.</SPAN> The first thing you need to 
+                  do is <SPAN class=hl>click the "Material Type 
+                  Selector"</SPAN>, yeah I know this isn't the proper name for 
+                  it, but for the life of me, I can't remember what it's really 
+                  called... err.... so anyway just click it and a <SPAN 
+                  class=hl>second window pops up</SPAN>... I'm HOPING you have 
+                  the Max Payne KF plug-ins setup properly because this is where 
+                  it will count... the new window is called <SPAN 
+                  class=hl>"Material Browser"</SPAN>... from this window <SPAN 
+                  class=hl>find "KF Material"</SPAN>. This is a material 
+                  inserted by the plug-in that will allow your model to have the 
+                  texture you specify and also probably does other stuff like 
+                  convert mapping co-ordinates to Max Payne 2 standards... <SPAN 
+                  class=hl>DON'T USE ANYTHING ELSE</SPAN> other than "KF 
+                  MATERIAL"!</P>
+                  <P align=center><IMG 
+                  src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/pic25_1.jpg"></P>
+                  <DIV class=hr>
+                  <HR>
+                  </DIV>
+                  <P><SPAN class=numlist><B>26.</B></SPAN> <SPAN class=hl>Double 
+                  click</SPAN> this material <SPAN class=hl>or CLICK OK</SPAN>, 
+                  now everything seems the same... hmm what has changed? I know! 
+                  maybe one of the spheres has changed color? No big deal... 
+                  this is normal. Have a look under the "basic parameters" 
+                  rollout... and <SPAN class=hl>change the diffuse color to 
+                  white</SPAN>, you can do this by <SPAN class=hl>clicking the 
+                  diffuse color box and using the color map to point at 
+                  WHITE</SPAN>. When you are done with that, scroll down the 
+                  material window to the "TEXTURES" rollout, and <SPAN 
+                  class=hl>TICK the diffuse checkbox</SPAN> and then <SPAN 
+                  class=hl>click the little box next to it that says 
+                  "NONE"</SPAN>. Again, the material browser will open... now 
+                  <SPAN class=hl>find and select "KF Texture"</SPAN>.</P>
+                  <P align=center><IMG 
+                  src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/pic26.jpg"></P>
+                  <P>Once you've done that you'll be back in the material window 
+                  again, have a look at the <SPAN class=hl>"basic 
+                  parameters"</SPAN>, AND... the first item there is <SPAN 
+                  class=hl>BITMAP</SPAN>. <SPAN class=hl>Click that box and then 
+                  select your texture</SPAN>... now, the top right hand sphere 
+                  has the image of the Glock wrapped around it... right? YUP. 
+                  Also at this point <SPAN class=hl>click on the "render texture 
+                  to viewport button"</SPAN> - if you don't know which one this 
+                  is, it's labelled in the one of the screeners above...</P>
+                  <P>Cool... now one more step to go before you can apply this 
+                  texture, look on the material window under the 6 spheres, 
+                  there should be a <SPAN class=hl>drop down box</SPAN> with an 
+                  <SPAN class=hl>eyedropper/pipette</SPAN> next to it... click 
+                  the drop down box and <SPAN class=hl>select "1 - 
+                  default"</SPAN>. Now <SPAN class=hl>click on the "Paint 
+                  material on object" button</SPAN>.</P>
+                  <DIV class=hr>
+                  <HR>
+                  </DIV>
+                  <P><SPAN class=numlist>27.</SPAN> Ok, so I mentioned about 
+                  setting up a map for your gun, we'll do this now. Again with 
+                  both parts of your gun selected, go to the <SPAN 
+                  class=hl>"modifiers" panel</SPAN> and from the<SPAN 
+                  class=hl>"modifiers list"</SPAN> find, and <SPAN 
+                  class=hl>select "UVW Map"</SPAN>... now as soon as it's 
+                  selected your gun should show the Glock texture on it 
+                  properlly... At this stage, it should look something like what 
+                  I intended... but the texture ISN'T quite right...</P>
+                  <P>The scaling is slightly squashed from handle to breach... 
+                  so <SPAN class=hl>from the modifiers panel</SPAN> have a look 
+                  for the <SPAN class=hl>"UVW Map" item you just added</SPAN>, 
+                  and under that should be a new item called "Gizmo"... if you 
+                  can't see it, click on the little PLUS box. Make sure you have 
+                  BOTH parts of your gun selected, now <SPAN class=hl>click the 
+                  Gizmo item</SPAN>... and a yellow square appears around your 
+                  model... what you now can do is use the normal SCALE and MOVE 
+                  tools from the main toolbar to fit the texture as you like it. 
+                  I suggest maximizing the TOP viewport and turning the view 
+                  mode to <I>"smooth + highlights"</I> so you can work more 
+                  accurately... (these options can be accessed in a handy menu 
+                  by RIGHT CLICKING the TOP LEFT of the active viewport)...</P>
+                  <P align=center><IMG 
+                  src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/pic27.jpg"></P>
+                  <DIV class=hr>
+                  <HR>
+                  </DIV>
+                  <P><SPAN class=numlist>28.</SPAN> Right, so my gun has been 
+                  textured properly (well to the best I can explain in this 
+                  tutorial), and if you go back to all 4 viewport windows, 
+                  select the 3D view; and then <SPAN class=hl>press F10</SPAN>, 
+                  then press the <SPAN class=hl>RENDER button</SPAN>... you can 
+                  see what your model looks like...</P>
+                  <P align=center><IMG 
+                  src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/glock1.jpg"></P>
+                  <DIV class=hr>
+                  <HR>
+                  </DIV>
+                  <P><SPAN class=numlist>29.</SPAN> Ok, so finally, you will 
+                  notice that the weapon isn't textured as good as it could be 
+                  (check out the video I put below)... you can improve the 
+                  quality of the texturing by creating a fitted weapon texture 
+                  map, and using UVW Unwrap. I'm not gonna explain this since 
+                  the idea was to just show you how to get started with weapon 
+                  modelling... </P>
+                  <P>One final thing to note is that most of the detail on the 
+                  weapon we made is minor, we have modelled the main geometry of 
+                  the gun and left the detail to the textures.</P>
+                  <P>Well, that's the end of this freakin' long ass tutorial... 
+                  I really really freakin' hope you have learned a little 
+                  something about weapon modelling, as I said before it's down 
+                  to your own imagination and creative genius to produce 
+                  feasible low poly weapons that look good. There are no 
+                  map/model downloads for this tutorial, since I know a lot of 
+                  people will just rip the weapon off for their own mod... there 
+                  is however a video rendering of the finished weapon (with some 
+                  added gloss to make it spangly and sexy...)...</P>
+                  <P>As for Implementing it, adding sound and animations... they 
+                  come in later tutorials...</P>
+                  <BLOCKQUOTE>
+                    <P><A 
+                    href="http://paynekiller.kipsta.net/tutorials/tutorial10/glock18c.zip">Download 
+                    the Glock18c Video clip here (450kb - QuickTime Movie inside 
+                    ZIP file).</A></P>
+                    <P><A 
+                    href="http://paynekiller.kipsta.net/tutorials/tutorial10/glock18c2.zip">Download 
+                    the same movie with the Breach pulled back (460kbs - QT 
+                    Movie inside ZIP).</A></P></BLOCKQUOTE>
+                  <P></P>
+                  <TABLE style="BORDER-COLLAPSE: collapse" borderColor=#111111 
+                  cellSpacing=3 cellPadding=2 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD width="50%">Jump to page: <A 
+                        href="http://paynekiller.kipsta.net/showtutorial.php?id=10&amp;page=1">1</A> 
+                        <A 
+                        href="http://paynekiller.kipsta.net/showtutorial.php?id=10&amp;page=2">2</A> 
+                        <A 
+                        href="http://paynekiller.kipsta.net/showtutorial.php?id=10&amp;page=3">3</A> 
+                      </TD>
+                      <TD width="50%">
+                        <P align=right><A 
+                        href="http://paynekiller.kipsta.net/showtutorial.php?id=10&amp;page=1">&lt; 
+                        Previous page</A> | <A 
+                        href="http://paynekiller.kipsta.net/showtutorial.php?id=10&amp;page=3">Next 
+                        page 
+            &gt;</A></P></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></CENTER>
+            <P></P></TD>
+          <TD vAlign=top width=15 
+          background="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/sidedotsb.gif"><IMG 
+            class=blank height=15 
+            src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/blank.gif" 
+            width=15> </TD>
+          <TD vAlign=top width=150><!-- SIDE PANEL FOR LOGIN, BANNERS and TOOLS -->
+            <FORM action=login.php method=post>
+            <TABLE style="BORDER-COLLAPSE: collapse" borderColor=#111111 
+            cellSpacing=1 cellPadding=2 border=0>
+              <TBODY>
+              <TR>
+                <TD width=40>User:</TD>
+                <TD><INPUT size=14 name=username></TD></TR>
+              <TR>
+                <TD width=40>Pass:</TD>
+                <TD><INPUT type=password size=14 name=password></TD></TR>
+              <TR>
+                <TD width=40>&nbsp;</TD>
+                <TD><INPUT type=image height=16 alt="Click here to login" 
+                  width=48 
+                  src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/login.gif" 
+                  border=0 name=Login></TD></TR></TBODY></TABLE>
+            <TABLE style="BORDER-COLLAPSE: collapse" borderColor=#111111 
+            cellSpacing=1 cellPadding=2 border=0>
+              <TBODY>
+              <TR>
+                <TD width="100%">
+                  <P align=center>Don't have a user account? Get one free! <A 
+                  href="http://paynekiller.kipsta.net/register.php">Click 
+                  here!</A></P></TD></TR></TBODY></TABLE><INPUT type=hidden 
+            value=submit name=submit> </FORM>
+            <P></P><LINK 
+            href="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/style.css" 
+            type=text/css rel=stylesheet>
+            <DIV class=hr>
+            <HR>
+            </DIV>
+            <P align=center><A href="http://www.ppawlowski.freeserve.co.uk/" 
+            target=_blank><IMG class=border height=31 
+            src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/noodlez.gif" 
+            width=88></A> <BR><IMG class=blank height=15 
+            src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/blank.gif" 
+            width=15> <BR><A href="http://www.paynereactor.com/" 
+            target=_blank><IMG class=border height=31 
+            src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/paynereactor.gif" 
+            width=88></A> <BR><IMG class=blank height=15 
+            src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/blank.gif" 
+            width=15> <BR><A href="http://www.3dactionplanet.com/maxpayne/" 
+            target=_blank><IMG class=border height=31 
+            src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/deepsix.jpg" 
+            width=88></A> <BR><IMG class=blank height=15 
+            src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/blank.gif" 
+            width=15> <BR><A href="http://www.maxpaynesource.com/" 
+            target=_blank><IMG class=border height=31 
+            src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/mpsource.jpg" 
+            width=88></A></P>
+            <P></P>
+            <DIV class=hr>
+            <HR>
+            </DIV>
+            <P align=center>Help me stop the pain! Donate to PayneKiller!</P>
+            <P>
+            <FORM action=https://www.paypal.com/cgi-bin/webscr method=post>
+            <CENTER><INPUT type=hidden value=_xclick name=cmd> <INPUT 
+            type=hidden value=paypal@kipsta.net name=business> <INPUT 
+            type=hidden value=1 name=no_note> <INPUT type=hidden value=GBP 
+            name=currency_code> <INPUT type=hidden value=0 name=tax> <INPUT 
+            type=image height=31 
+            alt="Donate to Paynekiller with PayPal - it's fast, free and secure!" 
+            width=62 
+            src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/paypal.gif" 
+            border=0 name=I1> </CENTER></FORM>
+            <P></P>
+            <DIV class=hr>
+            <HR>
+            </DIV>
+            <CENTER>
+            <P><B>Kipsta<BR>Recommends<BR></B>Prince of Persia and Beyond Good 
+            and Evil, perfect partners on Amazon.co.uk! <A class=_blank 
+            href="http://www.amazon.co.uk/exec/obidos/ASIN/B00009LW8B/kipstanet-21"><IMG 
+            alt="Prince of Persia: Sands of Time (PC) - Kipsta says: FUCKIN' AWESOME GAME!" 
+            hspace=3 
+            src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/amazonpopsm.jpg" 
+            vspace=3 border=0></A><BR>and...<BR><A class=_blank 
+            href="http://www.amazon.co.uk/exec/obidos/ASIN/B0000E3GWP/kipstanet-21"><IMG 
+            alt="Beyond Good and Evil - ONLY £14.99!!!! BARGAIN!" hspace=3 
+            src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/amazonbge.jpg" 
+            vspace=3 border=0></A><BR><A class=_blank 
+            href="http://www.amazon.co.uk/exec/obidos/redirect-home?tag=kipstanet-21&amp;site=amazon\">From 
+            Amazon.co.uk</A> <!-- 
+	<A HREF="http://www.amazon.co.uk/exec/obidos/ASIN/0744003237/kipstanet-21" class="_blank"><IMG SRC="layout/ads/amazonmpsg.jpg" border="0" alt="Max Payne 2: Official Strategy Guide (PC)" hspace="3" vspace="3"></A><br><a href="http://www.amazon.co.uk/exec/obidos/redirect-home?tag=kipstanet-21&site=amazon\" class="_blank">From Amazon.co.uk</a> 
+--></P></CENTER>
+            <DIV class=hr>
+            <HR>
+            </DIV>
+            <P></P>
+            <CENTER>
+            <TABLE style="BORDER-COLLAPSE: collapse" borderColor=#111111 
+            cellSpacing=2 cellPadding=2 border=0>
+              <TBODY>
+              <TR>
+                <TD width=120><!-- <p>There are <span class="hl">0</span> visitors browsing this page</p> -->
+                  <P>There are <SPAN class=hl>2</SPAN> active visitors at this 
+                  website</P></TD></TR></TBODY></TABLE></CENTER>
+            <P></P></TD>
+          <TD vAlign=top width=5><IMG class=blank height=10 
+            src="Kipsta's PayneKiller  Max Payne 2 Mod Resource Site_file/blank.gif" 
+            width=5> </TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD vAlign=top width="100%" height=15>
+      <DIV class=hr>
+      <HR>
+      </DIV></TD></TR>
+  <TR>
+    <TD vAlign=top width="100%" height=15>
+      <DIV align=center><!-- FOOTER, can change often so is variable -->
+      <P align=center><FONT color=#dc0000>Legal:</FONT> <FONT color=#808080><A 
+      href="http://paynekiller.kipsta.net/">Kipsta's PayneKiller website</A>, 
+      created, designed and maintained by <A 
+      href="mailto:%20paynekiller@kipsta.net">Simon 'kipsta' Choo</A>. <BR>All 
+      content is Copyright © 2003 by the creator; Simon Choo unless stated 
+      otherwise. <BR>You may not copy or re-use any work here without the 
+      express written permission of the creator.</FONT> </P>
+      <P align=center><FONT color=#808080>Max Payne 2 and the Max Payne 2 logo 
+      are trademarks of Take-Two Interactive Software, Inc</FONT> 
+  </P></DIV></TD></TR></TBODY></TABLE></CENTER></DIV></BODY></HTML>

@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>Viewport Popup Menu</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="ms3dhelp.css" type="text/css">
+</head>
+<div style='left:0px;position:absolute;top:0px;z-index:1; width: 308px; height: 88px' id=Layer1> 
+<img width=350 height=100 src="Images/ms3dhelptop.gif">
+</div>
+
+<div id="Layer2" style="position:absolute; left:10px; top:10px; width:100%; height:164px; z-index:2"> 
+  <table border="0" width="100%">
+    <tr valign="top"> 
+      <td> 
+        <h1>Viewport Popup Menu</h1>
+        <p>The viewport popup menu can be accessed by right-clicking in any of 
+          the viewports (3D or 2D). The menu provides a set of options that allow 
+          the current view to be altered. Below is an image showing the menu, 
+          click on one of the options to see a description for that menu item.</p>
+        <blockquote> 
+          <p><img src="Images/ViewportPopup.gif" width="183" height="323" border="0" usemap="#Map"><map name="Map"><area shape="rect" coords="4,3,180,19" href="#Wireframe"><area shape="rect" coords="4,19,180,36" href="#Flat"><area shape="rect" coords="4,36,180,53" href="#Smooth"><area shape="rect" coords="4,53,180,70" href="#Textured"><area shape="rect" coords="4,80,180,95" href="#Projection"><area shape="rect" coords="4,104,179,122" href="#ShowAxis"><area shape="rect" coords="4,122,179,139" href="#ShowGrid"><area shape="rect" coords="4,146,179,166" href="#Backfaces"><area shape="rect" coords="4,174,178,192" href="#ResetView"><area shape="rect" coords="4,192,178,208" href="#FrameAll"><area shape="rect" coords="4,208,178,226" href="#FrameSelection"><area shape="rect" coords="4,233,178,252" href="#Background"><area shape="rect" coords="4,259,178,279" href="#Screenshot"><area shape="rect" coords="4,279,178,296" href="#Record"><area shape="rect" coords="4,301,177,320" href="#Maximise"></map></p>
+        </blockquote>
+        <h2>Shading Type</h2>
+        <p>Wireframe, Flat Shaded, Smooth Shaded and Textured are all shading 
+          types. </p>
+        <blockquote> 
+          <h3><a name="Wireframe"></a>Wireframe</h3>
+          <p>This shows the model as it would be composed with lines between the 
+            vertices to represent the outlines of the faces of the model.</p>
+          <h3><a name="Flat"></a>Flat Shaded</h3>
+          <p>This shows the model with single colour flat faces to the structure. 
+            In this view, individual polygons can be seen easier than in the other 
+            views. </p>
+          <h3><a name="Smooth"></a>Smooth Shaded</h3>
+          <p>Smooth shading creates a gradient polygon when the light determines 
+            the brightness of the polygon at each vertex it belongs to. This gives 
+            a natural look, not possible in wireframe or flat shading.</p>
+          <h3><a name="Textured"></a>Textured</h3>
+          <p>This shading type is the same as smooth shading but assigned textures 
+            and alphamaps are also displayed.</p>
+        </blockquote>
+        <h2><a name="Projection"></a>Projection</h2>
+        <p>The projection sub menu brings up the menu shown in the image below.</p>
+        <blockquote> 
+          <p><img src="Images/perspective.gif" width="78" height="125"></p>
+        </blockquote>
+        <p>This menu choice allows you to change the perspective of the camera. 
+          All views listed apart from the 3D view use Orthographic projection 
+          (3D uses perspective). This allows you to control which way you view 
+          the object from allowing for easier modelling. This can also be changed 
+          through the <a href="Panels%20&amp;%20Windows/ViewCaption.html">Viewport 
+          Caption</a>.</p>
+        <h2><a name="ShowAxis"></a>Show Axis</h2>
+        <p>This option allows you to turn the display of the 3 axis lines in the 
+          centre of the view on and off. By default these lines are X = Yellow, 
+          Y = Turquoise and Z = Pink. In the orthographic (2D) views there will 
+          only be 2 lines displayed as the third lies on the same plane as that 
+          of the camera.</p>
+        <h2><a name="ShowGrid"></a>Show Grid</h2>
+        <p>This option toggles on and off the display of the grid lines in the 
+          viewport. This option can be used in all viewports, 3D and 2D (individually) 
+          to toggles grid lines on and off.</p>
+        <h2><a name="Backfaces"></a>Draw Backfaces</h2>
+        <p>All faces that face inward (have a clockwise vertex order) will not 
+          be displayed when this option is off. Inward facing faces are ones that 
+          are completely black when flat shadin is turned on.</p>
+        <h2><a name="ResetView"></a>Reset View</h2>
+        <p>This menu option allows the user to reset the viewport back to the 
+          default viewport settings. The defaults are the settings used when MilkShape 
+          3D is started up.</p>
+        <h2><a name="FrameAll"></a>Frame All</h2>
+        <p>This will frame the complete model (including all polygons/groups in 
+          the current workspace) into the centre of the view. This allows the 
+          easy viewing of all parts of the current model, it can also be useful 
+          when you are finished working on a specific part and instead of resetting 
+          the view to default you can frame the entire model for a better view.</p>
+        <h2><a name="FrameSelection"></a>Frame Selection</h2>
+        <p>This works in much the same way as Frame All except the view is focused 
+          on the current selected object/s in the workspace.</p>
+        <h2><a name="Background"></a>Choose Background Image...</h2>
+        <p>This allows the user to choose a background image for their model. 
+          This feature is commonly used to have a reference picture from which 
+          to work. This option will open a standard windows open box, choose your 
+          image from the appropriate directory on disk. A background image cannot 
+          be applied to a 3D (perspective) viewport.</p>
+        <p>Each pixel in the background image takes up 0.25 units on the MilkShape 
+          3D orthographic grid, so for example a 100 x 100 pixel image will take 
+          up 25 x 25 units on the grid. The background image is always centered, 
+          if the image is of even height or width then the best estimate is used.</p>
+        <h2><a name="Screenshot"></a>Take Screenshot...</h2>
+        <p>This menu choice will bring up a standard windows save box.The current 
+          contents of the viewport can be saved in .bmp format. When using this 
+          function you must type the .bmp file extension onto the end of the filename, 
+          if this is not done it will be an unknown type file.</p>
+        <h2></h2>
+        <h2><a name="Record"></a>Record AVI...</h2>
+        <p>This feature can be used to record an AVI format file of the animation 
+          of the currently loaded model. The AVI will run for the entire length 
+          of the frames currently specified in the <a href="Keyframer.html">Keyframer</a> 
+          at the bottom of the MilkShape 3D window. If you have an animation then 
+          it will be played and captured in the AVI file, if there is not animation 
+          then you will just get a still model, i.e. no animation or movement.</p>
+        <h2><a name="Maximise"></a>Maximize</h2>
+        <p>This feature simply toggles the viewport between maximised and minimised. 
+          When maximised the viewport takes up the space that all viewports would 
+          have taken up.</p>
+        <p>&nbsp;</p>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>&nbsp;</p></body>
+</html>
