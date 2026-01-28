@@ -1,0 +1,50 @@
+#include <..\level_items.h>
+#include <..\object_lods.h>
+#include <..\weaponid.h>
+
+[LOD]
+{
+    [Geometry]
+	ExportData = ..\..\projectiles\dummy\dummy_l0.kf2;
+    Distance = PROJECTILE_LOD_DRAW_ALWAYS;
+}
+
+[Properties]
+TriggerRadius = 50;
+CantPickupMessagesTimeout = 0;
+MatchingWeaponID = WEAPONID_ZIPPO;
+PickupIfNewWeapon = false;
+PickupIfAmmoNotFull = true;
+
+[OnFirstPickup]
+{
+	[Message] string = "activator->C_PickupWeapon( "zippo" );";
+	[Message] string = "activator->c_setinfiniteammo( zippo, true );";
+
+	[Message] String = "maxpayne_gamemode->gm_setplayercontrols( true );";
+	[Message] String = "maxpayne_gamemode->gm_setplayercontrols( false );";
+	[Message] String = "maxpayne_gamemode->gm_setplayercontrols( true );";
+	[Message] string = "activator->C_setidle(4,false);";
+}
+
+[OnPickUp]
+{
+	[Message] string = "activator->C_PickupWeapon( "zippo" );";
+	[Message] string = "activator->c_setinfiniteammo( zippo, true );";
+
+	[Message] String = "maxpayne_gamemode->gm_setplayercontrols( true );";
+	[Message] String = "maxpayne_gamemode->gm_setplayercontrols( false );";
+	[Message] String = "maxpayne_gamemode->gm_setplayercontrols( true );";
+	[Message] string = "activator->C_setidle(4,false);";
+}
+
+[OnCantPickup]
+{
+	[Message] string = "activator->C_PickupWeapon( "zippo" );";
+	[Message] string = "activator->c_pickupammo( zippo, -5 );";
+
+	[Message] String = "maxpayne_gamemode->gm_setplayercontrols( true );";
+	[Message] String = "maxpayne_gamemode->gm_setplayercontrols( false );";
+	[Message] String = "maxpayne_gamemode->gm_setplayercontrols( true );";
+	[Message] string = "activator->C_setidle(4,false);";
+}

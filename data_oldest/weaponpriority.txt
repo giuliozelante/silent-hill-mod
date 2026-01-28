@@ -1,0 +1,62 @@
+#include "database\weaponid.h"
+
+// Player chooses the weapon he uses according to this list
+// when clicking "Pick best weapon" or when running out of ammo.
+// These are in priority order starting from highest priority
+
+[BestWeapons]
+{
+	[weapon] ID = WEAPONID_HYPERBLASTER;
+	[weapon] ID = WEAPONID_BAR;
+	[weapon] ID = WEAPONID_M27;
+	[weapon] ID = WEAPONID_UZI;
+	[weapon] ID = WEAPONID_PUMPSHOTGUN;
+	[weapon] ID = WEAPONID_SAWEDSHOTGUN;
+	[weapon] ID = WEAPONID_GLOCK;
+	[weapon] ID = WEAPONID_SAW;
+	[weapon] ID = WEAPONID_KATANA;
+	[weapon] ID = WEAPONID_HAMMER;
+	[weapon] ID = WEAPONID_SCURE;
+	[weapon] ID = WEAPONID_BASEBALLBAT;
+	[weapon] ID = WEAPONID_LEADPIPE;
+	[weapon] ID = WEAPONID_ZIPPO;
+}
+
+// Cycling next/previous weapon uses this list (different from best weapons list
+// which doesn't include explosives or snipers). Weapon ID's are not used to
+// cycle weapons because empty weapon and painkiller etc have also ids.
+// These are in cycling order (the order they are in hud slots) 
+
+[CycleWeapons]
+{
+	[weapon] ID = WEAPONID_KATANA;
+	[weapon] ID = WEAPONID_SCURE;
+	[weapon] ID = WEAPONID_HAMMER;
+	[weapon] ID = WEAPONID_BASEBALLBAT;
+	[weapon] ID = WEAPONID_LEADPIPE;
+	[weapon] ID = WEAPONID_ZIPPO;
+
+	[weapon] ID = WEAPONID_DESERTEAGLE;
+	[weapon] ID = WEAPONID_M27;
+	[weapon] ID = WEAPONID_BERETTADUAL;
+	[weapon] ID = WEAPONID_GLOCK;
+	[weapon] ID = WEAPONID_BERETTA;
+
+	[weapon] ID = WEAPONID_JACKHAMMER;	
+	[weapon] ID = WEAPONID_PUMPSHOTGUN;
+	[weapon] ID = WEAPONID_SAWEDSHOTGUN;
+	
+	[weapon] ID = WEAPONID_HYPERBLASTER;
+	[weapon] ID = WEAPONID_MP5;
+	[weapon] ID = WEAPONID_INGRAMDUAL;
+	[weapon] ID = WEAPONID_UZI;
+	[weapon] ID = WEAPONID_INGRAM;	
+	
+	[weapon] ID = WEAPONID_M79;	
+	[weapon] ID = WEAPONID_GRENADE;
+	[weapon] ID = WEAPONID_MOLOTOV;
+	[weapon] ID = WEAPONID_SAW;
+
+	[weapon] ID = WEAPONID_SNIPER;
+	[weapon] ID = WEAPONID_BAR;
+}
