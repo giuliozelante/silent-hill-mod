@@ -8,10 +8,16 @@ This is a **Silent Hill mod for Max Payne**. It contains game configuration file
 
 ## Repository Structure
 
-- `data_newest/` - Active development data (primary working directory)
-- `data_old/`, `data_oldest/` - Previous version snapshots for reference
-- `SH Mod/` - Silent Hill mod-specific content (models, textures, sounds, levels)
-- `MP Modding Tutorials/` - MaxEd, MilkShape 3D, and particle effect tutorials
+**Main branch (master):**
+- `data_newest/` - Current game database (runtime configuration)
+- `SH Mod/` - Source content (models, textures, sounds, levels)
+
+**Archive branches:**
+- `docs` - MaxEd, MilkShape 3D, and particle effect tutorials
+- `archive/data-old` - Previous version snapshot
+- `archive/data-oldest` - Earliest version snapshot
+
+Access archived content: `git checkout docs` or `git checkout archive/data-old`
 
 ## Key Configuration Files
 
