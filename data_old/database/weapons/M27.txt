@@ -1,0 +1,84 @@
+#include <..\object_lods.h>
+#include <..\shooting.h>
+#include <..\weaponanimid.h>
+#include <..\weaponid.h>
+
+// Smith & Wesson M27
+
+[LOD]{
+	[Geometry] ExportData = M27_Lod0.kf2; Distance = WEAPON_LOD_FAR; }
+
+[Animationset]
+{
+	[Animation] Index = WEAPONANIM_DEFAULT; Filename = M27_Default.kf2;
+	
+	[Animation] Index = WEAPONANIM_SHOOT; Filename = M27_Shoot.kf2;
+	[Properties]
+	{
+		[Message] Frame = 4; String = "this->A_Play3DSound ( weapons, shoot_357Mag, \"\");";
+		[Message] Frame = 4; String = "this->P_CreateProjectile ( bullet_m27, 1 );";
+		[Message] Frame = 4; String = "this->PS_StartEffect ( muzzle_deserteagle, \"\" );";
+	}
+
+	[Animation] Index = WEAPONANIM_RELOAD; Filename = M27_Reload.kf2;
+	[Properties]
+	{
+		[Message] Frame = 3; String = "this->A_Play3DSound ( weapons, reload_revolver, \"\");";
+		[Message] Frame = 3; String = "this->P_CreateProjectile ( case_9mm, 6 );";
+	}
+	
+	[Animation] Index = WEAPONANIM_SHOOTEMPTY; Filename = M27_Default.kf2;
+	
+	[Animation] Index = WEAPONANIM_DROPONDEATH; Filename = M27_Default.kf2;
+	[Properties]
+	{
+		[Message] Frame = 0; String = "this->WS_Hide( " TRUE " );";
+		[Message] Frame = 0; String = "this->P_CreateProjectile ( enemy_m27, 1 );";
+	}
+}
+
+[Attributes]
+TwoHandedBones 		= YES;
+TwoHandedAnimation 	= NO;
+UseMultipleGunBones 	= NO;
+ShootDodgeAllowed	= YES;
+AutoAimingAllowed 	= YES;
+ProjectileOffset	= (0,0.08,0);
+
+SlotIndex 	= SLOTID_M27;
+InventoryID 	= INVENTORYID_M27;
+WeaponID 	= WEAPONID_M27;
+
+Clipsize 	= M27_CLIPSIZE;
+Pocketsize	= M27_POCKETSIZE;
+
+MaximumShootingFrequency 	= M27_MAXSHOOTINGFREQUENCY;
+DefaultShootingFrequency 	= M27_SHOOTINGFREQUENCY;
+ShootingFrequencyMultiplier	= M27_SLOWMOTIONMULTIPLIER;
+
+ReloadAmount 			= -1;
+UseModeSwitchAnimation 		= NO;
+SidewaysAimingMultiplier	= 1.0;
+
+FOVMultiplier = 1.0;
+// shakes are only applied when sniper zoom is on
+ShakeLength = 0.0;
+ShakeStrengthX = 0.0;
+ShakeStrengthY = 0.0;
+CrouchingShakeLength = 0.0;
+CrouchingShakeStrengthX = 0.0;
+CrouchingShakeStrengthY = 0.0;
+UsesLowerActivationGroup = false;
+
+[CrosshairAttributes]
+CastLength				= CROSSHAIR_CASTLENGTH ;
+SphereRadius 			= CROSSHAIR_SPHERERADIUS ;
+SmallProjectile 		= TRUE ;
+ScreenSizeFrontLimit	= CROSSHAIR_SIZEFRONTLIMIT ;
+ScreenSizeBackLimit		= CROSSHAIR_SIZEBACKLIMIT ;
+
+[Crosshair] 
+{ 
+	[Geometry] 
+	ExportData = ..\crosshairs\dot.kf2;
+}

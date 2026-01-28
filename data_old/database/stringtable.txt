@@ -1,0 +1,350 @@
+[OBJ_HOUSE_DANGER0]				String = "I miei cari erano in pericolo.";
+[OBJ_HOUSE_DANGER1]				String = "Dovevo salvarli.";
+
+[OBJ_SUBWAY_FIND_ALEX] 			String = "Dovevo trovare Alex.";
+[OBJ_SUBWAY_GET_OUT] 			String = "Dovevo uscire da quella trappola mortale.";
+[OBJ_SUBWAY_RATS]     			String = "Avevo dichiarato guerra a tutti i topi di fogna.";
+
+[OBJ_HOTEL_COVER_BLOWN0] 		String = "La mia copertura era saltata.";
+[OBJ_HOTEL_COVER_BLOWN1] 		String = "Dovevo uscire dall'hotel.";
+
+[OBJ_TENEMENTS_FIND_OFFICE0]	String = "Dovevo trovare il modo di raggiungere l'ufficio";
+[OBJ_TENEMENTS_FIND_OFFICE1]	String = "di Lupino all'ultimo piano.";
+[OBJ_TENEMENTS_GOGNITTI]		String = "Dovevo acciuffare Vinnie Gognitti.";
+
+[OBJ_ROOFTOPS_GOGNITTI]			String = "Dovevo acciuffare Vinnie Gognitti.";
+
+[OBJ_RAGNAROCK_LUPINO0]			String = "Dovevo affrontare Jack Lupino";
+[OBJ_RAGNAROCK_LUPINO1]			String = "e fargliela pagare.";
+
+[OBJ_NIGHTMARE_LOVED_ONES]		String = "Dovevo salvare i miei cari.";
+
+[OBJ_HOTEL2_DEATH_ROW]			String = "Dovevo interrompere questa serie di esecuzioni.";
+[OBJ_HOTEL2_FIND_NIAGARA]		String = "Dovevo trovare Niagara e dargli una bella lezione.";
+
+[OBJ_DOCKS_FIND_SHIP]			String = "Dovevo trovare una nave cargo chiamata 'Caronte'.";
+[OBJ_DOCKS_WIN]					String = "Dovevo riportare la nave sotto il controllo di Vladimir.";
+[OBJ_DOCKS_WEAPONS]				String = "Le armi nella stiva sarebbero tornate utili.";
+[OBJ_DOCKS_MEETING]				String = "Dovevo incontrarmi con Vladimir sul ponte.";
+
+[OBJ_RESTAURANT_ESCAPE]			String = "Dovevo sfuggire alle fiamme.";
+[OBJ_RESTAURANT_WAYOUT]			String = "Dovevo trovare una via d'uscita.";
+
+[OBJ_MANOR_TRIO]				String = "Dovevo occuparmi del Trio di Puncinello.";
+[OBJ_MANOR_PUNCHINELLO0]		String = "Dovevo scoprire per chi lavoravano";
+[OBJ_MANOR_PUNCHINELLO1]		String = "gli uomini in nero.";
+
+[OBJ_DRUGTRIP]					String = "La carne degli angeli decaduti!";
+
+[OBJ_COLDSTEEL_FIND]			String = "Dovevo trovare il nascondiglio della donna misteriosa.";
+[OBJ_COLDSTEEL_ELEVATOR]		String = "Dovevo trovare l'ascensore 'D-6.'";
+
+[OBJ_BUNKER_MS_VALKYR0]			String = "Dovevo trovare un segno della";
+[OBJ_BUNKER_MS_VALKYR1]			String = "signora Valchiria e del suo piano.";
+[OBJ_BUNKER_GETOUT0]			String = "Dovevo abbandonare il bunker";
+[OBJ_BUNKER_GETOUT1]			String = "prima che esplodesse.";
+
+[OBJ_GARAGE_BB0]				String = "B.B. avrebbe pagato a caro";
+[OBJ_GARAGE_BB1]				String = "prezzo la morte di Alex.";
+[OBJ_GARAGE_PHONE]				String = "Dovevo rispondere al telefono. Ero curioso.";
+
+[OBJ_ASGARD_ASSASINS]			String = "Dovevo sfuggire agli assassini di Nicole Horne.";
+
+[OBJ_AESIR_FIND0]				String = "Dovevo trovare il modo di raggiungere";
+[OBJ_AESIR_FIND1]				String = "la suite di Horne.";
+
+[OBJ_PENTHOUSE_END]				String = "Dovevo assolutamente bloccare Nicole Horne.";
+
+// needed for benchmark test levels only
+[RESURRECT]				String = "Resurrezione";
+
+[HUDPRINT_PICKUP_BERETTA_AMMO]		String = "Proiettili 9mm per Pistola";
+[HUDPRINT_PICKUP_M27_AMMO]		String = "Proiettili 357Magnum";
+[HUDPRINT_PICKUP_DESERTEAGLE_AMMO]	String = "Proiettili 50AE per Desert Eagle";
+[HUDPRINT_PICKUP_SHOTGUN_AMMO]		String = "Cartucce cal.12";
+[HUDPRINT_PICKUP_JACKHAMMER_AMMO]	String = "Cartucce cal.12 (JackHammer)";
+[HUDPRINT_PICKUP_INGRAM_AMMO]		String = "Proiettili per Ingram";
+[HUDPRINT_PICKUP_UZI_AMMO]		String = "Proiettili 9mm per Mitraglietta";
+[HUDPRINT_PICKUP_COLTCOMMANDO_AMMO]     String = "Proiettili 5.56mm per M4";
+[HUDPRINT_PICKUP_MP5_AMMO]    		String = "Proiettili 5.56mm per M4";
+[HUDPRINT_PICKUP_M79_AMMO]		String = "Granate da 40mm per M79";
+[HUDPRINT_PICKUP_SNIPER_AMMO]     	String = "Proiettili per Fucile di Precisione";
+[HUDPRINT_PICKUP_BAR_AMMO]     		String = "Proiettili .30-06 per Carabina";
+[HUDPRINT_PICKUP_HYPERBLASTER_AMMO]	String = "Batteria per HyperBlaster";
+
+//---------------------------------------------------------------------------------------------------------------------------
+
+[HUDPRINT_PICKUP_ZIPPO1]		String = "Accendino:   ";
+[HUDPRINT_PICKUP_ZIPPO2]         	String = "Vecchio Zippo";
+[HUDPRINT_PICKUP_ZIPPO_END]		String = "Accendino";
+
+[HUDPRINT_PICKUP_LEADPIPE1]		String = "Coltello:                           ";
+[HUDPRINT_PICKUP_LEADPIPE2]         	String = "Coltello da cucina, trovato nel Bar.";
+[HUDPRINT_PICKUP_LEADPIPE3]         	String = "Meglio di niente.                   ";
+[HUDPRINT_PICKUP_LEADPIPE_END]		String = "Coltello da Cucina";
+
+[HUDPRINT_PICKUP_BERETTA]		String = "Beretta";
+
+[HUDPRINT_PICKUP_BERETTADUAL]		String = "Beretta";
+
+[HUDPRINT_PICKUP_DESERTEAGLE]		String = "Desert Eagle 50";
+
+[HUDPRINT_PICKUP_SAWEDSHOTGUN1]		String = "Fucile:                             ";
+[HUDPRINT_PICKUP_SAWEDSHOTGUN2]         String = "Fucile con canne e calcio tagliate. ";
+[HUDPRINT_PICKUP_SAWEDSHOTGUN3]         String = "Capienza: 2 colpi. Letale da vicino.";
+[HUDPRINT_PICKUP_SAWEDSHOTGUN_END]	String = "Fucile";
+
+[HUDPRINT_PICKUP_PUMPSHOTGUN1]		String = "Fucile a Pompa:                  ";
+[HUDPRINT_PICKUP_PUMPSHOTGUN2]	        String = "Remington 870, potente e pratico.";
+[HUDPRINT_PICKUP_PUMPSHOTGUN3]	        String = "Capienza: 5 colpi.               ";
+[HUDPRINT_PICKUP_PUMPSHOTGUN_END]	String = "Fucile a Pompa";
+
+[HUDPRINT_PICKUP_JACKHAMMER]		String = "Jackhammer";
+
+[HUDPRINT_PICKUP_INGRAM]		String = "Ingram MAC M10";
+
+[HUDPRINT_PICKUP_INGRAMDUAL]		String = "Ingram MAC M10";
+
+[HUDPRINT_PICKUP_MP5]		        String = "Colt M4";
+
+[HUDPRINT_PICKUP_COLTCOMMANDO]		String = "Colt M4";
+
+[HUDPRINT_PICKUP_M79]			String = "M79";
+
+[HUDPRINT_PICKUP_PAINKILLERS1]	   	String = "Bevanda Salutare:           ";
+[HUDPRINT_PICKUP_PAINKILLERS2]          String = "Risana lievemente la salute.";
+[HUDPRINT_PICKUP_PAINKILLERS_END]	String = "Bevanda Salutare";
+
+[HUDPRINT_PICKUP_MOLOTOV]		String = "Molotov";
+[HUDPRINT_PICKUP_GRENADE]		String = "Granata";
+
+[HUDPRINT_PICKUP_BASEBALLBAT1]		String = "Tubo di Ferro:                     ";
+[HUDPRINT_PICKUP_BASEBALLBAT2]          String = "Vecchio tubo di ferro arrugginito. ";
+[HUDPRINT_PICKUP_BASEBALLBAT3]          String = "Lungo un metro, trovato nel vicolo.";
+[HUDPRINT_PICKUP_BASEBALLBAT_END]	String = "Tubo di Ferro";
+
+[HUDPRINT_PICKUP_SNIPER]		String = "Fucile di Precisione";
+
+[HUDPRINT_PICKUP_GLOCK1]		String = "Glock 17:               ";
+[HUDPRINT_PICKUP_GLOCK2]                String = "La Pistola 9mm di Cybil."; 
+[HUDPRINT_PICKUP_GLOCK3]		String = "Capienza: 15 colpi.     ";
+[HUDPRINT_PICKUP_GLOCK_END]		String = "Glock 17";
+
+[HUDPRINT_PICKUP_HAMMER1]		String = "Martello:                       ";
+[HUDPRINT_PICKUP_HAMMER2]		String = "Martello di emergenza.          ";
+[HUDPRINT_PICKUP_HAMMER3]		String = "Poco pratico, causa molti danni.";
+[HUDPRINT_PICKUP_HAMMER_END]		String = "Martello di Emergenza";
+
+[HUDPRINT_PICKUP_M271]			String = "Smith&Wesson 27:       ";
+[HUDPRINT_PICKUP_M272]			String = "Il Revolver di Kaufmann.";
+[HUDPRINT_PICKUP_M273]			String = "Potente 357 MAGNUM.     ";
+[HUDPRINT_PICKUP_M27_END]		String = "Smith&Wesson 27";
+
+[HUDPRINT_PICKUP_UZI1]			String = "Uzi:                          ";
+[HUDPRINT_PICKUP_UZI2]			String = "Piccola mitraglietta 9mm.     ";
+[HUDPRINT_PICKUP_UZI3]			String = "Veloce e difficile da gestire.";
+[HUDPRINT_PICKUP_UZI_END]		String = "Uzi";
+
+[HUDPRINT_PICKUP_SCURE1]		String = "Scure:                      ";
+[HUDPRINT_PICKUP_SCURE2]		String = "Scure di piccole dimensioni.";
+[HUDPRINT_PICKUP_SCURE_END]		String = "Scure";
+
+[HUDPRINT_PICKUP_KATANA1]		String = "Katana:                          ";
+[HUDPRINT_PICKUP_KATANA2]		String = "Vecchia Katana.                  ";
+[HUDPRINT_PICKUP_KATANA3]		String = "Spada dalla lama molto tagliente.";
+[HUDPRINT_PICKUP_KATANA_END]		String = "Katana";
+
+[HUDPRINT_PICKUP_BAR1]			String = "Browning BAR:                        ";
+[HUDPRINT_PICKUP_BAR2]			String = "Carabina da caccia calibro .30-06.   ";
+[HUDPRINT_PICKUP_BAR3]			String = "Potente e precisa. Capienza: 4 colpi.";
+[HUDPRINT_PICKUP_BAR_END]		String = "Fucile da Caccia";
+
+[HUDPRINT_PICKUP_SAW1]			String = "Motosega:                           ";
+[HUDPRINT_PICKUP_SAW2]			String = "Ottima per affettare legna e demoni.";
+[HUDPRINT_PICKUP_SAW_END]		String = "Motosega";
+
+[HUDPRINT_PICKUP_DRILL1]		String = "Demolitore:                              ";
+[HUDPRINT_PICKUP_DRILL2]		String = "In grado di perforare la roccia più dura.";
+[HUDPRINT_PICKUP_DRILL_END]		String = "Demolitore";
+
+[HUDPRINT_PICKUP_HYPERBLASTER1]		String = "HyperBlaster:            ";
+[HUDPRINT_PICKUP_HYPERBLASTER2]		String = "Arma Aliena.             ";
+[HUDPRINT_PICKUP_HYPERBLASTER3]		String = "Immensa potenza di fuoco.";
+[HUDPRINT_PICKUP_HYPERBLASTER_END]	String = "HyperBlaster";
+
+//---------------------------------------------------------------------------------------------------------------------------
+
+[HUDPRINT_PICKUP_BERETTA_AMMO_FULL]		String = "Massimo Proiettili Pistola";
+[HUDPRINT_PICKUP_M27_AMMO_FULL]			String = "Massimo Proiettili Revolver";
+[HUDPRINT_PICKUP_DESERTEAGLE_AMMO_FULL]		String = "Massimo Proiettili Desert Eagle";
+[HUDPRINT_PICKUP_SHOTGUN_AMMO_FULL]		String = "Massimo cartucce Fucile";
+[HUDPRINT_PICKUP_JACKHAMMER_AMMO_FULL]		String = "Massimo cartucce Jackhammer";
+[HUDPRINT_PICKUP_INGRAM_AMMO_FULL]		String = "Massimo Proiettili per Ingram";
+[HUDPRINT_PICKUP_UZI_AMMO_FULL]			String = "Massimo Proiettili per Mitraglietta";
+[HUDPRINT_PICKUP_MP5_AMMO_FULL]	                String = "Massimo Proiettili per M4";
+[HUDPRINT_PICKUP_COLTCOMMANDO_AMMO_FULL]	String = "Massimo Proiettili per M4";
+[HUDPRINT_PICKUP_M79_AMMO_FULL]			String = "Massimo granate per M79";
+[HUDPRINT_PICKUP_PAINKILLERS_FULL]		String = "Massimo Bevande Salutari";
+[HUDPRINT_PICKUP_MOLOTOV_AMMO_FULL]		String = "Massimo Molotov";
+[HUDPRINT_PICKUP_GRENADE_AMMO_FULL]		String = "Massimo Granate";
+[HUDPRINT_PICKUP_BASEBALLBAT_AMMO_FULL]		String = "Hai già un Tubo di Ferro";
+[HUDPRINT_PICKUP_HAMMER_AMMO_FULL]		String = "Hai già un Martello";
+[HUDPRINT_PICKUP_SCURE_AMMO_FULL]		String = "Hai già una Scure";
+[HUDPRINT_PICKUP_KATANA_AMMO_FULL]		String = "Hai già una Katana";
+[HUDPRINT_PICKUP_SAW_AMMO_FULL]			String = "Hai già una Motosega";
+[HUDPRINT_PICKUP_DRILL_AMMO_FULL]		String = "Hai già un Demolitore";
+[HUDPRINT_PICKUP_LEADPIPE_AMMO_FULL]		String = "Hai già un Coltello da Cucina";
+[HUDPRINT_PICKUP_ZIPPO_AMMO_FULL]		String = "Hai già un Accendino";
+[HUDPRINT_PICKUP_SNIPER_AMMO_FULL]		String = "Massimo Proiettili per Fucile di Precisione";
+[HUDPRINT_PICKUP_BAR_AMMO_FULL]			String = "Massimo Proiettili per Carabina";
+[HUDPRINT_PICKUP_HYPERBLASTER_AMMO_FULL]	String = "Massimo Batterie per HyperBlaster";
+
+//---------------------------------------------------------------------------------------------------------------------------
+
+// these variables are referred from globalconfig.txt
+// Attention! there is another pause text in stringdefines.h for gn-mode (it can't be a hud print)
+[NoPauseCameraPathText]				String = "Pausa"; 
+[QuickSaveGameDescriptionPrefix]	String = "Veloce: ";
+[AutoSaveGameDescriptionPrefix]		String = "Autom.: ";
+[QuickLoadQueryText]				String = "Premi ancora F9 per il caricamento veloce, Esc per annullare";
+
+[STRING_CARRYING]					String = "";		// Made empty very last minute, also moving lower inventory prints one line higher in the hud.txt
+[STRING_BAR_KEY]					String = "Chiave bar";
+[STRING_CELLAR_KEY]					String = "Chiave cantina";
+[STRING_STAIRCASE_KEY]				String = "Chiave scale";
+
+[HUDPRINT_PRESS_USE_TO_LOAD]		String = "Premi il tasto Usa (#USE#) per caricare l'ultima posizione salvata.";
+[TIP_PAUSECAMERA]					String = "Suggerimento: premi #PAUSE# per disattivare la modalità di pausa.";
+[TIP_SNIPER]					    String = "Suggerimento: premi e tieni premuto il tasto Usa (#USE#) per mirare col fucile di precisione.";
+[TIP_PAINKILLER]					String = "Suggerimento: premi #PAINKILLER# per utilizzare gli antidolorifici e alleviare il dolore.";
+[TIP_EXAMINE]						String = "Suggerimento: premi il tasto Usa (#USE#) per utilizzare o esaminare degli oggetti interessanti.";
+[TIP_SHOOTDODGE]					String = "Suggerimento: premi il tasto Bullet Time (#BULLETTIME#) per muoverti e sparare il volo.";
+[TIP_BULLETTIME]					String = "Suggerimento: premi il tasto Bullet Time (#BULLETTIME#) senza muoverti per entrare in modalità proiettili rallentati.";
+[TIP_DODGE]							String = "Suggerimento: premi #JUMP# e un tasto direzionale per effettuare una capriola evasiva.";
+[TIP_OBJECTIVES]					String = "Suggerimento: premi F2 per rivedere gli obiettivi di missione.";
+[TIP_VIEWNOTES]						String = "Suggerimento: premi F1 per rivedere più tardi il romanzo illustrato.";
+
+[STRING_INTRO_PRESENT_DAY]			String = "New York. Nostri giorni. Un'ora fa.";
+[STRING_MAXHOUSE_YEARS_AGO]			String = "New Jersey. Tre anni fa.";
+[STRING_SUBWAY_PRESENT_DAY]			String = "New York. Nostri giorni. Due notti fa.";
+
+[STRING_BUNKER_SCIENTIST_DEAD]		String = "Ooops...";
+[STRING_BUNKER_INV_PINCODE]			String = "Numero di PIN '665'";
+
+[STRING_PENTHOUSE_45_SEC]			String = "Decollo in 45 secondi";
+[STRING_PENTHOUSE_40_SEC]			String = "Decollo in 40 secondi";
+[STRING_PENTHOUSE_35_SEC]			String = "Decollo in 35 secondi";
+[STRING_PENTHOUSE_30_SEC]			String = "Decollo in 30 secondi";
+[STRING_PENTHOUSE_25_SEC]			String = "Decollo in 25 secondi";
+[STRING_PENTHOUSE_20_SEC]			String = "Decollo in 20 secondi";
+[STRING_PENTHOUSE_15_SEC]			String = "Decollo in 15 secondi";
+[STRING_PENTHOUSE_10_SEC]			String = "Decollo in 10 secondi";
+[STRING_PENTHOUSE_5_SEC]			String = "Decollo in 5 secondi";
+[STRING_PENTHOUSE_4_SEC]			String = "Decollo in 4 secondi";
+[STRING_PENTHOUSE_3_SEC]			String = "Decollo in 3 secondi";
+[STRING_PENTHOUSE_2_SEC]			String = "Decollo in 2 secondi";
+[STRING_PENTHOUSE_1_SEC]			String = "Decollo in 1 secondo";
+
+// Old, should be removed
+[STRING_INTRO_TIP_LOOK]				String = "Suggerimento: Max sta osservando un oggetto interessante";
+[STRING_INTRO_TIP_PRESSUSE]			String = "Suggerimento: premi Usa (#USE#) per raccogliere o esaminare oggetti";
+[STRING_INTRO_TIP_F1]				String = "Suggerimento: premi F1 per rivedere il romanzo illustrato";
+[STRING_SUBWAY_TIP_QUICKSAVE] 		String = "Suggerimento: premi F5 per il salvataggio veloce";
+[STRING_SUBWAY_TIP_SHOOTDODGE]		String = "Suggerimento: muoviti e premi il tasto #BULLETTIME# per sparare in volo";
+[STRING_SUBWAY_SHOOTDODGE]			String = "Suggerimento: resta fermo e tieni premuto il tasto #BULLETTIME# per attivare il Bullet Time";
+[STRING_SUBWAY_TIP_USE]				String = "Suggerimento: premi il tasto Usa (#USE#) per raccogliere oggetti";
+[STRING_SUBWAY_TIP_LOOK]			String = "Suggerimento: Max sta osservando un oggetto interessante";
+[STRING_SUBWAY_TIP_DODGE]			String = "Suggerimento: salta a sinistra o a destra per effettuare delle capriole evasive";
+[STRING_SUBWAY_TIP_PAINKILLERS]		String = "Suggerimento: usa gli antidolorifici (#PAINKILLER#) per restare in vita";
+[STRING_SUBWAY_INV_SECURITYCODE]	String = "Codice di sicurezza"; 
+[STRING_SUBWAY_INV_DETONATORS]		String = "Detonatori";
+// end old tips
+
+[TIP_01]							String = "Benvenuto a un breve tutorial su come giocare a Max Payne...";
+[TIP_02]							String = "C'è un telefono che squilla. Avvicinati.";
+[TIP_03]							String = "Max osserverà gli oggetti interessanti...";
+[TIP_04]							String = "Adesso mettiti davanti al telefono e premi il tasto #USE#.";
+[TIP_06]							String = "Adesso che sai come utilizzare gli oggetti, dirigiti verso la porta del furgone.";
+[TIP_07]							String = "Inizia provando a rispondere al telefono.";
+[TIP_08]							String = "Puoi sparare premendo il tasto #SHOOT#. Prova a colpire le casse.";
+[TIP_09]							String = "Puoi scorrere le tue armi utilizzando la rotella del mouse oppure premendo i tasti 1-6...";
+[TIP_12]							String = "Adesso occupati del lucchetto sulla porta metallica.";
+[TIP_13]							String = "A volte degli oggetti utili si nascondo all'interno di altri contenitori.";
+[TIP_15]							String = "Max può sparare in volo MUOVENDOSI e premendo il tasto #BULLETTIME#...";
+[TIP_17]							String = "Fai un po' di pratica con lo sparo in volo.";
+[TIP_20]							String = "Max può anche entrare in modalità proiettili rallentati...";
+[TIP_21]							String = "Premi il tasto #BULLETTIME# mentre sei fermo...";
+[TIP_22]							String = "Ritorna a velocità normale premendo ancora il tasto #BULLETTIME# senza muoverti...";
+[TIP_23]							String = "Il tempo di Bullet Time residuo è indicato dalla clessidra.";
+[TIP_26]							String = "Max salta ogni volta che premi il tasto #JUMP#...";
+[TIP_27]							String = "Salta lateralmente o all'indietro per effettuare delle capriole evasive...";
+[TIP_28]							String = "Adesso salta oltre la parete per proseguire.";
+[TIP_30]							String = "Usa l'opzione di salvataggio veloce (F5). Per ricaricare la partita premi F9.";
+
+[TIP_32]							String = "Il prossimo passo è provare i proiettili sospesi e lo sparo in volo durante una sparatoria...";
+[TIP_33]							String = "Premi sul distributore automatico di nemici vicino al telefono.";
+[TIP_37]							String = "Ispeziona l'ingresso della metropolitana per trovare un armadietto dei medicinali.";
+[TIP_40]							String = "Premi #PAINKILLER# per ingoiare un paio di pillole se sei rimasto ferito...";
+ [TIP_42]							String = "Adesso prova a perquisire il retro del furgone.";
+[TIP_43]							String = "Prova a controllare l'ingresso della metropolitana.";
+[TIP_44]							String = "Hai trovato un fucile di precisione...";
+[TIP_45]							String = "Tre nuovi nemici si stanno avvicinando dal vicolo laterale...";
+[TIP_46]							String = "Premi il tasto #USE# per mirare quando hai selezionato il fucile di precisione...";
+ [TIP_48]							String = "Se ti abbassi (#CROUCH#) mentre sei in modalità di precisione, puoi prendere meglio la mira.";
+[TIP_49]							String = "Questo completa l'allenamento...";
+[TIP_50]							String = "Se vuoi affinare la tua mira, il distributore automatico di nemici è ancora in funzione...";
+[TIP_52]							String = "Oppure puoi dedicarti all'esplorazione dell'ambiente...";
+[TIP_53]							String = "Una volta finito, premi Esc per tornare al menu principale.";
+[TIP_54]							String = "Congratulazioni! Hai trovato una stanza segreta.";
+
+[TIP_55]							String = "Seleziona il fucile di precisione con la rotella del mouse o premendo 6.";
+
+[TIP_57]							String = "Per prima cosa devi premere il distributore di nemici.";
+
+// Anything marked with [DELETE] is redundant and isn't used anymore
+
+[TIP_05]							String = "[DELETE] If needed, you can use the phone again to replay this tip...";
+[TIP_10]							String = "[DELETE] Once you've cycled to the weapon you want press #SHOOT# to select it...";
+[TIP_11]							String = "[DELETE] Now try shooting the boxes nearby.";
+[TIP_14]							String = "[DELETE] Max is able to perform special action moves...";
+[TIP_16]							String = "[DELETE] Then press #SHOOT# to fire your gun while in mid-air...";
+[TIP_18]							String = "[DELETE] Note that if Bullet Time is all used up Max will do an evasive rolling dodge instead.";
+[TIP_19]							String = "[DELETE] When you feel comfortable with shootdodging move over to the next pay phone.";
+[TIP_24]							String = "[DELETE] Toggle it on and off by pressing #BULLETTIME#. Try out moving in Bullet Time.";
+[TIP_25]							String = "[DELETE] When you feel comfortable with Bullet Time activation move to the next pay phone.";
+[TIP_29]							String = "[DELETE] This would be a perfect time to save your progress...";
+[TIP_31]							String = "[DELETE] Answer the pay phone on the other side of the street.";
+[TIP_34]							String = "[DELETE] an enemy will appear and attack you. You can reload your gun by pressing #RELOAD#...";
+[TIP_35]							String = "[DELETE] You are advised to make good use of dodging and Bullet Time while in combat.";
+[TIP_36]							String = "[DELETE] Well done. You should now pick up the guns that the enemies have dropped.";
+[TIP_38]							String = "[DELETE] Use the medicine cabinet (by pressing #USE#) to pick up the painkillers.";
+[TIP_39]							String = "[DELETE] Painkillers reduce the amount of pain Max is in...";
+[TIP_41]							String = "[DELETE] Note that it takes a little while for them to take effect.";
+[TIP_47]							String = "[DELETE] You can also try using Bullet Time when in zoom mode...";
+[TIP_51]							String = "[DELETE] Pressing it will make enemies appear in random locations...";
+[TIP_56]							String = "[DELETE] You can see the amount of Pain shown in red in the lower left corner of the screen.";
+
+[STRING_NORMAL_COMPLETED1]			String = "Congratulazioni! Hai completato Max Payne.";
+[STRING_NORMAL_COMPLETED2]			String = "Hai sbloccato le due nuove modalità Ultimo respiro e";
+[STRING_NORMAL_COMPLETED3]			String = "A fuoco lento, ancora più impegnative.";
+
+[STRING_NIGHTMARE_COMPLETED1]		String = "Congratulazioni!";
+[STRING_NIGHTMARE_COMPLETED2]		String = "Hai completato la modalità A fuoco lento. Non resta che prepararti";
+[STRING_NIGHTMARE_COMPLETED3]		String = "per la sfida finale, il livello Killer.";
+
+[STRING_HELL_COMPLETED1]			String = "Congratulazioni!";
+[STRING_HELL_COMPLETED2]			String = "Hai completato anche il livello Killer:";
+[STRING_HELL_COMPLETED3]			String = "la sfida più impegnativa di tutte.";
+
+[STRING_TIMEDMODE_COMPLETED1]		String = "Congratulazioni! Modalità Ultimo respiro completata:";
+[STRING_TIMEDMODE_COMPLETED2]		String = "hai vinto la tua corsa contro l'orologio.";
+[STRING_TIMEDMODE_COMPLETED3]		String = "Il tuo tempo complessivo è stato #TOTALTIME#.";
+[STRING_TIMEDMODE_COMPLETED4]		String = "Il tempo di riferimento Remedy è: 0:52:33"; // same time format as #TOTALTIME#
+
+[STRING_ENDCOMBAT_01]				String = "L'ultima sfida.";
+[STRING_ENDCOMBAT_02]				String = "VIA!";
+[STRING_ENDCOMBAT_03]				String = "Ben fatto!";
+
+[STRING_NYM_MAP]					String = "Il tuo tempo attuale è: #TOTALTIME#";
+[STRING_NYM_PART1_PAR]				String = "Il tempo di riferimento Remedy è: 0:18:14";
+[STRING_NYM_PART2_PAR]				String = "Il tempo di riferimento Remedy è: 0:30:39";
