@@ -5,19 +5,19 @@
 #include "..\database\stringdefines.h"
 #include "menuid.h"
 
-#define	BG_BITMAP_MAINMENU	"bitmaps\Menu_bg_Mainmenu.tga"
+#define	BG_BITMAP_MAINMENU	"bitmaps\Menu_bg_MainMenu.tga"
 #define	BG_BITMAP_OPTIONS	"bitmaps\Menu_bg_Generic.tga"
 #define	BG_BITMAP_LOADSAVE	"bitmaps\Menu_bg_LoadSave.tga"
 #define	BG_BITMAP_QUIT		"bitmaps\Menu_bg_Quit.tga"
-#define	BG_BITMAP_CREDITS	"bitmaps\Menu_bg_credits.tga"
+#define	BG_BITMAP_CREDITS	"bitmaps\Menu_bg_Generic.tga"
 
 [General]
 DefaultBackground	= BG_BITMAP_OPTIONS;
 
-NormalFont			= "bitmaps\Menu_Font_Univers.tga";
-NormalFontAlpha 		= "bitmaps\Menu_Font_Univers_Alpha.tga";
-SelectedFont			= "bitmaps\Menu_Font_Univers_Bright.tga";
-SelectedFontAlpha		= "bitmaps\Menu_Font_Univers_Alpha.tga";
+NormalFont			= "bitmaps\menu_font_univers.tga";
+NormalFontAlpha 		= "bitmaps\menu_font_univers_alpha.tga";
+SelectedFont			= "bitmaps\menu_font_univers_bright.tga";
+SelectedFontAlpha		= "bitmaps\menu_font_univers_alpha.tga";
 ToolTipFont			= "bitmaps\menu_font_univers_Verysmall.tga";
 ToolTipFontAlpha 		= "bitmaps\menu_font_univers_Verysmall_alpha.tga";
 
